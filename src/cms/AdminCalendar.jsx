@@ -59,7 +59,7 @@ const AdminCalendar = () => {
     <div className="space-y-6">
       {/* Add Event Button */}
       <div className="flex justify-between items-center">
-        <h3 className="text-2xl font-bold text-ges-navy">Manage Academic Calendar</h3>
+        <h3 className="text-2xl font-bold text-ges-navy">Manage GES Calendar</h3>
         <button
           onClick={() => setShowForm(true)}
           className="bg-ges-gold text-ges-navy px-6 py-3 rounded-lg font-semibold hover:bg-ges-teal hover:text-white transition-all duration-300 flex items-center"

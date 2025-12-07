@@ -24,7 +24,7 @@ const Header = () => {
     { name: 'GES Life', path: '/ges-life' },
     { name: 'Mentorship', path: '/mentorship' },
     { name: 'Partnerships', path: '/partnerships' },
-    { name: 'Academic Calendar', path: '/academic-calendar' },
+    { name: 'GES Calendar', path: '/academic-calendar' },
   ];
 
   useEffect(() => {

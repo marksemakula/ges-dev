@@ -91,7 +91,7 @@ const AdminPanel = () => {
         <div className="flex space-x-1 bg-white rounded-xl p-1 mb-8 shadow-lg">
           {[
             { key: 'content', label: 'Content Management' },
-            { key: 'calendar', label: 'Academic Calendar' },
+            { key: 'calendar', label: 'GES Calendar' },
             { key: 'institutions', label: 'Institutions' },
             { key: 'analytics', label: 'Analytics' }
           ].map((tab) => (
@@ -109,7 +109,7 @@ const AdminPanel = () => {
           ))}
         </div>
 
-        {/* Academic Calendar Tab */}
+        {/* GES Calendar Tab */}
         {activeTab === 'calendar' && (
           <div className="space-y-6">
             <AdminCalendar />

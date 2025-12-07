@@ -56,28 +56,12 @@ const Home = () => {
     { icon: LuGlobe, label: "Countries Represented", value: "15+", color: "text-ges-purple" }
   ];
 
+  const [institutionSlide, setInstitutionSlide] = useState(0);
+
   const institutions = [
     {
-      name: "Gombe High School",
-      description: "Advanced secondary education with focus on sciences and humanities",
-      students: "800+",
-      established: "1995",
-      specialties: ["Sciences", "Arts", "Technology"],
-      image: "/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg",
-      color: "bg-ges-blue"
-    },
-    {
-      name: "Gombe Junior School",
-      description: "Primary and lower secondary education with holistic development",
-      students: "600+",
-      established: "1998",
-      specialties: ["Foundation", "Character", "Skills"],
-      image: "/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg",
-      color: "bg-ges-teal"
-    },
-    {
-      name: "Scooby Doo International",
-      description: "International curriculum preparing students for global universities",
+      name: "Scooby Doo International School - Katale Campus",
+      description: "International curriculum offering both National & International curricula for global education",
       students: "400+",
       established: "2005",
       specialties: ["IB Program", "Cambridge", "Global Studies"],
@@ -85,12 +69,66 @@ const Home = () => {
       color: "bg-ges-purple"
     },
     {
+      name: "Scooby Doo International School - Gulu Campus",
+      description: "International curriculum offering both National & International curricula for global education",
+      students: "350+",
+      established: "2008",
+      specialties: ["IB Program", "Cambridge", "Global Studies"],
+      image: "/images/classexam.jpg",
+      color: "bg-ges-purple"
+    },
+    {
+      name: "Gombe Junior School - Kikajjo",
+      description: "Day school providing primary and lower secondary education with holistic development",
+      students: "500+",
+      established: "1998",
+      specialties: ["Foundation", "Character", "Skills"],
+      image: "/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg",
+      color: "bg-ges-teal"
+    },
+    {
+      name: "Gombe Junior School - Gulu",
+      description: "Day school providing primary and lower secondary education with holistic development",
+      students: "480+",
+      established: "2002",
+      specialties: ["Foundation", "Character", "Skills"],
+      image: "/images/schoolgroup.jpg",
+      color: "bg-ges-teal"
+    },
+    {
+      name: "Gombe Junior School - Boarding",
+      description: "Boarding school providing primary and lower secondary education with holistic development",
+      students: "350+",
+      established: "2000",
+      specialties: ["Foundation", "Character", "Skills"],
+      image: "/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg",
+      color: "bg-ges-teal"
+    },
+    {
+      name: "St. Andrew Kaggwa Gombe High School - Kawaala",
+      description: "Advanced secondary education with focus on sciences and humanities",
+      students: "550+",
+      established: "1995",
+      specialties: ["Sciences", "Arts", "Technology"],
+      image: "/images/annie-spratt-V-XM4kkWpng-unsplash.jpg",
+      color: "bg-ges-blue"
+    },
+    {
+      name: "St. Andrew Kaggwa Gombe High School - Bujuuko",
+      description: "Advanced secondary education with focus on sciences and humanities",
+      students: "520+",
+      established: "2003",
+      specialties: ["Sciences", "Arts", "Technology"],
+      image: "/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg",
+      color: "bg-ges-blue"
+    },
+    {
       name: "Jimmy Sekasi Business Institute",
-      description: "Business education and entrepreneurship development programs",
+      description: "Business education and entrepreneurship development programs for professional growth",
       students: "300+",
       established: "2010",
       specialties: ["Business", "Entrepreneurship", "Leadership"],
-      image: "/images/annie-spratt-V-XM4kkWpng-unsplash.jpg",
+      image: "/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg",
       color: "bg-ges-gold"
     }
   ];
@@ -417,55 +455,154 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {institutions.map((institution, index) => (
+          <div className="relative">
+            {/* Carousel Container */}
+            <div className="overflow-hidden">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-white to-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group ges-card-hover"
+                animate={{ x: -institutionSlide * 100 + "%" }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="flex"
               >
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={institution.image} 
-                    alt={institution.name} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute top-4 right-4">
-                    <div className={`px-4 py-2 ${institution.color} text-white rounded-full text-sm font-medium`}>
-                      Est. {institution.established}
-                    </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <div className="text-2xl font-bold">{institution.students}</div>
-                    <div className="text-sm opacity-80">Students</div>
-                  </div>
+                {/* Slide 1 - First 4 institutions */}
+                <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {institutions.slice(0, 4).map((institution, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-gradient-to-br from-white to-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group ges-card-hover"
+                    >
+                      <div className="relative h-64 overflow-hidden">
+                        <img 
+                          src={institution.image} 
+                          alt={institution.name} 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div className="absolute top-4 right-4">
+                          <div className={`px-4 py-2 ${institution.color} text-white rounded-full text-sm font-medium`}>
+                            Est. {institution.established}
+                          </div>
+                        </div>
+                        <div className="absolute bottom-4 left-4 text-white">
+                          <div className="text-2xl font-bold">{institution.students}</div>
+                          <div className="text-sm opacity-80">Students</div>
+                        </div>
+                      </div>
+                      <div className="p-8">
+                        <h3 className="text-2xl font-bold text-ges-navy mb-4">{institution.name}</h3>
+                        <p className="text-ges-slate mb-6 leading-relaxed">{institution.description}</p>
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {institution.specialties.map((specialty, idx) => (
+                            <span 
+                              key={idx}
+                              className="px-3 py-1 bg-ges-cream text-ges-navy rounded-full text-sm font-medium"
+                            >
+                              {specialty}
+                            </span>
+                          ))}
+                        </div>
+                        <Link 
+                          to={`/institutions/${institution.name.toLowerCase().replace(/\s+/g, '-')}`}
+                          className="inline-flex items-center text-ges-teal font-semibold hover:text-ges-navy transition-colors group"
+                        >
+                          Learn More <LuArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-ges-navy mb-4">{institution.name}</h3>
-                  <p className="text-ges-slate mb-6 leading-relaxed">{institution.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {institution.specialties.map((specialty, idx) => (
-                      <span 
-                        key={idx}
-                        className="px-3 py-1 bg-ges-cream text-ges-navy rounded-full text-sm font-medium"
-                      >
-                        {specialty}
-                      </span>
-                    ))}
-                  </div>
-                  <Link 
-                    to={`/institutions/${institution.name.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="inline-flex items-center text-ges-teal font-semibold hover:text-ges-navy transition-colors group"
-                  >
-                    Learn More <LuArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+
+                {/* Slide 2 - Next 4 institutions */}
+                <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {institutions.slice(4, 8).map((institution, index) => (
+                    <motion.div
+                      key={index + 4}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-gradient-to-br from-white to-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group ges-card-hover"
+                    >
+                      <div className="relative h-64 overflow-hidden">
+                        <img 
+                          src={institution.image} 
+                          alt={institution.name} 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div className="absolute top-4 right-4">
+                          <div className={`px-4 py-2 ${institution.color} text-white rounded-full text-sm font-medium`}>
+                            Est. {institution.established}
+                          </div>
+                        </div>
+                        <div className="absolute bottom-4 left-4 text-white">
+                          <div className="text-2xl font-bold">{institution.students}</div>
+                          <div className="text-sm opacity-80">Students</div>
+                        </div>
+                      </div>
+                      <div className="p-8">
+                        <h3 className="text-2xl font-bold text-ges-navy mb-4">{institution.name}</h3>
+                        <p className="text-ges-slate mb-6 leading-relaxed">{institution.description}</p>
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {institution.specialties.map((specialty, idx) => (
+                            <span 
+                              key={idx}
+                              className="px-3 py-1 bg-ges-cream text-ges-navy rounded-full text-sm font-medium"
+                            >
+                              {specialty}
+                            </span>
+                          ))}
+                        </div>
+                        <Link 
+                          to={`/institutions/${institution.name.toLowerCase().replace(/\s+/g, '-')}`}
+                          className="inline-flex items-center text-ges-teal font-semibold hover:text-ges-navy transition-colors group"
+                        >
+                          Learn More <LuArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
-            ))}
+            </div>
+
+            {/* Carousel Controls */}
+            <div className="flex justify-center items-center gap-4 mt-12">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setInstitutionSlide(Math.max(0, institutionSlide - 1))}
+                disabled={institutionSlide === 0}
+                className="p-3 bg-ges-gold text-ges-navy rounded-full hover:bg-ges-teal hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              >
+                <LuChevronLeft className="w-6 h-6" />
+              </motion.button>
+              
+              <div className="flex gap-2">
+                {Array.from({ length: Math.ceil(institutions.length / 4) }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setInstitutionSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      institutionSlide === index ? 'bg-ges-gold w-8' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setInstitutionSlide(Math.min(Math.ceil(institutions.length / 4) - 1, institutionSlide + 1))}
+                disabled={institutionSlide >= Math.ceil(institutions.length / 4) - 1}
+                className="p-3 bg-ges-gold text-ges-navy rounded-full hover:bg-ges-teal hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              >
+                <LuChevronRight className="w-6 h-6" />
+              </motion.button>
+            </div>
           </div>
         </div>
       </section>

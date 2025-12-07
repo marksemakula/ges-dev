@@ -94,7 +94,7 @@ export default function AcademicCalendar() {
   const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-ges-cream via-white to-ges-cream pt-24 pb-16">
+    <div className="min-h-screen bg-gray-400 pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -102,7 +102,7 @@ export default function AcademicCalendar() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-5xl font-bold text-ges-navy mb-4">Academic Calendar</h1>
+          <h1 className="text-5xl font-bold text-ges-navy mb-4">GES Calendar</h1>
           <p className="text-ges-slate text-lg">Stay updated with all important events and dates</p>
         </motion.div>
 

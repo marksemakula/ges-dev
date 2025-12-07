@@ -21,7 +21,7 @@ const Footer = () => {
     { name: 'About Us', path: '/about' },
     { name: 'Leadership', path: '/leadership' },
     { name: 'Admissions', path: '/admissions' },
-    { name: 'Academic Calendar', path: '/calendar' },
+    { name: 'GES Calendar', path: '/calendar' },
     { name: 'Student Portal', path: '/portal' },
     { name: 'Alumni', path: '/alumni' },
   ];
@@ -172,7 +172,7 @@ const Footer = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-gray-600 text-sm">
-                <p>&copy; 2024 Gombe Education Services. All rights reserved.</p>
+                <p>&copy; 2025 Gombe Education Services. All rights reserved.</p>
                 <div className="flex space-x-4">
                   <Link to="/privacy" className="hover:text-ges-gold transition-colors">
                     Privacy Policy
