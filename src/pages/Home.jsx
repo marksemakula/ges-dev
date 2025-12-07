@@ -56,6 +56,14 @@ const Home = () => {
     { icon: LuGlobe, label: "Countries Represented", value: "15+", color: "text-ges-purple" }
   ];
 
+  const logos = [
+    { name: 'Jimmy Sekasi', src: '/images/JimmySekasiLogo.png' },
+    { name: 'St. Andrew', src: '/images/StAndrewLogo.png' },
+    { name: 'Gombe', src: '/images/GombeBadge.png' },
+    { name: 'Scooby Doo', src: '/images/scoobydoo-logo.png' },
+    { name: 'GES', src: '/images/GES.png' },
+  ];
+
   const [institutionSlide, setInstitutionSlide] = useState(0);
 
   const institutions = [
@@ -372,24 +380,21 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Logos Carousel Section */}
       <section className="py-20 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
+          <div className="flex items-center justify-center gap-8">
+            {logos.map((logo, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center group"
+                className="flex items-center justify-center"
+                whileHover={{ scale: 1.1 }}
               >
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${stat.color} bg-opacity-10 mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <stat.icon className={`w-8 h-8 ${stat.color}`} />
-                </div>
-                <div className="text-3xl font-bold text-ges-navy mb-2">{stat.value}</div>
-                <div className="text-ges-slate font-medium">{stat.label}</div>
+                <img 
+                  src={logo.src} 
+                  alt={logo.name}
+                  className="h-24 w-auto grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                />
               </motion.div>
             ))}
           </div>

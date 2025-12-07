@@ -19,12 +19,14 @@ const Header = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Leadership', path: '/leadership' },
     { name: 'GES Life', path: '/ges-life' },
-    { name: 'Mentorship', path: '/mentorship' },
-    { name: 'Partnerships', path: '/partnerships' },
+    { name: 'International Education Pathway Program', path: '/mentorship' },
     { name: 'GES Calendar', path: '/academic-calendar' },
+  ];
+
+  const aboutLinks = [
+    { name: 'About Us', path: '/about', description: 'Learn about our vision and mission' },
+    { name: 'Leadership', path: '/leadership', description: 'Meet our leadership team' },
   ];
 
   useEffect(() => {
@@ -81,6 +83,48 @@ const Header = () => {
                 {link.name}
               </Link>
             ))}
+
+            {/* About Dropdown */}
+            <div
+              className="relative ml-2"
+              onMouseEnter={() => setDropdownOpen('about')}
+              onMouseLeave={() => setDropdownOpen(null)}
+            >
+              <button className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-full transition-all">
+                About <LuChevronDown className="ml-1 w-4 h-4" />
+              </button>
+              <AnimatePresence>
+                {dropdownOpen === 'about' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    className="absolute top-full right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl py-3 border border-gray-100 overflow-hidden"
+                  >
+                    {aboutLinks.map((link, index) => (
+                      <motion.div
+                        key={link.path}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                      >
+                        <Link
+                          to={link.path}
+                          className="block px-6 py-3 hover:bg-ges-cream transition-colors group"
+                        >
+                          <div className="font-semibold text-ges-navy group-hover:text-ges-teal transition-colors">
+                            {link.name}
+                          </div>
+                          <div className="text-xs text-ges-slate mt-1">
+                            {link.description}
+                          </div>
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* Institutions Dropdown */}
             <div
@@ -167,6 +211,44 @@ const Header = () => {
                     {link.name}
                   </Link>
                 ))}
+                
+                {/* About Dropdown for Mobile */}
+                <div className="border-t border-white/10 pt-2 mt-2">
+                  <button
+                    onClick={() => setDropdownOpen(dropdownOpen === 'about-mobile' ? null : 'about-mobile')}
+                    className="w-full text-left px-4 py-3 rounded-xl text-white hover:bg-white/10 transition-colors flex items-center justify-between"
+                  >
+                    <span>About</span>
+                    <motion.div
+                      animate={{ rotate: dropdownOpen === 'about-mobile' ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <LuChevronDown className="w-4 h-4" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {dropdownOpen === 'about-mobile' && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-4 space-y-2"
+                      >
+                        {aboutLinks.map((link) => (
+                          <Link
+                            key={link.path}
+                            to={link.path}
+                            onClick={() => setIsOpen(false)}
+                            className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg text-sm"
+                          >
+                            {link.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+                
                 <div className="h-px bg-white/10 my-4" />
                 <div className="px-4 text-xs font-bold text-ges-gold uppercase tracking-wider mb-2">
                   Our Institutions
