@@ -165,7 +165,7 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden bg-ges-navy">
-        <AnimatePresence mode="wait">
+        <AnimatePresence initial={false}>
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0 }}
