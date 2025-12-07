@@ -164,25 +164,31 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative h-screen overflow-hidden bg-ges-navy">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
             className={`absolute inset-0 ${heroSlides[currentSlide].background}`}
           >
             {/* Background Image */}
-            <div className="absolute inset-0">
+            <motion.div 
+              className="absolute inset-0"
+              initial={{ scale: 1.05 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 1.05 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <img 
                 src={heroSlides[currentSlide].image} 
                 alt="Hero background" 
                 className="w-full h-full object-cover opacity-20"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
-            </div>
+            </motion.div>
 
             {/* Floating Elements */}
             <div className="absolute inset-0 overflow-hidden">
@@ -196,9 +202,10 @@ const Home = () => {
             <div className="relative z-10 h-full flex items-center">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   className="text-white"
                 >
                   {/* Logo and Brand */}
@@ -250,19 +257,25 @@ const Home = () => {
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.7, duration: 0.8 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
                   className="relative"
                 >
                   <div className="relative">
-                    <div className="w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+                    <motion.div 
+                      className="w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl"
+                      initial={{ scale: 0.95 }}
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                    >
                       <img 
                         src={heroSlides[currentSlide].image} 
                         alt="Students" 
                         className="w-full h-full object-cover"
                       />
-                    </div>
+                    </motion.div>
                     {/* Floating Stats Cards */}
                     <div className="absolute -top-8 -left-8 bg-white/10 backdrop-blur-lg rounded-2xl p-4 text-white">
                       <div className="flex items-center space-x-3">
