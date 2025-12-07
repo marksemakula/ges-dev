@@ -5,14 +5,14 @@ import { LuMail, LuLinkedin, LuAward, LuGraduationCap } from 'react-icons/lu';
 const Leadership = () => {
   const leaders = [
     {
-      name: 'Dr. Sarah Mukasa',
-      position: 'Executive Director',
-      bio: 'With over 20 years in educational leadership, Dr. Mukasa has transformed GES into a premier educational institution.',
+      name: 'Daniella Nakayenga',
+      position: 'Rector, Gombe Education Services',
+      bio: 'With over 20 years in educational leadership, Daniella Nakayenga has transformed GES into a premier educational institution.',
       education: 'PhD in Educational Leadership, Harvard University',
       achievements: ['UNESCO Education Award 2022', 'Outstanding Leadership in Education 2021'],
-      image: '/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg',
-      email: 'sarah.mukasa@ges.ac.ug',
-      linkedin: 'https://linkedin.com/in/sarahmukasa'
+      image: '/images/73e7f5be-efe4-4779-a0dd-ec96e761e11c.jpg',
+      email: 'daniella.nakayenga@ges.ac.ug',
+      linkedin: 'https://linkedin.com/in/daniellanakayenga'
     },
     {
       name: 'Prof. John Kiprotich',
