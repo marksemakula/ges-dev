@@ -29,7 +29,7 @@ const MentorshipPortal = () => {
       experience: '20+ years',
       rating: 4.9,
       sessions: 156,
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: '/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg',
       bio: 'Dr. Mukasa brings over two decades of educational leadership experience, helping students develop strategic thinking and leadership skills.',
       availability: 'Weekdays 2-5 PM',
       specialties: ['Career Planning', 'Leadership Development', 'Academic Excellence']
@@ -42,7 +42,7 @@ const MentorshipPortal = () => {
       experience: '15+ years',
       rating: 4.8,
       sessions: 132,
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: '/images/megan-escobosa-photography-_FMi4LTEe6g-unsplash.jpg',
       bio: 'Prof. Kiprotich specializes in STEM education and research, guiding students through academic and research challenges.',
       availability: 'Monday & Wednesday 3-6 PM',
       specialties: ['Research Guidance', 'STEM Careers', 'Academic Writing']
@@ -55,7 +55,7 @@ const MentorshipPortal = () => {
       experience: '12+ years',
       rating: 4.9,
       sessions: 198,
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: '/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg',
       bio: 'Ms. Nakato focuses on holistic student development, helping students navigate personal and academic challenges.',
       availability: 'Tuesday & Thursday 1-4 PM',
       specialties: ['Personal Development', 'Career Guidance', 'Study Skills']
@@ -68,7 +68,7 @@ const MentorshipPortal = () => {
       experience: '18+ years',
       rating: 4.7,
       sessions: 89,
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: '/images/annie-spratt-V-XM4kkWpng-unsplash.jpg',
       bio: 'Mr. Ochieng mentors aspiring entrepreneurs and business-minded students in developing innovative solutions.',
       availability: 'Friday 10 AM - 1 PM',
       specialties: ['Entrepreneurship', 'Business Planning', 'Innovation']

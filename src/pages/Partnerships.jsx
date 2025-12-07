@@ -8,7 +8,7 @@ const Partnerships = () => {
       name: 'University of Cambridge',
       type: 'Academic Partnership',
       description: 'Collaboration on curriculum development and teacher training programs.',
-      logo: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      logo: '/images/megan-escobosa-photography-_FMi4LTEe6g-unsplash.jpg',
       benefits: ['Curriculum Development', 'Teacher Exchange', 'Student Programs'],
       established: '2018',
       website: 'https://cambridge.org'
@@ -17,7 +17,7 @@ const Partnerships = () => {
       name: 'UNESCO',
       type: 'Educational Development',
       description: 'Supporting educational development initiatives and quality assurance programs.',
-      logo: 'https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      logo: '/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg',
       benefits: ['Quality Assurance', 'Professional Development', 'Research Collaboration'],
       established: '2020',
       website: 'https://unesco.org'
@@ -26,7 +26,7 @@ const Partnerships = () => {
       name: 'British Council',
       type: 'Cultural Exchange',
       description: 'English language programs and cultural exchange initiatives.',
-      logo: 'https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      logo: '/images/happy pupil.jpg',
       benefits: ['Language Programs', 'Cultural Exchange', 'Professional Development'],
       established: '2019',
       website: 'https://britishcouncil.org'
@@ -35,7 +35,7 @@ const Partnerships = () => {
       name: 'Microsoft Education',
       type: 'Technology Partnership',
       description: 'Digital transformation and technology integration in education.',
-      logo: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      logo: '/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg',
       benefits: ['Digital Tools', 'Teacher Training', 'Student Certification'],
       established: '2021',
       website: 'https://microsoft.com/education'
@@ -44,7 +44,7 @@ const Partnerships = () => {
       name: 'World Bank Education',
       type: 'Development Partnership',
       description: 'Supporting educational infrastructure and capacity building initiatives.',
-      logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      logo: '/images/annie-spratt-V-XM4kkWpng-unsplash.jpg',
       benefits: ['Infrastructure Development', 'Capacity Building', 'Research Support'],
       established: '2017',
       website: 'https://worldbank.org/education'
@@ -53,7 +53,7 @@ const Partnerships = () => {
       name: 'Aga Khan Foundation',
       type: 'Educational Excellence',
       description: 'Promoting educational excellence and community development programs.',
-      logo: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+      logo: '/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg',
       benefits: ['Community Development', 'Scholarship Programs', 'Leadership Training'],
       established: '2016',
       website: 'https://akdn.org'

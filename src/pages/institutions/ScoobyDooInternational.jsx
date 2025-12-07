@@ -45,25 +45,25 @@ const ScoobyDooInternational = () => {
       name: 'Harvard University',
       country: 'USA',
       program: 'Summer Research Program',
-      image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: '/images/megan-escobosa-photography-_FMi4LTEe6g-unsplash.jpg'
     },
     {
       name: 'University of Cambridge',
       country: 'UK',
       program: 'Academic Exchange',
-      image: 'https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: '/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg'
     },
     {
       name: 'Sorbonne University',
       country: 'France',
       program: 'Language Immersion',
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: '/images/happy pupil.jpg'
     },
     {
       name: 'University of Toronto',
       country: 'Canada',
       program: 'Science Collaboration',
-      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: '/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg'
     }
   ];
 
@@ -80,7 +80,7 @@ const ScoobyDooInternational = () => {
       <section className="bg-ges-gradient text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+            src="/images/happy pupil.jpg" 
             alt="Scooby Doo International School" 
             className="w-full h-full object-cover opacity-20"
           />
@@ -225,7 +225,7 @@ const ScoobyDooInternational = () => {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="/images/happy pupil.jpg" 
                 alt="Multicultural students" 
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />

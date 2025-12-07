@@ -117,7 +117,7 @@ const About = () => {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="/images/happy pupil.jpg" 
                 alt="Students in classroom" 
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />

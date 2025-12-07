@@ -10,7 +10,7 @@ const Leadership = () => {
       bio: 'With over 20 years in educational leadership, Dr. Mukasa has transformed GES into a premier educational institution.',
       education: 'PhD in Educational Leadership, Harvard University',
       achievements: ['UNESCO Education Award 2022', 'Outstanding Leadership in Education 2021'],
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: '/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg',
       email: 'sarah.mukasa@ges.ac.ug',
       linkedin: 'https://linkedin.com/in/sarahmukasa'
     },
@@ -20,7 +20,7 @@ const Leadership = () => {
       bio: 'Prof. Kiprotich oversees academic excellence across all GES institutions with a focus on innovative curriculum development.',
       education: 'PhD in Curriculum Development, University of Cambridge',
       achievements: ['Excellence in Curriculum Innovation 2023', 'Academic Leadership Award 2020'],
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: '/images/megan-escobosa-photography-_FMi4LTEe6g-unsplash.jpg',
       email: 'john.kiprotich@ges.ac.ug',
       linkedin: 'https://linkedin.com/in/johnkirotich'
     },
@@ -30,7 +30,7 @@ const Leadership = () => {
       bio: 'Ms. Nakato ensures student welfare and holistic development across all GES institutions.',
       education: 'Masters in Student Affairs, Makerere University',
       achievements: ['Student Advocacy Excellence 2022', 'Community Service Award 2021'],
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: '/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg',
       email: 'grace.nakato@ges.ac.ug',
       linkedin: 'https://linkedin.com/in/gracenakato'
     },
@@ -40,7 +40,7 @@ const Leadership = () => {
       bio: 'Mr. Ochieng manages operations and infrastructure development across the GES network.',
       education: 'MBA in Operations Management, IUIU',
       achievements: ['Operational Excellence Award 2023', 'Infrastructure Development Leader 2022'],
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      image: '/images/annie-spratt-V-XM4kkWpng-unsplash.jpg',
       email: 'michael.ochieng@ges.ac.ug',
       linkedin: 'https://linkedin.com/in/michaelochieng'
     }
@@ -51,19 +51,19 @@ const Leadership = () => {
       name: 'Hon. Dr. Mary Kitutu',
       position: 'Chairperson, Board of Directors',
       background: 'Former Minister of Education, 25+ years in educational policy',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: '/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg'
     },
     {
       name: 'Prof. James Tumusiime',
       position: 'Vice Chairperson',
       background: 'Distinguished Professor of Mathematics, Makerere University',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: '/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg'
     },
     {
       name: 'Ms. Patricia Ssemwanga',
       position: 'Board Member',
       background: 'CEO of Leading Financial Institution, Education Advocate',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: '/images/happy pupil.jpg'
     }
   ];
 
@@ -274,7 +274,7 @@ const Leadership = () => {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="/images/classexam.jpg" 
                 alt="Leadership meeting" 
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />

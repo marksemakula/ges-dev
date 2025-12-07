@@ -22,7 +22,7 @@ const Blog = () => {
       publishedAt: '2024-01-20T00:00:00Z',
       category: 'Innovation',
       tags: ['digital learning', 'technology', 'future'],
-      image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/classexam.jpg',
       readTime: '5 min read'
     },
     {
@@ -34,7 +34,7 @@ const Blog = () => {
       publishedAt: '2024-01-18T00:00:00Z',
       category: 'Character Development',
       tags: ['character', 'values', 'education'],
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/happy pupil.jpg',
       readTime: '4 min read'
     },
     {
@@ -46,7 +46,7 @@ const Blog = () => {
       publishedAt: '2024-01-15T00:00:00Z',
       category: 'STEM',
       tags: ['STEM', 'science', 'technology'],
-      image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg',
       readTime: '6 min read'
     },
     {
@@ -58,7 +58,7 @@ const Blog = () => {
       publishedAt: '2024-01-12T00:00:00Z',
       category: 'Global Education',
       tags: ['partnerships', 'international', 'opportunities'],
-      image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/megan-escobosa-photography-_FMi4LTEe6g-unsplash.jpg',
       readTime: '7 min read'
     },
     {
@@ -70,7 +70,7 @@ const Blog = () => {
       publishedAt: '2024-01-10T00:00:00Z',
       category: 'Student Welfare',
       tags: ['mental health', 'wellbeing', 'support'],
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg',
       readTime: '5 min read'
     }
   ];
@@ -84,7 +84,7 @@ const Blog = () => {
       category: 'GES News',
       tags: item.metadata?.keywords || [],
       readTime: Math.ceil(item.content.split(' ').length / 200) + ' min read',
-      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: '/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg'
     }));
     
     const allPosts = [...mockPosts, ...cmsPosts];

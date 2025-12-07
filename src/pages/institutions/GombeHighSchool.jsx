@@ -35,22 +35,22 @@ const GombeHighSchool = () => {
     {
       name: 'Science Laboratories',
       description: 'State-of-the-art labs for Physics, Chemistry, and Biology',
-      image: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      image: '/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg'
     },
     {
       name: 'Digital Library',
       description: 'Modern library with digital resources and study spaces',
-      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      image: '/images/schoolgroup.jpg'
     },
     {
       name: 'Sports Complex',
       description: 'Multi-purpose sports facilities for various athletic activities',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      image: '/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg'
     },
     {
       name: 'Computer Lab',
       description: 'Modern computer laboratory with high-speed internet',
-      image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      image: '/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg'
     }
   ];
 
@@ -67,7 +67,7 @@ const GombeHighSchool = () => {
       <section className="bg-ges-gradient text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+            src="/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg" 
             alt="Gombe High School" 
             className="w-full h-full object-cover opacity-20"
           />
@@ -327,7 +327,7 @@ const GombeHighSchool = () => {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="/images/happy pupil.jpg" 
                 alt="Students at Gombe High School" 
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />

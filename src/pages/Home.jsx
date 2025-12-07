@@ -29,7 +29,7 @@ const Home = () => {
       description: "Empowering students with world-class education and innovative learning approaches that prepare them for global success.",
       cta: "Admission Now",
       background: "bg-gradient-to-br from-ges-navy via-ges-blue to-ges-teal",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "/images/happy pupil.jpg"
     },
     {
       title: "School of Your Time",
@@ -37,7 +37,7 @@ const Home = () => {
       description: "Innovative educational programs designed for the digital age while maintaining core academic excellence and character development.",
       cta: "Explore Programs",
       background: "bg-gradient-to-br from-ges-purple via-ges-burgundy to-ges-navy",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "/images/classexam.jpg"
     },
     {
       title: "Subscribe to Excellence",
@@ -45,7 +45,7 @@ const Home = () => {
       description: "Connect with our network of schools and discover opportunities for academic growth, mentorship, and lifelong learning.",
       cta: "Join Community",
       background: "bg-gradient-to-br from-ges-teal via-ges-green to-ges-gold",
-      image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "/images/schoolgroup.jpg"
     }
   ];
 
@@ -63,7 +63,7 @@ const Home = () => {
       students: "800+",
       established: "1995",
       specialties: ["Sciences", "Arts", "Technology"],
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg",
       color: "bg-ges-blue"
     },
     {
@@ -72,7 +72,7 @@ const Home = () => {
       students: "600+",
       established: "1998",
       specialties: ["Foundation", "Character", "Skills"],
-      image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg",
       color: "bg-ges-teal"
     },
     {
@@ -81,7 +81,7 @@ const Home = () => {
       students: "400+",
       established: "2005",
       specialties: ["IB Program", "Cambridge", "Global Studies"],
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "/images/happy pupil.jpg",
       color: "bg-ges-purple"
     },
     {
@@ -90,7 +90,7 @@ const Home = () => {
       students: "300+",
       established: "2010",
       specialties: ["Business", "Entrepreneurship", "Leadership"],
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "/images/annie-spratt-V-XM4kkWpng-unsplash.jpg",
       color: "bg-ges-gold"
     }
   ];
@@ -128,21 +128,21 @@ const Home = () => {
       excerpt: "Our students achieved remarkable results in the recent national examinations with 98% pass rate.",
       date: "2024-01-15",
       category: "Academic Excellence",
-      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg"
     },
     {
       title: "New STEM Laboratory Inaugurated",
       excerpt: "State-of-the-art science and technology laboratory opens to enhance practical learning.",
       date: "2024-01-10",
       category: "Infrastructure",
-      image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg"
     },
     {
       title: "International Partnership with Cambridge",
       excerpt: "GES signs MOU with Cambridge University for academic collaboration and student exchange.",
       date: "2024-01-05",
       category: "Partnerships",
-      image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/images/megan-escobosa-photography-_FMi4LTEe6g-unsplash.jpg"
     }
   ];
 
