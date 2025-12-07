@@ -12,6 +12,14 @@ import GESLifeFeed from './pages/GESLifeFeed';
 import MentorshipPortal from './pages/MentorshipPortal';
 import GombeHighSchool from './pages/institutions/GombeHighSchool';
 import ScoobyDooInternational from './pages/institutions/ScoobyDooInternational';
+import SAKGHSKawaala from './pages/institutions/SAKGHSKawaala';
+import SAKGHSBujuuko from './pages/institutions/SAKGHSBujuuko';
+import ScoobyKatale from './pages/institutions/ScoobyKatale';
+import ScoobyGulu from './pages/institutions/ScoobyGulu';
+import GJSKikajjo from './pages/institutions/GJSKikajjo';
+import GJSGulu from './pages/institutions/GJSGulu';
+import GJSBoarding from './pages/institutions/GJSBoarding';
+import JSBI from './pages/institutions/JSBI';
 import AdminPanel from './cms/AdminPanel';
 import AcademicCalendarPage from './pages/AcademicCalendar';
 import './App.css';
@@ -32,6 +40,14 @@ function App() {
           <Route path="/mentorship" element={<MentorshipPortal />} />
           <Route path="/institutions/gombe-high-school" element={<GombeHighSchool />} />
           <Route path="/institutions/scooby-doo" element={<ScoobyDooInternational />} />
+          <Route path="/institutions/sakghs-kawaala" element={<SAKGHSKawaala />} />
+          <Route path="/institutions/sakghs-bujuuko" element={<SAKGHSBujuuko />} />
+          <Route path="/institutions/scooby-katale" element={<ScoobyKatale />} />
+          <Route path="/institutions/scooby-gulu" element={<ScoobyGulu />} />
+          <Route path="/institutions/gjs-kikajjo" element={<GJSKikajjo />} />
+          <Route path="/institutions/gjs-gulu" element={<GJSGulu />} />
+          <Route path="/institutions/gjs-boarding" element={<GJSBoarding />} />
+          <Route path="/institutions/jsbi" element={<JSBI />} />
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/academic-calendar" element={<AcademicCalendarPage />} />
         </Routes>
