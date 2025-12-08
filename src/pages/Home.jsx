@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   LuArrowRight, 
@@ -15,12 +15,32 @@ import {
   LuMapPin, 
   LuTrophy, 
   LuTrendingUp,
-  LuX
+  LuX,
+  LuExternalLink
 } from 'react-icons/lu';
 
 const Home = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [previewInstitution, setPreviewInstitution] = useState(null);
+
+  // Handle navigation with view transitions
+  const handleInstitutionClick = (slug) => {
+    // Find the institution data
+    const institution = institutions.find(inst => inst.slug === slug);
+    setPreviewInstitution(institution);
+  };
+
+  const closePreview = () => {
+    setPreviewInstitution(null);
+  };
+
+  const visitFullSite = () => {
+    if (previewInstitution) {
+      navigate(`/institutions/${previewInstitution.slug}`);
+    }
+  };
 
   const heroSlides = [
     {
@@ -69,6 +89,7 @@ const Home = () => {
   const institutions = [
     {
       name: "Scooby Doo International School - Katale Campus",
+      slug: "scooby-katale",
       description: "International curriculum offering both National & International curricula for global education",
       students: "400+",
       established: "2005",
@@ -78,6 +99,7 @@ const Home = () => {
     },
     {
       name: "Scooby Doo International School - Gulu Campus",
+      slug: "scooby-gulu",
       description: "International curriculum offering both National & International curricula for global education",
       students: "350+",
       established: "2008",
@@ -87,6 +109,7 @@ const Home = () => {
     },
     {
       name: "Gombe Junior School - Kikajjo",
+      slug: "gjs-kikajjo",
       description: "Day school providing primary and lower secondary education with holistic development",
       students: "500+",
       established: "1998",
@@ -96,6 +119,7 @@ const Home = () => {
     },
     {
       name: "Gombe Junior School - Gulu",
+      slug: "gjs-gulu",
       description: "Day school providing primary and lower secondary education with holistic development",
       students: "480+",
       established: "2002",
@@ -105,6 +129,7 @@ const Home = () => {
     },
     {
       name: "Gombe Junior School - Boarding",
+      slug: "gjs-boarding",
       description: "Boarding school providing primary and lower secondary education with holistic development",
       students: "350+",
       established: "2000",
@@ -114,6 +139,7 @@ const Home = () => {
     },
     {
       name: "St. Andrew Kaggwa Gombe High School - Kawaala",
+      slug: "sakghs-kawaala",
       description: "Advanced secondary education with focus on sciences and humanities",
       students: "550+",
       established: "1995",
@@ -123,6 +149,7 @@ const Home = () => {
     },
     {
       name: "St. Andrew Kaggwa Gombe High School - Bujuuko",
+      slug: "sakghs-bujuuko",
       description: "Advanced secondary education with focus on sciences and humanities",
       students: "520+",
       established: "2003",
@@ -132,6 +159,7 @@ const Home = () => {
     },
     {
       name: "Jimmy Sekasi Business Institute",
+      slug: "jsbi",
       description: "Business education and entrepreneurship development programs for professional growth",
       students: "300+",
       established: "2010",
@@ -471,13 +499,11 @@ const Home = () => {
                 {/* Slide 1 - First 4 institutions */}
                 <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8">
                   {institutions.slice(0, 4).map((institution, index) => (
-                    <motion.div
+                    <div
                       key={index}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="bg-gradient-to-br from-white to-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group ges-card-hover"
+                      onClick={() => handleInstitutionClick(institution.slug)}
+                      style={{ viewTransitionName: `institution-${institution.slug}` }}
+                      className="cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group ges-card-hover"
                     >
                       <div className="relative h-64 overflow-hidden">
                         <img 
@@ -509,27 +535,22 @@ const Home = () => {
                             </span>
                           ))}
                         </div>
-                        <Link 
-                          to={`/institutions/${institution.name.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="inline-flex items-center text-ges-teal font-semibold hover:text-ges-navy transition-colors group"
-                        >
+                        <div className="inline-flex items-center text-ges-teal font-semibold group">
                           Learn More <LuArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
+                        </div>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
 
                 {/* Slide 2 - Next 4 institutions */}
                 <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8">
                   {institutions.slice(4, 8).map((institution, index) => (
-                    <motion.div
+                    <div
                       key={index + 4}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="bg-gradient-to-br from-white to-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group ges-card-hover"
+                      onClick={() => handleInstitutionClick(institution.slug)}
+                      style={{ viewTransitionName: `institution-${institution.slug}` }}
+                      className="cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group ges-card-hover"
                     >
                       <div className="relative h-64 overflow-hidden">
                         <img 
@@ -561,14 +582,11 @@ const Home = () => {
                             </span>
                           ))}
                         </div>
-                        <Link 
-                          to={`/institutions/${institution.name.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="inline-flex items-center text-ges-teal font-semibold hover:text-ges-navy transition-colors group"
-                        >
+                        <div className="inline-flex items-center text-ges-teal font-semibold group">
                           Learn More <LuArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
+                        </div>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </motion.div>
@@ -750,6 +768,71 @@ const Home = () => {
                 <div className="text-center">
                   <LuPlay className="w-16 h-16 mx-auto mb-4 opacity-50" />
                   <p className="text-lg opacity-75">Video content would be embedded here</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Institution Preview Modal */}
+      <AnimatePresence>
+        {previewInstitution && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closePreview}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.85, opacity: 0, y: 50 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] w-[85vw] h-[95vh] flex flex-col backdrop-blur-xl"
+              style={{ boxShadow: '0 0 0 1px rgba(255,255,255,0.1), 0 25px 50px -12px rgba(0,0,0,0.5)' }}
+            >
+              {/* Preview Header */}
+              <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-ges-navy to-ges-teal text-white border-b border-white/10">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-red-400"></div>
+                  <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                  <div className="w-2 h-2 rounded-full bg-green-400"></div>
+                  <span className="ml-4 text-sm font-medium opacity-90">{previewInstitution.name}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={visitFullSite}
+                    className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-sm font-medium transition-all flex items-center gap-2"
+                  >
+                    <LuExternalLink className="w-4 h-4" />
+                    Open Full Site
+                  </button>
+                  <button
+                    onClick={closePreview}
+                    className="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-all"
+                  >
+                    <LuX className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Preview Content - Iframe of actual institution page */}
+              <div className="flex-1 bg-gray-100 relative overflow-hidden">
+                <iframe
+                  src={`/institutions/${previewInstitution.slug}`}
+                  className="w-full h-full border-0"
+                  title={`Preview of ${previewInstitution.name}`}
+                  sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                />
+                {/* Loading overlay */}
+                <div className="absolute inset-0 bg-white flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
+                  <div className="text-center">
+                    <div className="w-12 h-12 border-4 border-ges-teal border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                    <p className="text-ges-slate">Loading preview...</p>
+                  </div>
                 </div>
               </div>
             </motion.div>

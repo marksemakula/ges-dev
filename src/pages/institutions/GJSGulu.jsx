@@ -34,7 +34,7 @@ const GJSGulu = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50" style={{ viewTransitionName: 'institution-gjs-gulu' }}>
       {/* Hero Section */}
       <section className="relative overflow-hidden text-white py-32" style={{ backgroundColor: brandColors.secondary }}>
         <div className="absolute inset-0">
