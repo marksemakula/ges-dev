@@ -270,7 +270,7 @@ const Home = () => {
                   
                   <div className="inline-flex items-center bg-ges-gold/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                     <LuCalendar className="w-4 h-4 mr-2 text-ges-gold" />
-                    <span className="text-sm font-medium">Back to School 2024</span>
+                    <span className="text-sm font-medium">GES Calender</span>
                   </div>
                   <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                     {heroSlides[currentSlide].title}
@@ -329,8 +329,8 @@ const Home = () => {
                           <LuTrophy className="w-6 h-6 text-ges-navy" />
                         </div>
                         <div>
-                          <div className="text-2xl font-bold">150+</div>
-                          <div className="text-sm opacity-80">Awards Won</div>
+                          <div className="text-2xl font-bold">Winners</div>
+                          <div className="text-sm opacity-80"></div>
                         </div>
                       </div>
                     </div>
@@ -383,7 +383,7 @@ const Home = () => {
       {/* Logos Carousel Section */}
       <section className="py-20 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6">
             {logos.map((logo, index) => (
               <motion.div
                 key={index}
@@ -393,7 +393,7 @@ const Home = () => {
                 <img 
                   src={logo.src} 
                   alt={logo.name}
-                  className="h-24 w-auto grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                  className="h-16 sm:h-20 md:h-24 w-auto max-h-24 object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
                 />
               </motion.div>
             ))}
