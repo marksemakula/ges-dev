@@ -189,7 +189,7 @@ const About = () => {
               {[
                 { year: '1995', title: 'Foundation of GES', description: 'Gombe Education Services was established with a vision to provide quality education in rural Uganda.' },
                 { year: '2000', title: 'Expansion Phase', description: 'Added Gombe Junior School to cater to primary education needs in the community.' },
-                { year: '2005', title: 'International Recognition', description: 'Launched Scooby Doo International School with Cambridge curriculum, gaining international recognition.' },
+                { year: '2005', title: 'International Recognition', description: 'Launched Scooby Doo International School Uganda (SISU) with Cambridge curriculum, gaining international recognition.' },
                 { year: '2010', title: 'Business Education', description: 'Established Jimmy Sekasi Business Institute to promote entrepreneurship and business skills.' },
                 { year: '2020', title: 'Digital Transformation', description: 'Embraced digital learning technologies and launched online education platforms.' },
                 { year: '2024', title: 'Future Ready', description: 'Continuing to innovate and prepare students for the challenges of tomorrow.' }

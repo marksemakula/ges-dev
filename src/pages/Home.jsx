@@ -88,7 +88,7 @@ const Home = () => {
 
   const institutions = [
     {
-      name: "Scooby Doo International School - Katale Campus",
+      name: "Scooby Doo International School Uganda (SISU) - Katale Campus",
       slug: "scooby-katale",
       description: "International curriculum offering both National & International curricula for global education",
       students: "400+",
@@ -98,7 +98,7 @@ const Home = () => {
       color: "bg-ges-purple"
     },
     {
-      name: "Scooby Doo International School - Gulu Campus",
+      name: "Scooby Doo International School Uganda (SISU) - Gulu Campus",
       slug: "scooby-gulu",
       description: "International curriculum offering both National & International curricula for global education",
       students: "350+",

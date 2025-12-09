@@ -59,7 +59,7 @@ const ScoobyGulu = () => {
             {/* Brand Name */}
             <div className="flex items-center">
               <h1 className="text-2xl font-bold" style={{ color: brandColors.secondary }}>
-                Scooby Doo <span style={{ color: brandColors.primary }}>International</span>
+                SISU <span style={{ color: brandColors.primary }}>Gulu</span>
               </h1>
             </div>
 
@@ -142,10 +142,10 @@ const ScoobyGulu = () => {
             >
               <div className="inline-flex items-center rounded-full px-6 py-2 mb-6" style={{ backgroundColor: `${brandColors.primary}40` }}>
                 <LuExternalLink className="w-4 h-4 mr-2" style={{ color: brandColors.primary }} />
-                <span className="text-sm font-medium">scooby-gulu.ges.ac.ug</span>
+                <span className="text-sm font-medium">sisu-gulu.ges.ac.ug</span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Scooby Doo International School
+                Scooby Doo International School Uganda (SISU)
               </h1>
               <p className="text-xl mb-4" style={{ color: brandColors.primary }}>
                 Gulu Campus
@@ -250,7 +250,7 @@ const ScoobyGulu = () => {
               Join Our Global Community
             </h2>
             <p className="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
-              Experience world-class international education at Scooby Doo International School - Gulu Campus
+              Experience world-class international education at SISU - Gulu Campus
             </p>
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <div className="flex items-center space-x-2">
@@ -290,7 +290,7 @@ const ScoobyGulu = () => {
                   className="h-16 w-auto mr-3"
                 />
                 <h3 className="text-2xl font-bold" style={{ color: brandColors.primary }}>
-                  Scooby Doo International
+                  SISU - Gulu Campus
                 </h3>
               </div>
               <p className="text-gray-200 mb-4">
@@ -338,7 +338,7 @@ const ScoobyGulu = () => {
           </div>
           <div className="border-t border-white/20 pt-8 text-center">
             <p className="text-gray-300">
-              &copy; {new Date().getFullYear()} Scooby Doo International School. All rights reserved.
+              &copy; {new Date().getFullYear()} Scooby Doo International School Uganda (SISU). All rights reserved.
             </p>
           </div>
         </div>
