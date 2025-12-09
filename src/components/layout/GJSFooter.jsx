@@ -10,9 +10,8 @@ const brandColors = {
 };
 
 const campuses = [
-  { name: 'Kikajjo Campus', contact: '+256 700 000 004', path: '/institutions/gjs-kikajjo' },
-  { name: 'Gulu Campus', contact: '+256 700 000 005', path: '/institutions/gjs-gulu' },
-  { name: 'Boarding Campus', contact: '+256 700 000 006', path: '/institutions/gjs-boarding' },
+  { name: 'Gombe Junior School (Boarding)', contact: '+256 700 000 004', path: '/institutions/gjs-boarding' },
+  { name: 'Gombe Junior School Kikajjo (Day)', contact: '+256 700 000 006', path: '/institutions/gjs-kikajjo' },
 ];
 
 const GJSFooter = () => {

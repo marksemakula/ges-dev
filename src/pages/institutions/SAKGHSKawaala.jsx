@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { LuMapPin, LuPhone, LuMail, LuUsers, LuAward, LuBookOpen, LuCalendar, LuArrowRight, LuExternalLink, LuStar, LuTarget } from 'react-icons/lu';
+import SAKHeader from '../../components/layout/SAKHeader';
+import SAKFooter from '../../components/layout/SAKFooter';
 
 const SAKGHSKawaala = () => {
   const brandColors = {
@@ -33,10 +35,38 @@ const SAKGHSKawaala = () => {
     }
   ];
 
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title = 'St. Andrew Kaggwa Gombe HS - Kawaala';
+
+    const ensureIcon = (rel) => {
+      const existing = document.querySelector(`link[rel='${rel}']`);
+      const prevHref = existing?.getAttribute('href');
+      let linkEl = existing;
+      if (!linkEl) {
+        linkEl = document.createElement('link');
+        linkEl.setAttribute('rel', rel);
+        document.head.appendChild(linkEl);
+      }
+      linkEl.setAttribute('href', '/images/StAndrewLogo.png');
+      return { linkEl, prevHref };
+    };
+
+    const fav = ensureIcon('icon');
+    const shortcut = ensureIcon('shortcut icon');
+
+    return () => {
+      document.title = prevTitle;
+      if (fav.linkEl && fav.prevHref) fav.linkEl.setAttribute('href', fav.prevHref);
+      if (shortcut.linkEl && shortcut.prevHref) shortcut.linkEl.setAttribute('href', shortcut.prevHref);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50" style={{ viewTransitionName: 'institution-sakghs-kawaala' }}>
+      <SAKHeader />
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white py-32" style={{ backgroundColor: brandColors.secondary }}>
+      <section id="home" className="relative overflow-hidden text-white py-32" style={{ backgroundColor: brandColors.secondary }}>
         <div className="absolute inset-0">
           <img 
             src="/images/annie-spratt-V-XM4kkWpng-unsplash.jpg" 
@@ -50,6 +80,11 @@ const SAKGHSKawaala = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
+            <div className="flex justify-center mb-8">
+              <div className="h-28 w-28 flex items-center justify-center overflow-hidden">
+                <img src="/images/StAndrewLogo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain" />
+              </div>
+            </div>
             <div className="inline-flex items-center rounded-full px-6 py-2 mb-6" style={{ backgroundColor: `${brandColors.primary}40` }}>
               <LuExternalLink className="w-4 h-4 mr-2" style={{ color: brandColors.primary }} />
               <span className="text-sm font-medium">sakghs-kawaala.ges.ac.ug</span>
@@ -70,32 +105,50 @@ const SAKGHSKawaala = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4" style={{ backgroundColor: `${brandColors.primary}20` }}>
-                  <stat.icon className="w-8 h-8" style={{ color: brandColors.primary }} />
-                </div>
-                <div className="text-3xl font-bold mb-2" style={{ color: brandColors.secondary }}>{stat.value}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+      {/* Black Background Section */}
+      <section className="py-40 bg-gray-100 relative overflow-hidden">
+        {/* Compact Academic Icons Background */}
+        <div className="absolute inset-0 opacity-10 text-black">
+          <div className="absolute top-[5%] left-[8%] text-4xl">⚗</div>
+          <div className="absolute top-[12%] left-[22%] text-3xl">📖</div>
+          <div className="absolute top-[3%] left-[45%] text-4xl">⚛</div>
+          <div className="absolute top-[15%] left-[65%] text-3xl">✎</div>
+          <div className="absolute top-[8%] left-[82%] text-4xl">🔬</div>
+          <div className="absolute top-[25%] left-[12%] text-3xl">📚</div>
+          <div className="absolute top-[28%] left-[35%] text-4xl">∑</div>
+          <div className="absolute top-[22%] left-[58%] text-3xl">π</div>
+          <div className="absolute top-[32%] left-[78%] text-4xl">📐</div>
+          <div className="absolute top-[38%] left-[5%] text-3xl">🎓</div>
+          <div className="absolute top-[42%] left-[25%] text-4xl">∫</div>
+          <div className="absolute top-[45%] left-[48%] text-3xl">√</div>
+          <div className="absolute top-[40%] left-[70%] text-4xl">🔭</div>
+          <div className="absolute top-[35%] left-[88%] text-3xl">📏</div>
+          <div className="absolute top-[52%] left-[15%] text-4xl">🌍</div>
+          <div className="absolute top-[58%] left-[38%] text-3xl">∞</div>
+          <div className="absolute top-[55%] left-[62%] text-4xl">Ω</div>
+          <div className="absolute top-[60%] left-[82%] text-3xl">α</div>
+          <div className="absolute top-[68%] left-[8%] text-4xl">β</div>
+          <div className="absolute top-[72%] left-[28%] text-3xl">γ</div>
+          <div className="absolute top-[65%] left-[52%] text-4xl">δ</div>
+          <div className="absolute top-[75%] left-[72%] text-3xl">Σ</div>
+          <div className="absolute top-[70%] left-[90%] text-4xl">Δ</div>
+          <div className="absolute top-[82%] left-[18%] text-3xl">λ</div>
+          <div className="absolute top-[85%] left-[42%] text-4xl">μ</div>
+          <div className="absolute top-[88%] left-[65%] text-3xl">θ</div>
+          <div className="absolute top-[92%] left-[85%] text-4xl">φ</div>
+          <div className="absolute top-[18%] left-[92%] text-3xl">ψ</div>
+          <div className="absolute top-[48%] left-[3%] text-4xl">ξ</div>
+          <div className="absolute top-[78%] left-[35%] text-3xl">⊕</div>
+          <div className="absolute top-[95%] left-[50%] text-4xl">⊗</div>
+          <div className="absolute top-[90%] left-[10%] text-3xl">≈</div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Content goes here */}
         </div>
       </section>
 
       {/* Programs Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="programs" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -138,7 +191,7 @@ const SAKGHSKawaala = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 text-white" style={{ backgroundColor: brandColors.secondary }}>
+      <section id="contact" className="py-20 text-white" style={{ backgroundColor: brandColors.secondary }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -176,6 +229,7 @@ const SAKGHSKawaala = () => {
           </motion.div>
         </div>
       </section>
+      <SAKFooter />
     </div>
   );
 };

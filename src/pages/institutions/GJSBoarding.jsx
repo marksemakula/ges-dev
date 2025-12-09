@@ -120,15 +120,37 @@ const GJSBoarding = () => {
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
               Take a virtual tour of our vibrant learning environment and state-of-the-art facilities
             </p>
-            <motion.button
+            <motion.div
               onClick={() => setIsGalleryOpen(true)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl"
-              style={{ backgroundColor: brandColors.primary, color: brandColors.secondary }}
+              whileHover={{ scale: 1.02 }}
+              className="relative max-w-4xl mx-auto cursor-pointer overflow-hidden rounded-2xl shadow-2xl"
             >
-              View Photo Gallery
-            </motion.button>
+              <div className="relative h-96 flex items-center justify-center gap-4">
+                {galleryImages.slice(0, 3).map((img, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="relative h-80 flex-1"
+                  >
+                    <img
+                      src={img}
+                      alt={`Preview ${idx + 1}`}
+                      className="w-full h-full object-cover rounded-xl"
+                      style={{ filter: 'blur(1px)' }}
+                    />
+                    <div className="absolute inset-0 bg-black/20 rounded-xl"></div>
+                  </motion.div>
+                ))}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-black/60 backdrop-blur-sm px-8 py-4 rounded-full border-2 border-white/50">
+                    <p className="text-white font-bold text-lg">Click to View Full Gallery</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

@@ -17,8 +17,8 @@ import SAKGHSBujuuko from './pages/institutions/SAKGHSBujuuko';
 import ScoobyKatale from './pages/institutions/ScoobyKatale';
 import ScoobyGulu from './pages/institutions/ScoobyGulu';
 import GJSKikajjo from './pages/institutions/GJSKikajjo';
-import GJSGulu from './pages/institutions/GJSGulu';
-import GJSBoarding from './pages/institutions/GJSBoarding';
+import GJSBoarding from './pages/institutions/GJSGulu';
+import GJSAbout from './pages/institutions/GJSAbout';
 import JSBI from './pages/institutions/JSBI';
 import AdminPanel from './cms/AdminPanel';
 import AcademicCalendarPage from './pages/AcademicCalendar';
@@ -28,7 +28,10 @@ function App() {
   const location = useLocation();
   
   // Hide GES header/footer for pages with their own brand (Scooby & GJS)
-  const isBrandedInstitution = location.pathname.includes('/institutions/scooby') || location.pathname.includes('/institutions/gjs');
+  const isBrandedInstitution =
+    location.pathname.includes('/institutions/scooby') ||
+    location.pathname.includes('/institutions/gjs') ||
+    location.pathname.includes('/institutions/sakghs');
   
   return (
     <div className="min-h-screen bg-ges-cream">
@@ -49,9 +52,9 @@ function App() {
           <Route path="/institutions/sakghs-bujuuko" element={<SAKGHSBujuuko />} />
           <Route path="/institutions/scooby-katale" element={<ScoobyKatale />} />
           <Route path="/institutions/scooby-gulu" element={<ScoobyGulu />} />
-          <Route path="/institutions/gjs-kikajjo" element={<GJSKikajjo />} />
-          <Route path="/institutions/gjs-gulu" element={<GJSGulu />} />
           <Route path="/institutions/gjs-boarding" element={<GJSBoarding />} />
+          <Route path="/institutions/gjs-kikajjo" element={<GJSKikajjo />} />
+          <Route path="/institutions/gjs-about" element={<GJSAbout />} />
           <Route path="/institutions/jsbi" element={<JSBI />} />
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/academic-calendar" element={<AcademicCalendarPage />} />

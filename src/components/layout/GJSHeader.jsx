@@ -9,14 +9,14 @@ const brandColors = {
 };
 
 const campuses = [
-  { name: 'Kikajjo Campus', path: '/institutions/gjs-kikajjo' },
-  { name: 'Gulu Campus', path: '/institutions/gjs-gulu' },
-  { name: 'Boarding Campus', path: '/institutions/gjs-boarding' },
+  { name: 'Gombe Junior School', subtitle: 'Boarding', path: '/institutions/gjs-boarding' },
+  { name: 'Gombe Junior School Kikajjo', subtitle: 'Day', path: '/institutions/gjs-kikajjo' },
 ];
 
 const GJSHeader = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
@@ -61,6 +61,41 @@ const GJSHeader = () => {
 
             <div
               className="relative"
+              onMouseEnter={() => setAboutDropdownOpen(true)}
+              onMouseLeave={() => setAboutDropdownOpen(false)}
+            >
+              <button className="flex items-center text-sm font-semibold text-white hover:text-[#FFD700] transition-colors">
+                About <LuChevronDown className="w-4 h-4 ml-1" />
+              </button>
+              <AnimatePresence>
+                {aboutDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                    className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 z-[140]"
+                  >
+                    <Link
+                      to="/institutions/gjs-about"
+                      className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors rounded-xl mx-2"
+                      onClick={() => setAboutDropdownOpen(false)}
+                    >
+                      Our Story
+                    </Link>
+                    <Link
+                      to="/institutions/gjs-about#management"
+                      className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors rounded-xl mx-2"
+                      onClick={() => setAboutDropdownOpen(false)}
+                    >
+                      School Management
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <div
+              className="relative"
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
             >
@@ -84,9 +119,10 @@ const GJSHeader = () => {
                       >
                         <Link
                           to={campus.path}
-                          className="block px-5 py-3 text-sm font-semibold text-gray-800 hover:bg-[#FFF6CC] hover:text-[#800E13] transition-colors"
+                          className="block px-5 py-3 text-sm hover:bg-[#FFF6CC] hover:text-[#800E13] transition-colors"
                         >
-                          {campus.name}
+                          <div className="font-semibold text-gray-800">{campus.name}</div>
+                          <div className="text-xs text-gray-500">{campus.subtitle}</div>
                         </Link>
                       </motion.div>
                     ))}

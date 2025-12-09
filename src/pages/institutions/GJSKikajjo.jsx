@@ -31,22 +31,22 @@ const GJSKikajjo = () => {
   };
 
   const stats = [
-    { icon: LuUsers, label: 'Students', value: '500+' },
-    { icon: LuAward, label: 'Success Rate', value: '97%' },
-    { icon: LuBookOpen, label: 'Levels', value: 'P1-S4' },
-    { icon: LuHeart, label: 'Student Care', value: '100%' },
+    { icon: LuUsers, label: 'Students', value: '480+' },
+    { icon: LuAward, label: 'Academic Excellence', value: '100%' },
+    { icon: LuBookOpen, label: 'Levels', value: 'P1-P7' },
+    { icon: LuHeart, label: 'Community', value: 'Impact' },
   ];
 
   const programs = [
     {
       title: 'Primary Education',
-      description: 'Strong foundation in literacy, numeracy, and character development',
-      features: ['P1-P7', 'Holistic Learning', 'Life Skills'],
+      description: 'Comprehensive primary education from P1 to P7 with strong foundation in literacy, numeracy, and character development',
+      features: ['P1-P7', 'Holistic Learning', 'Academic Excellence', 'Life Skills'],
     },
     {
-      title: 'Lower Secondary',
-      description: 'Comprehensive curriculum for S1-S4 with modern teaching methods',
-      features: ['Core Subjects', 'Practical Skills', 'ICT Integration'],
+      title: 'Commute Transport and Safety',
+      description: 'Safe and reliable transportation services ensuring secure commute for day scholars with comprehensive safety measures',
+      features: ['School Transport', 'Safety Protocols', 'Reliable Schedule', 'Secure Commute'],
     },
     {
       title: 'Character Development',
@@ -82,16 +82,16 @@ const GJSKikajjo = () => {
               <span className="text-sm font-medium">gjs-kikajjo.ges.ac.ug</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: brandColors.secondary }}>
-              Gombe Junior School
+              Gombe Junior School Kikajjo
             </h1>
             <p className="text-xl mb-4" style={{ color: brandColors.secondary }}>
-              Kikajjo Campus
+              Day School
             </p>
             <p className="text-xl mb-8 leading-relaxed" style={{ color: '#5c3a2a' }}>
-              Quality Day School Education • Established 1998
+              Primary Education (P1-P7) • Day School • Opened 2019
             </p>
             <p className="text-lg max-w-3xl mx-auto leading-relaxed" style={{ color: '#5c3a2a' }}>
-              Day school providing primary and lower secondary education with holistic development and character formation.
+              Entirely day school created from the separation of day scholars from boarders, bringing transformation to the Kikajjo community.
             </p>
           </motion.div>
         </div>
@@ -120,15 +120,37 @@ const GJSKikajjo = () => {
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
               Take a virtual tour of our vibrant learning environment and state-of-the-art facilities
             </p>
-            <motion.button
+            <motion.div
               onClick={() => setIsGalleryOpen(true)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl"
-              style={{ backgroundColor: brandColors.primary, color: brandColors.secondary }}
+              whileHover={{ scale: 1.02 }}
+              className="relative max-w-4xl mx-auto cursor-pointer overflow-hidden rounded-2xl shadow-2xl"
             >
-              View Photo Gallery
-            </motion.button>
+              <div className="relative h-96 flex items-center justify-center gap-4">
+                {galleryImages.slice(0, 3).map((img, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="relative h-80 flex-1"
+                  >
+                    <img
+                      src={img}
+                      alt={`Preview ${idx + 1}`}
+                      className="w-full h-full object-cover rounded-xl"
+                      style={{ filter: 'blur(1px)' }}
+                    />
+                    <div className="absolute inset-0 bg-black/20 rounded-xl"></div>
+                  </motion.div>
+                ))}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-black/60 backdrop-blur-sm px-8 py-4 rounded-full border-2 border-white/50">
+                    <p className="text-white font-bold text-lg">Click to View Full Gallery</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

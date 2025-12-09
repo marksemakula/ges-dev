@@ -31,22 +31,22 @@ const GJSGulu = () => {
   };
 
   const stats = [
-    { icon: LuUsers, label: 'Students', value: '480+' },
-    { icon: LuAward, label: 'Success Rate', value: '96%' },
-    { icon: LuBookOpen, label: 'Levels', value: 'P1-S4' },
-    { icon: LuHeart, label: 'Student Care', value: '100%' },
+    { icon: LuUsers, label: 'Students', value: '500+' },
+    { icon: LuAward, label: 'First Grades', value: '100%' },
+    { icon: LuBookOpen, label: 'Levels', value: 'P1-P7' },
+    { icon: LuHeart, label: 'Boarding', value: 'Available' },
   ];
 
   const programs = [
     {
       title: 'Primary Education',
-      description: 'Strong foundation in literacy, numeracy, and character development',
-      features: ['P1-P7', 'Holistic Learning', 'Life Skills'],
+      description: 'Comprehensive primary education from P1 to P7 with strong foundation in literacy, numeracy, and character development',
+      features: ['P1-P7', 'Holistic Learning', 'Academic Excellence', 'Life Skills'],
     },
     {
-      title: 'Lower Secondary',
-      description: 'Comprehensive curriculum for S1-S4 with modern teaching methods',
-      features: ['Core Subjects', 'Practical Skills', 'ICT Integration'],
+      title: 'Boarding Care',
+      description: 'Safe and nurturing boarding environment with 24/7 care, supervision, and support for holistic child development',
+      features: ['24/7 Care', 'Meals Provided', 'Evening Studies', 'Wellness Support'],
     },
     {
       title: 'Character Development',
@@ -85,13 +85,13 @@ const GJSGulu = () => {
               Gombe Junior School
             </h1>
             <p className="text-xl mb-4" style={{ color: brandColors.secondary }}>
-              Gulu Campus
+              Day Campus
             </p>
             <p className="text-xl mb-8 leading-relaxed" style={{ color: '#5c3a2a' }}>
-              Quality Day School Education • Established 2002
+              Quality Day Education • Established 2013
             </p>
             <p className="text-lg max-w-3xl mx-auto leading-relaxed" style={{ color: '#5c3a2a' }}>
-              Day school providing primary and lower secondary education with holistic development and character formation.
+              Our pioneer campus providing comprehensive day education from nursery through lower secondary with a proven track record of 100% first grades.
             </p>
           </motion.div>
         </div>
@@ -120,15 +120,37 @@ const GJSGulu = () => {
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
               Take a virtual tour of our vibrant learning environment and state-of-the-art facilities
             </p>
-            <motion.button
+            <motion.div
               onClick={() => setIsGalleryOpen(true)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl"
-              style={{ backgroundColor: brandColors.primary, color: brandColors.secondary }}
+              whileHover={{ scale: 1.02 }}
+              className="relative max-w-4xl mx-auto cursor-pointer overflow-hidden rounded-2xl shadow-2xl"
             >
-              View Photo Gallery
-            </motion.button>
+              <div className="relative h-96 flex items-center justify-center gap-4">
+                {galleryImages.slice(0, 3).map((img, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="relative h-80 flex-1"
+                  >
+                    <img
+                      src={img}
+                      alt={`Preview ${idx + 1}`}
+                      className="w-full h-full object-cover rounded-xl"
+                      style={{ filter: 'blur(1px)' }}
+                    />
+                    <div className="absolute inset-0 bg-black/20 rounded-xl"></div>
+                  </motion.div>
+                ))}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-black/60 backdrop-blur-sm px-8 py-4 rounded-full border-2 border-white/50">
+                    <p className="text-white font-bold text-lg">Click to View Full Gallery</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -234,20 +256,20 @@ const GJSGulu = () => {
               Enroll Your Child Today
             </h2>
             <p className="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
-              Give your child the best foundation at Gombe Junior School - Gulu Campus
+              Give your child the best foundation at Gombe Junior School
             </p>
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <div className="flex items-center space-x-2">
                 <LuMapPin className="w-5 h-5" style={{ color: brandColors.primary }} />
-                <span>Gulu City</span>
+                <span>Wakiso District</span>
               </div>
               <div className="flex items-center space-x-2">
                 <LuPhone className="w-5 h-5" style={{ color: brandColors.primary }} />
-                <span>+256 700 000 005</span>
+                <span>+256 700 000 004</span>
               </div>
               <div className="flex items-center space-x-2">
                 <LuMail className="w-5 h-5" style={{ color: brandColors.primary }} />
-                <span>info@gjs-gulu.ges.ac.ug</span>
+                <span>info@gjs.ges.ac.ug</span>
               </div>
             </div>
             <motion.button

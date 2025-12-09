@@ -108,33 +108,23 @@ const Home = () => {
       color: "bg-ges-purple"
     },
     {
-      name: "Gombe Junior School - Kikajjo",
-      slug: "gjs-kikajjo",
-      description: "Day school providing primary and lower secondary education with holistic development",
+      name: "Gombe Junior School",
+      slug: "gjs-boarding",
+      description: "Boarding school providing day & boarding education with proven academic excellence - 100% first grades 2017 & 2022",
       students: "500+",
-      established: "1998",
-      specialties: ["Foundation", "Character", "Skills"],
-      image: "/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg",
-      color: "bg-ges-teal"
-    },
-    {
-      name: "Gombe Junior School - Gulu",
-      slug: "gjs-gulu",
-      description: "Day school providing primary and lower secondary education with holistic development",
-      students: "480+",
-      established: "2002",
-      specialties: ["Foundation", "Character", "Skills"],
+      established: "2013",
+      specialties: ["Boarding", "Academic Excellence", "Character"],
       image: "/images/schoolgroup.jpg",
       color: "bg-ges-teal"
     },
     {
-      name: "Gombe Junior School - Boarding",
-      slug: "gjs-boarding",
-      description: "Boarding school providing primary and lower secondary education with holistic development",
-      students: "350+",
-      established: "2000",
-      specialties: ["Foundation", "Character", "Skills"],
-      image: "/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg",
+      name: "Gombe Junior School Kikajjo",
+      slug: "gjs-kikajjo",
+      description: "Day school created in 2019 providing customized day education with community transformation",
+      students: "480+",
+      established: "2019",
+      specialties: ["Day Education", "Community Impact", "Excellence"],
+      image: "/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg",
       color: "bg-ges-teal"
     },
     {
