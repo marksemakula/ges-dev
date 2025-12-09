@@ -521,7 +521,7 @@ const ScoobyKatale = () => {
             className="text-center mb-16"
           >
             <p className="text-lg font-semibold mb-2" style={{ color: '#FF6B35' }}>Our Programs</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: brandColors.secondary, fontFamily: 'Fredoka, sans-serif' }}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: brandColors.secondary }}>
               We meet kids at their level<br/>regardless of their age
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
