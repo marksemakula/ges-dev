@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { LuMapPin, LuPhone, LuMail, LuUsers, LuAward, LuBookOpen, LuHeart, LuExternalLink } from 'react-icons/lu';
+import GJSHeader from '../../components/layout/GJSHeader';
+import GJSFooter from '../../components/layout/GJSFooter';
 
 const GJSKikajjo = () => {
   const brandColors = {
@@ -35,35 +37,40 @@ const GJSKikajjo = () => {
 
   return (
     <div className="min-h-screen bg-gray-50" style={{ viewTransitionName: 'institution-gjs-kikajjo' }}>
+      <GJSHeader />
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white py-32" style={{ backgroundColor: brandColors.secondary }}>
-        <div className="absolute inset-0">
-          <img 
-            src="/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg" 
-            alt="Gombe Junior School - Kikajjo" 
-            className="w-full h-full object-cover opacity-20"
-          />
-        </div>
+      <section
+        id="home"
+        className="relative overflow-hidden py-28"
+        style={{ backgroundColor: '#FDEFB2', color: brandColors.secondary }}
+      >
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
+            <div className="flex justify-center mb-8">
+              <img
+                src="/images/GombeBadge.jpg"
+                alt="Gombe Junior School"
+                className="h-28 w-auto drop-shadow-md"
+              />
+            </div>
             <div className="inline-flex items-center rounded-full px-6 py-2 mb-6" style={{ backgroundColor: `${brandColors.primary}40` }}>
               <LuExternalLink className="w-4 h-4 mr-2" style={{ color: brandColors.primary }} />
               <span className="text-sm font-medium">gjs-kikajjo.ges.ac.ug</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: brandColors.secondary }}>
               Gombe Junior School
             </h1>
-            <p className="text-xl mb-4" style={{ color: brandColors.primary }}>
+            <p className="text-xl mb-4" style={{ color: brandColors.secondary }}>
               Kikajjo Campus
             </p>
-            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+            <p className="text-xl mb-8 leading-relaxed" style={{ color: '#5c3a2a' }}>
               Quality Day School Education • Established 1998
             </p>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg max-w-3xl mx-auto leading-relaxed" style={{ color: '#5c3a2a' }}>
               Day school providing primary and lower secondary education with holistic development and character formation.
             </p>
           </motion.div>
@@ -95,7 +102,7 @@ const GJSKikajjo = () => {
       </section>
 
       {/* Programs Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="programs" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -138,7 +145,7 @@ const GJSKikajjo = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 text-white" style={{ backgroundColor: brandColors.secondary }}>
+      <section id="contact" className="py-20 text-white" style={{ backgroundColor: brandColors.secondary }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -176,6 +183,7 @@ const GJSKikajjo = () => {
           </motion.div>
         </div>
       </section>
+      <GJSFooter />
     </div>
   );
 };

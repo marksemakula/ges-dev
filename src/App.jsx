@@ -27,12 +27,12 @@ import './App.css';
 function App() {
   const location = useLocation();
   
-  // Hide GES header/footer for Scooby Doo institution pages
-  const isScoobyPage = location.pathname.includes('/institutions/scooby');
+  // Hide GES header/footer for pages with their own brand (Scooby & GJS)
+  const isBrandedInstitution = location.pathname.includes('/institutions/scooby') || location.pathname.includes('/institutions/gjs');
   
   return (
     <div className="min-h-screen bg-ges-cream">
-      {!isScoobyPage && <Header />}
+      {!isBrandedInstitution && <Header />}
       
       <AnimatePresence mode="wait">
         <Routes>
@@ -58,7 +58,7 @@ function App() {
         </Routes>
       </AnimatePresence>
       
-      {!isScoobyPage && <Footer />}
+      {!isBrandedInstitution && <Footer />}
     </div>
   );
 }
