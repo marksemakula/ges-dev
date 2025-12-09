@@ -242,13 +242,13 @@ const ScoobyGulu = () => {
         </motion.div>
       </div>
       {/* Custom Header/Navbar */}
-      <header className="sticky top-0 z-50 bg-white shadow-md overflow-hidden">
+      <header className="sticky top-0 z-50 bg-white shadow-md overflow-visible">
         {/* Floating Decorative Elements */}
         <div className="absolute top-0 left-10 w-8 h-8 bg-yellow-300 rounded-full opacity-20 animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
         <div className="absolute top-2 right-20 w-6 h-6 bg-red-300 rounded-full opacity-20 animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}></div>
         <div className="absolute top-4 left-1/3 w-10 h-10 bg-blue-300 rounded-full opacity-20 animate-pulse" style={{ animationDuration: '5s' }}></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-visible">
           <div className="flex items-center justify-between h-20">
             {/* Brand Name with playful animation */}
             <motion.div 
@@ -289,7 +289,7 @@ const ScoobyGulu = () => {
                 </motion.button>
                 {isAboutDropdownOpen && (
                   <motion.div 
-                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl py-3 border-2 border-[#FFD700] z-50"
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl py-3 border-2 border-[#FFD700] z-[100]"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
@@ -595,7 +595,7 @@ const ScoobyGulu = () => {
         </svg>
       </div>
 
-      {/* Contact Section */}}
+      {/* Contact Section */}
       <section className="py-20 text-white" style={{ backgroundColor: brandColors.secondary }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div

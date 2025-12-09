@@ -30,7 +30,7 @@ const Header = () => {
 
   const aboutLinks = [
     { name: 'About Us', path: '/about', description: 'Learn about our vision and mission' },
-    { name: 'Leadership', path: '/leadership', description: 'Meet our leadership team' },
+    { name: 'School Management Committee', path: '/leadership', description: 'Meet the committee guiding our schools' },
   ];
 
   useEffect(() => {
@@ -103,7 +103,7 @@ const Header = () => {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl py-3 border border-gray-100 overflow-hidden"
+                    className="absolute top-full right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl py-3 border border-gray-100 overflow-hidden z-[60]"
                   >
                     {aboutLinks.map((link, index) => (
                       <motion.div
@@ -145,7 +145,7 @@ const Header = () => {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full right-0 mt-2 w-80 bg-white rounded-2xl shadow-2xl py-3 border border-gray-100 overflow-hidden"
+                    className="absolute top-full right-0 mt-2 w-80 bg-white rounded-2xl shadow-2xl py-3 border border-gray-100 overflow-hidden z-[60]"
                   >
                     {institutions.map((inst, index) => (
                       <motion.div
