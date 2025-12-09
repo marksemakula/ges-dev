@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -25,9 +25,14 @@ import AcademicCalendarPage from './pages/AcademicCalendar';
 import './App.css';
 
 function App() {
+  const location = useLocation();
+  
+  // Hide GES header/footer for Scooby Doo institution pages
+  const isScoobyPage = location.pathname.includes('/institutions/scooby');
+  
   return (
     <div className="min-h-screen bg-ges-cream">
-      <Header />
+      {!isScoobyPage && <Header />}
       
       <AnimatePresence mode="wait">
         <Routes>
@@ -53,7 +58,7 @@ function App() {
         </Routes>
       </AnimatePresence>
       
-      <Footer />
+      {!isScoobyPage && <Footer />}
     </div>
   );
 }
