@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { LuMail, LuPhone, LuMapPin } from 'react-icons/lu';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const brandColors = {
   primary: '#FFD700',
@@ -16,83 +17,114 @@ const campuses = [
 
 const GJSFooter = () => {
   return (
-    <footer className="relative overflow-hidden" style={{ backgroundColor: brandColors.secondary }}>
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute -top-10 left-10 w-40 h-40 rounded-full" style={{ backgroundColor: brandColors.primary }} />
-        <div className="absolute bottom-0 right-24 w-56 h-56 rounded-full" style={{ backgroundColor: brandColors.primary }} />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-white">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <footer className="bg-gray-800 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Brand */}
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <div className="flex items-center gap-4 mb-4">
-              <img src="/images/GombeBadge.png" alt="Gombe Junior School" className="h-14 w-auto" />
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <img src="/images/GombeBadge.png" alt="Gombe Junior School" className="h-10 w-auto brightness-0 invert" />
               <div className="leading-tight">
-                <div className="text-xl font-bold">Gombe Junior School</div>
-                <div className="text-sm font-semibold" style={{ color: brandColors.primary }}>
+                <div className="text-base font-bold">Gombe Junior School</div>
+                <div className="text-xs font-semibold" style={{ color: brandColors.primary }}>
                   Ssosolye bwatafa
                 </div>
               </div>
             </div>
-            <p className="text-sm text-white/80 leading-relaxed max-w-md">
+            <p className="text-sm text-gray-300 leading-relaxed">
               Nurturing learners through academic excellence, character formation, and a caring community across our campuses.
             </p>
-          </motion.div>
+            <div className="flex space-x-3">
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                href="#"
+                className="text-gray-300 hover:text-[#FFD700] transition-colors duration-300"
+              >
+                <FaFacebook size={18} />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                href="#"
+                className="text-gray-300 hover:text-[#FFD700] transition-colors duration-300"
+              >
+                <FaTwitter size={18} />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                href="#"
+                className="text-gray-300 hover:text-[#FFD700] transition-colors duration-300"
+              >
+                <FaInstagram size={18} />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                href="#"
+                className="text-gray-300 hover:text-[#FFD700] transition-colors duration-300"
+              >
+                <FaLinkedin size={18} />
+              </motion.a>
+            </div>
+          </div>
 
           {/* Campuses */}
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.05 }}>
-            <h4 className="text-lg font-semibold mb-4" style={{ color: brandColors.primary }}>Our Campuses</h4>
-            <ul className="space-y-3">
+          <div className="space-y-3">
+            <h3 className="text-base font-semibold" style={{ color: brandColors.primary }}>Our Campuses</h3>
+            <ul className="space-y-2">
               {campuses.map((campus) => (
                 <li key={campus.path}>
                   <Link
                     to={campus.path}
-                    className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+                    className="text-gray-300 hover:text-[#FFD700] transition-colors duration-300 text-sm block"
                   >
-                    <span className="font-semibold">{campus.name}</span>
-                    <span className="text-sm" style={{ color: brandColors.primary }}>{campus.contact}</span>
+                    {campus.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Contact */}
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <h4 className="text-lg font-semibold mb-4" style={{ color: brandColors.primary }}>Contact Us</h4>
-            <div className="space-y-4 text-white/90">
-              <div className="flex items-start gap-3">
-                <LuMapPin className="w-5 h-5 mt-1" style={{ color: brandColors.primary }} />
+          <div className="space-y-3">
+            <h3 className="text-base font-semibold" style={{ color: brandColors.primary }}>Contact Us</h3>
+            <div className="space-y-2 text-gray-300 text-sm">
+              <div className="flex items-start gap-2">
+                <LuMapPin className="w-4 h-4 mt-0.5" style={{ color: brandColors.primary }} />
                 <p>Wakiso District, Uganda<br />P.O. Box 71523, Kampala</p>
               </div>
-              <div className="flex items-start gap-3">
-                <LuPhone className="w-5 h-5 mt-1" style={{ color: brandColors.primary }} />
+              <div className="flex items-start gap-2">
+                <LuPhone className="w-4 h-4 mt-0.5" style={{ color: brandColors.primary }} />
                 <div>
                   <p>+256 700 000 004 (Kikajjo)</p>
                   <p>+256 700 000 005 (Gulu)</p>
                   <p>+256 700 000 006 (Boarding)</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <LuMail className="w-5 h-5 mt-1" style={{ color: brandColors.primary }} />
+              <div className="flex items-start gap-2">
+                <LuMail className="w-4 h-4 mt-0.5" style={{ color: brandColors.primary }} />
                 <div>
                   <p>info@gjs.ges.ac.ug</p>
                   <p>admissions@gjs.ges.ac.ug</p>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </div>
 
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center text-sm text-white/80 gap-3">
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700 mt-6 pt-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
           <span>© 2025 Gombe Junior School. All rights reserved.</span>
-          <div className="flex gap-4">
-            <Link to="/privacy" className="hover:text-white" aria-label="Privacy Policy">Privacy</Link>
-            <Link to="/terms" className="hover:text-white" aria-label="Terms of Service">Terms</Link>
-            <Link to="/cookies" className="hover:text-white" aria-label="Cookie Policy">Cookies</Link>
+          <div className="flex items-center gap-6 mt-3 md:mt-0">
+            <Link to="/privacy" className="hover:text-[#FFD700] transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-[#FFD700] transition-colors">Terms</Link>
+            <Link to="/cookies" className="hover:text-[#FFD700] transition-colors">Cookies</Link>
+            <div className="flex items-center gap-2">
+              <span className="text-gray-300 text-sm">Powered by</span>
+              <img 
+                src="/images/Inzozi-grayscale.png" 
+                alt="Inzozi Logo" 
+                className="h-10 w-auto" 
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,13 +1,33 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { LuMapPin, LuPhone, LuMail, LuUsers, LuAward, LuBookOpen, LuHeart, LuExternalLink, LuBed } from 'react-icons/lu';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { LuMapPin, LuPhone, LuMail, LuUsers, LuAward, LuBookOpen, LuHeart, LuExternalLink, LuBed, LuChevronLeft, LuChevronRight, LuX } from 'react-icons/lu';
 import GJSHeader from '../../components/layout/GJSHeader';
 import GJSFooter from '../../components/layout/GJSFooter';
 
 const GJSBoarding = () => {
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const brandColors = {
     primary: '#FFD700', // Yellow
     secondary: '#800E13', // Burgundy
+  };
+
+  const galleryImages = [
+    '/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg',
+    '/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg',
+    '/images/schoolgroup.jpg',
+    '/images/happy pupil.jpg',
+    '/images/happgirl.jpg',
+    '/images/classexam.jpg',
+  ];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
   const stats = [
@@ -77,29 +97,87 @@ const GJSBoarding = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4" style={{ backgroundColor: `${brandColors.primary}20` }}>
-                  <stat.icon className="w-8 h-8" style={{ color: brandColors.primary }} />
-                </div>
-                <div className="text-3xl font-bold mb-2" style={{ color: brandColors.secondary }}>{stat.value}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+      {/* Gallery Section - replacing Stats */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/images/topsphere-media-ojBd8yB5KDM-unsplash.jpg" 
+            alt="Gombe Junior School Gallery" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#800E13]/90 via-[#800E13]/80 to-[#800E13]/70"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Experience Our Campus
+            </h2>
+            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+              Take a virtual tour of our vibrant learning environment and state-of-the-art facilities
+            </p>
+            <motion.button
+              onClick={() => setIsGalleryOpen(true)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl"
+              style={{ backgroundColor: brandColors.primary, color: brandColors.secondary }}
+            >
+              View Photo Gallery
+            </motion.button>
+          </motion.div>
         </div>
       </section>
+
+      {/* Gallery Modal */}
+      <AnimatePresence>
+        {isGalleryOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4"
+            onClick={() => setIsGalleryOpen(false)}
+          >
+            <div className="relative max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
+              <button
+                onClick={() => setIsGalleryOpen(false)}
+                className="absolute -top-12 right-0 text-white hover:text-[#FFD700] transition-colors"
+              >
+                <LuX className="w-8 h-8" />
+              </button>
+              <motion.img
+                key={currentImageIndex}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                src={galleryImages[currentImageIndex]}
+                alt={`Gallery ${currentImageIndex + 1}`}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full transition-all"
+              >
+                <LuChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full transition-all"
+              >
+                <LuChevronRight className="w-6 h-6" />
+              </button>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+                {currentImageIndex + 1} / {galleryImages.length}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Programs Section */}
       <section id="programs" className="py-20 bg-gray-50">

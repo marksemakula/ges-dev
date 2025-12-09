@@ -1,13 +1,33 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { LuMapPin, LuPhone, LuMail, LuUsers, LuAward, LuBookOpen, LuHeart, LuExternalLink } from 'react-icons/lu';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { LuMapPin, LuPhone, LuMail, LuUsers, LuAward, LuBookOpen, LuHeart, LuExternalLink, LuChevronLeft, LuChevronRight, LuX } from 'react-icons/lu';
 import GJSHeader from '../../components/layout/GJSHeader';
 import GJSFooter from '../../components/layout/GJSFooter';
 
 const GJSGulu = () => {
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const brandColors = {
     primary: '#FFD700', // Yellow
     secondary: '#800E13', // Burgundy
+  };
+
+  const galleryImages = [
+    '/images/schoolgroup.jpg',
+    '/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg',
+    '/images/happy pupil.jpg',
+    '/images/happgirl.jpg',
+    '/images/classexam.jpg',
+    '/images/megan-escobosa-photography-_FMi4LTEe6g-unsplash.jpg',
+  ];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
   const stats = [
