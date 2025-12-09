@@ -51,23 +51,227 @@ const ScoobyKatale = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50" style={{ viewTransitionName: 'institution-scooby-katale' }}>
+    <div className="min-h-screen bg-gray-50 relative overflow-hidden" style={{ viewTransitionName: 'institution-scooby-katale' }}>
+      {/* Add CSS for floating animations */}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        @keyframes floatSlow {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-30px) rotate(-5deg); }
+        }
+        @keyframes floatReverse {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(20px) rotate(10deg); }
+        }
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes spinSlow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .float { animation: float 6s ease-in-out infinite; }
+        .float-slow { animation: floatSlow 8s ease-in-out infinite; }
+        .float-reverse { animation: floatReverse 7s ease-in-out infinite; }
+        .spin { animation: spin 20s linear infinite; }
+        .spin-slow { animation: spinSlow 30s linear infinite; }
+      `}</style>
+
+      {/* Global Floating Elements */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Stars */}
+        <motion.div 
+          className="absolute top-10 left-[10%] w-12 h-12 text-yellow-400 opacity-30"
+          animate={{ 
+            y: [0, -20, 0],
+            rotate: [0, 360]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </motion.div>
+
+        {/* Colorful Circles */}
+        <motion.div 
+          className="absolute top-32 right-[15%] w-16 h-16 rounded-full bg-gradient-to-br from-pink-300 to-purple-300 opacity-20"
+          animate={{ 
+            y: [0, 30, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 6, repeat: Infinity }}
+        />
+        
+        <motion.div 
+          className="absolute top-[40%] left-[5%] w-20 h-20 rounded-full bg-gradient-to-br from-blue-300 to-cyan-300 opacity-20"
+          animate={{ 
+            y: [0, -25, 0],
+            x: [0, 10, 0]
+          }}
+          transition={{ duration: 10, repeat: Infinity }}
+        />
+
+        {/* Triangle */}
+        <motion.div 
+          className="absolute bottom-[30%] right-[10%] w-16 h-16 opacity-20"
+          animate={{ 
+            rotate: [0, 360],
+            y: [0, -15, 0]
+          }}
+          transition={{ duration: 12, repeat: Infinity }}
+        >
+          <svg viewBox="0 0 24 24" fill="#FFD700">
+            <path d="M12 2L2 22h20L12 2z"/>
+          </svg>
+        </motion.div>
+
+        {/* Heart Shape */}
+        <motion.div 
+          className="absolute top-[60%] left-[80%] w-12 h-12 text-red-300 opacity-25"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            y: [0, -20, 0]
+          }}
+          transition={{ duration: 5, repeat: Infinity }}
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </motion.div>
+
+        {/* Cloud Shape */}
+        <motion.div 
+          className="absolute top-20 right-[25%] w-24 h-16 opacity-15"
+          animate={{ 
+            x: [0, 30, 0],
+            y: [0, -10, 0]
+          }}
+          transition={{ duration: 15, repeat: Infinity }}
+        >
+          <svg viewBox="0 0 24 24" fill="#87CEEB">
+            <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-1.48 0-2.85.43-4.01 1.17C6.65 5.09 5.26 5.97 4.23 7.13 2.84 8.6 2 10.54 2 12.62c0 2.89 1.86 5.35 4.46 6.27.3.11.62.11.93.11h11.21c.31 0 .63-.04.93-.11C22.14 17.97 24 15.51 24 12.62c0-2.08-.84-4.02-2.23-5.49-.97-1.16-2.36-2.04-3.7-2.96-.17-.12-.36-.23-.55-.34C18.15 4.43 16.78 4 15.3 4c-3.64 0-6.67 2.59-7.35 6.04h11.4z"/>
+          </svg>
+        </motion.div>
+
+        {/* Pencil Icon */}
+        <motion.div 
+          className="absolute top-[45%] right-[5%] w-14 h-14 text-orange-400 opacity-25"
+          animate={{ 
+            rotate: [0, 15, 0, -15, 0],
+            y: [0, -15, 0]
+          }}
+          transition={{ duration: 7, repeat: Infinity }}
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+          </svg>
+        </motion.div>
+
+        {/* ABC Blocks */}
+        <motion.div 
+          className="absolute bottom-[20%] left-[15%] w-16 h-16 text-green-400 opacity-20"
+          animate={{ 
+            y: [0, 20, 0],
+            rotate: [0, -10, 0, 10, 0]
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <rect x="4" y="4" width="7" height="7" rx="1"/>
+            <rect x="13" y="4" width="7" height="7" rx="1"/>
+            <rect x="4" y="13" width="7" height="7" rx="1"/>
+            <rect x="13" y="13" width="7" height="7" rx="1"/>
+          </svg>
+        </motion.div>
+
+        {/* Music Note */}
+        <motion.div 
+          className="absolute top-[70%] right-[30%] w-10 h-10 text-purple-400 opacity-25"
+          animate={{ 
+            y: [0, -25, 0],
+            rotate: [0, 10, 0]
+          }}
+          transition={{ duration: 6, repeat: Infinity }}
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+          </svg>
+        </motion.div>
+
+        {/* Ball */}
+        <motion.div 
+          className="absolute top-[25%] left-[70%] w-14 h-14 rounded-full bg-gradient-to-br from-red-400 to-orange-400 opacity-25"
+          animate={{ 
+            y: [0, -30, 0],
+            scale: [1, 1.15, 1]
+          }}
+          transition={{ duration: 4, repeat: Infinity }}
+        />
+
+        {/* Butterfly */}
+        <motion.div 
+          className="absolute bottom-[40%] left-[25%] w-12 h-12 text-pink-400 opacity-30"
+          animate={{ 
+            x: [0, 20, 0, -20, 0],
+            y: [0, -15, 0, -10, 0]
+          }}
+          transition={{ duration: 10, repeat: Infinity }}
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2c-1.1 0-2 .9-2 2v2.17c-1.17.41-2 1.52-2 2.83v8c0 1.66 1.34 3 3 3h2c1.66 0 3-1.34 3-3V9c0-1.31-.83-2.42-2-2.83V4c0-1.1-.9-2-2-2zm-7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.35 0 .69-.06 1-.17v-5.66c-.31-.11-.65-.17-1-.17zm14 0c-.35 0-.69.06-1 .17v5.66c.31.11.65.17 1 .17 1.66 0 3-1.34 3-3s-1.34-3-3-3z"/>
+          </svg>
+        </motion.div>
+
+        {/* Book */}
+        <motion.div 
+          className="absolute top-[55%] left-[90%] w-12 h-12 text-blue-500 opacity-20"
+          animate={{ 
+            rotate: [0, -10, 0, 10, 0],
+            y: [0, -12, 0]
+          }}
+          transition={{ duration: 9, repeat: Infinity }}
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+          </svg>
+        </motion.div>
+      </div>
       {/* Custom Header/Navbar */}
-      <header className="sticky top-0 z-50 bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-50 bg-white shadow-md overflow-hidden">
+        {/* Floating Decorative Elements */}
+        <div className="absolute top-0 left-10 w-8 h-8 bg-yellow-300 rounded-full opacity-20 animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
+        <div className="absolute top-2 right-20 w-6 h-6 bg-red-300 rounded-full opacity-20 animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}></div>
+        <div className="absolute top-4 left-1/3 w-10 h-10 bg-blue-300 rounded-full opacity-20 animate-pulse" style={{ animationDuration: '5s' }}></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex items-center justify-between h-20">
-            {/* Brand Name */}
-            <div className="flex items-center">
+            {/* Brand Name with playful animation */}
+            <motion.div 
+              className="flex items-center"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+            >
               <h1 className="text-2xl font-bold" style={{ color: brandColors.secondary }}>
                 SISU <span style={{ color: brandColors.primary }}>Katale</span>
               </h1>
-            </div>
+            </motion.div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-[#800E13] font-medium transition-colors">
+            <nav className="hidden lg:flex items-center space-x-6">
+              <motion.a 
+                href="#home" 
+                className="relative text-gray-700 hover:text-[#800E13] font-medium transition-all duration-300 group"
+                whileHover={{ y: -2 }}
+              >
                 Home
-              </a>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FFD700] group-hover:w-full transition-all duration-300"></span>
+              </motion.a>
               
               {/* About Us Dropdown */}
               <div 
@@ -75,24 +279,76 @@ const ScoobyKatale = () => {
                 onMouseEnter={() => setIsAboutDropdownOpen(true)}
                 onMouseLeave={() => setIsAboutDropdownOpen(false)}
               >
-                <button className="flex items-center text-gray-700 hover:text-[#800E13] font-medium transition-colors">
+                <motion.button 
+                  className="flex items-center text-gray-700 hover:text-[#800E13] font-medium transition-colors group"
+                  whileHover={{ y: -2 }}
+                >
                   About Us
                   <LuChevronDown className={`ml-1 w-4 h-4 transition-transform ${isAboutDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FFD700] group-hover:w-full transition-all duration-300"></span>
+                </motion.button>
                 {isAboutDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 border border-gray-100 z-50">
-                    <a href="#management" className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#800E13] transition-colors">
+                  <motion.div 
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl py-3 border-2 border-[#FFD700] z-50"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <a href="#management" className="block px-4 py-3 text-gray-700 hover:bg-[#FFF9E6] hover:text-[#800E13] transition-colors rounded-lg mx-2">
                       School Management Committee
                     </a>
-                  </div>
+                    <a href="#mission" className="block px-4 py-3 text-gray-700 hover:bg-[#FFF9E6] hover:text-[#800E13] transition-colors rounded-lg mx-2">
+                      Mission & Vision
+                    </a>
+                    <a href="#facilities" className="block px-4 py-3 text-gray-700 hover:bg-[#FFF9E6] hover:text-[#800E13] transition-colors rounded-lg mx-2">
+                      Our Facilities
+                    </a>
+                  </motion.div>
                 )}
               </div>
+
+              <motion.a 
+                href="#blog" 
+                className="relative text-gray-700 hover:text-[#800E13] font-medium transition-all duration-300 group"
+                whileHover={{ y: -2 }}
+              >
+                Blog
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FFD700] group-hover:w-full transition-all duration-300"></span>
+              </motion.a>
+
+              <motion.a 
+                href="#gallery" 
+                className="relative text-gray-700 hover:text-[#800E13] font-medium transition-all duration-300 group"
+                whileHover={{ y: -2 }}
+              >
+                Gallery
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FFD700] group-hover:w-full transition-all duration-300"></span>
+              </motion.a>
+
+              <motion.a 
+                href="#programs" 
+                className="relative text-gray-700 hover:text-[#800E13] font-medium transition-all duration-300 group"
+                whileHover={{ y: -2 }}
+              >
+                Programs
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FFD700] group-hover:w-full transition-all duration-300"></span>
+              </motion.a>
+
+              <motion.a 
+                href="#contact" 
+                className="px-6 py-2 rounded-full font-bold text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+                style={{ backgroundColor: brandColors.primary, color: brandColors.secondary }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact
+              </motion.a>
             </nav>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
             >
               {isMenuOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />}
             </button>
@@ -100,25 +356,50 @@ const ScoobyKatale = () => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t">
-              <a href="#home" className="block py-3 text-gray-700 hover:text-[#800E13] font-medium">
+            <motion.div 
+              className="lg:hidden py-4 border-t border-gray-100"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+            >
+              <a href="#home" className="block py-3 px-4 text-gray-700 hover:bg-[#FFF9E6] hover:text-[#800E13] font-medium rounded-lg transition-colors">
                 Home
               </a>
-              <div className="py-3">
+              <div className="py-2">
                 <button 
                   onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
-                  className="flex items-center justify-between w-full text-gray-700 hover:text-[#800E13] font-medium"
+                  className="flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:bg-[#FFF9E6] hover:text-[#800E13] font-medium rounded-lg transition-colors"
                 >
                   About Us
                   <LuChevronDown className={`w-4 h-4 transition-transform ${isAboutDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isAboutDropdownOpen && (
-                  <a href="#management" className="block pl-4 py-2 text-gray-600 hover:text-[#800E13]">
-                    School Management Committee
-                  </a>
+                  <div className="mt-2 ml-4 space-y-1">
+                    <a href="#management" className="block py-2 px-4 text-gray-600 hover:text-[#800E13] rounded-lg hover:bg-[#FFF9E6]">
+                      School Management Committee
+                    </a>
+                    <a href="#mission" className="block py-2 px-4 text-gray-600 hover:text-[#800E13] rounded-lg hover:bg-[#FFF9E6]">
+                      Mission & Vision
+                    </a>
+                    <a href="#facilities" className="block py-2 px-4 text-gray-600 hover:text-[#800E13] rounded-lg hover:bg-[#FFF9E6]">
+                      Our Facilities
+                    </a>
+                  </div>
                 )}
               </div>
-            </div>
+              <a href="#blog" className="block py-3 px-4 text-gray-700 hover:bg-[#FFF9E6] hover:text-[#800E13] font-medium rounded-lg transition-colors">
+                Blog
+              </a>
+              <a href="#gallery" className="block py-3 px-4 text-gray-700 hover:bg-[#FFF9E6] hover:text-[#800E13] font-medium rounded-lg transition-colors">
+                Gallery
+              </a>
+              <a href="#programs" className="block py-3 px-4 text-gray-700 hover:bg-[#FFF9E6] hover:text-[#800E13] font-medium rounded-lg transition-colors">
+                Programs
+              </a>
+              <a href="#contact" className="block py-3 px-4 mt-2 text-center rounded-full font-bold text-white" style={{ backgroundColor: brandColors.primary, color: brandColors.secondary }}>
+                Contact
+              </a>
+            </motion.div>
           )}
         </div>
       </header>
