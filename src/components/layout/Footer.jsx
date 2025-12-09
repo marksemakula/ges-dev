@@ -141,7 +141,7 @@ const Footer = () => {
                   <LuMapPin className="w-5 h-5 text-ges-teal mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-700">
-                      Gombe District, Uganda<br />
+                      Wakiso District, Uganda<br />
                       P.O. Box 123, Gombe
                     </p>
                   </div>
