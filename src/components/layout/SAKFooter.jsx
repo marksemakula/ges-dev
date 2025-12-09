@@ -72,8 +72,25 @@ const SAKFooter = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/30 pt-4 text-center text-xs text-white">
-          © {new Date().getFullYear()} St. Andrew Kaggwa Gombe High School. All rights reserved.
+        <div className="border-t border-white/30 pt-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-xs text-white">
+              © {new Date().getFullYear()} St. Andrew Kaggwa Gombe High School. All rights reserved.
+            </div>
+            <div className="flex items-center gap-6">
+              <Link to="/privacy" className="text-xs text-white hover:text-[#FFD700] transition-colors">Privacy</Link>
+              <Link to="/terms" className="text-xs text-white hover:text-[#FFD700] transition-colors">Terms</Link>
+              <Link to="/cookies" className="text-xs text-white hover:text-[#FFD700] transition-colors">Cookies</Link>
+              <div className="flex items-center gap-2">
+                <span className="text-white text-xs">Powered by</span>
+                <img 
+                  src="/images/Inzozi-grayscale.png" 
+                  alt="Inzozi Logo" 
+                  className="h-10 w-auto" 
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
