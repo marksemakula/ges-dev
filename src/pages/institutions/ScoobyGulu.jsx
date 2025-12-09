@@ -452,9 +452,30 @@ const ScoobyGulu = () => {
         </div>
       </section>
 
+      {/* Wavy Divider */}
+      <div className="w-full" style={{ marginTop: '-1px', lineHeight: 0 }}>
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full" style={{ height: '100px', display: 'block' }}>
+          <path d="M0,0 C300,90 600,90 900,0 C1050,50 1150,50 1200,0 L1200,120 L0,120 Z" fill="#FFF9F5"></path>
+        </svg>
+      </div>
+
       {/* Stats Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20" style={{ backgroundColor: '#FFF9F5' }}>
+        {/* Decorative Elements */}
+        <div className="absolute top-10 left-10 opacity-10 z-0">
+          <svg width="80" height="80" viewBox="0 0 100 100">
+            <path d="M50,10 L60,40 L90,40 L65,60 L75,90 L50,70 L25,90 L35,60 L10,40 L40,40 Z" fill="#FFD700" />
+          </svg>
+        </div>
+        <div className="absolute bottom-10 right-10 opacity-10 z-0">
+          <svg width="100" height="60" viewBox="0 0 100 60">
+            <ellipse cx="30" cy="30" rx="25" ry="15" fill="#FFD700"/>
+            <ellipse cx="70" cy="30" rx="25" ry="15" fill="#FFD700"/>
+            <rect x="10" y="35" width="80" height="20" rx="10" fill="#FFD700"/>
+          </svg>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <motion.div
@@ -465,10 +486,10 @@ const ScoobyGulu = () => {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4" style={{ backgroundColor: `${brandColors.primary}20` }}>
-                  <stat.icon className="w-8 h-8" style={{ color: brandColors.primary }} />
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full mb-4" style={{ backgroundColor: '#fff', boxShadow: '0 10px 30px rgba(128,14,19,0.1)' }}>
+                  <stat.icon className="w-10 h-10" style={{ color: brandColors.primary }} />
                 </div>
-                <div className="text-3xl font-bold mb-2" style={{ color: brandColors.secondary }}>{stat.value}</div>
+                <div className="text-4xl font-bold mb-2" style={{ color: brandColors.secondary }}>{stat.value}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
@@ -476,8 +497,29 @@ const ScoobyGulu = () => {
         </div>
       </section>
 
+      {/* Wavy Divider */}
+      <div className="w-full" style={{ backgroundColor: '#FFF9F5', marginTop: '-1px' }}>
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full" style={{ height: '80px', display: 'block' }}>
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style={{ fill: '#F0F9FF' }}></path>
+        </svg>
+      </div>
+
+      {/* Wavy Section Divider */}
+      <div className="relative w-full h-16">
+        <svg className="absolute top-0 w-full h-16" viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path d="M0,50 Q360,0 720,50 T1440,50 L1440,100 L0,100 Z" fill="#f9fafb"></path>
+        </svg>
+      </div>
+
       {/* Programs Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 relative" style={{ backgroundColor: '#F0F9FF' }}>
+        {/* Decorative Airplane */}
+        <div className="absolute top-20 right-10 opacity-10">
+          <svg width="120" height="80" viewBox="0 0 120 80">
+            <path d="M10,40 L60,20 L110,40 L100,50 L70,45 L50,70 L45,70 L55,45 L30,42 L20,50 L15,48 Z" fill="#800E13" stroke="#800E13" strokeWidth="2"/>
+          </svg>
+        </div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -485,8 +527,9 @@ const ScoobyGulu = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: brandColors.secondary }}>
-              Academic Programs
+            <p className="text-lg font-semibold mb-2" style={{ color: '#FF6B35' }}>Our Programs</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: brandColors.secondary, fontFamily: 'Fredoka, sans-serif' }}>
+              We meet kids at their level<br/>regardless of their age
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               World-class international education programs
@@ -494,32 +537,65 @@ const ScoobyGulu = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {programs.map((program, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <h3 className="text-2xl font-bold mb-4" style={{ color: brandColors.secondary }}>{program.title}</h3>
-                <p className="text-gray-600 mb-6">{program.description}</p>
-                <div className="space-y-2">
-                  {program.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: brandColors.primary }}></div>
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+            {programs.map((program, index) => {
+              const bgColors = ['#FFE8E8', '#E8F5FF', '#E8FFE8'];
+              const accentColors = ['#FF6B35', '#4FB8FF', '#5FD068'];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="bg-white p-8 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
+                  style={{
+                    borderRadius: '30px',
+                    backgroundColor: bgColors[index % 3]
+                  }}
+                >
+                  <div className="inline-block px-5 py-2 rounded-full text-sm font-bold mb-4" 
+                    style={{ 
+                      backgroundColor: '#fff', 
+                      color: accentColors[index % 3],
+                      boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+                    }}>
+                    {program.title}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4" style={{ color: brandColors.secondary }}>
+                    {program.title}
+                  </h3>
+                  <p className="text-gray-700 mb-6 leading-relaxed">{program.description}</p>
+                  <ul className="space-y-3">
+                    {program.features.map((feature, fIndex) => (
+                      <li key={fIndex} className="flex items-start text-gray-700">
+                        <span className="w-6 h-6 rounded-full mr-3 flex items-center justify-center flex-shrink-0" 
+                          style={{ backgroundColor: accentColors[index % 3] }}>
+                          <span className="text-white text-xs">✓</span>
+                        </span>
+                        <span className="pt-0.5">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  {/* Decorative blob */}
+                  <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full opacity-20" 
+                    style={{ backgroundColor: accentColors[index % 3] }}></div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Wavy Divider */}
+      <div className="w-full" style={{ marginTop: '-1px', lineHeight: 0 }}>
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full" style={{ height: '100px', display: 'block' }}>
+          <path d="M0,0 C300,90 600,90 900,0 C1050,50 1150,50 1200,0 L1200,120 L0,120 Z" fill="#ffffff"></path>
+        </svg>
+      </div>
+
+      {/* Contact Section */}}
       <section className="py-20 text-white" style={{ backgroundColor: brandColors.secondary }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
