@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LuMapPin, LuPhone, LuMail, LuUsers, LuAward, LuBookOpen, LuHeart, LuExternalLink, LuChevronLeft, LuChevronRight, LuX } from 'react-icons/lu';
+import { LuMapPin, LuPhone, LuMail, LuChevronLeft, LuChevronRight, LuX } from 'react-icons/lu';
 import GJSHeader from '../../components/layout/GJSHeader';
 import GJSFooter from '../../components/layout/GJSFooter';
 
 const GJSKikajjo = () => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const brandColors = {
-    primary: '#FFD700', // Yellow
-    secondary: '#800E13', // Burgundy
-  };
 
   const galleryImages = [
     '/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg',
@@ -30,102 +25,146 @@ const GJSKikajjo = () => {
     setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
-  const stats = [
-    { icon: LuUsers, label: 'Students', value: '480+' },
-    { icon: LuAward, label: 'Academic Excellence', value: '100%' },
-    { icon: LuBookOpen, label: 'Levels', value: 'P1-P7' },
-    { icon: LuHeart, label: 'Community', value: 'Impact' },
+  const highlights = [
+    { emoji: '📚', label: 'P1-P7', description: 'Complete Primary Education' },
+    { emoji: '🎨', label: 'Creative', description: 'Arts & Creativity' },
+    { emoji: '⚽', label: 'Sports', description: 'Sports & Activities' },
+    { emoji: '👨‍🏫', label: 'Expert Teachers', description: 'Experienced Faculty' },
   ];
 
   const programs = [
     {
-      title: 'Primary Education',
-      description: 'Comprehensive primary education from P1 to P7 with strong foundation in literacy, numeracy, and character development',
-      features: ['P1-P7', 'Holistic Learning', 'Academic Excellence', 'Life Skills'],
+      emoji: '📖',
+      title: 'Academics',
+      description: 'Strong foundation in Literacy and Numeracy with modern teaching methods',
+      color: 'from-blue-400 to-blue-600',
     },
     {
-      title: 'Commute Transport and Safety',
-      description: 'Safe and reliable transportation services ensuring secure commute for day scholars with comprehensive safety measures',
-      features: ['School Transport', 'Safety Protocols', 'Reliable Schedule', 'Secure Commute'],
+      emoji: '🚌',
+      title: 'Safe Transport',
+      description: 'Daily school transport ensuring safe commute for all day scholars',
+      color: 'from-orange-400 to-orange-600',
     },
     {
-      title: 'Character Development',
-      description: 'Values-based education emphasizing integrity and leadership',
-      features: ['Leadership', 'Ethics', 'Community Service'],
-    }
+      emoji: '❤️',
+      title: 'Care & Love',
+      description: 'Nurturing environment with individual attention and pastoral care',
+      color: 'from-pink-400 to-pink-600',
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50" style={{ viewTransitionName: 'institution-gjs-kikajjo' }}>
+    <div className="min-h-screen" style={{ viewTransitionName: 'institution-gjs-kikajjo' }}>
       <GJSHeader />
-      {/* Hero Section */}
-      <section
-        id="home"
-        className="relative overflow-hidden py-28"
-        style={{ backgroundColor: '#FDEFB2', color: brandColors.secondary }}
-      >
+      
+      {/* Hero Section - Vibrant & Fun */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-300 via-orange-300 to-pink-300"></div>
+        
+        {/* Decorative floating elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div animate={{ y: [0, -30, 0] }} transition={{ duration: 4, repeat: Infinity }} className="absolute top-10 left-10 text-8xl">⭐</motion.div>
+          <motion.div animate={{ y: [0, 20, 0], rotate: [0, -20, 0] }} transition={{ duration: 3, repeat: Infinity, delay: 0.5 }} className="absolute top-32 right-16 text-7xl">🎈</motion.div>
+          <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 3, repeat: Infinity, delay: 1 }} className="absolute bottom-32 left-20 text-8xl">✨</motion.div>
+          <motion.div animate={{ rotate: [0, 360] }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }} className="absolute bottom-20 right-1/4 text-8xl">🌈</motion.div>
+          <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 5, repeat: Infinity, delay: 0.3 }} className="absolute top-1/2 right-10 text-7xl">☀️</motion.div>
+          <motion.div animate={{ bounce: [0, -20, 0] }} transition={{ duration: 2, repeat: Infinity }} className="absolute bottom-40 left-1/4 text-7xl">🎓</motion.div>
+        </div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="flex justify-center mb-8">
-              <img
-                src="/images/GombeBadge.jpg"
-                alt="Gombe Junior School"
-                className="h-28 w-auto drop-shadow-md"
-              />
-            </div>
-            <div className="inline-flex items-center rounded-full px-6 py-2 mb-6" style={{ backgroundColor: `${brandColors.primary}40` }}>
-              <LuExternalLink className="w-4 h-4 mr-2" style={{ color: brandColors.primary }} />
-              <span className="text-sm font-medium">gjs-kikajjo.ges.ac.ug</span>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: brandColors.secondary }}>
-              Gombe Junior School Kikajjo
-            </h1>
-            <p className="text-xl mb-4" style={{ color: brandColors.secondary }}>
-              Day School
-            </p>
-            <p className="text-xl mb-8 leading-relaxed" style={{ color: '#5c3a2a' }}>
-              Primary Education (P1-P7) • Day School • Opened 2019
-            </p>
-            <p className="text-lg max-w-3xl mx-auto leading-relaxed" style={{ color: '#5c3a2a' }}>
-              Entirely day school created from the separation of day scholars from boarders, bringing transformation to the Kikajjo community.
-            </p>
+            <motion.div 
+              className="flex justify-center mb-6"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <div className="bg-white p-4 rounded-full shadow-2xl">
+                <img
+                  src="/images/GombeBadge.jpg"
+                  alt="Gombe Junior School"
+                  className="h-24 w-auto"
+                />
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+              className="inline-flex items-center rounded-full px-6 py-3 mb-6 bg-white shadow-lg"
+            >
+              <LuExternalLink className="w-4 h-4 mr-2 text-purple-600" />
+              <span className="text-sm font-bold text-purple-600">gjs-kikajjo.ges.ac.ug</span>
+            </motion.div>
+            
+            <motion.h1 
+              className="text-6xl md:text-7xl font-black mb-4 text-white drop-shadow-lg"
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.3, type: 'spring' }}
+            >
+              Gombe Junior School 🎓
+            </motion.h1>
+            
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="inline-block bg-white px-8 py-3 rounded-full shadow-xl mb-6"
+            >
+              <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+                Kikajjo Day Campus 🌟
+              </p>
+            </motion.div>
+            
+            <motion.p 
+              className="text-xl mb-6 leading-relaxed text-white font-semibold drop-shadow-md"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              🎨 Where Learning is Fun! 📚 P1-P7 Excellence 🌈
+            </motion.p>
+            
+            <motion.p 
+              className="text-lg max-w-3xl mx-auto leading-relaxed bg-white/90 backdrop-blur-sm px-8 py-4 rounded-2xl shadow-xl text-gray-800 font-medium"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              A magical place where children discover, learn, and grow! Bringing joy and excellence to the Kikajjo community since 2019. 🚌✨
+            </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Gallery Section - replacing Stats */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg" 
-            alt="Gombe Junior School Gallery" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#800E13]/90 via-[#800E13]/80 to-[#800E13]/70"></div>
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Gallery Section - See Our School! 📸 */}
+      <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-green-100 to-teal-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
+            className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Experience Our Campus
+            <h2 className="text-5xl md:text-6xl font-black text-center mb-6 text-green-800 drop-shadow-lg">
+              See Our School! 📸
             </h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Take a virtual tour of our vibrant learning environment and state-of-the-art facilities
+            <p className="text-2xl text-green-700 font-bold mb-12">
+              Explore our beautiful campus and vibrant learning spaces ✨
             </p>
+
+            {/* Gallery Preview */}
             <motion.div
               onClick={() => setIsGalleryOpen(true)}
               whileHover={{ scale: 1.02 }}
-              className="relative max-w-4xl mx-auto cursor-pointer overflow-hidden rounded-2xl shadow-2xl"
+              className="relative max-w-4xl mx-auto cursor-pointer overflow-hidden rounded-3xl shadow-2xl border-4 border-white"
             >
-              <div className="relative h-96 flex items-center justify-center gap-4">
+              <div className="relative h-96 flex items-center justify-center gap-4 bg-white">
                 {galleryImages.slice(0, 3).map((img, idx) => (
                   <motion.div
                     key={idx}
@@ -138,16 +177,18 @@ const GJSKikajjo = () => {
                     <img
                       src={img}
                       alt={`Preview ${idx + 1}`}
-                      className="w-full h-full object-cover rounded-xl"
-                      style={{ filter: 'blur(1px)' }}
+                      className="w-full h-full object-cover rounded-2xl"
                     />
-                    <div className="absolute inset-0 bg-black/20 rounded-xl"></div>
                   </motion.div>
                 ))}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-black/60 backdrop-blur-sm px-8 py-4 rounded-full border-2 border-white/50">
-                    <p className="text-white font-bold text-lg">Click to View Full Gallery</p>
-                  </div>
+                  <motion.div
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="bg-yellow-400 px-10 py-6 rounded-3xl border-4 border-white shadow-2xl"
+                  >
+                    <p className="text-white font-black text-2xl">View Gallery! 🖼️</p>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -169,7 +210,7 @@ const GJSKikajjo = () => {
               {/* Close Button */}
               <button
                 onClick={() => setIsGalleryOpen(false)}
-                className="absolute -top-12 right-0 text-white hover:text-[#FFD700] transition-colors"
+                className="absolute -top-12 right-0 text-white hover:text-yellow-400 transition-colors z-10"
               >
                 <LuX className="w-8 h-8" />
               </button>
@@ -188,19 +229,19 @@ const GJSKikajjo = () => {
               {/* Navigation */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full transition-all"
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-yellow-400 hover:bg-yellow-500 text-white p-4 rounded-full transition-all font-black text-2xl shadow-2xl"
               >
                 <LuChevronLeft className="w-6 h-6" />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full transition-all"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-yellow-400 hover:bg-yellow-500 text-white p-4 rounded-full transition-all font-black text-2xl shadow-2xl"
               >
                 <LuChevronRight className="w-6 h-6" />
               </button>
 
               {/* Counter */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-white px-6 py-3 rounded-full font-black text-lg border-4 border-white shadow-2xl">
                 {currentImageIndex + 1} / {galleryImages.length}
               </div>
             </div>
@@ -208,8 +249,8 @@ const GJSKikajjo = () => {
         )}
       </AnimatePresence>
 
-      {/* Programs Section */}
-      <section id="programs" className="py-20 bg-gray-50">
+      {/* Programs Section - What We Offer 🎯 */}
+      <section id="programs" className="py-20 md:py-32 bg-gradient-to-br from-pink-100 to-purple-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -217,75 +258,115 @@ const GJSKikajjo = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: brandColors.secondary }}>
-              Our Programs
+            <h2 className="text-5xl md:text-6xl font-black text-pink-800 drop-shadow-lg">
+              What We Offer 🎯
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Building strong foundations for lifelong learning
+            <p className="text-2xl text-pink-700 font-bold mt-4">
+              Everything your child needs to thrive! 🌟
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {programs.map((program, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {[
+              {
+                emoji: '📖',
+                title: 'Academics',
+                description: 'Excellent teaching with modern methods',
+                gradient: 'from-blue-400 to-blue-600'
+              },
+              {
+                emoji: '🚌',
+                title: 'Safe Transport',
+                description: 'Reliable and safe daily transportation',
+                gradient: 'from-orange-400 to-orange-600'
+              },
+              {
+                emoji: '❤️',
+                title: 'Care & Love',
+                description: 'Nurturing environment with personal attention',
+                gradient: 'from-pink-400 to-pink-600'
+              }
+            ].map((program, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                className={`bg-gradient-to-br ${program.gradient} rounded-3xl p-10 shadow-2xl text-white border-4 border-white hover:shadow-2xl transition-all duration-300 transform hover:scale-105`}
               >
-                <h3 className="text-2xl font-bold mb-4" style={{ color: brandColors.secondary }}>{program.title}</h3>
-                <p className="text-gray-600 mb-6">{program.description}</p>
-                <div className="space-y-2">
-                  {program.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: brandColors.primary }}></div>
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+                <div className="text-8xl mb-6 drop-shadow-xl">{program.emoji}</div>
+                <h3 className="text-4xl font-black mb-4">{program.title}</h3>
+                <p className="text-xl font-bold leading-relaxed">{program.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 text-white" style={{ backgroundColor: brandColors.secondary }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Contact Section - Ready to Join Us? 🚀 */}
+      <section id="contact" className="py-20 md:py-32 bg-gradient-to-br from-orange-300 via-red-300 to-pink-300 overflow-hidden relative">
+        {/* Decorative floating emoji */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 4, repeat: Infinity }} className="absolute top-10 right-20 text-7xl opacity-30">✏️</motion.div>
+          <motion.div animate={{ rotate: [0, 360] }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }} className="absolute bottom-20 left-10 text-6xl opacity-20">🎓</motion.div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Enroll Your Child Today
+            <h2 className="text-5xl md:text-6xl font-black mb-8 text-white drop-shadow-xl">
+              Ready to Join Us? 🚀
             </h2>
-            <p className="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
-              Give your child the best foundation at Gombe Junior School - Kikajjo Campus
+            <p className="text-2xl text-white font-bold mb-12 drop-shadow-lg">
+              Give your child an amazing learning experience!
             </p>
-            <div className="flex flex-wrap justify-center gap-6 mb-12">
-              <div className="flex items-center space-x-2">
-                <LuMapPin className="w-5 h-5" style={{ color: brandColors.primary }} />
-                <span>Kikajjo, Wakiso</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <LuPhone className="w-5 h-5" style={{ color: brandColors.primary }} />
-                <span>+256 700 000 004</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <LuMail className="w-5 h-5" style={{ color: brandColors.primary }} />
-                <span>info@gjs-kikajjo.ges.ac.ug</span>
-              </div>
-            </div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-12 py-4 rounded-full font-bold text-xl transition-all duration-300 shadow-lg"
-              style={{ backgroundColor: brandColors.primary, color: brandColors.secondary }}
+
+            {/* Contact Info Box */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl p-10 max-w-2xl mx-auto border-4 border-white shadow-2xl mb-12"
             >
-              Apply Now
+              <div className="space-y-6">
+                <div className="flex items-center justify-center space-x-4 text-xl">
+                  <LuMapPin className="w-8 h-8 text-red-600 flex-shrink-0" />
+                  <div>
+                    <p className="font-black text-gray-800">Location</p>
+                    <p className="text-gray-700 font-bold">Kikajjo, Wakiso</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center space-x-4 text-xl">
+                  <LuPhone className="w-8 h-8 text-red-600 flex-shrink-0" />
+                  <div>
+                    <p className="font-black text-gray-800">Call Us</p>
+                    <p className="text-gray-700 font-bold">+256 700 000 004</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center space-x-4 text-xl">
+                  <LuMail className="w-8 h-8 text-red-600 flex-shrink-0" />
+                  <div>
+                    <p className="font-black text-gray-800">Email</p>
+                    <p className="text-gray-700 font-bold">info@gjs-kikajjo.ges.ac.ug</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Call to Action Button */}
+            <motion.button
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="px-16 py-6 rounded-3xl font-black text-3xl text-orange-600 bg-white border-4 border-white shadow-2xl hover:bg-yellow-100 transition-all duration-300"
+            >
+              Enroll Now! 📝
             </motion.button>
           </motion.div>
         </div>
