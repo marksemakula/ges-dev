@@ -58,7 +58,7 @@ const Header = () => {
             <motion.img
               src="/logo.png"
               alt="GES Logo"
-              className="h-12 w-auto group-hover:drop-shadow-lg transition-all duration-300"
+              className="h-24 w-auto group-hover:drop-shadow-lg transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             />

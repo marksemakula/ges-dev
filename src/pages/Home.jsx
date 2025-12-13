@@ -91,6 +91,24 @@ const Home = () => {
   ];
 
   const [institutionSlide, setInstitutionSlide] = useState(0);
+  const heroInstitutions = [
+    { name: 'St. Andrew Kaggwa Gombe High School', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-kawaala' },
+    { name: 'St. Andrew Kaggwa Gombe High School', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-bujuuko' },
+    { name: 'Gombe Junior School - Kikajjo', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-kikajjo' },
+    { name: 'Gombe Junior School - Boarding', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-boarding' },
+    { name: 'Scooby Doo International School Uganda (SISU) - Katale', logo: '/images/scoobydoo-logo.png', path: '/institutions/scooby-katale' },
+    { name: 'Scooby Doo International School Uganda (SISU) - Gulu', logo: '/images/scoobydoo-logo.png', path: '/institutions/scooby-gulu' },
+    { name: 'Jimmy Sekasi Business Institute (JSBI)', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', path: '/institutions/jsbi' },
+  ];
+  const [currentInstitutionIndex, setCurrentInstitutionIndex] = useState(0);
+  const currentInstitution = heroInstitutions[currentInstitutionIndex];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentInstitutionIndex((prev) => (prev + 1) % heroInstitutions.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const institutions = [
     {
@@ -278,16 +296,16 @@ const Home = () => {
                   transition={{ duration: 0.5, ease: "easeOut" }}
                   className="text-white"
                 >
-                  {/* Logo and Brand */}
+                  {/* Rotating Institution Logos */}
                   <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
                     className="mb-8 flex items-center space-x-4"
                   >
-                    <img src="/logo.png" alt="GES Logo" className="h-24 w-auto drop-shadow-lg" />
+                    <img src={currentInstitution.logo} alt={currentInstitution.name + ' Logo'} className="h-24 w-auto drop-shadow-lg" />
                     <div>
-                      <h2 className="text-3xl font-bold text-white">GOMBE EDUCATION SERVICES</h2>
+                      <h2 className="text-3xl font-bold text-white">{currentInstitution.name}</h2>
                       <p className="text-ges-gold text-sm font-semibold tracking-wider">EXCELLENCE SINCE 1995</p>
                     </div>
                   </motion.div>
