@@ -83,8 +83,8 @@ const Home = () => {
   ];
 
   const logos = [
-    { name: 'Jimmy Sekasi', src: '/images/JimmySekasiLogo.png' },
-    { name: 'St. Andrew', src: '/images/StAndrewLogo.png' },
+    { name: 'Jimmy Sekasi', src: '/images/Jimmy Ssekasi Business Institute Logo.png' },
+    { name: 'St. Andrew', src: '/images/Gombe High logo.png' },
     { name: 'Gombe', src: '/images/GombeBadge.png' },
     { name: 'Scooby Doo', src: '/images/scoobydoo-logo.png' },
     { name: 'GES', src: '/images/GES.png' },
@@ -109,6 +109,10 @@ const Home = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  const heroDescription = currentInstitution.name.includes('Scooby Doo International School Uganda')
+    ? 'This is an early years independent international school oering both National & International curricular and brings together learners from dierent parts of Uganda from the age of 2-6years.\nStarted in 2013'
+    : heroSlides[currentSlide].description;
 
   const institutions = [
     {
@@ -320,8 +324,8 @@ const Home = () => {
                   <p className="text-xl md:text-2xl mb-4 text-ges-gold font-medium">
                     {heroSlides[currentSlide].subtitle}
                   </p>
-                  <p className="text-lg mb-8 text-gray-200 leading-relaxed max-w-2xl">
-                    {heroSlides[currentSlide].description}
+                  <p className="text-lg mb-8 text-gray-200 leading-relaxed max-w-2xl" style={{ whiteSpace: 'pre-line' }}>
+                    {heroDescription}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <motion.button
