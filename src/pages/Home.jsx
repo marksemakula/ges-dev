@@ -25,6 +25,11 @@ const Home = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [previewInstitution, setPreviewInstitution] = useState(null);
 
+  // No slug resolution needed anymore - each institution has its own design
+  const resolveInstitutionSlug = (slug) => {
+    return slug;
+  };
+
   // Handle navigation with view transitions
   const handleInstitutionClick = (slug) => {
     // Find the institution data
@@ -38,7 +43,8 @@ const Home = () => {
 
   const visitFullSite = () => {
     if (previewInstitution) {
-      navigate(`/institutions/${previewInstitution.slug}`);
+      const resolvedSlug = resolveInstitutionSlug(previewInstitution.slug);
+      navigate(`/institutions/${resolvedSlug}`);
     }
   };
 
@@ -90,41 +96,41 @@ const Home = () => {
     {
       name: "Scooby Doo International School Uganda (SISU) - Katale Campus",
       slug: "scooby-katale",
-      description: "International curriculum offering both National & International curricula for global education",
+      description: "Modern international school featuring innovative design - Active Learning, Expert Teachers & Safe Environment",
       students: "400+",
       established: "2005",
-      specialties: ["IB Program", "Cambridge", "Global Studies"],
-      image: "/images/happy pupil.jpg",
+      specialties: ["Modern Design", "International Standards", "Excellence"],
+      image: "/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg",
       color: "bg-ges-purple"
     },
     {
       name: "Scooby Doo International School Uganda (SISU) - Gulu Campus",
       slug: "scooby-gulu",
-      description: "International curriculum offering both National & International curricula for global education",
+      description: "Modern international school featuring innovative design - Active Learning, Expert Teachers & Safe Environment",
       students: "350+",
       established: "2008",
-      specialties: ["IB Program", "Cambridge", "Global Studies"],
-      image: "/images/classexam.jpg",
+      specialties: ["Modern Design", "International Standards", "Excellence"],
+      image: "/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg",
       color: "bg-ges-purple"
     },
     {
       name: "Gombe Junior School",
       slug: "gjs-boarding",
-      description: "Boarding school providing day & boarding education with proven academic excellence - 100% first grades 2017 & 2022",
+      description: "Modern boarding & day school featuring innovative international design - Active Learning, Expert Teachers & Safe Environment",
       students: "500+",
       established: "2013",
-      specialties: ["Boarding", "Academic Excellence", "Character"],
-      image: "/images/schoolgroup.jpg",
+      specialties: ["Modern Design", "International Standards", "Excellence"],
+      image: "/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg",
       color: "bg-ges-teal"
     },
     {
       name: "Gombe Junior School Kikajjo",
       slug: "gjs-kikajjo",
-      description: "Day school created in 2019 providing customized day education with community transformation",
+      description: "Modern day school featuring innovative international design - Active Learning, Expert Teachers & Safe Environment",
       students: "480+",
       established: "2019",
-      specialties: ["Day Education", "Community Impact", "Excellence"],
-      image: "/images/bright-kwabena-kyere-rxB0L6nrP5M-unsplash.jpg",
+      specialties: ["Modern Design", "International Standards", "Excellence"],
+      image: "/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg",
       color: "bg-ges-teal"
     },
     {
@@ -812,7 +818,7 @@ const Home = () => {
               {/* Preview Content - Iframe of actual institution page */}
               <div className="flex-1 bg-gray-100 relative overflow-hidden">
                 <iframe
-                  src={`/institutions/${previewInstitution.slug}`}
+                  src={`/institutions/${resolveInstitutionSlug(previewInstitution.slug)}`}
                   className="w-full h-full border-0"
                   title={`Preview of ${previewInstitution.name}`}
                   sandbox="allow-same-origin allow-scripts allow-popups allow-forms"

@@ -17,7 +17,7 @@ import SAKGHSBujuuko from './pages/institutions/SAKGHSBujuuko';
 import ScoobyKatale from './pages/institutions/ScoobyKatale';
 import ScoobyGulu from './pages/institutions/ScoobyGulu';
 import GJSKikajjo from './pages/institutions/GJSKikajjo';
-import GJSBoarding from './pages/institutions/GJSGulu';
+import GJSBoarding from './pages/institutions/GJSBoarding';
 import GJSAbout from './pages/institutions/GJSAbout';
 import JSBI from './pages/institutions/JSBI';
 import AdminPanel from './cms/AdminPanel';

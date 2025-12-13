@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { LuMapPin, LuPhone, LuMail, LuUsers, LuAward, LuBookOpen, LuGlobe, LuExternalLink, LuTarget, LuMenu, LuX, LuChevronDown } from 'react-icons/lu';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
-const GJSKikajjo = () => {
+const ScoobyKatale_REACT = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
 
@@ -12,7 +12,7 @@ const GJSKikajjo = () => {
     const link = document.querySelector("link[rel~='icon']") || document.createElement('link');
     link.type = 'image/png';
     link.rel = 'icon';
-    link.href = '/kidearn-theme/assets/images/logo-light.png';
+    link.href = '/images/scooby-logo.png';
     document.getElementsByTagName('head')[0].appendChild(link);
 
     // Restore original favicon when component unmounts
@@ -51,7 +51,7 @@ const GJSKikajjo = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 relative overflow-hidden" style={{ viewTransitionName: 'institution-gjs-kikajjo' }}>
+    <div className="min-h-screen bg-gray-50 relative overflow-hidden" style={{ viewTransitionName: 'institution-scooby-katale' }}>
       {/* Add CSS for floating animations */}
       <style>{`
         @keyframes float {
@@ -258,7 +258,7 @@ const GJSKikajjo = () => {
               transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
             >
               <h1 className="text-2xl font-bold" style={{ color: brandColors.secondary }}>
-                GJS <span style={{ color: brandColors.primary }}>Kikajjo</span>
+                SISU <span style={{ color: brandColors.primary }}>Katale</span>
               </h1>
             </motion.div>
 
@@ -409,7 +409,7 @@ const GJSKikajjo = () => {
         <div className="absolute inset-0">
           <img 
             src="/images/happy pupil.jpg" 
-            alt="Gombe Junior School - Kikajjo" 
+            alt="Scooby Doo International School - Katale" 
             className="w-full h-full object-cover opacity-20"
           />
         </div>
@@ -423,13 +423,13 @@ const GJSKikajjo = () => {
             >
               <div className="inline-flex items-center rounded-full px-6 py-2 mb-6" style={{ backgroundColor: `${brandColors.primary}40` }}>
                 <LuExternalLink className="w-4 h-4 mr-2" style={{ color: brandColors.primary }} />
-                <span className="text-sm font-medium">gjs-kikajjo.ges.ac.ug</span>
+                <span className="text-sm font-medium">sisu-katale.ges.ac.ug</span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Gombe Junior School (GJS)
+                Scooby Doo International School Uganda (SISU)
               </h1>
               <p className="text-xl mb-4" style={{ color: brandColors.primary }}>
-                Kikajjo Campus
+                Katale Campus
               </p>
             </motion.div>
             
@@ -442,8 +442,8 @@ const GJSKikajjo = () => {
             >
               <div className="bg-white rounded-full p-6 shadow-2xl">
                 <img 
-                  src="/kidearn-theme/assets/images/logo-light.png" 
-                  alt="Gombe Junior School" 
+                  src="/images/scooby-logo.png" 
+                  alt="Scooby Doo International School Uganda" 
                   className="w-48 h-48 rounded-full object-cover"
                 />
               </div>
@@ -600,7 +600,7 @@ const GJSKikajjo = () => {
               Join Our Global Community
             </h2>
             <p className="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
-              Experience world-class international education at GJS - Kikajjo Campus
+              Experience world-class international education at SISU - Katale Campus
             </p>
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <div className="flex items-center space-x-2">
@@ -613,7 +613,7 @@ const GJSKikajjo = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <LuMail className="w-5 h-5" style={{ color: brandColors.primary }} />
-                <span>info@gjs.ges.ac.ug</span>
+                <span>info@scoobydoodaycare.ges.ac.ug</span>
               </div>
             </div>
             <motion.button
@@ -636,12 +636,12 @@ const GJSKikajjo = () => {
             <div>
               <div className="flex items-center mb-4">
                 <img 
-                  src="/kidearn-theme/assets/images/logo-light.png" 
-                  alt="Gombe Junior School" 
+                  src="/images/scooby-logo.png" 
+                  alt="Scooby Doo International School" 
                   className="h-16 w-auto mr-3"
                 />
                 <h3 className="text-2xl font-bold" style={{ color: brandColors.primary }}>
-                  GJS - Kikajjo Campus
+                  SISU - Katale Campus
                 </h3>
               </div>
               <p className="text-gray-200 mb-4">
@@ -655,7 +655,7 @@ const GJSKikajjo = () => {
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
                   <LuMail className="w-5 h-5 mt-1 flex-shrink-0" />
-                  <span className="text-gray-200">info@gjs.ges.ac.ug</span>
+                  <span className="text-gray-200">info@scoobydoodaycare.ges.ac.ug</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <LuPhone className="w-5 h-5 mt-1 flex-shrink-0" />
@@ -667,7 +667,7 @@ const GJSKikajjo = () => {
                 </div>
                 <div className="flex items-start space-x-3">
                   <LuMapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-                  <span className="text-gray-200">Kikajjo Campus, Kampala</span>
+                  <span className="text-gray-200">Katale Campus, Kampala</span>
                 </div>
               </div>
             </div>
@@ -695,7 +695,7 @@ const GJSKikajjo = () => {
           {/* Bottom Bar */}
           <div className="border-t border-white/20 pt-8 text-center">
             <p className="text-gray-300">
-              &copy; {new Date().getFullYear()} Gombe Junior School (GJS). All rights reserved.
+              &copy; {new Date().getFullYear()} Scooby Doo International School Uganda (SISU). All rights reserved.
             </p>
           </div>
         </div>
@@ -704,4 +704,4 @@ const GJSKikajjo = () => {
   );
 };
 
-export default GJSKikajjo;
+export default ScoobyKatale_REACT;

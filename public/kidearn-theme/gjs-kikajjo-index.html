@@ -19,8 +19,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link
-  href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&amp;family=Fredoka:wght@700&amp;family=Schoolbell&amp;family=Cinzel:wght@400;600;700;800&amp;display=swap"
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&amp;family=Fredoka:wght@700&amp;family=Schoolbell&amp;display=swap"
   rel="stylesheet">
+
+<!-- Cinzel font for brand name -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
+	rel="stylesheet">
 
 <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="assets/vendors/bootstrap-select/bootstrap-select.min.css" />
@@ -80,12 +85,14 @@ body.custom-cursor {
 }
 
 .main-header__brand-name {
-  color: #f4f7fb;
-  font-weight: 400;
-  letter-spacing: 0.6px;
-  font-size: 20px;
-  font-family: 'Cinzel', serif;
-}.main-header__nav.main-menu {
+	color: #f4f7fb;
+	font-family: 'Cinzel', serif;
+	font-weight: 400;
+	letter-spacing: 0.6px;
+	font-size: 16px;
+}
+
+.main-header__nav.main-menu {
   margin-left: auto;
   flex: 1 1 auto;
   display: flex;
@@ -275,12 +282,14 @@ body.custom-cursor {
     <div class="container-fluid">
         <div class="main-header__inner">
 
-            <div class="main-header__brand">
-                <a href="index.html" class="main-header__brand-link">
-                    <img src="/images/scooby-logo.png" alt="Scooby-Doo International School" />
-                </a>
-                <span class="main-header__brand-name">Scoobydoo International School Uganda (SISU)</span>
-            </div>            <nav class="main-header__nav main-menu">
+			<div class="main-header__brand">
+				<a href="index.html" class="main-header__brand-link">
+					<img src="/images/scooby-logo.png" alt="Scooby-Doo International School" />
+				</a>
+				<span class="main-header__brand-name">Scoobydoo International School Uganda (SISU)</span>
+			</div>
+
+            <nav class="main-header__nav main-menu">
                 <ul class="main-menu__list">
 	
 	<li class="dropdown megamenu">
