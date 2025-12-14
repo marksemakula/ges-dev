@@ -29,14 +29,71 @@ const JSBI = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState('all');
+  const [programImages, setProgramImages] = useState({
+    0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0
+  });
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const imagesByCategory = {
+    food: [
+      '/images/Food/IMG_00258.JPG',
+      '/images/Food/IMG_00508.JPG',
+      '/images/Food/IMG_00678.JPG',
+      '/images/Food/IMG_00688.JPG',
+      '/images/Food/IMG_00698.JPG',
+      '/images/Food/IMG_0089.JPG'
+    ],
+    baking: [
+      '/images/Baking/allen-rad-JBIK4QZOFfc-unsplash.jpg',
+      '/images/Baking/american-heritage-chocolate-vdx5hPQhXFk-unsplash.jpg',
+      '/images/Baking/annie-spratt-EACvtuV2k2E-unsplash.jpg',
+      '/images/Baking/annie-spratt-XyBeP4K9Vzs-unsplash.jpg',
+      '/images/Baking/charles-chen-w2ZFjDnUL3w-unsplash.jpg'
+    ],
+    coffee: [
+      '/images/Coffee/IMG_0176.JPG',
+      '/images/Coffee/IMG_0319.JPG',
+      '/images/Coffee/IMG_0691.JPG',
+      '/images/Coffee/IMG_0697.JPG',
+      '/images/Coffee/IMG_0766.JPG',
+      '/images/Coffee/IMG_1379.JPG'
+    ],
+    fashion: [
+      '/images/Fashion/christian-agbede-EiYH9QupDls-unsplash.jpg',
+      '/images/Fashion/christian-agbede-ukoyiWGdz2k-unsplash.jpg',
+      '/images/Fashion/karsten-winegeart-pMLaE6C76Ms-unsplash.jpg',
+      '/images/Fashion/malicki-m-beser-PKMvkg7vnUo-unsplash.jpg',
+      '/images/Fashion/oladimeji-odunsi-Wu3yqve2gnc-unsplash.jpg'
+    ],
+    beauty: [
+      '/images/Beauty/ashley-smith-RGWutmrg4rY-unsplash.jpg',
+      '/images/Beauty/chris-quintana-gsng44sj-FE-unsplash.jpg',
+      '/images/Beauty/jamie-street-aMuq-Xz7R_M-unsplash.jpg',
+      '/images/Beauty/jazmin-quaynor-FoeIOgztCXo-unsplash.jpg',
+      '/images/Beauty/manu-camargo-BkaD07QEiJc-unsplash.jpg'
+    ],
+    ict: [
+      '/images/ICT/ben-iwara-p9-zw6CyMrU-unsplash.jpg',
+      '/images/ICT/boitumelo-5qvBHCflHyM-unsplash.jpg',
+      '/images/ICT/boitumelo-mZ-vSMus7zM-unsplash.jpg',
+      '/images/ICT/brian-j-tromp-T5Us4Q9JMZk-unsplash.jpg'
+    ],
+    business: [
+      '/images/Business/IMG_2730.JPG',
+      '/images/Business/madib-zikri-ZPKPxTlIjLA-unsplash.jpg',
+      '/images/Business/ninthgrid-hdfPDesgEw8-unsplash.jpg',
+      '/images/Business/ninthgrid-wCfWNod54JU-unsplash.jpg',
+      '/images/Business/steward-masweneng-uMBf3Nt_N_g-unsplash.jpg',
+      '/images/Business/the-jopwell-collection-0QvOpmEEYNE-unsplash.jpg'
+    ],
+    mixology: [
+      '/images/Mixology/IMG_0419.JPG',
+      '/images/Mixology/IMG_0771.JPG',
+      '/images/Mixology/IMG_0998.JPG',
+      '/images/Mixology/IMG_1002.JPG',
+      '/images/Mixology/IMG_1334.JPG',
+      '/images/Mixology/IMG_1714.JPG'
+    ]
+  };
 
   const programs = [
     {
@@ -46,7 +103,8 @@ const JSBI = () => {
       duration: '6-12 Months',
       level: 'Certificate & Diploma',
       description: 'Master the art of cooking with hands-on training in professional kitchens.',
-      color: 'from-orange-500 to-red-600'
+      color: 'from-orange-500 to-red-600',
+      imageFolder: 'food'
     },
     {
       category: 'culinary',
@@ -55,7 +113,8 @@ const JSBI = () => {
       duration: '4-8 Months',
       level: 'Certificate',
       description: 'Learn the craft of pastry making, cake decoration, and artisan baking.',
-      color: 'from-pink-500 to-rose-600'
+      color: 'from-pink-500 to-rose-600',
+      imageFolder: 'baking'
     },
     {
       category: 'culinary',
@@ -64,7 +123,8 @@ const JSBI = () => {
       duration: '2-3 Months',
       level: 'Certificate',
       description: 'Perfect your coffee-making skills and latte art techniques.',
-      color: 'from-amber-600 to-orange-700'
+      color: 'from-amber-600 to-orange-700',
+      imageFolder: 'coffee'
     },
     {
       category: 'fashion',
@@ -73,7 +133,8 @@ const JSBI = () => {
       duration: '12 Months',
       level: 'Diploma',
       description: 'Create stunning fashion designs and learn garment construction.',
-      color: 'from-purple-500 to-pink-600'
+      color: 'from-purple-500 to-pink-600',
+      imageFolder: 'fashion'
     },
     {
       category: 'fashion',
@@ -82,7 +143,8 @@ const JSBI = () => {
       duration: '12 Months',
       level: 'Diploma',
       description: 'Master professional hairdressing and beauty therapy techniques.',
-      color: 'from-fuchsia-500 to-purple-600'
+      color: 'from-fuchsia-500 to-purple-600',
+      imageFolder: 'beauty'
     },
     {
       category: 'tech',
@@ -91,7 +153,8 @@ const JSBI = () => {
       duration: '3-6 Months',
       level: 'Certificate',
       description: 'Build essential digital skills for the modern workplace.',
-      color: 'from-blue-500 to-cyan-600'
+      color: 'from-blue-500 to-cyan-600',
+      imageFolder: 'ict'
     },
     {
       category: 'business',
@@ -100,7 +163,8 @@ const JSBI = () => {
       duration: '6 Months',
       level: 'Certificate',
       description: 'Develop entrepreneurial skills and business acumen.',
-      color: 'from-green-500 to-emerald-600'
+      color: 'from-green-500 to-emerald-600',
+      imageFolder: 'business'
     },
     {
       category: 'culinary',
@@ -109,15 +173,98 @@ const JSBI = () => {
       duration: '2-3 Months',
       level: 'Certificate',
       description: 'Learn professional bartending and cocktail creation.',
-      color: 'from-teal-500 to-cyan-600'
+      color: 'from-teal-500 to-cyan-600',
+      imageFolder: 'mixology'
     }
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const timeouts = [];
+    const intervals = [];
+
+    programs.forEach((program, index) => {
+      const timeoutId = setTimeout(() => {
+        const intervalId = setInterval(() => {
+          setProgramImages(prev => {
+            const images = imagesByCategory[program.imageFolder];
+            if (!images || images.length === 0) return prev;
+            return {
+              ...prev,
+              [index]: (prev[index] + 1) % images.length
+            };
+          });
+        }, 10000);
+        intervals.push(intervalId);
+      }, index * 1250);
+      timeouts.push(timeoutId);
+    });
+
+    return () => {
+      timeouts.forEach(id => clearTimeout(id));
+      intervals.forEach(id => clearInterval(id));
+    };
+  }, []);
 
   const stats = [
     { number: '500+', label: 'Graduates', sublabel: 'Success Stories' },
     { number: '95%', label: 'Employment Rate', sublabel: 'Within 6 Months' },
     { number: '15+', label: 'Programs', sublabel: 'Career Pathways' },
     { number: '20+', label: 'Industry Partners', sublabel: 'Job Placement' }
+  ];
+
+  const facultyMembers = [
+    {
+      name: 'Grace Namugera',
+      role: 'Head of Culinary Arts',
+      focus: 'Farm-to-table cuisine and kitchen leadership',
+      icon: LuChefHat,
+      color: 'from-orange-500 to-red-600'
+    },
+    {
+      name: 'Brian Kintu',
+      role: 'Lead Technology Instructor',
+      focus: 'Digital literacy, coding fundamentals, and support skills',
+      icon: LuLaptop,
+      color: 'from-blue-500 to-cyan-600'
+    },
+    {
+      name: 'Sarah Nanyonjo',
+      role: 'Business & Entrepreneurship',
+      focus: 'Small business growth, marketing, and personal finance',
+      icon: LuTrendingUp,
+      color: 'from-green-500 to-emerald-600'
+    }
+  ];
+
+  const admissionSteps = [
+    {
+      title: 'Choose Your Program',
+      detail: 'Review our certificate and diploma pathways across culinary, fashion, tech, and business.',
+      icon: LuGraduationCap
+    },
+    {
+      title: 'Prepare Documents',
+      detail: 'Gather academic transcripts, a national ID, and any prior certification for review.',
+      icon: LuAward
+    },
+    {
+      title: 'Submit & Interview',
+      detail: 'Apply online or on campus, then complete a brief interview or skills assessment.',
+      icon: LuCalendar
+    },
+    {
+      title: 'Enroll & Begin',
+      detail: 'Finalize tuition arrangements, attend orientation, and start building practical skills.',
+      icon: LuArrowRight
+    }
   ];
 
   const filteredPrograms = activeTab === 'all' 
@@ -141,7 +288,7 @@ const JSBI = () => {
             {/* Brand Title */}
             <div className="flex flex-col">
               <h1 className={`text-xl font-bold ${scrolled ? 'text-gray-900' : 'text-white'}`}>
-                Jimmy Sekasi Business Institute
+                Jimmy Ssekasi Business Institute
               </h1>
               <p className={`text-xs font-medium tracking-wider ${scrolled ? 'text-orange-600' : 'text-orange-100'}`}>
                 SKILLS FOR LIFE, CAREERS FOR TOMORROW
@@ -152,6 +299,9 @@ const JSBI = () => {
             <div className="hidden lg:flex items-center space-x-8">
               <a href="#programs" className={`font-medium hover:text-orange-600 transition ${scrolled ? 'text-gray-700' : 'text-white'}`}>
                 Programs
+              </a>
+              <a href="#faculty" className={`font-medium hover:text-orange-600 transition ${scrolled ? 'text-gray-700' : 'text-white'}`}>
+                Faculty
               </a>
               <a href="#admissions" className={`font-medium hover:text-orange-600 transition ${scrolled ? 'text-gray-700' : 'text-white'}`}>
                 Admissions
@@ -187,6 +337,7 @@ const JSBI = () => {
               >
                 <div className="flex flex-col space-y-3 pt-4">
                   <a href="#programs" className={`font-medium ${scrolled ? 'text-gray-700' : 'text-white'}`}>Programs</a>
+                  <a href="#faculty" className={`font-medium ${scrolled ? 'text-gray-700' : 'text-white'}`}>Faculty</a>
                   <a href="#admissions" className={`font-medium ${scrolled ? 'text-gray-700' : 'text-white'}`}>Admissions</a>
                   <a href="#about" className={`font-medium ${scrolled ? 'text-gray-700' : 'text-white'}`}>About</a>
                   <a href="#contact" className={`font-medium ${scrolled ? 'text-gray-700' : 'text-white'}`}>Contact</a>
@@ -345,20 +496,32 @@ const JSBI = () => {
 
           {/* Programs Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {filteredPrograms.map((program, index) => (
+            {filteredPrograms.map((program, index) => {
+              const programIndex = programs.findIndex(p => p.title === program.title);
+              const images = imagesByCategory[program.imageFolder] || [];
+              const currentImageIndex = programImages[programIndex] || 0;
+              
+              return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col min-h-[380px]"
               >
-                <div className={`h-3 bg-gradient-to-r ${program.color}`}></div>
-                <div className="p-6">
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${program.color} flex items-center justify-center mb-4 group-hover:scale-110 transition`}>
-                    <program.icon className="w-8 h-8 text-white" />
+                <div className="relative h-40">
+                  <img
+                    src={images.length > 0 ? images[currentImageIndex % images.length] : '/images/Food/IMG_0089.JPG'}
+                    alt={`${program.title} showcase`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className={`absolute top-4 left-4 w-14 h-14 rounded-xl bg-white/90 flex items-center justify-center shadow-lg`}> 
+                    <program.icon className={`w-7 h-7 text-orange-600`} />
                   </div>
+                </div>
+                <div className={`h-1 bg-gradient-to-r ${program.color}`}></div>
+                <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition">
                     {program.title}
                   </h3>
@@ -372,19 +535,20 @@ const JSBI = () => {
                     </div>
                     <span className="font-semibold text-orange-600">{program.level}</span>
                   </div>
-                  <button className="w-full bg-gray-100 text-gray-900 py-2 rounded-lg font-semibold hover:bg-orange-600 hover:text-white transition group-hover:bg-orange-600 group-hover:text-white flex items-center justify-center space-x-2">
+                  <button className="mt-auto w-full bg-gray-100 text-gray-900 py-2 rounded-lg font-semibold hover:bg-orange-600 hover:text-white transition group-hover:bg-orange-600 group-hover:text-white flex items-center justify-center space-x-2">
                     <span>Learn More</span>
                     <LuChevronRight className="w-4 h-4" />
                   </button>
                 </div>
               </motion.div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
 
       {/* Why Choose JSBI Section */}
-      <section className="py-20 bg-white">
+      <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -470,6 +634,158 @@ const JSBI = () => {
         </div>
       </section>
 
+      {/* Faculty Section */}
+      <section id="faculty" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <div className="h-1 w-12 bg-orange-600"></div>
+              <span className="text-orange-600 font-bold tracking-wider uppercase text-sm">
+                Our Faculty
+              </span>
+              <div className="h-1 w-12 bg-orange-600"></div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Learn From Practitioners
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Industry-experienced instructors who bring real-world projects and mentorship into every class.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {facultyMembers.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition overflow-hidden border border-gray-100"
+              >
+                <div className={`h-2 bg-gradient-to-r ${member.color}`}></div>
+                <div className="p-6">
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${member.color} flex items-center justify-center mb-4`}>
+                    <member.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+                  <p className="text-orange-600 font-semibold mb-2">{member.role}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{member.focus}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Admissions Section */}
+      <section id="admissions" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <div className="h-1 w-12 bg-orange-600"></div>
+              <span className="text-orange-600 font-bold tracking-wider uppercase text-sm">
+                Admissions
+              </span>
+              <div className="h-1 w-12 bg-orange-600"></div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Your Path To Enrollment
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Follow these simple steps to join the next intake and start building career-ready skills.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {admissionSteps.map((step, index) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-orange-200 hover:shadow-lg transition"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center">
+                    <step.icon className="w-6 h-6 text-orange-600" />
+                  </div>
+                  <span className="text-sm font-semibold text-orange-600">Step {index + 1}</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.detail}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <div className="h-1 w-12 bg-orange-500"></div>
+              <span className="text-orange-400 font-bold tracking-wider uppercase text-sm">
+                Contact
+              </span>
+              <div className="h-1 w-12 bg-orange-500"></div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              We Are Here To Help
+            </h2>
+            <p className="text-lg text-orange-100 max-w-3xl mx-auto">
+              Reach out for admissions guidance, program details, or campus visits.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+              <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
+                <LuPhone className="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Call Us</h3>
+              <p className="text-orange-100 mb-3">+256 XXX XXXXXX</p>
+              <p className="text-gray-400 text-sm">Monday to Friday, 8:00am - 5:00pm EAT</p>
+            </div>
+
+            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+              <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
+                <LuMail className="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Email</h3>
+              <p className="text-orange-100 mb-3">info@jsbi.ges.ac.ug</p>
+              <p className="text-gray-400 text-sm">We aim to respond within one business day.</p>
+            </div>
+
+            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+              <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
+                <LuMapPin className="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Visit Campus</h3>
+              <p className="text-orange-100 mb-3">Kampala, Uganda</p>
+              <p className="text-gray-400 text-sm">Schedule a tour and meet our team in person.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -532,6 +848,7 @@ const JSBI = () => {
               <h3 className="text-lg font-bold mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li><a href="#programs" className="text-gray-400 hover:text-orange-500 transition">Programs</a></li>
+                <li><a href="#faculty" className="text-gray-400 hover:text-orange-500 transition">Faculty</a></li>
                 <li><a href="#admissions" className="text-gray-400 hover:text-orange-500 transition">Admissions</a></li>
                 <li><a href="#about" className="text-gray-400 hover:text-orange-500 transition">About Us</a></li>
                 <li><a href="#contact" className="text-gray-400 hover:text-orange-500 transition">Contact</a></li>
