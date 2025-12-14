@@ -220,28 +220,17 @@ const JSBI = () => {
     { number: '20+', label: 'Industry Partners', sublabel: 'Job Placement' }
   ];
 
-  const facultyMembers = [
-    {
-      name: 'Grace Namugera',
-      role: 'Head of Culinary Arts',
-      focus: 'Farm-to-table cuisine and kitchen leadership',
-      icon: LuChefHat,
-      color: 'from-orange-500 to-red-600'
-    },
-    {
-      name: 'Brian Kintu',
-      role: 'Lead Technology Instructor',
-      focus: 'Digital literacy, coding fundamentals, and support skills',
-      icon: LuLaptop,
-      color: 'from-blue-500 to-cyan-600'
-    },
-    {
-      name: 'Sarah Nanyonjo',
-      role: 'Business & Entrepreneurship',
-      focus: 'Small business growth, marketing, and personal finance',
-      icon: LuTrendingUp,
-      color: 'from-green-500 to-emerald-600'
-    }
+  const partners = [
+    { name: 'Cafe Javas', logo: '/images/cafe-javas.jpeg' },
+    { name: 'Java House', logo: '/images/java-house.avif' },
+    { name: 'GES', logo: '/images/GES.png' },
+    { name: 'Majestic Brands', logo: '/images/UTB.png' },
+    { name: 'Buganda Kingdom', logo: '/images/Flag_of_Buganda.svg' },
+    { name: 'Cafe Javas', logo: '/images/cafe-javas.jpeg' },
+    { name: 'Java House', logo: '/images/JavaHouseLogo.webp' },
+    { name: 'GES', logo: '/images/GES.png' },
+    { name: 'Majestic Brands', logo: '/images/UTB.png' },
+    { name: 'Buganda Kingdom', logo: '/images/Flag_of_Buganda.svg' },
   ];
 
   const admissionSteps = [
@@ -634,8 +623,8 @@ const JSBI = () => {
         </div>
       </section>
 
-      {/* Faculty Section */}
-      <section id="faculty" className="py-20 bg-gray-50">
+      {/* Partners Section */}
+      <section id="faculty" className="py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -646,39 +635,54 @@ const JSBI = () => {
             <div className="flex items-center justify-center space-x-2 mb-4">
               <div className="h-1 w-12 bg-orange-600"></div>
               <span className="text-orange-600 font-bold tracking-wider uppercase text-sm">
-                Our Faculty
+                Our Partners
               </span>
               <div className="h-1 w-12 bg-orange-600"></div>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Learn From Practitioners
+              Proudly Associated With
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Industry-experienced instructors who bring real-world projects and mentorship into every class.
+              Building careers through industry partnerships and real-world connections.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {facultyMembers.map((member, index) => (
+          {/* Auto-scrolling Partners Carousel */}
+          <div className="relative overflow-hidden">
+            {/* Left fade mask */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+            {/* Right fade mask */}
+            <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+            
+            <div className="flex overflow-hidden">
               <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition overflow-hidden border border-gray-100"
+                className="flex gap-12 items-center"
+                animate={{
+                  x: [0, -1200]
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 20,
+                    ease: "linear"
+                  }
+                }}
               >
-                <div className={`h-2 bg-gradient-to-r ${member.color}`}></div>
-                <div className="p-6">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${member.color} flex items-center justify-center mb-4`}>
-                    <member.icon className="w-7 h-7 text-white" />
+                {[...partners, ...partners].map((partner, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center"
+                  >
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="max-w-full max-h-full object-contain px-4"
+                    />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-orange-600 font-semibold mb-2">{member.role}</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">{member.focus}</p>
-                </div>
+                ))}
               </motion.div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -727,61 +731,6 @@ const JSBI = () => {
                 <p className="text-gray-600 text-sm leading-relaxed">{step.detail}</p>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="h-1 w-12 bg-orange-500"></div>
-              <span className="text-orange-400 font-bold tracking-wider uppercase text-sm">
-                Contact
-              </span>
-              <div className="h-1 w-12 bg-orange-500"></div>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              We Are Here To Help
-            </h2>
-            <p className="text-lg text-orange-100 max-w-3xl mx-auto">
-              Reach out for admissions guidance, program details, or campus visits.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
-              <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
-                <LuPhone className="w-6 h-6 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Call Us</h3>
-              <p className="text-orange-100 mb-3">+256 XXX XXXXXX</p>
-              <p className="text-gray-400 text-sm">Monday to Friday, 8:00am - 5:00pm EAT</p>
-            </div>
-
-            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
-              <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
-                <LuMail className="w-6 h-6 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Email</h3>
-              <p className="text-orange-100 mb-3">info@jsbi.ges.ac.ug</p>
-              <p className="text-gray-400 text-sm">We aim to respond within one business day.</p>
-            </div>
-
-            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
-              <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
-                <LuMapPin className="w-6 h-6 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Visit Campus</h3>
-              <p className="text-orange-100 mb-3">Kampala, Uganda</p>
-              <p className="text-gray-400 text-sm">Schedule a tour and meet our team in person.</p>
-            </div>
           </div>
         </div>
       </section>
