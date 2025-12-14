@@ -92,8 +92,8 @@ const Home = () => {
 
   const [institutionSlide, setInstitutionSlide] = useState(0);
   const heroInstitutions = [
-    { name: 'St. Andrew Kaggwa Gombe High School', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-kawaala' },
-    { name: 'St. Andrew Kaggwa Gombe High School', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-bujuuko' },
+    { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-kawaala' },
+    { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-bujuuko' },
     { name: 'Gombe Junior School - Kikajjo', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-kikajjo' },
     { name: 'Gombe Junior School - Boarding', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-boarding' },
     { name: 'Scooby Doo International School Uganda (SISU) - Katale', logo: '/images/scoobydoo-logo.png', path: '/institutions/scooby-katale' },
@@ -106,12 +106,22 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentInstitutionIndex((prev) => (prev + 1) % heroInstitutions.length);
-    }, 5000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 
   const heroDescription = currentInstitution.name.includes('Scooby Doo International School Uganda')
     ? 'This is an early years independent international school oering both National & International curricular and brings together learners from dierent parts of Uganda from the age of 2-6years.\nStarted in 2013'
+    : currentInstitution.name.includes('Gombe Junior School - Kikajjo')
+    ? 'Gombe Junior School Kikajjo GJS-K was opened in 2019 after the separation of day scholars from Boarders to create for them their own school which is entirely day. The school has brought about transformation in the community around its location.'
+    : currentInstitution.name.includes('Gombe Junior School')
+    ? 'This school is one of our pioneer schools that started in 2013 as day & boarding. It academically excelled with 100% rst grades in 2017 & 2022 emerging best in Wakiso District and ranked number 4 & 5 in Uganda respectively. Due to its growth, the day parents sought customized services which saw the creation of an independent day section.'
+    : currentInstitution.name.includes('Jimmy Sekasi Business Institute')
+    ? 'In a deliberate plan to build a hybrid mid-level training college GES took over JSBI to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities and be direct partakers in their career destiny. It oers oers a unique blend of post-secondary school education and training in short courses, Certificates & Diplomas in Pastry and Baking, Barista skills, Mixology, Cookery skills,Basic Cake making and Decoration, ICT courses, Culinary arts, and Diploma courses in Fashion and Design, and Hairdressing and Beauty Therapy respectively.'
+    : currentInstitution.path.includes('sakghs-kawaala')
+    ? 'St. Andrew Kaggwa Gombe School Kawaala is both \'O\' and \'A\' level mixed Day and Boarding school, that started in June 2016.'
+    : currentInstitution.path.includes('sakghs-bujuuko')
+    ? 'This is one of our new campuses that started in October 2022 and has brought about a paradigm shift from Kings College Bujuuko to St Andrew Kaggwa Gombe High School Bujuuko Campus. The school is O\' and \'A\' level mixed, both day & boarding school and meets the middle income Parents\' aspiration for better education services at an affordable fees.'
     : heroSlides[currentSlide].description;
 
   const institutions = [
@@ -120,7 +130,7 @@ const Home = () => {
       slug: "scooby-katale",
       description: "Modern international school featuring innovative design - Active Learning, Expert Teachers & Safe Environment",
       students: "400+",
-      established: "2005",
+      established: "2013",
       specialties: ["Modern Design", "International Standards", "Excellence"],
       image: "/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg",
       color: "bg-ges-purple"
@@ -130,7 +140,7 @@ const Home = () => {
       slug: "scooby-gulu",
       description: "Modern international school featuring innovative design - Active Learning, Expert Teachers & Safe Environment",
       students: "350+",
-      established: "2008",
+      established: "2013",
       specialties: ["Modern Design", "International Standards", "Excellence"],
       image: "/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg",
       color: "bg-ges-purple"
@@ -160,7 +170,7 @@ const Home = () => {
       slug: "sakghs-kawaala",
       description: "Advanced secondary education with focus on sciences and humanities",
       students: "550+",
-      established: "1995",
+      established: "2016",
       specialties: ["Sciences", "Arts", "Technology"],
       image: "/images/annie-spratt-V-XM4kkWpng-unsplash.jpg",
       color: "bg-ges-blue"
@@ -170,7 +180,7 @@ const Home = () => {
       slug: "sakghs-bujuuko",
       description: "Advanced secondary education with focus on sciences and humanities",
       students: "520+",
-      established: "2003",
+      established: "2022",
       specialties: ["Sciences", "Arts", "Technology"],
       image: "/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg",
       color: "bg-ges-blue"
@@ -318,13 +328,13 @@ const Home = () => {
                     <LuCalendar className="w-4 h-4 mr-2 text-ges-gold" />
                     <span className="text-sm font-medium">GES Calender</span>
                   </div>
-                  <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                  <h1 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
                     {heroSlides[currentSlide].title}
                   </h1>
                   <p className="text-xl md:text-2xl mb-4 text-ges-gold font-medium">
                     {heroSlides[currentSlide].subtitle}
                   </p>
-                  <p className="text-lg mb-8 text-gray-200 leading-relaxed max-w-2xl" style={{ whiteSpace: 'pre-line' }}>
+                  <p className="text-sm mb-8 text-gray-200 leading-relaxed max-w-2xl" style={{ whiteSpace: 'pre-line' }}>
                     {heroDescription}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
