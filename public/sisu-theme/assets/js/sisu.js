@@ -343,26 +343,26 @@
   }
 
   /*-- Hover Tilt --*/
-  let kidearnTiltElm = $(".kidearn-tilt");
-  if (kidearnTiltElm.length) {
-    kidearnTiltElm.each(function () {
+  let sisuTiltElm = $(".sisu-tilt");
+  if (sisuTiltElm.length) {
+    sisuTiltElm.each(function () {
       let self = $(this);
       let options = self.data("tilt-options");
-      let kidearnTilt = self.tilt(
+      let sisuTilt = self.tilt(
         "object" === typeof options ? options : JSON.parse(options)
       );
     });
   }
 
-  function kidearnPara() {
-    let kidearnParaElm = $(".kidearn-splax");
-    if (kidearnParaElm.length) {
-      kidearnParaElm.each(function () {
+  function sisuPara() {
+    let sisuParaElm = $(".sisu-splax");
+    if (sisuParaElm.length) {
+      sisuParaElm.each(function () {
         let self = $(this);
         let className = self.attr("class");
         var image = document.getElementsByClassName(className);
         let options = self.data("para-options");
-        let kidearnPara = new simpleParallax(
+        let sisuPara = new simpleParallax(
           image,
           "object" === typeof options ? options : JSON.parse(options)
         );
@@ -385,8 +385,8 @@
   }
 
   //accrodion
-  if ($(".kidearn-accrodion").length) {
-    var accrodionGrp = $(".kidearn-accrodion");
+  if ($(".sisu-accrodion").length) {
+    var accrodionGrp = $(".sisu-accrodion");
     accrodionGrp.each(function () {
       var accrodionName = $(this).data("grp-name");
       var Self = $(this);
@@ -399,10 +399,10 @@
           .find(".accrodion-title")
           .on("click", function () {
             if ($(this).parent().hasClass("active") === false) {
-              $(".kidearn-accrodion." + accrodionName)
+              $(".sisu-accrodion." + accrodionName)
                 .find(".accrodion")
                 .removeClass("active");
-              $(".kidearn-accrodion." + accrodionName)
+              $(".sisu-accrodion." + accrodionName)
                 .find(".accrodion")
                 .find(".accrodion-content")
                 .slideUp();
@@ -485,9 +485,9 @@
 
   function thmOwlInit() {
     // owl slider
-    let kidearnowlCarousel = $(".kidearn-owl__carousel");
-    if (kidearnowlCarousel.length) {
-      kidearnowlCarousel.each(function () {
+    let sisuowlCarousel = $(".sisu-owl__carousel");
+    if (sisuowlCarousel.length) {
+      sisuowlCarousel.each(function () {
         let elm = $(this);
         let options = elm.data("owl-options");
         let thmOwlCarousel = elm.owlCarousel(
@@ -599,9 +599,9 @@
   stickyMenuUpScroll($(".sticky-header--normal"), "active");
 
   //Strech Column
-  function kidearn_stretch() {
+  function sisu_stretch() {
     var i = $(window).width();
-    $(".row .kidearn-stretch-element-inside-column").each(function () {
+    $(".row .sisu-stretch-element-inside-column").each(function () {
       var $this = $(this),
         row = $this.closest(".row"),
         cols = $this.closest('[class^="col-"]'),
@@ -630,9 +630,9 @@
       $this.css(styles);
     });
   }
-  kidearn_stretch();
+  sisu_stretch();
 
-  function kidearn_cuved_circle() {
+  function sisu_cuved_circle() {
     let circleTypeElm = $(".curved-circle--item");
     if (circleTypeElm.length) {
       circleTypeElm.each(function () {
@@ -676,7 +676,7 @@
     thmOwlInit();
     thmTinyInit();
     priceFilter();
-    kidearnPara();
+    sisuPara();
 
     if ($(".circle-progress").length) {
       $(".circle-progress").appear(function () {
@@ -747,7 +747,7 @@
       });
     }
 
-    kidearn_cuved_circle();
+    sisu_cuved_circle();
   });
 
   let scrollTop = $('.scroll-top path');
@@ -794,6 +794,6 @@
   });
 
   $(window).on("resize", function () {
-    kidearn_stretch();
+    sisu_stretch();
   });
 })(jQuery);
