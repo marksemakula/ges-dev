@@ -1,34 +1,34 @@
-# SCD Kidearn Theme Implementation for GES
+# SCD SISU Theme Implementation for GES
 
 ## Completed Tasks
 
-✅ **Entire Kidearn HTML Theme Copied to Workspace**
-- Location: `/public/kidearn-theme/`
+✅ **Entire SISU HTML Theme Copied to Workspace**
+- Location: `/public/sisu-theme/`
 - Contains: All 40+ HTML pages, complete CSS assets, JavaScript libraries, and images
 - Ready for direct use and reference
 
 ✅ **GJS Kikajjo HTML Page Created**
 - Location: `/public/gjs-kikajjo.html`
-- Based on: Kidearn template index.html
+- Based on: SISU template index.html
 - Status: Customized with GJS contact information and branding
 - Contact Info: +256 700 000 005 | info@gjs-kikajjo.ges.ac.ug | Gombe, Kampala
 
 ✅ **GJS Boarding HTML Page Created**
 - Location: `/public/gjs-boarding.html`
-- Based on: Kidearn template index.html  
+- Based on: SISU template index.html  
 - Status: Created as template (ready for specific boarding campus customizations)
 - Contact Info: Ready for customization
 
 ✅ **React Components (Alternative)**
-- GJSKikajjo.jsx: Professional Kidearn-inspired React component (100% complete)
-- GJSBoarding.jsx: Professional Kidearn-inspired React component (100% complete)
+- GJSKikajjo.jsx: Professional SISU-inspired React component (100% complete)
+- GJSBoarding.jsx: Professional SISU-inspired React component (100% complete)
 - Location: `/src/pages/institutions/`
 
 ## File Structure
 
 ```
 /public/
-├── kidearn-theme/              # Complete Kidearn template
+├── sisu-theme/              # Complete SISU template
 │   ├── index.html
 │   ├── about.html
 │   ├── contact.html
@@ -61,7 +61,7 @@
    - Or integrate HTML pages directly into the website navigation
 
 3. **Update Assets**
-   - Point CSS/JS references in HTML to `/kidearn-theme/assets/`
+   - Point CSS/JS references in HTML to `/sisu-theme/assets/`
    - Replace placeholder images with GJS school photos
 
 4. **Customize Content**
@@ -100,5 +100,5 @@
 ---
 
 **Implementation Date:** December 10, 2025
-**Theme:** Kidearn HTML v1.0
+**Theme:** SISU HTML v1.0
 **Status:** Ready for customization and deployment

@@ -27,11 +27,12 @@ import './App.css';
 function App() {
   const location = useLocation();
   
-  // Hide GES header/footer for pages with their own brand (Scooby & GJS)
+  // Hide GES header/footer for pages with their own brand (Scooby, GJS & JSBI)
   const isBrandedInstitution =
     location.pathname.includes('/institutions/scooby') ||
     location.pathname.includes('/institutions/gjs') ||
-    location.pathname.includes('/institutions/sakghs');
+    location.pathname.includes('/institutions/sakghs') ||
+    location.pathname.includes('/institutions/jsbi');
   
   return (
     <div className="min-h-screen bg-ges-cream">
