@@ -138,21 +138,14 @@ const JSBI = () => {
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <img
-                src="/images/Jimmy Ssekasi Business Institute Logo.png"
-                alt="JSBI Logo"
-                className="h-16 w-auto"
-              />
-              <div className="hidden md:block">
-                <h1 className={`text-xl font-bold ${scrolled ? 'text-gray-900' : 'text-white'}`}>
-                  Jimmy Sekasi Business Institute
-                </h1>
-                <p className={`text-xs font-medium tracking-wider ${scrolled ? 'text-orange-600' : 'text-orange-100'}`}>
-                  SKILLS FOR LIFE, CAREERS FOR TOMORROW
-                </p>
-              </div>
+            {/* Brand Title */}
+            <div className="flex flex-col">
+              <h1 className={`text-xl font-bold ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+                Jimmy Sekasi Business Institute
+              </h1>
+              <p className={`text-xs font-medium tracking-wider ${scrolled ? 'text-orange-600' : 'text-orange-100'}`}>
+                SKILLS FOR LIFE, CAREERS FOR TOMORROW
+              </p>
             </div>
 
             {/* Desktop Navigation */}
@@ -212,8 +205,8 @@ const JSBI = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg"
-            alt="Students learning"
+            src="/images/JimmySsekasi.png"
+            alt="Jimmy Ssekasi Business Institute"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-orange-900/95 via-red-900/90 to-orange-800/85"></div>
@@ -230,6 +223,13 @@ const JSBI = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
+              <div className="mb-6">
+                <img
+                  src="/images/Jimmy Ssekasi Business Institute Logo.png"
+                  alt="JSBI Logo"
+                  className="h-16 w-auto drop-shadow-2xl"
+                />
+              </div>
               <div className="flex items-center space-x-2 mb-6">
                 <LuGraduationCap className="w-8 h-8 text-orange-400" />
                 <span className="text-orange-400 font-bold tracking-wider uppercase text-sm">
@@ -260,52 +260,11 @@ const JSBI = () => {
               </div>
             </motion.div>
 
-            {/* Circular Images */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden lg:grid grid-cols-2 gap-6"
-            >
-              <div className="space-y-6">
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-orange-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition"></div>
-                  <img
-                    src="/images/premium_photo-1661861141158-be08023174e6.avif"
-                    alt="Student 1"
-                    className="relative w-64 h-64 rounded-full object-cover border-4 border-white shadow-2xl"
-                  />
-                </div>
-              </div>
-              <div className="space-y-6 mt-12">
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-red-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition"></div>
-                  <img
-                    src="/images/premium_photo-1666956837879-fafe054d850c.avif"
-                    alt="Student 2"
-                    className="relative w-64 h-64 rounded-full object-cover border-4 border-white shadow-2xl"
-                  />
-                </div>
-              </div>
-            </motion.div>
+            {/* Visual spacer intentionally left empty to keep layout balanced on large screens */}
+            <div className="hidden lg:block" aria-hidden="true"></div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-1.5 bg-white rounded-full"
-            />
-          </div>
-        </motion.div>
       </section>
 
       {/* Stats Section */}
