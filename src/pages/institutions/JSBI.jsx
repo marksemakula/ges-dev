@@ -227,7 +227,7 @@ const JSBI = () => {
                 <img
                   src="/images/Jimmy Ssekasi Business Institute Logo.png"
                   alt="JSBI Logo"
-                  className="h-16 w-auto drop-shadow-2xl"
+                  className="h-48 w-auto drop-shadow-2xl"
                 />
               </div>
               <div className="flex items-center space-x-2 mb-6">
