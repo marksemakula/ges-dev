@@ -12,7 +12,7 @@ const GJSKikajjo = () => {
     const link = document.querySelector("link[rel~='icon']") || document.createElement('link');
     link.type = 'image/png';
     link.rel = 'icon';
-    link.href = '/kidearn-theme/assets/images/logo-light.png';
+    link.href = '/sisu-theme/assets/images/logo-light.png';
     document.getElementsByTagName('head')[0].appendChild(link);
 
     // Restore original favicon when component unmounts
@@ -442,7 +442,7 @@ const GJSKikajjo = () => {
             >
               <div className="bg-white rounded-full p-6 shadow-2xl">
                 <img 
-                  src="/kidearn-theme/assets/images/logo-light.png" 
+                  src="/sisu-theme/assets/images/logo-light.png" 
                   alt="Gombe Junior School" 
                   className="w-48 h-48 rounded-full object-cover"
                 />
@@ -636,7 +636,7 @@ const GJSKikajjo = () => {
             <div>
               <div className="flex items-center mb-4">
                 <img 
-                  src="/kidearn-theme/assets/images/logo-light.png" 
+                  src="/sisu-theme/assets/images/logo-light.png" 
                   alt="Gombe Junior School" 
                   className="h-16 w-auto mr-3"
                 />

@@ -3,7 +3,7 @@ import React from 'react';
 const ScoobyKatale = () => {
   return (
     <iframe
-      src="/kidearn-theme/sisu-katale-index.html"
+      src="/sisu-theme/sisu-katale-index.html"
       style={{
         width: '100%',
         height: '100vh',

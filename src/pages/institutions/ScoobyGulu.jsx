@@ -3,7 +3,7 @@ import React from 'react';
 const ScoobyGulu = () => {
   return (
     <iframe
-      src="/kidearn-theme/sisu-gulu-index.html"
+      src="/sisu-theme/sisu-gulu-index.html"
       style={{
         width: '100%',
         height: '100vh',
