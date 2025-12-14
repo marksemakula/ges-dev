@@ -92,13 +92,13 @@ const Home = () => {
 
   const [institutionSlide, setInstitutionSlide] = useState(0);
   const heroInstitutions = [
-    { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-kawaala' },
-    { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-bujuuko' },
-    { name: 'Gombe Junior School - Kikajjo', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-kikajjo' },
-    { name: 'Gombe Junior School - Boarding', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-boarding' },
-    { name: 'Scooby Doo International School Uganda (SISU) - Katale', logo: '/images/scoobydoo-logo.png', path: '/institutions/scooby-katale' },
-    { name: 'Scooby Doo International School Uganda (SISU) - Gulu', logo: '/images/scoobydoo-logo.png', path: '/institutions/scooby-gulu' },
-    { name: 'Jimmy Sekasi Business Institute (JSBI)', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', path: '/institutions/jsbi' },
+    { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-kawaala', url: 'sakghs-kawaala.ges.ac.ug' },
+    { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-bujuuko', url: 'sakghs-bujuuko.ges.ac.ug' },
+    { name: 'Gombe Junior School - Kikajjo', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-kikajjo', url: 'gjs-kikajjo.ges.ac.ug' },
+    { name: 'Gombe Junior School - Boarding', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-boarding', url: 'gjs-boarding.ges.ac.ug' },
+    { name: 'Scooby Doo International School Uganda (SISU) - Katale', logo: '/images/scoobydoo-logo.png', path: '/institutions/scooby-katale', url: 'sisu-katale.ges.ac.ug' },
+    { name: 'Scooby Doo International School Uganda (SISU) - Gulu', logo: '/images/scoobydoo-logo.png', path: '/institutions/scooby-gulu', url: 'sisu-gulu.ges.ac.ug' },
+    { name: 'Jimmy Sekasi Business Institute (JSBI)', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', path: '/institutions/jsbi', url: 'jsbi.ges.ac.ug' },
   ];
   const [currentInstitutionIndex, setCurrentInstitutionIndex] = useState(0);
   const currentInstitution = heroInstitutions[currentInstitutionIndex];
@@ -320,7 +320,7 @@ const Home = () => {
                     <img src={currentInstitution.logo} alt={currentInstitution.name + ' Logo'} className="h-24 w-auto drop-shadow-lg" />
                     <div>
                       <h2 className="text-3xl font-bold text-white">{currentInstitution.name}</h2>
-                      <p className="text-ges-gold text-sm font-semibold tracking-wider">EXCELLENCE SINCE 1995</p>
+                      <p className="text-ges-gold text-sm font-semibold tracking-wider">{currentInstitution.url}</p>
                     </div>
                   </motion.div>
                   
@@ -385,7 +385,7 @@ const Home = () => {
                           <LuTrophy className="w-6 h-6 text-ges-navy" />
                         </div>
                         <div>
-                          <div className="text-2xl font-bold">Winners</div>
+                          <div className="text-2xl font-bold"></div>
                           <div className="text-sm opacity-80"></div>
                         </div>
                       </div>
@@ -396,8 +396,8 @@ const Home = () => {
                           <LuTrendingUp className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <div className="text-2xl font-bold">98%</div>
-                          <div className="text-sm opacity-80">Success Rate</div>
+                          <div className="text-2xl font-bold"></div>
+                          <div className="text-sm opacity-80"></div>
                         </div>
                       </div>
                     </div>
@@ -516,16 +516,16 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <div className="relative">
-            {/* Carousel Container */}
-            <div className="overflow-hidden">
+          <div className="relative -mx-4 px-4">
+            {/* Carousel Container - clip to show exactly 4 cards per slide */}
+            <div className="overflow-hidden py-8">
               <motion.div
                 animate={{ x: -institutionSlide * 100 + "%" }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 className="flex"
               >
                 {/* Slide 1 - First 4 institutions */}
-                <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8 px-8">
                   {institutions.slice(0, 4).map((institution, index) => (
                     <div
                       key={index}
@@ -572,7 +572,7 @@ const Home = () => {
                 </div>
 
                 {/* Slide 2 - Next 4 institutions */}
-                <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8 px-8">
                   {institutions.slice(4, 8).map((institution, index) => (
                     <div
                       key={index + 4}
