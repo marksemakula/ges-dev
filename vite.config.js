@@ -12,6 +12,18 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET,OPTIONS',
+      'Access-Control-Allow-Headers': '*'
+    }
+  },
+  preview: {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET,OPTIONS',
+      'Access-Control-Allow-Headers': '*'
+    }
   },
    build: {
     outDir: 'dist',

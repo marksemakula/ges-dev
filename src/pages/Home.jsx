@@ -853,7 +853,7 @@ const Home = () => {
                   src={`/institutions/${resolveInstitutionSlug(previewInstitution.slug)}`}
                   className="w-full h-full border-0"
                   title={`Preview of ${previewInstitution.name}`}
-                  sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                  sandbox="allow-scripts allow-popups allow-forms"
                 />
                 {/* Loading overlay */}
                 <div className="absolute inset-0 bg-white flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
