@@ -136,7 +136,26 @@ body.custom-cursor {
   align-items: center;
   padding: 160px 5vw 140px;
 	background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg') center/cover no-repeat;
-  overflow: hidden;
+  overflow: visible;
+}
+
+.landing-hero::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: #ffffff;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1920 583" fill="currentColor"><path d="M-269.399 430.984C-269.399 430.984 -263.032 258.275 -152.598 234.817C-42.1635 211.359 -87.5979 58.3007 -.5 39.1241C178.5 -.286858 159.234 123.899 369.5 72.731C579.766 21.5634 654.667 49.2729 746 72.731C837.333 96.1891 910.298 0 1165.5 0C1364.3 13.9241 1425 69.0773 1538 83.2642C1605.97 91.7971 1696 28.5907 1858.73 128.2C2018.03 200.685 2069 583 2069 583H-297L-269.399 430.984Z" /></svg>');
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1920 583" fill="currentColor"><path d="M-269.399 430.984C-269.399 430.984 -263.032 258.275 -152.598 234.817C-42.1635 211.359 -87.5979 58.3007 -.5 39.1241C178.5 -.286858 159.234 123.899 369.5 72.731C579.766 21.5634 654.667 49.2729 746 72.731C837.333 96.1891 910.298 0 1165.5 0C1364.3 13.9241 1425 69.0773 1538 83.2642C1605.97 91.7971 1696 28.5907 1858.73 128.2C2018.03 200.685 2069 583 2069 583H-297L-269.399 430.984Z" /></svg>');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: top center;
+  mask-position: top center;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  z-index: 10;
 }
 
 .landing-hero::after {
@@ -265,6 +284,16 @@ body.custom-cursor {
 /* Force footer brand color */
 .main-footer__bg {
 	background-color: #6e1d0f !important;
+}
+
+/* Footer text styling - white and Ubuntu font */
+.main-footer__info a,
+.footer-widget__info a,
+.footer-widget__links a,
+.footer-widget__title,
+.main-footer__copyright {
+	color: white !important;
+	font-family: 'Ubuntu', sans-serif !important;
 }
 </style>
 
@@ -1141,7 +1170,7 @@ body.custom-cursor {
 		<div class="container">
 			<div class="main-footer__bottom__inner" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
 				<p class="main-footer__copyright" style="margin: 0;">
-					&copy; Copyright <span class="dynamic-year"></span> by SISU HTML Template.
+					&copy; Copyright 2026 Scoobydoo International School Uganda (SISU).
 				</p>
 				<div style="display: flex; align-items: center; gap: 8px;">
 					<span style="color: #d1d5db; font-size: 14px;">Powered by</span>
