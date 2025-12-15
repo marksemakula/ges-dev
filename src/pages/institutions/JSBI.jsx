@@ -12,10 +12,6 @@ import {
   LuMapPin,
   LuPhone,
   LuMail,
-  LuFacebook,
-  LuTwitter,
-  LuInstagram,
-  LuLinkedin,
   LuPlay,
   LuChefHat,
   LuCoffee,
@@ -518,28 +514,42 @@ const JSBI = () => {
                     {program.description}
                   </p>
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center space-x-1">
-                      <LuClock className="w-4 h-4" />
-                      <span>{program.duration}</span>
+                    <div className="flex items-center gap-4">
+                      {[
+                        { href: "https://discord.gg/ges", className: "icon-discord", label: "Discord" },
+                        { href: "https://instagram.com/ges", className: "icon-instagram", label: "Instagram" },
+                        { href: "https://linkedin.com/company/ges", className: "icon-linkedin", label: "LinkedIn" },
+                        { href: "https://slack.com/ges", className: "icon-slack", label: "Slack" },
+                        { href: "https://youtube.com/@ges", className: "icon-youtube", label: "YouTube" },
+                        { href: "https://x.com/ges", className: "icon-x", label: "X" },
+                        { href: "https://wa.me/256", className: "icon-whatsapp", label: "WhatsApp" },
+                        { href: "https://t.me/ges", className: "icon-telegram", label: "Telegram" },
+                      ].map((item) => (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={item.label}
+                          className="social-icon-btn"
+                        >
+                          <span className={`icon ${item.className}`} aria-hidden="true"></span>
+                        </a>
+                      ))}
                     </div>
-                    <span className="font-semibold text-orange-600">{program.level}</span>
                   </div>
-                  <button className="mt-auto w-full bg-gray-100 text-gray-900 py-2 rounded-lg font-semibold hover:bg-orange-600 hover:text-white transition group-hover:bg-orange-600 group-hover:text-white flex items-center justify-center space-x-2">
-                    <span>Learn More</span>
-                    <LuChevronRight className="w-4 h-4" />
-                  </button>
                 </div>
               </motion.div>
-            );
+              );
             })}
           </div>
         </div>
       </section>
 
-      {/* Why Choose JSBI Section */}
-      <section id="about" className="py-20 bg-white">
+      {/* About Section */}
+      <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -776,18 +786,30 @@ const JSBI = () => {
                 Empowering young men and women with contemporary skills for careers in 
                 culinary arts, fashion, technology, and business.
               </p>
-              <div className="flex space-x-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center hover:bg-orange-700 transition">
-                  <LuFacebook className="w-5 h-5" />
+              <div className="social-icons flex flex-wrap items-center gap-3">
+                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
+                  <img src="/icons/discord.svg" alt="Discord" className="h-5 w-5" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center hover:bg-orange-700 transition">
-                  <LuTwitter className="w-5 h-5" />
+                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
+                  <img src="/icons/instagram.svg" alt="Instagram" className="h-5 w-5" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center hover:bg-orange-700 transition">
-                  <LuInstagram className="w-5 h-5" />
+                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
+                  <img src="/icons/linkedin.svg" alt="LinkedIn" className="h-5 w-5" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center hover:bg-orange-700 transition">
-                  <LuLinkedin className="w-5 h-5" />
+                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
+                  <img src="/icons/slack.svg" alt="Slack" className="h-5 w-5" />
+                </a>
+                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
+                  <img src="/icons/youtube.svg" alt="YouTube" className="h-5 w-5" />
+                </a>
+                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
+                  <img src="/icons/x.svg" alt="X" className="h-5 w-5" />
+                </a>
+                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
+                  <img src="/icons/whatsapp.svg" alt="WhatsApp" className="h-5 w-5" />
+                </a>
+                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
+                  <img src="/icons/telegram.svg" alt="Telegram" className="h-5 w-5" />
                 </a>
               </div>
             </div>
@@ -814,11 +836,11 @@ const JSBI = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <LuPhone className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                  <span className="text-gray-400">+256 XXX XXXXXX</span>
+                  <span className="text-gray-400">+256756241530  +256772472570</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <LuMail className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                  <span className="text-gray-400">info@jsbi.ges.ac.ug</span>
+                  <span className="text-gray-400">info@jsbi.ac.ug</span>
                 </li>
               </ul>
             </div>
@@ -829,9 +851,19 @@ const JSBI = () => {
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © 2025 Jimmy Sekasi Business Institute. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition">Terms of Service</a>
+            <div className="flex items-center gap-8">
+              <div className="flex space-x-6 text-sm">
+                <a href="#" className="text-gray-400 hover:text-orange-500 transition">Privacy Policy</a>
+                <a href="#" className="text-gray-400 hover:text-orange-500 transition">Terms of Service</a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-gray-300 font-urbanist text-sm">Powered by</span>
+                <img
+                  src="/images/Inzozi-grayscale.png"
+                  alt="Inzozi Logo"
+                  className="h-8 w-auto brightness-0 invert"
+                />
+              </div>
             </div>
           </div>
         </div>
