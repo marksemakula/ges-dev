@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { LuGlobe, LuPhone, LuMail, LuUsers, LuAward, LuBookOpen, LuMapPin, LuArrowRight, LuExternalLink, LuStar, LuTarget, LuLanguages, LuGraduationCap } from 'react-icons/lu';
 
 const ScoobyDooInternational = () => {
+  useEffect(() => {
+    // Aggressively remove any preloader elements
+    const removePreloaders = () => {
+      const preloaders = document.querySelectorAll('.preloader, .preloader__image, div[class*="preload"]');
+      preloaders.forEach(el => {
+        el.remove();
+      });
+      // Also remove from body
+      document.body.style.overflow = 'visible';
+    };
+
+    // Remove immediately
+    removePreloaders();
+    
+    // Remove again after a short delay (in case something adds it back)
+    const timer = setTimeout(removePreloaders, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
   const stats = [
     { icon: LuUsers, label: 'Students', value: '400+', color: 'text-ges-blue' },
     { icon: LuGlobe, label: 'Countries', value: '15+', color: 'text-ges-gold' },
@@ -75,7 +94,12 @@ const ScoobyDooInternational = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-ges-cream">
+    <motion.div 
+      className="min-h-screen bg-ges-cream"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Hero Section */}
       <section className="bg-ges-gradient text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -388,7 +412,7 @@ const ScoobyDooInternational = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

@@ -58,8 +58,75 @@
       }
     }
     </script>
+    <style>
+      /* Nuclear option - hide preloader with maximum specificity */
+      .preloader,
+      div.preloader,
+      body .preloader,
+      html .preloader,
+      .preloader__image,
+      div[class*="preload"],
+      *[class*="preloader"] {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        position: fixed !important;
+        left: -9999px !important;
+        top: -9999px !important;
+        width: 0 !important;
+        height: 0 !important;
+        z-index: -99999 !important;
+      }
+      body {
+        overflow: visible !important;
+      }
+    </style>
   </head>
   <body>
+    <script>
+      // Immediately hide and remove any preloader elements
+      (function() {
+        // Block any window.load event listeners from showing preloader
+        const originalAddEventListener = window.addEventListener;
+        window.addEventListener = function(type, listener, options) {
+          if (type === 'load') {
+            const wrappedListener = function(event) {
+              // Remove all preloaders first
+              document.querySelectorAll('.preloader, .preloader__image, [class*="preload"]').forEach(el => el.remove());
+              listener.call(this, event);
+            };
+            return originalAddEventListener.call(this, type, wrappedListener, options);
+          }
+          return originalAddEventListener.call(this, type, listener, options);
+        };
+
+        // Aggressively remove preloaders
+        const removePreloaders = function() {
+          const elements = document.querySelectorAll('.preloader, .preloader__image, [class*="preload"], body > div:first-child[style*="background"]');
+          elements.forEach(el => {
+            if (el && el.parentNode) {
+              el.remove();
+            }
+          });
+          document.body.style.overflow = 'visible';
+        };
+
+        // Run immediately
+        removePreloaders();
+        
+        // Run on DOM ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', removePreloaders);
+        } else {
+          removePreloaders();
+        }
+        
+        // Keep checking aggressively
+        const interval = setInterval(removePreloaders, 50);
+        setTimeout(() => clearInterval(interval), 3000);
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

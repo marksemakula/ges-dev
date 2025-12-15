@@ -19,6 +19,18 @@ body {
   overflow-x: hidden;
 }
 
+/* Hide preloader from old theme templates */
+.preloader,
+.preloader__image,
+div[class*="preloader"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+}
+
 #root {
   width: 100%;
   min-height: 100vh;
