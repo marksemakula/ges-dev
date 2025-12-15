@@ -20,6 +20,8 @@ import {
   LuTrendingUp,
   LuClock
 } from 'react-icons/lu';
+import { FaDiscord, FaInstagram, FaLinkedin, FaSlack, FaYoutube, FaWhatsapp, FaTelegram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const JSBI = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -513,31 +515,6 @@ const JSBI = () => {
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                     {program.description}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center gap-4">
-                      {[
-                        { href: "https://discord.gg/ges", className: "icon-discord", label: "Discord" },
-                        { href: "https://instagram.com/ges", className: "icon-instagram", label: "Instagram" },
-                        { href: "https://linkedin.com/company/ges", className: "icon-linkedin", label: "LinkedIn" },
-                        { href: "https://slack.com/ges", className: "icon-slack", label: "Slack" },
-                        { href: "https://youtube.com/@ges", className: "icon-youtube", label: "YouTube" },
-                        { href: "https://x.com/ges", className: "icon-x", label: "X" },
-                        { href: "https://wa.me/256", className: "icon-whatsapp", label: "WhatsApp" },
-                        { href: "https://t.me/ges", className: "icon-telegram", label: "Telegram" },
-                      ].map((item) => (
-                        <a
-                          key={item.label}
-                          href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={item.label}
-                          className="social-icon-btn"
-                        >
-                          <span className={`icon ${item.className}`} aria-hidden="true"></span>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               </motion.div>
               );
@@ -787,29 +764,29 @@ const JSBI = () => {
                 culinary arts, fashion, technology, and business.
               </p>
               <div className="social-icons flex flex-wrap items-center gap-3">
-                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                  <img src="/icons/discord.svg" alt="Discord" className="h-5 w-5" />
+                <a href="https://discord.gg/ges" target="_blank" rel="noopener noreferrer" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition text-white">
+                  <FaDiscord className="w-5 h-5" />
                 </a>
-                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                  <img src="/icons/instagram.svg" alt="Instagram" className="h-5 w-5" />
+                <a href="https://instagram.com/ges" target="_blank" rel="noopener noreferrer" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition text-white">
+                  <FaInstagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                  <img src="/icons/linkedin.svg" alt="LinkedIn" className="h-5 w-5" />
+                <a href="https://linkedin.com/company/ges" target="_blank" rel="noopener noreferrer" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition text-white">
+                  <FaLinkedin className="w-5 h-5" />
                 </a>
-                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                  <img src="/icons/slack.svg" alt="Slack" className="h-5 w-5" />
+                <a href="https://slack.com/ges" target="_blank" rel="noopener noreferrer" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition text-white">
+                  <FaSlack className="w-5 h-5" />
                 </a>
-                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                  <img src="/icons/youtube.svg" alt="YouTube" className="h-5 w-5" />
+                <a href="https://youtube.com/@ges" target="_blank" rel="noopener noreferrer" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition text-white">
+                  <FaYoutube className="w-5 h-5" />
                 </a>
-                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                  <img src="/icons/x.svg" alt="X" className="h-5 w-5" />
+                <a href="https://x.com/ges" target="_blank" rel="noopener noreferrer" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition text-white">
+                  <FaXTwitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                  <img src="/icons/whatsapp.svg" alt="WhatsApp" className="h-5 w-5" />
+                <a href="https://wa.me/256" target="_blank" rel="noopener noreferrer" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition text-white">
+                  <FaWhatsapp className="w-5 h-5" />
                 </a>
-                <a href="#" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                  <img src="/icons/telegram.svg" alt="Telegram" className="h-5 w-5" />
+                <a href="https://t.me/ges" target="_blank" rel="noopener noreferrer" className="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition text-white">
+                  <FaTelegram className="w-5 h-5" />
                 </a>
               </div>
             </div>
