@@ -27,6 +27,14 @@ const JSBI = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState('all');
+  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    program: '',
+    documents: null
+  });
   const [programImages, setProgramImages] = useState({
     0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0
   });
@@ -258,6 +266,23 @@ const JSBI = () => {
     ? programs 
     : programs.filter(p => p.category === activeTab);
 
+  const handleFormChange = (e) => {
+    const { name, value, files } = e.target;
+    if (name === 'documents') {
+      setFormData(prev => ({ ...prev, documents: files[0] }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    alert(`Application submitted!\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nProgram: ${formData.program}\nDocuments: ${formData.documents?.name || 'None'}`);
+    setFormData({ name: '', phone: '', email: '', program: '', documents: null });
+    setIsApplyModalOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -299,7 +324,9 @@ const JSBI = () => {
               <a href="#contact" className={`font-medium hover:text-orange-600 transition ${scrolled ? 'text-gray-700' : 'text-white'}`}>
                 Contact
               </a>
-              <button className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition font-semibold shadow-lg hover:shadow-xl">
+              <button 
+                onClick={() => setIsApplyModalOpen(true)}
+                className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition font-semibold shadow-lg hover:shadow-xl">
                 Apply Now
               </button>
             </div>
@@ -847,6 +874,126 @@ const JSBI = () => {
           </div>
         </div>
       </footer>
+
+      {/* Apply Now Modal */}
+      <AnimatePresence>
+        {isApplyModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsApplyModalOpen(false)}
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8"
+            >
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold text-gray-900">Apply Now</h2>
+                <button
+                  onClick={() => setIsApplyModalOpen(false)}
+                  className="text-gray-500 hover:text-gray-700 text-2xl"
+                >
+                  ×
+                </button>
+              </div>
+
+              <form onSubmit={handleFormSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-600 focus:border-transparent outline-none transition"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-600 focus:border-transparent outline-none transition"
+                    placeholder="Enter your phone number"
+                  />
+                  <p className="text-xs text-gray-500 mt-1">Format: +256702456789</p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-600 focus:border-transparent outline-none transition"
+                    placeholder="Enter your email address"
+                  />
+                  <p className="text-xs text-gray-500 mt-1">Format: name@emailprovider.com</p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Select Program</label>
+                  <select
+                    name="program"
+                    value={formData.program}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-600 focus:border-transparent outline-none transition"
+                  >
+                    <option value="">Choose a program</option>
+                    {programs.map((prog) => (
+                      <option key={prog.title} value={prog.title}>
+                        {prog.title}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Upload Academic Documents</label>
+                  <input
+                    type="file"
+                    name="documents"
+                    onChange={handleFormChange}
+                    accept=".pdf,.doc,.docx,.jpg,.png"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-600 focus:border-transparent outline-none transition"
+                  />
+                  <p className="text-xs text-gray-500 mt-1">Please merge documents into one file, no bigger than 4MBs</p>
+                </div>
+
+                <div className="flex gap-3 pt-4">
+                  <button
+                    type="submit"
+                    className="flex-1 bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition font-semibold"
+                  >
+                    Submit Application
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setIsApplyModalOpen(false)}
+                    className="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-50 transition font-semibold"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
