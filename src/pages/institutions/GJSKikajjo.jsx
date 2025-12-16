@@ -35,18 +35,18 @@ const GJSKikajjo = () => {
   const programs = [
     {
       title: 'IB Program',
-      description: 'International Baccalaureate curriculum for globally-minded learners',
-      features: ['Primary Years', 'Middle Years', 'Diploma Programme'],
+      description: 'International Baccalaureate foundation tailored for primary learners',
+      features: ['Primary Years', 'Inquiry Learning', 'Global Skills'],
     },
     {
-      title: 'Cambridge Curriculum',
-      description: 'Cambridge International Education from Primary to A-Levels',
-      features: ['IGCSE', 'AS Level', 'A Level'],
+      title: 'ICT & e-Learning Program',
+      description: 'Digital-first learning that builds strong tech literacy from the early years',
+      features: ['Digital Literacy', 'Coding Fundamentals', 'Blended Learning'],
     },
     {
       title: 'National Curriculum',
-      description: 'Uganda National Curriculum integrated with international standards',
-      features: ['Primary', 'O-Level', 'A-Level'],
+      description: 'Uganda National Curriculum integrated with international standards for P1-P7',
+      features: ['Primary (P1-P7)', 'Life Skills', 'Competency-Based'],
     }
   ];
 
