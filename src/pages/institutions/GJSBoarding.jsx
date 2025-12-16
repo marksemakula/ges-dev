@@ -440,13 +440,11 @@ const GJSBoarding = () => {
               transition={{ delay: 0.3 }}
               className="flex justify-center md:justify-end"
             >
-              <div className="bg-white rounded-full p-6 shadow-2xl">
-                <img 
-                  src="/sisu-theme/assets/images/logo-light.png" 
-                  alt="Gombe Junior School" 
-                  className="w-48 h-48 rounded-full object-cover"
-                />
-              </div>
+              <img 
+                src="/images/Gombe Junior School logo.png" 
+                alt="Gombe Junior School" 
+                className="w-96 h-96 object-contain"
+              />
             </motion.div>
           </div>
         </div>
@@ -636,15 +634,15 @@ const GJSBoarding = () => {
       </section>
 
       {/* Custom Footer */}
-      <footer className="bg-[#800E13] text-white py-12">
+      <footer className="bg-[#800E13] text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center mb-4">
                 <img 
-                  src="/sisu-theme/assets/images/logo-light.png" 
+                  src="/images/Gombe Junior School logo.png" 
                   alt="Gombe Junior School" 
-                  className="h-16 w-auto mr-3"
+                  className="h-40 w-auto mr-3 grayscale"
                 />
                 <h3 className="text-2xl font-bold" style={{ color: brandColors.primary }}>
                   GJS - Boarding Campus
@@ -693,10 +691,20 @@ const GJSBoarding = () => {
               </div>
             </div>
           </div>
-          <div className="border-t border-white/20 pt-8 text-center">
-            <p className="text-gray-300">
-              &copy; {new Date().getFullYear()} Gombe Junior School (GJS). All rights reserved.
-            </p>
+          <div className="border-t border-white/20 pt-3">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-300 mb-4 md:mb-0">
+                &copy; {new Date().getFullYear()} Gombe Junior School (GJS). All rights reserved.
+              </p>
+              <div className="flex items-center space-x-2">
+                <span className="text-gray-300 text-sm">Powered by</span>
+                <img 
+                  src="/images/Inzozi-grayscale.png" 
+                  alt="Inzozi Logo" 
+                  className="h-16 w-auto brightness-0 invert" 
+                />
+              </div>
+            </div>
           </div>
         </div>
       </footer>

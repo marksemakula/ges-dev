@@ -79,6 +79,14 @@ const GombeHighSchool = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
+            <motion.img 
+              src="/images/Gombe Junior School logo.png" 
+              alt="Gombe Junior School Logo" 
+              className="h-24 md:h-32 mx-auto mb-6 drop-shadow-lg"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+            />
             <div className="inline-flex items-center bg-ges-gold/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
               <LuExternalLink className="w-4 h-4 mr-2 text-ges-gold" />
               <span className="text-sm font-medium">gombehighschool.ges.ac.ug</span>
@@ -337,6 +345,84 @@ const GombeHighSchool = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer Section */}
+      <footer className="bg-ges-navy text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center md:items-start"
+            >
+              <img 
+                src="/images/Gombe Junior School logo.png" 
+                alt="Gombe Junior School Logo" 
+                className="h-20 mb-4"
+              />
+              <p className="text-gray-300 text-sm text-center md:text-left">
+                Providing excellence in secondary education since 1995
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <h3 className="text-lg font-semibold mb-4 text-ges-gold">Quick Links</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-300 hover:text-ges-gold transition">About Us</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-ges-gold transition">Academics</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-ges-gold transition">Admissions</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-ges-gold transition">Contact</a></li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <h3 className="text-lg font-semibold mb-4 text-ges-gold">Contact</h3>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                <li className="flex items-center"><LuPhone className="w-4 h-4 mr-2" /> +256 481 421024</li>
+                <li className="flex items-center"><LuMail className="w-4 h-4 mr-2" /> info@gombehighschool.ges.ac.ug</li>
+                <li className="flex items-center"><LuMapPin className="w-4 h-4 mr-2" /> Gombe, Uganda</li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <h3 className="text-lg font-semibold mb-4 text-ges-gold">Follow Us</h3>
+              <div className="flex gap-4">
+                <a href="#" className="w-10 h-10 bg-ges-gold rounded-full flex items-center justify-center hover:bg-ges-teal transition">
+                  <span className="text-ges-navy font-bold">f</span>
+                </a>
+                <a href="#" className="w-10 h-10 bg-ges-gold rounded-full flex items-center justify-center hover:bg-ges-teal transition">
+                  <span className="text-ges-navy font-bold">𝕏</span>
+                </a>
+                <a href="#" className="w-10 h-10 bg-ges-gold rounded-full flex items-center justify-center hover:bg-ges-teal transition">
+                  <span className="text-ges-navy font-bold">📷</span>
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="border-t border-gray-700 pt-8">
+            <p className="text-center text-gray-400 text-sm">
+              © 2024 Gombe High School. All rights reserved. Part of Gombe Education Services
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
