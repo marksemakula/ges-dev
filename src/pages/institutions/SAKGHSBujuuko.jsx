@@ -48,7 +48,7 @@ const SAKGHSBujuuko = () => {
         linkEl.setAttribute('rel', rel);
         document.head.appendChild(linkEl);
       }
-      linkEl.setAttribute('href', '/images/StAndrewLogo.png');
+      linkEl.setAttribute('href', '/images/Gombe High logo.png');
       return { linkEl, prevHref };
     };
 
@@ -81,8 +81,8 @@ const SAKGHSBujuuko = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="flex justify-center mb-8">
-              <div className="h-28 w-28 flex items-center justify-center overflow-hidden">
-                <img src="/images/StAndrewLogo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain" />
+              <div className="h-[21rem] w-[21rem] flex items-center justify-center overflow-hidden">
+                <img src="/images/Gombe High logo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain" />
               </div>
             </div>
             <div className="inline-flex items-center rounded-full px-6 py-2 mb-6" style={{ backgroundColor: `${brandColors.primary}40` }}>

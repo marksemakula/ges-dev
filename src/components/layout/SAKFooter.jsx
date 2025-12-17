@@ -21,8 +21,8 @@ const SAKFooter = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-3">
             <div className="flex items-center gap-3">
-              <div className="h-12 w-12 flex items-center justify-center overflow-hidden">
-                <img src="/images/StAndrewLogo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain" />
+              <div className="h-24 w-24 flex items-center justify-center overflow-hidden">
+                <img src="/images/Gombe High logo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain grayscale" />
               </div>
               <div className="leading-tight">
                 <div className="text-base font-bold">St. Andrew Kaggwa Gombe HS</div>
