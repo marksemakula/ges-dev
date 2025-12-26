@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Leadership from './pages/Leadership';
@@ -36,6 +37,7 @@ function App() {
   
   return (
     <div className="min-h-screen bg-ges-cream">
+      <ScrollToTop />
       {!isBrandedInstitution && <Header />}
       
       <AnimatePresence mode="wait">
