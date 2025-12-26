@@ -300,8 +300,8 @@ const Home = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 h-full flex items-center">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative z-10 h-full flex items-center pt-20 sm:pt-24 md:pt-0">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -314,44 +314,44 @@ const Home = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
-                    className="mb-8 flex items-center space-x-4"
+                    className="mb-4 sm:mb-6 md:mb-8 flex items-center space-x-2 sm:space-x-3 md:space-x-4"
                   >
-                    <img src={currentInstitution.logo} alt={currentInstitution.name + ' Logo'} className="h-24 w-auto drop-shadow-lg" />
+                    <img src={currentInstitution.logo} alt={currentInstitution.name + ' Logo'} className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto drop-shadow-lg" />
                     <div>
-                      <h2 className="text-3xl font-bold text-white">{currentInstitution.name}</h2>
-                      <p className="text-ges-gold text-sm font-semibold tracking-wider">{currentInstitution.url}</p>
+                      <h2 className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-white leading-tight">{currentInstitution.name}</h2>
+                      <p className="text-ges-gold text-[10px] sm:text-xs md:text-sm font-semibold tracking-wider">{currentInstitution.url}</p>
                     </div>
                   </motion.div>
                   
-                  <div className="inline-flex items-center bg-ges-gold/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                    <LuCalendar className="w-4 h-4 mr-2 text-ges-gold" />
-                    <span className="text-sm font-medium">GES Calender</span>
+                  <div className="inline-flex items-center bg-ges-gold/20 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-3 sm:mb-4 md:mb-6">
+                    <LuCalendar className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-ges-gold" />
+                    <span className="text-xs sm:text-sm font-medium">GES Calender</span>
                   </div>
-                  <h1 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                     {heroSlides[currentSlide].title}
                   </h1>
-                  <p className="text-xl md:text-2xl mb-4 text-ges-gold font-medium">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-2 sm:mb-3 md:mb-4 text-ges-gold font-medium">
                     {heroSlides[currentSlide].subtitle}
                   </p>
-                  <p className="text-sm mb-8 text-gray-200 leading-relaxed max-w-2xl" style={{ whiteSpace: 'pre-line' }}>
+                  <p className="text-xs sm:text-sm md:text-base mb-4 sm:mb-6 md:mb-8 text-gray-200 leading-relaxed max-w-2xl" style={{ whiteSpace: 'pre-line' }}>
                     {heroDescription}
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="bg-ges-gold text-ges-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 flex items-center justify-center group shadow-lg"
+                      className="bg-ges-gold text-ges-navy px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-sm sm:text-base md:text-lg hover:bg-white transition-all duration-300 flex items-center justify-center group shadow-lg"
                     >
                       {heroSlides[currentSlide].cta}
-                      <LuArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      <LuArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                     </motion.button>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => setIsVideoPlaying(true)}
-                      className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-ges-navy transition-all duration-300 flex items-center justify-center group"
+                      className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-sm sm:text-base md:text-lg hover:bg-white hover:text-ges-navy transition-all duration-300 flex items-center justify-center group"
                     >
-                      <LuPlay className="mr-2 w-5 h-5" />
+                      <LuPlay className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
                       Watch Video
                     </motion.button>
                   </div>
@@ -362,7 +362,7 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
-                  className="relative"
+                  className="relative hidden lg:block"
                 >
                   <div className="relative">
                     <motion.div 

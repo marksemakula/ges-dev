@@ -53,19 +53,19 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
             <motion.img
               src="/logo.png"
               alt="GES Logo"
-              className="h-24 w-auto group-hover:drop-shadow-lg transition-all duration-300"
+              className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto group-hover:drop-shadow-lg transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             />
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-white group-hover:text-ges-gold transition-colors">
+              <h1 className="text-sm md:text-lg lg:text-xl font-bold text-white group-hover:text-ges-gold transition-colors">
                 Gombe Education Services
               </h1>
-              <p className={`text-xs font-medium tracking-wider ${scrolled ? 'text-ges-gold' : 'text-gray-300'}`}>
+              <p className={`text-[10px] md:text-xs font-medium tracking-wider ${scrolled ? 'text-ges-gold' : 'text-gray-300'}`}>
                 EXCELLENCE SINCE 1995
               </p>
             </div>
