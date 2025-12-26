@@ -300,7 +300,7 @@ const Home = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 h-full flex items-center pt-20 sm:pt-24 md:pt-0">
+            <div className="relative z-10 h-full flex items-center pt-28 sm:pt-32 md:pt-36 lg:pt-0">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
