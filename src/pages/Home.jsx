@@ -447,9 +447,6 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-ges-navy mb-6">
               Why Choose GES
             </h2>
-            <p className="text-xl text-ges-slate max-w-3xl mx-auto">
-              Discover what makes Gombe Education Services the premier choice for quality education
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -462,11 +459,11 @@ const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group ges-card-hover"
               >
-                <div className="w-32 h-32 mx-auto bg-ges-gold/10 rounded-2xl flex items-center justify-center mb-6 overflow-hidden group-hover:bg-ges-gold group-hover:text-white transition-all duration-300">
+                <div className="w-32 h-32 mx-auto rounded-2xl flex items-center justify-center mb-6 overflow-hidden transition-all duration-300">
                   <img
                     src={feature.logo}
                     alt={`${feature.title} logo`}
-                    className="w-24 h-24 object-contain"
+                    className="w-32 h-32 object-contain"
                   />
                 </div>
                 <h3 className="text-xl font-bold text-ges-navy mb-4">{feature.title}</h3>
