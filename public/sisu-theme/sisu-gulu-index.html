@@ -470,6 +470,98 @@ body.custom-cursor {
 		</div>
 	</div>
 </section>
+
+<style>
+/* Make testimonial section overflow visible to show full cloud */
+.testimonial-one {
+  overflow: visible !important;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-one__area {
+  overflow: visible !important;
+  position: relative;
+  max-width: 100vw !important;
+  margin: 0 auto !important;
+  padding: 40px 0 !important;
+}
+
+.testimonial-one__bg {
+  overflow: visible !important;
+  animation: colorPulse 8s ease-in-out infinite;
+}
+
+.testimonial-one__bg-shape {
+  overflow: visible !important;
+  animation: multiColorGlow 10s ease-in-out infinite;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  width: 600px !important;
+  height: 600px !important;
+  max-width: 90vw !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.testimonial-one__item {
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+.testimonial-one__item__quote {
+  padding: 20px 30px !important;
+}
+
+/* Multi-color animation for the cloud background */
+@keyframes multiColorGlow {
+  0% {
+    filter: hue-rotate(0deg) brightness(1) saturate(1.2);
+  }
+  25% {
+    filter: hue-rotate(90deg) brightness(1.1) saturate(1.3);
+  }
+  50% {
+    filter: hue-rotate(180deg) brightness(1.2) saturate(1.4);
+  }
+  75% {
+    filter: hue-rotate(270deg) brightness(1.1) saturate(1.3);
+  }
+  100% {
+    filter: hue-rotate(360deg) brightness(1) saturate(1.2);
+  }
+}
+
+/* Subtle color pulse for the main background */
+@keyframes colorPulse {
+  0%, 100% {
+    background-color: #FAF5F2;
+  }
+  25% {
+    background-color: #FFF5E6;
+  }
+  50% {
+    background-color: #F0F8FF;
+  }
+  75% {
+    background-color: #FFF0F5;
+  }
+}
+
+/* Ensure container doesn't clip content */
+.testimonial-one .container {
+  overflow: visible !important;
+}
+
+/* Prevent horizontal overflow on page */
+body {
+  overflow-x: hidden !important;
+}
+</style>
+
 <section class="testimonial-one">
 	<div class="testimonial-one__pen sisu-splax" data-para-options='{
 		"orientation": "left",
@@ -483,7 +575,7 @@ body.custom-cursor {
 			<div class="testimonial-one__bg"></div>
 			<div class="testimonial-one__bg-shape sisu-splax" style="background-image: url(assets/images/shapes/testimonial-shape-1.png);" data-para-options='{
 				"orientation": "down",
-				"scale": 1.5,
+				"scale": 1.2,
 				"delay": ".3",
 				"transition": "cubic-bezier(0,0,0,1)",
 				"overflow": true
