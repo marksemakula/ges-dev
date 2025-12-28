@@ -47,32 +47,20 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         scrolled 
           ? 'bg-ges-navy/95 backdrop-blur-md shadow-lg py-2' 
-          : 'bg-transparent py-3 sm:py-4 md:py-6'
+          : 'bg-transparent py-2 sm:py-3'
       }`}
     >
-      <nav className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-4">
-          {/* Brand left-aligned */}
-          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
-            <motion.img
-              src="/logo.png"
-              alt="GES Logo"
-              className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto group-hover:drop-shadow-lg transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            />
-            <div className="hidden sm:block">
-              <h1 className="text-sm md:text-lg lg:text-xl font-bold text-white group-hover:text-ges-gold transition-colors">
-                Gombe Education Services
-              </h1>
-              <p className={`text-[10px] md:text-xs font-medium tracking-wider ${scrolled ? 'text-ges-gold' : 'text-gray-300'}`}>
-                EXCELLENCE SINCE 1995
-              </p>
-            </div>
-          </Link>
+      <nav className="relative w-full px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
+        {/* Brand text left, navigation right */}
+        <div className="flex items-center gap-4 justify-between">
+          <div className="hidden sm:flex flex-col leading-tight text-white">
+            <span className="text-sm md:text-base font-bold">Gombe Education Services</span>
+            <span className={`text-[10px] md:text-xs font-medium tracking-wider ${scrolled ? 'text-ges-gold' : 'text-gray-200'}`}>
+              EXCELLENCE SINCE 1995
+            </span>
+          </div>
 
-          {/* Navigation and controls grouped to the right */}
-          <div className="flex items-center gap-3 ml-auto">
+          <div className="flex items-center gap-3 justify-end flex-1">
             <div className="hidden lg:flex items-center space-x-1">
               {navLinks.map((link) => (
                 <Link
@@ -101,7 +89,6 @@ const Header = () => {
                   {dropdownOpen === 'about' && (
                     <motion.div
                       initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       className="absolute top-full right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl py-3 border border-gray-100 overflow-hidden z-[60]"
                     >

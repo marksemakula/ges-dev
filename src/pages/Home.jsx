@@ -366,15 +366,15 @@ const Home = () => {
                 >
                   <div className="relative">
                     <motion.div 
-                      className="w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl"
+                      className="w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm flex items-center justify-center"
                       initial={{ scale: 0.95 }}
                       animate={{ scale: 1 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                     >
                       <img 
-                        src={heroSlides[currentSlide].image} 
-                        alt="Students" 
-                        className="w-full h-full object-cover"
+                        src="/logo.png" 
+                        alt="GES Logo" 
+                        className="h-60 sm:h-64 md:h-72 lg:h-80 w-auto object-contain drop-shadow-2xl"
                       />
                     </motion.div>
                     {/* Floating Stats Cards */}
