@@ -379,17 +379,6 @@ const Home = () => {
                     </motion.div>
                     {/* Floating Stats Cards */}
                     {/* Removed trophy stat card per request */}
-                    <div className="absolute -bottom-8 -right-8 bg-white/10 backdrop-blur-lg rounded-2xl p-4 text-white">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-ges-teal rounded-xl flex items-center justify-center">
-                          <LuTrendingUp className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold"></div>
-                          <div className="text-sm opacity-80"></div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </motion.div>
               </div>
