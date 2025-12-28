@@ -50,9 +50,9 @@ const Header = () => {
           : 'bg-transparent py-3 sm:py-4 md:py-6'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
+      <nav className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-4">
+          {/* Brand left-aligned */}
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
             <motion.img
               src="/logo.png"
@@ -71,123 +71,125 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  location.pathname === link.path
-                    ? 'text-ges-navy bg-ges-gold'
-                    : 'text-white hover:bg-white/10'
-                }`}
+          {/* Navigation and controls grouped to the right */}
+          <div className="flex items-center gap-3 ml-auto">
+            <div className="hidden lg:flex items-center space-x-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    location.pathname === link.path
+                      ? 'text-ges-navy bg-ges-gold'
+                      : 'text-white hover:bg-white/10'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              {/* About Dropdown */}
+              <div
+                className="relative ml-2"
+                onMouseEnter={() => setDropdownOpen('about')}
+                onMouseLeave={() => setDropdownOpen(null)}
               >
-                {link.name}
-              </Link>
-            ))}
-
-            {/* About Dropdown */}
-            <div
-              className="relative ml-2"
-              onMouseEnter={() => setDropdownOpen('about')}
-              onMouseLeave={() => setDropdownOpen(null)}
-            >
-              <button className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-full transition-all">
-                About <LuChevronDown className="ml-1 w-4 h-4" />
-              </button>
-              <AnimatePresence>
-                {dropdownOpen === 'about' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl py-3 border border-gray-100 overflow-hidden z-[60]"
-                  >
-                    {aboutLinks.map((link, index) => (
-                      <motion.div
-                        key={link.path}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                      >
-                        <Link
-                          to={link.path}
-                          className="block px-6 py-3 hover:bg-ges-cream transition-colors group"
+                <button className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-full transition-all">
+                  About <LuChevronDown className="ml-1 w-4 h-4" />
+                </button>
+                <AnimatePresence>
+                  {dropdownOpen === 'about' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      className="absolute top-full right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl py-3 border border-gray-100 overflow-hidden z-[60]"
+                    >
+                      {aboutLinks.map((link, index) => (
+                        <motion.div
+                          key={link.path}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05 }}
                         >
-                          <div className="font-semibold text-ges-navy group-hover:text-ges-teal transition-colors">
-                            {link.name}
-                          </div>
-                          <div className="text-xs text-ges-slate mt-1">
-                            {link.description}
-                          </div>
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                          <Link
+                            to={link.path}
+                            className="block px-6 py-3 hover:bg-ges-cream transition-colors group"
+                          >
+                            <div className="font-semibold text-ges-navy group-hover:text-ges-teal transition-colors">
+                              {link.name}
+                            </div>
+                            <div className="text-xs text-ges-slate mt-1">
+                              {link.description}
+                            </div>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
-            {/* Institutions Dropdown */}
-            <div
-              className="relative ml-2"
-              onMouseEnter={() => setDropdownOpen('institutions')}
-              onMouseLeave={() => setDropdownOpen(null)}
-            >
-              <button className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-full transition-all">
-                Institutions <LuChevronDown className="ml-1 w-4 h-4" />
-              </button>
-              <AnimatePresence>
-                {dropdownOpen === 'institutions' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full right-0 mt-2 w-80 bg-white rounded-2xl shadow-2xl py-3 border border-gray-100 overflow-hidden z-[60]"
-                  >
-                    {institutions.map((inst, index) => (
-                      <motion.div
-                        key={inst.subdomain}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                      >
-                        <Link
-                          to={inst.path}
-                          className="block px-6 py-3 hover:bg-ges-cream transition-colors group"
+              {/* Institutions Dropdown */}
+              <div
+                className="relative ml-2"
+                onMouseEnter={() => setDropdownOpen('institutions')}
+                onMouseLeave={() => setDropdownOpen(null)}
+              >
+                <button className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-full transition-all">
+                  Institutions <LuChevronDown className="ml-1 w-4 h-4" />
+                </button>
+                <AnimatePresence>
+                  {dropdownOpen === 'institutions' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      className="absolute top-full right-0 mt-2 w-80 bg-white rounded-2xl shadow-2xl py-3 border border-gray-100 overflow-hidden z-[60]"
+                    >
+                      {institutions.map((inst, index) => (
+                        <motion.div
+                          key={inst.subdomain}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05 }}
                         >
-                          <div className="flex justify-between items-start">
-                            <div>
-                              <div className="font-semibold text-ges-navy group-hover:text-ges-teal transition-colors">
-                                {inst.name}
-                              </div>
-                              <div className="text-xs text-ges-slate mt-1">
-                                {inst.description}
+                          <Link
+                            to={inst.path}
+                            className="block px-6 py-3 hover:bg-ges-cream transition-colors group"
+                          >
+                            <div className="flex justify-between items-start">
+                              <div>
+                                <div className="font-semibold text-ges-navy group-hover:text-ges-teal transition-colors">
+                                  {inst.name}
+                                </div>
+                                <div className="text-xs text-ges-slate mt-1">
+                                  {inst.description}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
-          </div>
 
-          {/* Action Buttons */}
-          <div className="hidden lg:flex items-center space-x-3 ml-4">
-            {/* Removed Apply Now button */}
-          </div>
+            {/* Action Buttons */}
+            <div className="hidden lg:flex items-center space-x-3 ml-4">
+              {/* Removed Apply Now button */}
+            </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
-          >
-            {isOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />}
-          </button>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors ml-auto"
+            >
+              {isOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
