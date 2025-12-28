@@ -198,25 +198,25 @@ const Home = () => {
 
   const features = [
     {
-      icon: LuAward,
+      logo: "/images/Gombe High logo.png",
       title: "Excellence in Education",
       description: "Consistently ranked among top educational institutions with outstanding academic results.",
       stats: "95% Pass Rate"
     },
     {
-      icon: LuUsers,
+      logo: "/images/Jimmy Ssekasi Business Institute Logo.png",
       title: "Expert Faculty",
       description: "Highly qualified teachers with international experience and modern teaching methodologies.",
       stats: "150+ Teachers"
     },
     {
-      icon: LuGlobe,
+      logo: "/images/scoobydoo-logo.png",
       title: "Global Perspective",
       description: "International partnerships and exchange programs preparing students for global opportunities.",
       stats: "25+ Partners"
     },
     {
-      icon: LuBookOpen,
+      logo: "/images/Gombe Junior School logo.png",
       title: "Comprehensive Curriculum",
       description: "Well-rounded education covering academics, sports, arts, and character development.",
       stats: "50+ Subjects"
@@ -462,8 +462,12 @@ const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group ges-card-hover"
               >
-                <div className="w-16 h-16 bg-ges-gold/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-ges-gold group-hover:text-white transition-all duration-300">
-                  <feature.icon className="w-8 h-8 text-ges-gold group-hover:text-white" />
+                <div className="w-16 h-16 bg-ges-gold/10 rounded-2xl flex items-center justify-center mb-6 overflow-hidden group-hover:bg-ges-gold group-hover:text-white transition-all duration-300">
+                  <img
+                    src={feature.logo}
+                    alt={`${feature.title} logo`}
+                    className="w-12 h-12 object-contain"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-ges-navy mb-4">{feature.title}</h3>
                 <p className="text-ges-slate mb-4 leading-relaxed">{feature.description}</p>
