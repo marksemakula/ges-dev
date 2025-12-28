@@ -462,11 +462,11 @@ const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group ges-card-hover"
               >
-                <div className="w-16 h-16 bg-ges-gold/10 rounded-2xl flex items-center justify-center mb-6 overflow-hidden group-hover:bg-ges-gold group-hover:text-white transition-all duration-300">
+                <div className="w-32 h-32 mx-auto bg-ges-gold/10 rounded-2xl flex items-center justify-center mb-6 overflow-hidden group-hover:bg-ges-gold group-hover:text-white transition-all duration-300">
                   <img
                     src={feature.logo}
                     alt={`${feature.title} logo`}
-                    className="w-12 h-12 object-contain"
+                    className="w-24 h-24 object-contain"
                   />
                 </div>
                 <h3 className="text-xl font-bold text-ges-navy mb-4">{feature.title}</h3>
