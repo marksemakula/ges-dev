@@ -316,9 +316,9 @@ const Home = () => {
                     transition={{ delay: 0.2, duration: 0.6 }}
                     className="mb-4 sm:mb-6 md:mb-8 flex items-center space-x-2 sm:space-x-3 md:space-x-4"
                   >
-                    <img src={currentInstitution.logo} alt={currentInstitution.name + ' Logo'} className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto drop-shadow-lg" />
+                    <img src={currentInstitution.logo} alt={currentInstitution.name + ' Logo'} className="h-20 sm:h-24 md:h-32 lg:h-36 w-auto drop-shadow-lg" />
                     <div>
-                      <h2 className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-white leading-tight">{currentInstitution.name}</h2>
+                      <h2 className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-tight">{currentInstitution.name}</h2>
                       <p className="text-ges-gold text-[10px] sm:text-xs md:text-sm font-semibold tracking-wider">{currentInstitution.url}</p>
                     </div>
                   </motion.div>
