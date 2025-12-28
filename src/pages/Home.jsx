@@ -708,7 +708,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#800E13] relative overflow-hidden">
+      <section className="py-20 bg-[#670C07] relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-32 h-32 bg-ges-gold/10 rounded-full floating-shape"></div>
           <div className="absolute bottom-20 right-20 w-48 h-48 bg-ges-teal/10 rounded-full floating-shape"></div>
@@ -724,9 +724,6 @@ const Home = () => {
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Ready to Join Our Community?
             </h2>
-            <p className="text-xl text-gray-200 mb-12 leading-relaxed">
-              Take the first step towards excellence. Apply now and become part of Uganda's premier educational institution.
-            </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
