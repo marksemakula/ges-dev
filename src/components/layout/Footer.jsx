@@ -172,7 +172,7 @@ const Footer = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-gray-600 text-sm">
-                <p>&copy; 2025 Gombe Education Services. All rights reserved.</p>
+                <p>&copy; 2026 Gombe Education Service. All rights reserved.</p>
                 <div className="flex space-x-4">
                   <Link to="/privacy" className="hover:text-ges-gold transition-colors">
                     Privacy Policy
@@ -186,15 +186,26 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* Back to Top */}
-              <motion.button
-                onClick={scrollToTop}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-10 h-10 bg-ges-gold text-ges-navy rounded-lg flex items-center justify-center hover:bg-ges-teal hover:text-white transition-all duration-300"
-              >
-                <LuArrowUp className="w-5 h-5" />
-              </motion.button>
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-600 text-sm">Powered by</span>
+                  <img 
+                    src="/images/Inzozi-grayscale1.png" 
+                    alt="Inzozi Logo" 
+                    className="h-10 w-auto" 
+                  />
+                </div>
+
+                {/* Back to Top */}
+                <motion.button
+                  onClick={scrollToTop}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-10 h-10 bg-ges-gold text-ges-navy rounded-lg flex items-center justify-center hover:bg-ges-teal hover:text-white transition-all duration-300"
+                >
+                  <LuArrowUp className="w-5 h-5" />
+                </motion.button>
+              </div>
             </div>
           </div>
         </div>
