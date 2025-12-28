@@ -82,11 +82,13 @@ const Home = () => {
   ];
 
   const logos = [
-    { name: 'Jimmy Sekasi', src: '/images/Jimmy Ssekasi Business Institute Logo.png' },
-    { name: 'St. Andrew', src: '/images/Gombe High logo.png' },
-    { name: 'Gombe', src: '/images/GombeBadge.png' },
-    { name: 'Scooby Doo', src: '/images/scoobydoo-logo.png' },
-    { name: 'GES', src: '/images/GES.png' },
+    { name: 'KISU', src: '/images/KISU.png' },
+    { name: 'MoES', src: '/images/MoES.png' },
+    { name: 'Jimmy Sekasi Business Institute', src: '/images/Jimmy Ssekasi Business Institute Logo.png' },
+    { name: 'Gombe High School', src: '/images/Gombe High logo.png' },
+    { name: 'Gombe Junior School', src: '/images/Gombe Junior School logo.png' },
+    { name: 'Scooby Doo International School', src: '/images/scooby-logo.png' },
+    { name: 'Buganda', src: '/images/Flag_of_Buganda.svg' },
   ];
 
   const [institutionSlide, setInstitutionSlide] = useState(0);
@@ -415,21 +417,21 @@ const Home = () => {
       </section>
 
       {/* Logos Carousel Section */}
-      <section className="py-20 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6">
-            {logos.map((logo, index) => (
-              <motion.div
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="relative">
+          <div className="flex animate-scroll">
+            {/* Duplicate logos for seamless loop */}
+            {[...logos, ...logos, ...logos].map((logo, index) => (
+              <div
                 key={index}
-                className="flex items-center justify-center"
-                whileHover={{ scale: 1.1 }}
+                className="flex-shrink-0 flex items-center justify-center px-8"
               >
                 <img 
                   src={logo.src} 
                   alt={logo.name}
                   className="h-16 sm:h-20 md:h-24 w-auto max-h-24 object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -490,9 +492,6 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-ges-navy mb-6">
               Our Institutions
             </h2>
-            <p className="text-xl text-ges-slate max-w-3xl mx-auto">
-              Explore our family of educational institutions, each offering specialized programs for different academic levels
-            </p>
           </motion.div>
 
           <div className="relative -mx-4 px-4">
