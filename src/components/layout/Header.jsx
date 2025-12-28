@@ -53,7 +53,7 @@ const Header = () => {
       <nav className="relative w-full px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
         {/* Brand text left, navigation right */}
         <div className="flex items-center gap-4 justify-between">
-          <div className="hidden sm:flex flex-col leading-tight text-white">
+          <div className="hidden sm:flex flex-col leading-tight text-white ml-8 md:ml-12 lg:ml-16">
             <span className="text-sm md:text-base font-bold">Gombe Education Service</span>
             <span className={`text-[10px] md:text-xs font-medium tracking-wider ${scrolled ? 'text-ges-gold' : 'text-gray-200'}`}>
               EXCELLENCE SINCE 1995
