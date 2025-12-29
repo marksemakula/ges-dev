@@ -195,7 +195,7 @@ const Footer = () => {
                   <img 
                     src="/images/Inzozi-grayscale1.png" 
                     alt="Inzozi Logo" 
-                    className="h-10 w-auto" 
+                    className="h-16 w-auto" 
                   />
                 </div>
 
