@@ -25,7 +25,7 @@ const SAKFooter = () => {
                 <img src="/images/Gombe High logo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain grayscale" />
               </div>
               <div className="leading-tight">
-                <div className="text-base font-bold">St. Andrew Kaggwa Gombe HS</div>
+                <div className="text-base font-bold">St. Andrew Kaggwa Gombe High School</div>
                 <div className="text-xs font-semibold" style={{ color: brandColors.primary }}>Excellence & Character</div>
               </div>
             </div>
@@ -86,7 +86,7 @@ const SAKFooter = () => {
                 <img 
                   src="/images/Inzozi-grayscale.png" 
                   alt="Inzozi Logo" 
-                  className="h-10 w-auto" 
+                  className="h-16 w-auto" 
                 />
               </div>
             </div>
