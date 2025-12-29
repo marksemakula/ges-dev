@@ -11,9 +11,12 @@ const Footer = () => {
   };
 
   const institutions = [
-    { name: 'Gombe High School', path: '/institutions/gombe-high-school' },
-    { name: 'Gombe Junior School', path: '/institutions/gombe-junior-school' },
-    { name: 'Scooby Doo International', path: '/institutions/scooby-doo' },
+    { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', path: '/institutions/sakghs-kawaala' },
+    { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', path: '/institutions/sakghs-bujuuko' },
+    { name: 'Gombe Junior School - Kikajjo', path: '/institutions/gjs-kikajjo' },
+    { name: 'Gombe Junior School - Boarding', path: '/institutions/gjs-boarding' },
+    { name: 'Scooby Doo International School - Katale', path: '/institutions/scooby-katale' },
+    { name: 'Scooby Doo International School - Gulu', path: '/institutions/scooby-gulu' },
     { name: 'Jimmy Sekasi Business Institute', path: '/institutions/jsbi' },
   ];
 
@@ -37,19 +40,18 @@ const Footer = () => {
 
       <div className="relative">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Company Info */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="lg:col-span-1"
             >
               <div className="flex items-center space-x-3 mb-6">
                 <img src="/logo.png" alt="GES Logo" className="h-16 w-auto" />
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Gombe Education Services</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Gombe Education Service</h3>
                   <p className="text-ges-gold text-sm font-semibold">EXCELLENCE SINCE 1995</p>
                 </div>
               </div>
@@ -111,9 +113,10 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
+              className="lg:col-span-2"
             >
               <h4 className="text-lg font-semibold mb-6 text-ges-gold">Our Institutions</h4>
-              <ul className="space-y-3">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8">
                 {institutions.map((inst) => (
                   <li key={inst.path}>
                     <Link 

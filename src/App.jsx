@@ -11,8 +11,6 @@ import Blog from './pages/Blog';
 import Partnerships from './pages/Partnerships';
 import GESLifeFeed from './pages/GESLifeFeed';
 import MentorshipPortal from './pages/MentorshipPortal';
-import GombeHighSchool from './pages/institutions/GombeHighSchool';
-import ScoobyDooInternational from './pages/institutions/ScoobyDooInternational';
 import SAKGHSKawaala from './pages/institutions/SAKGHSKawaala';
 import SAKGHSBujuuko from './pages/institutions/SAKGHSBujuuko';
 import ScoobyKatale from './pages/institutions/ScoobyKatale';
@@ -49,8 +47,6 @@ function App() {
           <Route path="/partnerships" element={<Partnerships />} />
           <Route path="/ges-life" element={<GESLifeFeed />} />
           <Route path="/mentorship" element={<MentorshipPortal />} />
-          <Route path="/institutions/gombe-high-school" element={<GombeHighSchool />} />
-          <Route path="/institutions/scooby-doo" element={<ScoobyDooInternational />} />
           <Route path="/institutions/sakghs-kawaala" element={<SAKGHSKawaala />} />
           <Route path="/institutions/sakghs-bujuuko" element={<SAKGHSBujuuko />} />
           <Route path="/institutions/scooby-katale" element={<ScoobyKatale />} />
