@@ -10,6 +10,7 @@ import Leadership from './pages/Leadership';
 import Blog from './pages/Blog';
 import Partnerships from './pages/Partnerships';
 import GESLifeFeed from './pages/GESLifeFeed';
+import GESLifeCatalogue from './pages/GESLifeCatalogue';
 import MentorshipPortal from './pages/MentorshipPortal';
 import SAKGHSKawaala from './pages/institutions/SAKGHSKawaala';
 import SAKGHSBujuuko from './pages/institutions/SAKGHSBujuuko';
@@ -45,7 +46,7 @@ function App() {
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/partnerships" element={<Partnerships />} />
-          <Route path="/ges-life" element={<GESLifeFeed />} />
+          <Route path="/ges-life" element={<GESLifeCatalogue />} />
           <Route path="/mentorship" element={<MentorshipPortal />} />
           <Route path="/institutions/sakghs-kawaala" element={<SAKGHSKawaala />} />
           <Route path="/institutions/sakghs-bujuuko" element={<SAKGHSBujuuko />} />
