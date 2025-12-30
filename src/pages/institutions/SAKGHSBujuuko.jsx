@@ -22,16 +22,19 @@ const SAKGHSBujuuko = () => {
       title: 'Sciences Program',
       description: 'Comprehensive science education covering Physics, Chemistry, Biology, and Mathematics',
       subjects: ['Physics', 'Chemistry', 'Biology', 'Mathematics', 'ICT'],
+      image: '/images/science.avif',
     },
     {
       title: 'Arts Program',
       description: 'Liberal arts education focusing on languages, humanities, and social sciences',
       subjects: ['Literature', 'History', 'Geography', 'Economics', 'Languages'],
+      image: '/images/ARTS.jpg',
     },
     {
       title: 'Technical Program',
       description: 'Practical skills development in technical and vocational subjects',
       subjects: ['Technical Drawing', 'Computer Science', 'Agriculture', 'Business Studies'],
+      image: '/images/TD.jpg',
     }
   ];
 
@@ -130,17 +133,28 @@ const SAKGHSBujuuko = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col p-0"
+                style={{ overflow: 'hidden' }}
               >
-                <h3 className="text-2xl font-bold mb-4" style={{ color: brandColors.secondary }}>{program.title}</h3>
-                <p className="text-gray-600 mb-6">{program.description}</p>
-                <div className="space-y-2">
-                  {program.subjects.map((subject, idx) => (
-                    <div key={idx} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: brandColors.primary }}></div>
-                      <span className="text-gray-700">{subject}</span>
-                    </div>
-                  ))}
+                <div className="w-full h-40 md:h-48" style={{ flex: '0 0 50%' }}>
+                  <img
+                    src={program.image}
+                    alt={program.title + ' image'}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: 'center' }}
+                  />
+                </div>
+                <div className="flex-1 flex flex-col p-8">
+                  <h3 className="text-2xl font-bold mb-4" style={{ color: brandColors.secondary }}>{program.title}</h3>
+                  <p className="text-gray-600 mb-6">{program.description}</p>
+                  <div className="space-y-2">
+                    {program.subjects.map((subject, idx) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <div className="w-2 h-2 rounded-full" style={{ backgroundColor: brandColors.primary }}></div>
+                        <span className="text-gray-700">{subject}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
