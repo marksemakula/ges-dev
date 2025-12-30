@@ -295,10 +295,10 @@ const Home = () => {
 
             {/* Floating Elements */}
             <div className="absolute inset-0 overflow-hidden">
-              <div className="floating-shape absolute top-20 left-10 w-20 h-20 bg-ges-gold/20 rounded-full"></div>
-              <div className="floating-shape absolute top-40 right-20 w-32 h-32 bg-ges-teal/20 rounded-full"></div>
-              <div className="floating-shape absolute bottom-20 left-1/3 w-16 h-16 bg-ges-purple/20 rounded-full"></div>
-              <div className="floating-shape absolute top-1/3 right-1/3 w-24 h-24 bg-ges-gold/10 rounded-full"></div>
+              <div className="floating-shape absolute top-20 left-10 w-20 h-20 bg-ges-gold/20 rounded-full animate-float"></div>
+              <div className="floating-shape absolute top-40 right-20 w-32 h-32 bg-ges-teal/20 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+              <div className="floating-shape absolute bottom-20 left-1/3 w-16 h-16 bg-ges-purple/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+              <div className="floating-shape absolute top-1/3 right-1/3 w-24 h-24 bg-ges-gold/10 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
             </div>
 
             {/* Content */}
@@ -309,13 +309,13 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="text-white"
+                  className="text-white font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}
                 >
                   {/* Rotating Institution Logos */}
                   <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
+                    initial={{ opacity: 0, y: -20, rotate: -5 }}
+                    animate={{ opacity: 1, y: 0, rotate: 0 }}
+                    transition={{ delay: 0.2, duration: 0.6, type: 'spring', stiffness: 120 }}
                     className="mb-4 sm:mb-6 md:mb-8 flex items-center space-x-2 sm:space-x-3 md:space-x-4"
                   >
                     <img src={currentInstitution.logo} alt={currentInstitution.name + ' Logo'} className="h-20 sm:h-24 md:h-32 lg:h-36 w-auto drop-shadow-lg" />
@@ -329,29 +329,31 @@ const Home = () => {
                     <LuCalendar className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-ges-gold" />
                     <span className="text-xs sm:text-sm font-medium">GES Calender</span>
                   </div>
-                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>
                     {heroSlides[currentSlide].title}
                   </h1>
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-2 sm:mb-3 md:mb-4 text-ges-gold font-medium">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-2 sm:mb-3 md:mb-4 text-ges-gold font-medium font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>
                     {heroSlides[currentSlide].subtitle}
                   </p>
-                  <p className="text-xs sm:text-sm md:text-base mb-4 sm:mb-6 md:mb-8 text-gray-200 leading-relaxed max-w-2xl" style={{ whiteSpace: 'pre-line' }}>
+                  <p className="text-xs sm:text-sm md:text-base mb-4 sm:mb-6 md:mb-8 text-gray-200 leading-relaxed max-w-2xl font-sans" style={{ whiteSpace: 'pre-line', fontFamily: 'Ubuntu, system-ui, sans-serif' }}>
                     {heroDescription}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                     <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="bg-ges-gold text-ges-navy px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-sm sm:text-base md:text-lg hover:bg-white transition-all duration-300 flex items-center justify-center group shadow-lg"
+                      whileHover={{ scale: 1.08, boxShadow: '0 8px 32px 0 rgba(0,0,0,0.15)' }}
+                      whileTap={{ scale: 0.97 }}
+                      className="bg-ges-gold text-ges-navy px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-sm sm:text-base md:text-lg hover:bg-white transition-all duration-300 flex items-center justify-center group shadow-lg font-sans"
+                      style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}
                     >
                       {heroSlides[currentSlide].cta}
                       <LuArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                     </motion.button>
                     <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      whileHover={{ scale: 1.08, boxShadow: '0 8px 32px 0 rgba(0,0,0,0.10)' }}
+                      whileTap={{ scale: 0.97 }}
                       onClick={() => setIsVideoPlaying(true)}
-                      className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-sm sm:text-base md:text-lg hover:bg-white hover:text-ges-navy transition-all duration-300 flex items-center justify-center group"
+                      className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-sm sm:text-base md:text-lg hover:bg-white hover:text-ges-navy transition-all duration-300 flex items-center justify-center group font-sans"
+                      style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}
                     >
                       <LuPlay className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
                       Watch Video
@@ -364,7 +366,7 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
-                  className="relative hidden lg:block"
+                  className="relative hidden lg:block animate-float"
                 >
                   <div className="relative">
                     <motion.div 
@@ -373,10 +375,13 @@ const Home = () => {
                       animate={{ scale: 1 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                     >
-                      <img 
+                      <motion.img 
                         src="/logo.png" 
                         alt="GES Logo" 
                         className="h-60 sm:h-64 md:h-72 lg:h-80 w-auto object-contain drop-shadow-2xl"
+                        initial={{ scale: 0.95, rotate: -2 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{ duration: 1.2, type: 'spring', stiffness: 80 }}
                       />
                     </motion.div>
                     {/* Floating Stats Cards */}
@@ -419,7 +424,7 @@ const Home = () => {
       {/* Logos Carousel Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="relative">
-          <div className="flex animate-scroll">
+          <div className="flex animate-scroll font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>
             {/* Duplicate logos for seamless loop */}
             {[...logos, ...logos, ...logos].map((logo, index) => (
               <div
@@ -455,23 +460,27 @@ const Home = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group ges-card-hover"
+                transition={{ delay: index * 0.1, type: 'spring', stiffness: 120 }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group ges-card-hover font-sans"
+                style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}
               >
-                <div className="w-32 h-32 mx-auto rounded-2xl flex items-center justify-center mb-6 overflow-hidden transition-all duration-300">
-                  <img
+                <div className="w-32 h-32 mx-auto rounded-2xl flex items-center justify-center mb-6 overflow-hidden transition-all duration-300 animate-float" style={{ animationDelay: `${index * 0.5}s` }}>
+                  <motion.img
                     src={feature.logo}
                     alt={`${feature.title} logo`}
                     className="w-32 h-32 object-contain"
+                    initial={{ scale: 0.9, rotate: -5 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.8, type: 'spring', stiffness: 100 }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-ges-navy mb-4">{feature.title}</h3>
-                <p className="text-ges-slate mb-4 leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-bold text-ges-navy mb-4 font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>{feature.title}</h3>
+                <p className="text-ges-slate mb-4 leading-relaxed font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>{feature.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-ges-teal">{feature.stats}</span>
+                  <span className="text-2xl font-bold text-ges-teal font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>{feature.stats}</span>
                   <LuArrowRight className="w-5 h-5 text-ges-gold group-hover:translate-x-1 transition-transform" />
                 </div>
               </motion.div>
@@ -662,11 +671,12 @@ const Home = () => {
             {recentNews.map((news, index) => (
               <motion.article
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group ges-card-hover"
+                transition={{ delay: index * 0.1, type: 'spring', stiffness: 120 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group ges-card-hover font-sans"
+                style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}
               >
                 <div className="relative h-48 overflow-hidden">
                   <img 
@@ -685,10 +695,10 @@ const Home = () => {
                     <LuCalendar className="w-4 h-4 mr-2" />
                     {new Date(news.date).toLocaleDateString()}
                   </div>
-                  <h3 className="text-xl font-bold text-ges-navy mb-3 group-hover:text-ges-teal transition-colors">
+                  <h3 className="text-xl font-bold text-ges-navy mb-3 group-hover:text-ges-teal transition-colors font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>
                     {news.title}
                   </h3>
-                  <p className="text-ges-slate mb-4 leading-relaxed">
+                  <p className="text-ges-slate mb-4 leading-relaxed font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>
                     {news.excerpt}
                   </p>
                   <button className="inline-flex items-center text-ges-teal font-semibold hover:text-ges-navy transition-colors group">
@@ -721,21 +731,23 @@ const Home = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>
               Ready to Join Our Community?
             </h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-ges-gold text-ges-navy px-12 py-4 rounded-full font-bold text-xl hover:bg-white transition-all duration-300 shadow-lg"
+                whileHover={{ scale: 1.08, boxShadow: '0 8px 32px 0 rgba(0,0,0,0.15)' }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-ges-gold text-ges-navy px-12 py-4 rounded-full font-bold text-xl hover:bg-white transition-all duration-300 shadow-lg font-sans"
+                style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}
               >
                 Apply Now
               </motion.button>
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-12 py-4 rounded-full font-bold text-xl hover:bg-white hover:text-ges-navy transition-all duration-300"
+                whileHover={{ scale: 1.08, boxShadow: '0 8px 32px 0 rgba(0,0,0,0.10)' }}
+                whileTap={{ scale: 0.97 }}
+                className="border-2 border-white text-white px-12 py-4 rounded-full font-bold text-xl hover:bg-white hover:text-ges-navy transition-all duration-300 font-sans"
+                style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}
               >
                 Schedule Visit
               </motion.button>
