@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { LuMail, LuPhone, LuMapPin } from 'react-icons/lu';
@@ -9,12 +9,14 @@ const brandColors = {
   secondary: '#800E13',
 };
 
-const campuses = [
+
+const campusesData = [
   { name: 'Kawaala Campus', path: '/institutions/sakghs-kawaala', contact: '+256 700 000 000', location: 'Kawaala, Kampala' },
   { name: 'Bujuuko Campus', path: '/institutions/sakghs-bujuuko', contact: '+256 700 000 001', location: 'Bujuuko, Wakiso' },
 ];
 
-const SAKFooter = () => {
+const SAKFooter = React.memo(() => {
+  const campuses = useMemo(() => campusesData, []);
   return (
     <footer className="text-white pt-10 pb-8" style={{ backgroundColor: '#3C4242' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,7 +24,7 @@ const SAKFooter = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <div className="h-24 w-24 flex items-center justify-center overflow-hidden">
-                <img src="/images/Gombe High logo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain grayscale" />
+                <img src="/images/Gombe High logo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain grayscale" loading="lazy" />
               </div>
               <div className="leading-tight">
                 <div className="text-base font-bold">St. Andrew Kaggwa Gombe High School</div>
@@ -87,6 +89,7 @@ const SAKFooter = () => {
                   src="/images/Inzozi-grayscale.png" 
                   alt="Inzozi Logo" 
                   className="h-16 w-auto" 
+                  loading="lazy" 
                 />
               </div>
             </div>
@@ -95,6 +98,6 @@ const SAKFooter = () => {
       </div>
     </footer>
   );
-};
+});
 
 export default SAKFooter;

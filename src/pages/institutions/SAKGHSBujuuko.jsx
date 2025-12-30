@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import { LuMapPin, LuPhone, LuMail, LuUsers, LuAward, LuBookOpen, LuCalendar, LuArrowRight, LuExternalLink, LuStar, LuTarget } from 'react-icons/lu';
 import SAKHeader from '../../components/layout/SAKHeader';
-import SAKFooter from '../../components/layout/SAKFooter';
+const SAKFooter = lazy(() => import('../../components/layout/SAKFooter'));
 
 const SAKGHSBujuuko = () => {
   const brandColors = {
@@ -17,7 +17,7 @@ const SAKGHSBujuuko = () => {
     { icon: LuTarget, label: 'University Admissions', value: '93%', color: 'text-yellow-600' },
   ];
 
-  const programs = [
+  const programs = useMemo(() => [
     {
       title: 'Sciences Program',
       description: 'Comprehensive science education covering Physics, Chemistry, Biology, and Mathematics',
@@ -36,7 +36,7 @@ const SAKGHSBujuuko = () => {
       subjects: ['Technical Drawing', 'Computer Science', 'Agriculture', 'Business Studies'],
       image: '/images/TD.jpg',
     }
-  ];
+  ], []);
 
   useEffect(() => {
     const prevTitle = document.title;
@@ -75,6 +75,7 @@ const SAKGHSBujuuko = () => {
             src="/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg" 
             alt="St. Andrew Kaggwa Gombe High School - Bujuuko" 
             className="w-full h-full object-cover opacity-20"
+            loading="lazy"
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +86,7 @@ const SAKGHSBujuuko = () => {
           >
             <div className="flex justify-center mb-8">
               <div className="h-[21rem] w-[21rem] flex items-center justify-center overflow-hidden">
-                <img src="/images/Gombe High logo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain" />
+                <img src="/images/Gombe High logo.png" alt="St. Andrew Kaggwa Gombe HS" className="h-full w-full object-contain" loading="lazy" />
               </div>
             </div>
             <div className="inline-flex items-center rounded-full px-6 py-2 mb-6" style={{ backgroundColor: `${brandColors.primary}40` }}>
@@ -142,6 +143,7 @@ const SAKGHSBujuuko = () => {
                     alt={program.title + ' image'}
                     className="w-full h-full object-cover"
                     style={{ objectPosition: 'center' }}
+                    loading="lazy"
                   />
                 </div>
                 <div className="flex-1 flex flex-col p-8">
@@ -201,7 +203,9 @@ const SAKGHSBujuuko = () => {
           </motion.div>
         </div>
       </section>
-      <SAKFooter />
+      <Suspense fallback={<div className="text-center py-8">Loading footer...</div>}>
+        <SAKFooter />
+      </Suspense>
     </div>
   );
 };
