@@ -1,4 +1,5 @@
 import React from 'react';
+import CollageBackground from '../components/gallery/CollageBackground';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { galleryImages } from './gesLifeGalleryImages';
@@ -102,12 +103,15 @@ const GESLifeCatalogue: React.FC = () => {
         </div>
       </div>
 
-      {/* Animated Gallery Section */}
-      <section className="max-w-7xl mx-auto mt-20 mb-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-10 text-ges-navy font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>
+      {/* Animated Gallery Section with Collage Background */}
+      <section className="relative max-w-7xl mx-auto mt-20 mb-10">
+        <div className="absolute inset-0 w-full h-full pointer-events-none select-none">
+          <CollageBackground />
+        </div>
+        <h2 className="relative z-10 text-4xl md:text-5xl font-bold text-center mb-10 text-ges-navy font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>
           GES Life Gallery
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {galleryImages.map((img, idx) => (
             <motion.div
               key={img.src}
