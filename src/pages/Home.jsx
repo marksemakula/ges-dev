@@ -267,10 +267,8 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden bg-ges-navy">
-        {/* Persistent Overlay effect */}
+      <section className="relative h-screen overflow-hidden bg-ges-navy hero-section">
         <div className="hero-overlay"></div>
-        
         <AnimatePresence initial={false}>
           <motion.div
             key={currentSlide}
