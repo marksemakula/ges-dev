@@ -1,20 +1,15 @@
-.hero-section {
-  position: relative;
+/* Additional component-specific styles */
+.hero-gradient {
+  background: linear-gradient(135deg, #0A2342 0%, #1a3a5f 50%, #2A9D8F 100%);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: rgba(94, 23, 19, 0.5);
-  /* Make dots larger and more visible */
-  background-image: radial-gradient(#5e1713 60%, transparent 60%);
-  background-size: 4px 4px;
-  z-index: 8;
-}
-/* Additional component-specific styles */
-.hero-gradient {
-  background: linear-gradient(135deg, #0A2342 0%, #1a3a5f 50%, #2A9D8F 100%);
+  background-color: rgba(94, 23, 19, 0.45);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.35) 33%, transparent 33%);
+  background-size: 2px 2px;
 }
 
 .institution-card {
@@ -60,22 +55,4 @@
   background: linear-gradient(90deg, transparent 0%, #C5A572 50%, transparent 100%);
   height: 1px;
   width: 100%;
-}
-
-/*
-Source - https://stackoverflow.com/a
-Posted by Alexander O'Mara
-Retrieved 2026-01-01, License - CC BY-SA 3.0
-*/
-.hero-overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  pointer-events: none;
-  background: rgba(94, 23, 19, 0.5);
-  background-image: radial-gradient(#5e1713 33%, transparent 33%);
-  background-size: 2px 2px;
-  z-index: 2;
 }

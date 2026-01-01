@@ -267,7 +267,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden bg-ges-navy hero-section">
+      <section className="relative h-screen overflow-hidden bg-ges-navy">
         <AnimatePresence initial={false}>
           <motion.div
             key={currentSlide}
@@ -291,6 +291,7 @@ const Home = () => {
                 className="w-full h-full object-cover opacity-20"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+              <div className="hero-overlay"></div>
             </motion.div>
 
             {/* Floating Elements */}
@@ -302,7 +303,7 @@ const Home = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-20 h-full flex items-center pt-28 sm:pt-32 md:pt-36 lg:pt-0">
+            <div className="relative z-10 h-full flex items-center pt-28 sm:pt-32 md:pt-36 lg:pt-0">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -392,9 +393,6 @@ const Home = () => {
             </div>
           </motion.div>
         </AnimatePresence>
-
-        {/* Overlay above background, below content */}
-        <div className="hero-overlay"></div>
 
         {/* Navigation Controls */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center space-x-4 z-20">
