@@ -855,7 +855,7 @@ const JSBI = () => {
           {/* Bottom Bar */}
           <div className="border-t border-gray-800 pt-2 pb-2 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2025 Jimmy Sekasi Business Institute. All rights reserved.
+              © 2026 Jimmy Sekasi Business Institute. All rights reserved.
             </p>
             <div className="flex items-center gap-8">
               <div className="flex space-x-6 text-sm">

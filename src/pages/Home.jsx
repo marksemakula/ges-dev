@@ -268,35 +268,33 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden bg-ges-navy">
-
-
-          <AnimatePresence initial={false}>
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className={`absolute inset-0 ${heroSlides[currentSlide].background}`}
-              style={{ zIndex: 1 }}
+        {/* Persistent Overlay effect */}
+        <div className="hero-overlay"></div>
+        
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className={`absolute inset-0 ${heroSlides[currentSlide].background}`}
+          >
+            {/* Background Image */}
+            <motion.div 
+              className="absolute inset-0"
+              initial={{ scale: 1.05 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 1.05 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              {/* Background Image */}
-              <motion.div 
-                className="absolute inset-0"
-                initial={{ scale: 1.05 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 1.05 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <img 
-                  src={heroSlides[currentSlide].image} 
-                  alt="Hero background" 
-                  className="w-full h-full object-cover opacity-20"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
-                {/* Overlay effect - always above background, always visible */}
-                <div className="hero-overlay" style={{ zIndex: 2 }}></div>
-              </motion.div>
+              <img 
+                src={heroSlides[currentSlide].image} 
+                alt="Hero background" 
+                className="w-full h-full object-cover opacity-20"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+            </motion.div>
 
             {/* Floating Elements */}
             <div className="absolute inset-0 overflow-hidden">
