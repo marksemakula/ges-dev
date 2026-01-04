@@ -23,7 +23,7 @@ const Header = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'GES Life', path: '/ges-life' },
-    { name: 'International Education Pathway Program', path: '/mentorship' },
+    { name: 'International Education Pathway Program', path: '/international-pathway' },
     { name: 'GES Calendar', path: '/academic-calendar' },
   ];
 

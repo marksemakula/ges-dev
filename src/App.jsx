@@ -20,6 +20,7 @@ import GJSKikajjo from './pages/institutions/GJSKikajjo';
 import GJSBoarding from './pages/institutions/GJSBoarding';
 import GJSAbout from './pages/institutions/GJSAbout';
 import JSBI from './pages/institutions/JSBI';
+import InternationalPathway from './pages/InternationalPathway';
 import AdminPanel from './cms/AdminPanel';
 import AcademicCalendarPage from './pages/AcademicCalendar';
 import './App.css';
@@ -27,12 +28,13 @@ import './App.css';
 function App() {
   const location = useLocation();
   
-  // Hide GES header/footer for pages with their own brand (Scooby, GJS & JSBI)
+  // Hide GES header/footer for pages with their own brand (Scooby, GJS, JSBI & IPP)
   const isBrandedInstitution =
     location.pathname.includes('/institutions/scooby') ||
     location.pathname.includes('/institutions/gjs') ||
     location.pathname.includes('/institutions/sakghs') ||
-    location.pathname.includes('/institutions/jsbi');
+    location.pathname.includes('/institutions/jsbi') ||
+    location.pathname === '/international-pathway';
   
   return (
     <div className="min-h-screen bg-ges-cream">
@@ -56,6 +58,7 @@ function App() {
           <Route path="/institutions/gjs-kikajjo" element={<GJSKikajjo />} />
           <Route path="/institutions/gjs-about" element={<GJSAbout />} />
           <Route path="/institutions/jsbi" element={<JSBI />} />
+          <Route path="/international-pathway" element={<InternationalPathway />} />
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/academic-calendar" element={<AcademicCalendarPage />} />
         </Routes>
