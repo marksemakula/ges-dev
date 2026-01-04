@@ -134,7 +134,7 @@ const InternationalPathway: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-[#670C07] px-6 py-2.5 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                  className="bg-yellow-400 text-[#670C07] px-6 py-2.5 rounded-lg font-semibold hover:bg-yellow-300 transition-colors"
                 >
                   Apply Now
                 </motion.button>
@@ -537,14 +537,31 @@ const InternationalPathway: React.FC = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20"
+              className="relative overflow-hidden bg-white/15 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-2xl shadow-black/20"
             >
-              <form className="space-y-6">
+              <motion.div
+                className="absolute inset-0"
+                initial={{ scale: 1.05 }}
+                animate={{ scale: 1.15 }}
+                transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+              >
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage: "url('/images/gombebg.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
+                <div className="absolute inset-0 bg-[#670C07]/70" />
+              </motion.div>
+
+              <form className="relative z-10 space-y-6">
                 <div>
                   <label className="block text-sm font-medium mb-2">Full Name</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-gray-300"
+                    className="w-full px-4 py-3 bg-white/15 border border-white/25 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300/70 text-white placeholder-gray-200"
                     placeholder="Your name"
                   />
                 </div>
@@ -553,7 +570,7 @@ const InternationalPathway: React.FC = () => {
                   <label className="block text-sm font-medium mb-2">Email</label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-gray-300"
+                    className="w-full px-4 py-3 bg-white/15 border border-white/25 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300/70 text-white placeholder-gray-200"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -562,7 +579,7 @@ const InternationalPathway: React.FC = () => {
                   <label className="block text-sm font-medium mb-2">Phone</label>
                   <input
                     type="tel"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-gray-300"
+                    className="w-full px-4 py-3 bg-white/15 border border-white/25 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300/70 text-white placeholder-gray-200"
                     placeholder="+256 ..."
                   />
                 </div>
@@ -571,14 +588,14 @@ const InternationalPathway: React.FC = () => {
                   <label className="block text-sm font-medium mb-2">Message</label>
                   <textarea
                     rows={4}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-gray-300"
+                    className="w-full px-4 py-3 bg-white/15 border border-white/25 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300/70 text-white placeholder-gray-200"
                     placeholder="Tell us about your education goals..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-white text-[#670C07] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                  className="w-full bg-yellow-400 text-[#670C07] px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-colors shadow-lg shadow-black/10"
                 >
                   Send Message
                 </button>
