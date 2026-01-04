@@ -495,7 +495,7 @@ const InternationalPathway: React.FC = () => {
                   <div>
                     <div className="font-semibold mb-1">Email</div>
                     <a href="mailto:info@ipp-ges.org" className="text-gray-200 hover:text-white transition-colors">
-                      info@ipp-ges.org
+                      info@iepp.ges.org
                     </a>
                   </div>
                 </div>
@@ -519,7 +519,7 @@ const InternationalPathway: React.FC = () => {
                   <div>
                     <div className="font-semibold mb-1">Address</div>
                     <p className="text-gray-200">
-                      Gombe Education System<br />
+                      Gombe Education Service<br />
                       Kampala, Uganda
                     </p>
                   </div>
