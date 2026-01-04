@@ -265,26 +265,32 @@ const InternationalPathway: React.FC = () => {
       </div>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        id="about"
+        className="relative py-24 bg-cover bg-center text-white"
+        style={{ backgroundImage: "url('/images/uni3.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-[#670C07]/90" aria-hidden="true"></div>
+        <div className="absolute inset-0 bg-black/20" aria-hidden="true"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-center">
               Why Choose IPP?
             </h2>
 
-            <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-lg text-gray-100 leading-relaxed">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-bold text-[#670C07] mb-3">Global University Partnerships</h3>
-                <p>
+                <h3 className="text-2xl font-bold text-white mb-3">Global University Partnerships</h3>
+                <p className="text-gray-100">
                   Access to top universities worldwide through our established network of academic partnerships.
                 </p>
               </motion.div>
@@ -295,8 +301,8 @@ const InternationalPathway: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
-                <h3 className="text-2xl font-bold text-[#670C07] mb-3">Personalized Counseling</h3>
-                <p>
+                <h3 className="text-2xl font-bold text-white mb-3">Personalized Counseling</h3>
+                <p className="text-gray-100">
                   One-on-one guidance from experienced education counselors to help you choose the right path.
                 </p>
               </motion.div>
@@ -307,8 +313,8 @@ const InternationalPathway: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <h3 className="text-2xl font-bold text-[#670C07] mb-3">Test Preparation</h3>
-                <p>
+                <h3 className="text-2xl font-bold text-white mb-3">Test Preparation</h3>
+                <p className="text-gray-100">
                   Comprehensive preparation for IELTS, TOEFL, SAT, and other international standardized tests.
                 </p>
               </motion.div>
@@ -319,8 +325,8 @@ const InternationalPathway: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
               >
-                <h3 className="text-2xl font-bold text-[#670C07] mb-3">Scholarship Assistance</h3>
-                <p>
+                <h3 className="text-2xl font-bold text-white mb-3">Scholarship Assistance</h3>
+                <p className="text-gray-100">
                   Support in identifying and applying for scholarships and financial aid opportunities.
                 </p>
               </motion.div>
