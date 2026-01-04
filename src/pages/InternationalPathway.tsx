@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { LuMenu, LuX, LuGlobe, LuUsers, LuBookOpen, LuGraduationCap, LuArrowRight, LuMail, LuPhone, LuMapPin, LuLinkedin, LuFacebook, LuTwitter, LuChevronLeft, LuChevronRight } from 'react-icons/lu';
+import { FaDiscord, FaInstagram, FaLinkedin, FaSlack, FaYoutube, FaWhatsapp, FaTelegram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const InternationalPathway: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -581,7 +583,7 @@ const InternationalPathway: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2">
@@ -629,30 +631,52 @@ const InternationalPathway: React.FC = () => {
 
             <div>
               <h3 className="font-bold text-lg mb-4">Connect</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
-                  <LuLinkedin className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
-                  <LuFacebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
-                  <LuTwitter className="w-5 h-5" />
-                </a>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { icon: FaDiscord, href: 'https://discord.com/ges' },
+                  { icon: FaInstagram, href: 'https://instagram.com/ges' },
+                  { icon: FaLinkedin, href: 'https://linkedin.com/company/ges' },
+                  { icon: FaSlack, href: 'https://slack.com/ges' },
+                  { icon: FaYoutube, href: 'https://youtube.com/ges' },
+                  { icon: FaXTwitter, href: 'https://twitter.com/ges' },
+                  { icon: FaWhatsapp, href: 'https://whatsapp.com/ges' },
+                  { icon: FaTelegram, href: 'https://telegram.com/ges' },
+                ].map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    className="flex items-center justify-center transition-all duration-300 text-white hover:text-gray-300"
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+          <div className="pt-4">
+            <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
               <p>© {new Date().getFullYear()} International Education Pathway Program. All rights reserved.</p>
-              <div className="flex space-x-6 mt-4 md:mt-0">
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  Terms of Service
-                </a>
+              <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+                <div className="flex space-x-6">
+                  <a href="#" className="hover:text-white transition-colors">
+                    Privacy Policy
+                  </a>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Terms of Service
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-400 text-sm">Powered by</span>
+                  <img 
+                    src="/images/Inzozi-grayscale1.png" 
+                    alt="Inzozi Logo" 
+                    className="h-16 w-auto" 
+                  />
+                </div>
               </div>
             </div>
           </div>
