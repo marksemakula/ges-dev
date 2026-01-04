@@ -202,6 +202,23 @@ const InternationalPathway: React.FC = () => {
           )}
         </motion.nav>
 
+        <motion.a
+          href="https://wa.me/256123456789"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with us on WhatsApp"
+          className="fixed left-4 bottom-6 z-50"
+          initial={{ scale: 0, opacity: 0, y: 24 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, type: 'spring', stiffness: 260, damping: 18 }}
+          whileHover={{ scale: 1.08, y: -2 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <div className="p-4 rounded-full bg-green-500 text-white shadow-2xl shadow-green-900/30 border border-white/30">
+            <FaWhatsapp className="w-6 h-6" />
+          </div>
+        </motion.a>
+
         {/* Hero Content */}
         <div className="relative z-10 pt-32 pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -614,7 +631,7 @@ const InternationalPathway: React.FC = () => {
                 <img
                   src="/images/IPP.png"
                   alt="IPP"
-                  className="h-12 w-auto"
+                  className="h-36 w-auto"
                 />
                 <div>
                   <div className="text-lg font-bold">International Education</div>
