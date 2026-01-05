@@ -203,7 +203,7 @@ const InternationalPathway: React.FC = () => {
         </motion.nav>
 
         <motion.a
-          href="https://wa.me/256123456789"
+          href="https://wa.me/2560708800006"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat with us on WhatsApp"
