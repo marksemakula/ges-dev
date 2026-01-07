@@ -40,14 +40,18 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isCalendarPage = location.pathname === '/academic-calendar';
+
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
-        scrolled 
-          ? 'bg-[#670C07]/95 backdrop-blur-md shadow-lg py-2' 
-          : 'bg-transparent py-2 sm:py-3'
+        isCalendarPage
+          ? 'bg-[#670C07]/95 backdrop-blur-md shadow-lg py-2'
+          : scrolled 
+            ? 'bg-[#670C07]/95 backdrop-blur-md shadow-lg py-2' 
+            : 'bg-transparent py-2 sm:py-3'
       }`}
     >
       <nav className="relative w-full px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
@@ -55,7 +59,7 @@ const Header = () => {
         <div className="flex items-center gap-4 justify-between">
           <div className="hidden sm:flex flex-col leading-tight text-white ml-8 md:ml-12 lg:ml-16">
             <span className="text-sm md:text-base font-bold">Gombe Education Service</span>
-            <span className={`text-[10px] md:text-xs font-medium tracking-wider ${scrolled ? 'text-ges-gold' : 'text-gray-200'}`}>
+            <span className={`text-[10px] md:text-xs font-medium tracking-wider ${(scrolled || isCalendarPage) ? 'text-ges-gold' : 'text-gray-200'}`}>
               EXCELLENCE SINCE 1995
             </span>
           </div>
