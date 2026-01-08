@@ -202,26 +202,22 @@ const Home = () => {
     {
       logo: "/images/Gombe High logo.png",
       title: "Excellence in Education",
-      description: "Consistently ranked among top educational institutions with outstanding academic results.",
-      stats: "95% Pass Rate"
+      description: "Consistently ranked among top educational institutions with outstanding academic results."
     },
     {
       logo: "/images/Jimmy Ssekasi Business Institute Logo.png",
       title: "Expert Faculty",
-      description: "Highly qualified teachers with international experience and modern teaching methodologies.",
-      stats: "150+ Teachers"
+      description: "Highly qualified teachers with international experience and modern teaching methodologies."
     },
     {
       logo: "/images/scoobydoo-logo.png",
       title: "Global Perspective",
-      description: "International partnerships and exchange programs preparing students for global opportunities.",
-      stats: "25+ Partners"
+      description: "International partnerships and exchange programs preparing students for global opportunities."
     },
     {
       logo: "/images/Gombe Junior School logo.png",
       title: "Comprehensive Curriculum",
-      description: "Well-rounded education covering academics, sports, arts, and character development.",
-      stats: "50+ Subjects"
+      description: "Well-rounded education covering academics, sports, arts, and character development."
     }
   ];
 
@@ -479,11 +475,7 @@ const Home = () => {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-ges-navy mb-4 font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>{feature.title}</h3>
-                <p className="text-ges-slate mb-4 leading-relaxed font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>{feature.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-ges-teal font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>{feature.stats}</span>
-                  <LuArrowRight className="w-5 h-5 text-ges-gold group-hover:translate-x-1 transition-transform" />
-                </div>
+                <p className="text-ges-slate leading-relaxed font-sans" style={{ fontFamily: 'Ubuntu, system-ui, sans-serif' }}>{feature.description}</p>
               </motion.div>
             ))}
           </div>

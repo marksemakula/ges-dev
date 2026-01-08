@@ -333,7 +333,7 @@ END:VCALENDAR`;
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={goToToday}
-            className="px-6 py-2 bg-gradient-to-r from-ges-gold to-yellow-500 text-ges-navy rounded-xl font-semibold shadow-md hover:shadow-lg transition-all"
+            className="px-6 py-2 bg-[#670C07] text-white rounded-xl font-semibold shadow-md hover:shadow-lg hover:bg-[#7f1009] transition-all"
           >
             Today
           </motion.button>
