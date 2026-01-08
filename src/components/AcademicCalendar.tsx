@@ -763,7 +763,7 @@ END:VCALENDAR`;
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => exportToICS(selectedEvent)}
-                      className="flex-1 bg-gradient-to-r from-ges-gold to-yellow-500 text-ges-navy px-6 py-3 rounded-xl font-semibold flex items-center justify-center shadow-md hover:shadow-lg transition-all"
+                      className="flex-1 bg-[#670C07] text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center shadow-md hover:shadow-lg hover:bg-[#7f1009] transition-all"
                     >
                       <LuDownload className="w-5 h-5 mr-2" />
                       Export to Calendar
@@ -772,7 +772,7 @@ END:VCALENDAR`;
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => shareEvent(selectedEvent)}
-                      className="flex-1 bg-gradient-to-r from-ges-teal to-blue-600 text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center shadow-md hover:shadow-lg transition-all"
+                      className="flex-1 bg-[#670C07] text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center shadow-md hover:shadow-lg hover:bg-[#7f1009] transition-all"
                     >
                       <LuShare2 className="w-5 h-5 mr-2" />
                       Share Event
