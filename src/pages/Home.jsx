@@ -93,13 +93,13 @@ const Home = () => {
 
   const [institutionSlide, setInstitutionSlide] = useState(0);
   const heroInstitutions = [
-    { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-kawaala', url: 'sakghs-kawaala.ges.ac.ug' },
-    { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-bujuuko', url: 'sakghs-bujuuko.ges.ac.ug' },
-    { name: 'Gombe Junior School - Kikajjo', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-kikajjo', url: 'gjs-kikajjo.ges.ac.ug' },
-    { name: 'Gombe Junior School - Boarding', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-boarding', url: 'gjs-boarding.ges.ac.ug' },
-    { name: 'Scooby Doo International School Uganda (SISU) - Katale', logo: '/images/scoobydoo-logo.png', path: '/institutions/scooby-katale', url: 'sisu-katale.ges.ac.ug' },
-    { name: 'Scooby Doo International School Uganda (SISU) - Gulu', logo: '/images/scoobydoo-logo.png', path: '/institutions/scooby-gulu', url: 'sisu-gulu.ges.ac.ug' },
-    { name: 'Jimmy Sekasi Business Institute (JSBI)', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', path: '/institutions/jsbi', url: 'jsbi.ges.ac.ug' },
+    { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-kawaala', url: 'sakghs-kawaala.netlify.app' },
+    { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-bujuuko', url: 'sakghs-bujuuko.netlify.app' },
+    { name: 'Gombe Junior School - Kikajjo', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-kikajjo', url: 'gjs-kikajjo.netlify.app' },
+    { name: 'Gombe Junior School - Boarding', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-boarding', url: 'gjs-boarding.netlify.app' },
+    { name: 'Scooby Doo International School Uganda (SISU) - Katale', logo: '/images/scoobydoo-logo.png', path: '/institutions/scooby-katale', url: 'sisu-katale.netlify.app' },
+    { name: 'Scooby Doo International School Uganda (SISU) - Gulu', logo: '/images/scoobydoo-logo.png', path: '/institutions/scooby-gulu', url: 'sisu-gulu.netlify.app' },
+    { name: 'Jimmy Sekasi Business Institute (JSBI)', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', path: '/institutions/jsbi', url: 'jsbi.netlify.app' },
   ];
   const [currentInstitutionIndex, setCurrentInstitutionIndex] = useState(0);
   const currentInstitution = heroInstitutions[currentInstitutionIndex];

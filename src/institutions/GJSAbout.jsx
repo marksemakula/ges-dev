@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { LuAward, LuTrophy, LuGraduationCap, LuUsers, LuCalendar, LuMapPin } from 'react-icons/lu';
-import GJSHeader from '../../components/layout/GJSHeader';
-import GJSFooter from '../../components/layout/GJSFooter';
+import GJSHeader from '../components/layout/GJSHeader';
+import GJSFooter from '../components/layout/GJSFooter';
 
 const GJSAbout = () => {
   const brandColors = {

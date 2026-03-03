@@ -10,19 +10,18 @@ import Leadership from './pages/Leadership';
 import Blog from './pages/Blog';
 import Partnerships from './pages/Partnerships';
 import GESLifeFeed from './pages/GESLifeFeed';
-import GESLifeCatalogue from './pages/GESLifeCatalogue';
 import MentorshipPortal from './pages/MentorshipPortal';
-import SAKGHSKawaala from './pages/institutions/SAKGHSKawaala';
-import SAKGHSBujuuko from './pages/institutions/SAKGHSBujuuko';
-import ScoobyKatale from './pages/institutions/ScoobyKatale';
-import ScoobyGulu from './pages/institutions/ScoobyGulu';
-import GJSKikajjo from './pages/institutions/GJSKikajjo';
-import GJSBoarding from './pages/institutions/GJSBoarding';
-import GJSAbout from './pages/institutions/GJSAbout';
-import JSBI from './pages/institutions/JSBI';
+import SAKGHSKawaala from './institutions/SAKGHSKawaala';
+import SAKGHSBujuuko from './institutions/SAKGHSBujuuko';
+import ScoobyKatale from './institutions/ScoobyKatale';
+import ScoobyGulu from './institutions/ScoobyGulu';
+import GJSKikajjo from './institutions/GJSKikajjo';
+import GJSBoarding from './institutions/GJSBoarding';
+import GJSAbout from './institutions/GJSAbout';
+import JSBI from './institutions/JSBI';
 import InternationalPathway from './pages/InternationalPathway';
 import AdminPanel from './cms/AdminPanel';
-import AcademicCalendarPage from './pages/AcademicCalendar';
+import AcademicCalendarPage from './components/AcademicCalendar';
 import './App.css';
 
 function App() {
@@ -48,7 +47,7 @@ function App() {
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/partnerships" element={<Partnerships />} />
-          <Route path="/ges-life" element={<GESLifeCatalogue />} />
+          <Route path="/ges-life" element={<GESLifeFeed />} />
           <Route path="/mentorship" element={<MentorshipPortal />} />
           <Route path="/institutions/sakghs-kawaala" element={<SAKGHSKawaala />} />
           <Route path="/institutions/sakghs-bujuuko" element={<SAKGHSBujuuko />} />

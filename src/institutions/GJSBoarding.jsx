@@ -423,7 +423,7 @@ const GJSBoarding = () => {
             >
               <div className="inline-flex items-center rounded-full px-6 py-2 mb-6" style={{ backgroundColor: `${brandColors.primary}40` }}>
                 <LuExternalLink className="w-4 h-4 mr-2" style={{ color: brandColors.primary }} />
-                <span className="text-sm font-medium">gjs-boarding.ges.ac.ug</span>
+                <span className="text-sm font-medium">gjs-boarding.netlify.app</span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Gombe Junior School (GJS)
