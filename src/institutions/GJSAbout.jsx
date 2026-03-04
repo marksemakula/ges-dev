@@ -71,7 +71,7 @@ const GJSAbout = () => {
           >
             <div className="flex justify-center mb-8">
               <img
-                src="/images/GombeBadge.jpg"
+                src="/images/GombeBadge.png"
                 alt="Gombe Junior School"
                 className="h-28 w-auto drop-shadow-md"
               />
