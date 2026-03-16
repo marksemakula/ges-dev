@@ -363,7 +363,7 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
-                  className="relative hidden lg:flex items-center justify-center animate-float"
+                  className="relative hidden lg:flex items-center justify-center"
                 >
                   <motion.img 
                     src="/logo.png" 
