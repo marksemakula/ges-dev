@@ -30,7 +30,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white text-gray-900 relative overflow-hidden">
+    <footer className="bg-gray-100 text-gray-900 relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-32 h-32 bg-netlify-teal rounded-full"></div>
