@@ -48,10 +48,10 @@ const Header = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isCalendarPage
-          ? 'bg-[#670C07]/95 backdrop-blur-md shadow-lg py-2'
+          ? 'bg-netlify-dark/95 backdrop-blur-md shadow-lg py-2'
           : scrolled 
-            ? 'bg-[#670C07]/95 backdrop-blur-md shadow-lg py-2' 
-            : 'bg-transparent py-2 sm:py-3'
+            ? 'bg-netlify-dark/95 backdrop-blur-md shadow-lg py-2' 
+            : 'bg-netlify-dark/80 backdrop-blur-md py-2 sm:py-3'
       }`}
     >
       <nav className="relative w-full px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
@@ -59,7 +59,7 @@ const Header = () => {
         <div className="flex items-center gap-4 justify-between">
           <div className="hidden sm:flex flex-col leading-tight text-white ml-8 md:ml-12 lg:ml-16">
             <span className="text-sm md:text-base font-bold">Gombe Education Service</span>
-            <span className={`text-[10px] md:text-xs font-medium tracking-wider ${(scrolled || isCalendarPage) ? 'text-ges-gold' : 'text-gray-200'}`}>
+            <span className="text-[10px] md:text-xs font-medium tracking-wider text-netlify-teal">
               EXCELLENCE SINCE 1995
             </span>
           </div>
@@ -72,8 +72,8 @@ const Header = () => {
                   to={link.path}
                   className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     location.pathname === link.path
-                      ? 'text-ges-navy bg-ges-gold'
-                      : 'text-white hover:bg-white/10'
+                      ? 'text-netlify-dark bg-netlify-teal'
+                      : 'text-white hover:bg-netlify-gray hover:text-netlify-teal'
                   }`}
                 >
                   {link.name}
@@ -86,7 +86,7 @@ const Header = () => {
                 onMouseEnter={() => setDropdownOpen('about')}
                 onMouseLeave={() => setDropdownOpen(null)}
               >
-                <button className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-full transition-all">
+                <button className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-netlify-gray hover:text-netlify-teal rounded-full transition-all">
                   About <LuChevronDown className="ml-1 w-4 h-4" />
                 </button>
                 <AnimatePresence>
@@ -105,9 +105,9 @@ const Header = () => {
                         >
                           <Link
                             to={link.path}
-                            className="block px-6 py-3 hover:bg-ges-cream transition-colors group"
+                            className="block px-6 py-3 hover:bg-netlify-dark transition-colors group"
                           >
-                            <div className="font-semibold text-ges-navy group-hover:text-ges-teal transition-colors">
+                            <div className="font-semibold text-gray-900 group-hover:text-netlify-teal transition-colors">
                               {link.name}
                             </div>
                             <div className="text-xs text-ges-slate mt-1">
@@ -127,7 +127,7 @@ const Header = () => {
                 onMouseEnter={() => setDropdownOpen('institutions')}
                 onMouseLeave={() => setDropdownOpen(null)}
               >
-                <button className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-full transition-all">
+                <button className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-netlify-gray hover:text-netlify-teal rounded-full transition-all">
                   Institutions <LuChevronDown className="ml-1 w-4 h-4" />
                 </button>
                 <AnimatePresence>
@@ -147,11 +147,11 @@ const Header = () => {
                         >
                           <Link
                             to={inst.path}
-                            className="block px-6 py-3 hover:bg-ges-cream transition-colors group"
+                            className="block px-6 py-3 hover:bg-netlify-dark transition-colors group"
                           >
                             <div className="flex justify-between items-start">
                               <div>
-                                <div className="font-semibold text-ges-navy group-hover:text-ges-teal transition-colors">
+                                <div className="font-semibold text-gray-900 group-hover:text-netlify-teal transition-colors">
                                   {inst.name}
                                 </div>
                                 <div className="text-xs text-ges-slate mt-1">
@@ -176,7 +176,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors ml-auto"
+              className="lg:hidden p-2 text-white hover:bg-netlify-gray hover:text-netlify-teal rounded-lg transition-colors ml-auto"
             >
               {isOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />}
             </button>
@@ -190,7 +190,7 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden mt-4 bg-ges-navy/95 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden"
+              className="lg:hidden mt-4 bg-netlify-darker/95 backdrop-blur-xl rounded-2xl border border-netlify-gray overflow-hidden"
             >
               <div className="p-4 space-y-2">
                 {navLinks.map((link) => (
@@ -200,8 +200,8 @@ const Header = () => {
                     onClick={() => setIsOpen(false)}
                     className={`block px-4 py-3 rounded-xl transition-colors ${
                       location.pathname === link.path
-                        ? 'bg-ges-gold text-ges-navy font-bold'
-                        : 'text-white hover:bg-white/10'
+                        ? 'bg-netlify-teal text-netlify-dark font-bold'
+                        : 'text-white hover:bg-netlify-gray hover:text-netlify-teal'
                     }`}
                   >
                     {link.name}
@@ -212,7 +212,7 @@ const Header = () => {
                 <div className="border-t border-white/10 pt-2 mt-2">
                   <button
                     onClick={() => setDropdownOpen(dropdownOpen === 'about-mobile' ? null : 'about-mobile')}
-                    className="w-full text-left px-4 py-3 rounded-xl text-white hover:bg-white/10 transition-colors flex items-center justify-between"
+                    className="w-full text-left px-4 py-3 rounded-xl text-white hover:bg-netlify-gray hover:text-netlify-teal transition-colors flex items-center justify-between"
                   >
                     <span>About</span>
                     <motion.div
@@ -245,8 +245,8 @@ const Header = () => {
                   </AnimatePresence>
                 </div>
                 
-                <div className="h-px bg-white/10 my-4" />
-                <div className="px-4 text-xs font-bold text-ges-gold uppercase tracking-wider mb-2">
+                <div className="h-px bg-netlify-gray my-4" />
+                <div className="px-4 text-xs font-bold text-netlify-teal uppercase tracking-wider mb-2">
                   Our Institutions
                 </div>
                 {institutions.map((inst) => (
@@ -262,7 +262,7 @@ const Header = () => {
                 <div className="pt-4 mt-4">
                   <motion.button
                     whileTap={{ scale: 0.95 }}
-                    className="w-full bg-ges-gold text-ges-navy px-6 py-3 rounded-xl font-bold hover:bg-ges-teal hover:text-white transition-all duration-300"
+                    className="w-full bg-netlify-teal text-netlify-dark px-6 py-3 rounded-xl font-bold hover:bg-netlify-cyan hover:text-white transition-all duration-300"
                   >
                     Apply Now
                   </motion.button>

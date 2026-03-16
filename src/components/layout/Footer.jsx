@@ -33,9 +33,9 @@ const Footer = () => {
     <footer className="bg-white text-gray-900 relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-ges-gold rounded-full"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-ges-teal rounded-full"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-ges-burgundy rounded-full"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-netlify-teal rounded-full"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-netlify-purple rounded-full"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-netlify-cyan rounded-full"></div>
       </div>
 
       <div className="relative">
@@ -52,7 +52,7 @@ const Footer = () => {
                 <img src="/logo.png" alt="GES Logo" className="h-16 w-auto" />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">Gombe Education Service</h3>
-                  <p className="text-ges-gold text-sm font-semibold">EXCELLENCE SINCE 1995</p>
+                  <p className="text-netlify-teal text-sm font-semibold">EXCELLENCE SINCE 1995</p>
                 </div>
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed">
@@ -76,7 +76,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className="flex items-center justify-center transition-all duration-300 text-black hover:text-ges-gold"
+                    className="flex items-center justify-center transition-all duration-300 text-gray-900 hover:text-netlify-teal"
                   >
                     <social.icon className="w-5 h-5" />
                   </motion.a>
@@ -91,15 +91,15 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <h4 className="text-lg font-semibold mb-6 text-ges-gold">Quick Links</h4>
+              <h4 className="text-lg font-semibold mb-6 text-netlify-teal">Quick Links</h4>
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.path}>
                     <Link 
                       to={link.path}
-                      className="text-gray-700 hover:text-ges-gold transition-colors duration-300 flex items-center group"
+                      className="text-gray-700 hover:text-netlify-teal transition-colors duration-300 flex items-center group"
                     >
-                      <span className="w-2 h-2 bg-ges-teal rounded-full mr-3 group-hover:bg-ges-gold transition-colors"></span>
+                      <span className="w-2 h-2 bg-netlify-cyan rounded-full mr-3 group-hover:bg-netlify-teal transition-colors"></span>
                       {link.name}
                     </Link>
                   </li>
@@ -115,15 +115,15 @@ const Footer = () => {
               transition={{ delay: 0.2 }}
               className="lg:col-span-2"
             >
-              <h4 className="text-lg font-semibold mb-6 text-ges-gold">Our Institutions</h4>
+              <h4 className="text-lg font-semibold mb-6 text-netlify-teal">Our Institutions</h4>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8">
                 {institutions.map((inst) => (
                   <li key={inst.path}>
                     <Link 
                       to={inst.path}
-                      className="text-gray-700 hover:text-ges-gold transition-colors duration-300 flex items-center group"
+                      className="text-gray-700 hover:text-netlify-teal transition-colors duration-300 flex items-center group"
                     >
-                      <span className="w-2 h-2 bg-ges-teal rounded-full mr-3 group-hover:bg-ges-gold transition-colors"></span>
+                      <span className="w-2 h-2 bg-netlify-cyan rounded-full mr-3 group-hover:bg-netlify-teal transition-colors"></span>
                       {inst.name}
                     </Link>
                   </li>
@@ -138,10 +138,10 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <h4 className="text-lg font-semibold mb-6 text-ges-gold">Contact Info</h4>
+              <h4 className="text-lg font-semibold mb-6 text-netlify-teal">Contact Info</h4>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <LuMapPin className="w-5 h-5 text-ges-teal mt-1 flex-shrink-0" />
+                  <LuMapPin className="w-5 h-5 text-netlify-cyan mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-700">
                       Wakiso District, Uganda<br />
@@ -150,14 +150,14 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <LuPhone className="w-5 h-5 text-ges-teal flex-shrink-0" />
+                  <LuPhone className="w-5 h-5 text-netlify-cyan flex-shrink-0" />
                   <div>
                     <p className="text-gray-700">+256 700 123 456</p>
                     <p className="text-gray-700">+256 800 987 654</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <LuMail className="w-5 h-5 text-ges-teal flex-shrink-0" />
+                  <LuMail className="w-5 h-5 text-netlify-cyan flex-shrink-0" />
                   <div>
                     <p className="text-gray-700">info@ges.ac.ug</p>
                     <p className="text-gray-700">admissions@ges.ac.ug</p>
@@ -177,13 +177,13 @@ const Footer = () => {
               <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-gray-600 text-sm">
                 <p>&copy; 2026 Gombe Education Service. All rights reserved.</p>
                 <div className="flex space-x-4">
-                  <Link to="/privacy" className="hover:text-ges-gold transition-colors">
+                  <Link to="/privacy" className="hover:text-netlify-teal transition-colors">
                     Privacy Policy
                   </Link>
-                  <Link to="/terms" className="hover:text-ges-gold transition-colors">
+                  <Link to="/terms" className="hover:text-netlify-teal transition-colors">
                     Terms of Service
                   </Link>
-                  <Link to="/cookies" className="hover:text-ges-gold transition-colors">
+                  <Link to="/cookies" className="hover:text-netlify-teal transition-colors">
                     Cookie Policy
                   </Link>
                 </div>
@@ -204,7 +204,7 @@ const Footer = () => {
                   onClick={scrollToTop}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 bg-ges-gold text-ges-navy rounded-lg flex items-center justify-center hover:bg-ges-teal hover:text-white transition-all duration-300"
+                  className="w-10 h-10 bg-netlify-teal text-netlify-dark rounded-lg flex items-center justify-center hover:bg-netlify-cyan transition-all duration-300"
                 >
                   <LuArrowUp className="w-5 h-5" />
                 </motion.button>

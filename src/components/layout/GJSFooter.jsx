@@ -5,8 +5,8 @@ import { LuMail, LuPhone, LuMapPin } from 'react-icons/lu';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const brandColors = {
-  primary: '#FFD700',
-  secondary: '#800E13',
+  primary: '#00C7B7',
+  secondary: '#0e1117',
 };
 
 const campuses = [
@@ -16,7 +16,7 @@ const campuses = [
 
 const GJSFooter = () => {
   return (
-    <footer className="bg-gray-800 text-white">
+    <footer className="bg-white text-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Brand */}
@@ -37,28 +37,28 @@ const GJSFooter = () => {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 href="#"
-                className="text-gray-300 hover:text-[#FFD700] transition-colors duration-300"
+                className="text-gray-700 hover:text-netlify-teal transition-colors duration-300"
               >
                 <FaFacebook size={18} />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 href="#"
-                className="text-gray-300 hover:text-[#FFD700] transition-colors duration-300"
+                className="text-gray-700 hover:text-netlify-teal transition-colors duration-300"
               >
                 <FaTwitter size={18} />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 href="#"
-                className="text-gray-300 hover:text-[#FFD700] transition-colors duration-300"
+                className="text-gray-700 hover:text-netlify-teal transition-colors duration-300"
               >
                 <FaInstagram size={18} />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 href="#"
-                className="text-gray-300 hover:text-[#FFD700] transition-colors duration-300"
+                className="text-gray-700 hover:text-netlify-teal transition-colors duration-300"
               >
                 <FaLinkedin size={18} />
               </motion.a>
@@ -73,7 +73,7 @@ const GJSFooter = () => {
                 <li key={campus.path}>
                   <Link
                     to={campus.path}
-                    className="text-gray-300 hover:text-[#FFD700] transition-colors duration-300 text-sm block"
+                    className="text-gray-700 hover:text-netlify-teal transition-colors duration-300 text-sm block"
                   >
                     {campus.name}
                   </Link>
@@ -113,9 +113,9 @@ const GJSFooter = () => {
         <div className="border-t border-gray-700 mt-6 pt-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
           <span>© 2025 Gombe Junior School. All rights reserved.</span>
           <div className="flex items-center gap-6 mt-3 md:mt-0">
-            <Link to="/privacy" className="hover:text-[#FFD700] transition-colors">Privacy</Link>
-            <Link to="/terms" className="hover:text-[#FFD700] transition-colors">Terms</Link>
-            <Link to="/cookies" className="hover:text-[#FFD700] transition-colors">Cookies</Link>
+            <Link to="/privacy" className="hover:text-netlify-teal transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-netlify-teal transition-colors">Terms</Link>
+            <Link to="/cookies" className="hover:text-netlify-teal transition-colors">Cookies</Link>
             <div className="flex items-center gap-2">
               <span className="text-gray-300 text-sm">Powered by</span>
               <img 

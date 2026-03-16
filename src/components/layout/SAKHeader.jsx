@@ -4,8 +4,8 @@ import { LuChevronDown, LuMenu, LuX } from 'react-icons/lu';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const brandColors = {
-  primary: '#FFD700',
-  secondary: '#800E13',
+  primary: '#00C7B7',
+  secondary: '#0e1117',
 };
 
 const campuses = [
@@ -58,10 +58,10 @@ const SAKHeader = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="relative text-sm font-semibold text-white hover:text-[#FFD700] transition-colors group"
+                className="relative text-sm font-semibold text-white hover:text-[#00C7B7] transition-colors group"
               >
                 {link.label}
-                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#FFD700] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#00C7B7] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
 
@@ -79,7 +79,7 @@ const SAKHeader = () => {
                     if (item.label === 'Events') setEventsOpen(false);
                   }}
                 >
-                  <button className="flex items-center text-sm font-semibold text-white hover:text-[#FFD700] transition-colors">
+                  <button className="flex items-center text-sm font-semibold text-white hover:text-[#00C7B7] transition-colors">
                     {item.label} <LuChevronDown className="w-4 h-4 ml-1" />
                   </button>
                   <AnimatePresence>
@@ -111,10 +111,10 @@ const SAKHeader = () => {
                 <a
                   key={idx}
                   href={item.href}
-                  className="relative text-sm font-semibold text-white hover:text-[#FFD700] transition-colors group"
+                  className="relative text-sm font-semibold text-white hover:text-[#00C7B7] transition-colors group"
                 >
                   {item.label}
-                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#FFD700] transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#00C7B7] transition-all duration-300 group-hover:w-full" />
                 </a>
               )
             ))}
@@ -124,7 +124,7 @@ const SAKHeader = () => {
               onMouseEnter={() => setCampusOpen(true)}
               onMouseLeave={() => setCampusOpen(false)}
             >
-              <button className="flex items-center text-sm font-semibold text-white hover:text-[#FFD700] transition-colors">
+              <button className="flex items-center text-sm font-semibold text-white hover:text-[#00C7B7] transition-colors">
                 Campuses <LuChevronDown className="w-4 h-4 ml-1" />
               </button>
               <AnimatePresence>
@@ -144,7 +144,7 @@ const SAKHeader = () => {
                       >
                         <Link
                           to={campus.path}
-                          className="block px-5 py-3 text-sm hover:bg-[#FFF6CC] hover:text-[#800E13] transition-colors rounded-xl"
+                          className="block px-5 py-3 text-sm hover:bg-netlify-gray hover:text-netlify-teal transition-colors rounded-xl"
                           onClick={closeMenus}
                         >
                           <div className="font-semibold text-gray-900">{campus.name}</div>
@@ -159,7 +159,7 @@ const SAKHeader = () => {
 
             <Link
               to="/admissions"
-              className="px-4 py-2 rounded-full text-sm font-bold text-[#800E13] bg-[#FFD700] hover:bg-[#f0c200] transition-colors shadow-md"
+              className="px-4 py-2 rounded-full text-sm font-bold text-netlify-dark bg-netlify-teal hover:bg-netlify-cyan transition-colors shadow-md"
             >
               Apply Now
             </Link>
@@ -189,7 +189,7 @@ const SAKHeader = () => {
                   key={link.href}
                   href={link.href}
                   onClick={closeMenus}
-                  className="block text-sm font-semibold text-gray-800 hover:text-[#800E13]"
+                  className="block text-sm font-semibold text-gray-800 hover:text-netlify-teal"
                 >
                   {link.label}
                 </a>
@@ -205,7 +205,7 @@ const SAKHeader = () => {
                           key={sidx}
                           href={subitem.href}
                           onClick={closeMenus}
-                          className="block rounded-lg px-3 py-2 bg-gray-50 border border-gray-100 text-sm font-semibold text-gray-800 hover:bg-[#FFF6CC] hover:text-[#800E13]"
+                          className="block rounded-lg px-3 py-2 bg-gray-50 border border-gray-100 text-sm font-semibold text-gray-800 hover:bg-netlify-gray hover:text-netlify-teal"
                         >
                           {subitem.label}
                         </a>
@@ -217,7 +217,7 @@ const SAKHeader = () => {
                     key={idx}
                     href={item.href}
                     onClick={closeMenus}
-                    className="block text-sm font-semibold text-gray-800 hover:text-[#800E13]"
+                    className="block text-sm font-semibold text-gray-800 hover:text-netlify-teal"
                   >
                     {item.label}
                   </a>
@@ -232,7 +232,7 @@ const SAKHeader = () => {
                       key={campus.path}
                       to={campus.path}
                       onClick={closeMenus}
-                      className="block rounded-lg px-3 py-2 bg-gray-50 border border-gray-100 text-sm font-semibold text-gray-800 hover:bg-[#FFF6CC] hover:text-[#800E13]"
+                      className="block rounded-lg px-3 py-2 bg-gray-50 border border-gray-100 text-sm font-semibold text-gray-800 hover:bg-netlify-gray hover:text-netlify-teal"
                     >
                       {campus.name}
                     </Link>
@@ -243,8 +243,7 @@ const SAKHeader = () => {
               <Link
                 to="/admissions"
                 onClick={closeMenus}
-                className="block text-center px-4 py-3 rounded-full text-sm font-bold text-white"
-                style={{ backgroundColor: brandColors.secondary }}
+                className="block text-center px-4 py-3 rounded-full text-sm font-bold text-white bg-netlify-teal hover:bg-netlify-cyan"
               >
                 Apply Now
               </Link>

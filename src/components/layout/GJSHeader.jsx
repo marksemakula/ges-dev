@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { LuChevronDown, LuMenu, LuX } from 'react-icons/lu';
 
 const brandColors = {
-  primary: '#FFD700',
-  secondary: '#800E13',
+  primary: '#00C7B7',
+  secondary: '#0e1117',
 };
 
 const campuses = [
@@ -52,10 +52,10 @@ const GJSHeader = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="relative text-sm font-semibold text-white hover:text-[#FFD700] transition-colors group"
+                className="relative text-sm font-semibold text-white hover:text-[#00C7B7] transition-colors group"
               >
                 {link.label}
-                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#FFD700] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#00C7B7] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
 
@@ -64,7 +64,7 @@ const GJSHeader = () => {
               onMouseEnter={() => setAboutDropdownOpen(true)}
               onMouseLeave={() => setAboutDropdownOpen(false)}
             >
-              <button className="flex items-center text-sm font-semibold text-white hover:text-[#FFD700] transition-colors">
+              <button className="flex items-center text-sm font-semibold text-white hover:text-[#00C7B7] transition-colors">
                 About <LuChevronDown className="w-4 h-4 ml-1" />
               </button>
               <AnimatePresence>
@@ -99,7 +99,7 @@ const GJSHeader = () => {
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
             >
-              <button className="flex items-center text-sm font-semibold text-white hover:text-[#FFD700] transition-colors">
+              <button className="flex items-center text-sm font-semibold text-white hover:text-[#00C7B7] transition-colors">
                 Campuses <LuChevronDown className="w-4 h-4 ml-1" />
               </button>
               <AnimatePresence>
@@ -119,7 +119,7 @@ const GJSHeader = () => {
                       >
                         <Link
                           to={campus.path}
-                          className="block px-5 py-3 text-sm hover:bg-[#FFF6CC] hover:text-[#800E13] transition-colors"
+                          className="block px-5 py-3 text-sm hover:bg-netlify-gray hover:text-netlify-teal transition-colors"
                         >
                           <div className="font-semibold text-gray-800">{campus.name}</div>
                           <div className="text-xs text-gray-500">{campus.subtitle}</div>
@@ -133,7 +133,7 @@ const GJSHeader = () => {
 
             <Link
               to="/admissions"
-              className="px-4 py-2 rounded-full text-sm font-bold text-[#800E13] bg-[#FFD700] hover:bg-[#f0c200] transition-colors shadow-md"
+              className="px-4 py-2 rounded-full text-sm font-bold text-netlify-dark bg-netlify-teal hover:bg-netlify-cyan transition-colors shadow-md"
             >
               Apply Now
             </Link>
@@ -142,7 +142,7 @@ const GJSHeader = () => {
           {/* Mobile toggle */}
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="lg:hidden p-2 rounded-md text-white hover:text-[#FFD700] transition-colors"
+            className="lg:hidden p-2 rounded-md text-white hover:text-netlify-teal transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />}
@@ -156,7 +156,7 @@ const GJSHeader = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden overflow-hidden border-t border-[#F3C93A]"  
+              className="lg:hidden overflow-hidden border-t border-netlify-teal"  
             >
               <div className="py-4 space-y-2">
                 {navLinks.map((link) => (
@@ -170,7 +170,7 @@ const GJSHeader = () => {
                   </a>
                 ))}
 
-                <div className="border-t border-[#F3C93A] pt-2 mt-2">
+                <div className="border-t border-netlify-teal pt-2 mt-2">
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     className="w-full flex items-center justify-between px-3 py-3 rounded-xl text-sm font-semibold text-white hover:bg-[rgba(255,255,255,0.1)]"
@@ -203,7 +203,7 @@ const GJSHeader = () => {
                 <Link
                   to="/admissions"
                   onClick={() => setIsMobileOpen(false)}
-                  className="block text-center px-3 py-3 rounded-xl text-sm font-bold text-[#800E13] bg-[#FFD700] hover:bg-[#f0c200]"
+                  className="block text-center px-3 py-3 rounded-xl text-sm font-bold text-netlify-dark bg-netlify-teal hover:bg-netlify-cyan"
                 >
                   Apply Now
                 </Link>
