@@ -207,7 +207,7 @@ const Home = () => {
     {
       logo: "/images/Jimmy Ssekasi Business Institute Logo.png",
       title: "Expert Faculty",
-      description: "Highly qualified teachers with international experience and modern teaching methodologies."
+      description: "Highly qualified faculty with international experience and modern teaching methodologies."
     },
     {
       logo: "/images/scoobydoo-logo.png",
@@ -442,17 +442,6 @@ const Home = () => {
       {/* Features Section */}
       <section className="py-20 bg-ges-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-ges-navy mb-6">
-              Why Choose GES
-            </h2>
-          </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <motion.div
