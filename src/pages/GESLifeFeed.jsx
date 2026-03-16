@@ -385,25 +385,6 @@ const GESLifeFeed = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-16"
         >
-          <div className="flex flex-col items-center mb-8">
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-ges-navy mb-3"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              Latest from Our Community
-            </motion.h2>
-            <motion.p 
-              className="text-ges-slate text-lg"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              Filter by category to find what matters to you
-            </motion.p>
-          </div>
           
           <div className="flex flex-wrap justify-center gap-4">
             {[
