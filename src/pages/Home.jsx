@@ -363,27 +363,16 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
-                  className="relative hidden lg:block animate-float"
+                  className="relative hidden lg:flex items-center justify-center animate-float"
                 >
-                  <div className="relative">
-                    <motion.div 
-                      className="w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm flex items-center justify-center"
-                      initial={{ scale: 0.95 }}
-                      animate={{ scale: 1 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                    >
-                      <motion.img 
-                        src="/logo.png" 
-                        alt="GES Logo" 
-                        className="h-60 sm:h-64 md:h-72 lg:h-80 w-auto object-contain drop-shadow-2xl"
-                        initial={{ scale: 0.95, rotate: -2 }}
-                        animate={{ scale: 1, rotate: 0 }}
-                        transition={{ duration: 1.2, type: 'spring', stiffness: 80 }}
-                      />
-                    </motion.div>
-                    {/* Floating Stats Cards */}
-                    {/* Removed trophy stat card per request */}
-                  </div>
+                  <motion.img 
+                    src="/logo.png" 
+                    alt="GES Logo" 
+                    className="h-60 sm:h-64 md:h-72 lg:h-80 xl:h-96 w-auto object-contain drop-shadow-2xl"
+                    initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                    transition={{ duration: 1.2, type: 'spring', stiffness: 80 }}
+                  />
                 </motion.div>
               </div>
             </div>
