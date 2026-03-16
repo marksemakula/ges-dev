@@ -41,6 +41,9 @@ const Header = () => {
   }, []);
 
   const isCalendarPage = location.pathname === '/academic-calendar';
+  const isGESLifePage = location.pathname === '/ges-life';
+  const isHomePage = location.pathname === '/';
+  const isTransparentMode = (isGESLifePage || isHomePage) && !scrolled;
 
   return (
     <motion.header
@@ -49,15 +52,17 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isCalendarPage
           ? 'bg-netlify-dark/95 backdrop-blur-md shadow-lg py-2'
-          : scrolled 
-            ? 'bg-netlify-dark/95 backdrop-blur-md shadow-lg py-2' 
-            : 'bg-netlify-dark/80 backdrop-blur-md py-2 sm:py-3'
+          : isTransparentMode
+            ? 'bg-gradient-to-b from-black/30 to-transparent backdrop-blur-sm py-2 sm:py-3'
+            : scrolled 
+              ? 'bg-netlify-dark/95 backdrop-blur-md shadow-lg py-2' 
+              : 'bg-netlify-dark/80 backdrop-blur-md py-2 sm:py-3'
       }`}
     >
       <nav className="relative w-full px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
         {/* Brand text left, navigation right */}
         <div className="flex items-center gap-4 justify-between">
-          <div className="hidden sm:flex flex-col leading-tight text-white ml-8 md:ml-12 lg:ml-16">
+          <div className={`hidden sm:flex flex-col leading-tight text-white ml-8 md:ml-12 lg:ml-16 ${isTransparentMode ? 'drop-shadow-lg' : ''}`}>
             <span className="text-sm md:text-base font-bold">Gombe Education Service</span>
             <span className="text-[10px] md:text-xs font-medium tracking-wider text-netlify-teal">
               EXCELLENCE SINCE 1995
@@ -65,15 +70,17 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-3 justify-end flex-1">
-            <div className="hidden lg:flex items-center space-x-1">
+            <div className={`hidden lg:flex items-center space-x-1 ${isTransparentMode ? 'drop-shadow-lg' : ''}`}>
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     location.pathname === link.path
-                      ? 'text-netlify-dark bg-netlify-teal'
-                      : 'text-white hover:bg-netlify-gray hover:text-netlify-teal'
+                      ? 'text-netlify-dark bg-netlify-teal shadow-lg'
+                      : isTransparentMode
+                        ? 'text-white hover:bg-white/10 hover:text-ges-gold'
+                        : 'text-white hover:bg-netlify-gray hover:text-netlify-teal'
                   }`}
                 >
                   {link.name}
@@ -86,7 +93,11 @@ const Header = () => {
                 onMouseEnter={() => setDropdownOpen('about')}
                 onMouseLeave={() => setDropdownOpen(null)}
               >
-                <button className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-netlify-gray hover:text-netlify-teal rounded-full transition-all">
+                <button className={`flex items-center px-4 py-2 text-sm font-medium text-white rounded-full transition-all ${
+                  isTransparentMode
+                    ? 'hover:bg-white/10 hover:text-ges-gold'
+                    : 'hover:bg-netlify-gray hover:text-netlify-teal'
+                }`}>
                   About <LuChevronDown className="ml-1 w-4 h-4" />
                 </button>
                 <AnimatePresence>
@@ -127,7 +138,11 @@ const Header = () => {
                 onMouseEnter={() => setDropdownOpen('institutions')}
                 onMouseLeave={() => setDropdownOpen(null)}
               >
-                <button className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-netlify-gray hover:text-netlify-teal rounded-full transition-all">
+                <button className={`flex items-center px-4 py-2 text-sm font-medium text-white rounded-full transition-all ${
+                  isTransparentMode
+                    ? 'hover:bg-white/10 hover:text-ges-gold'
+                    : 'hover:bg-netlify-gray hover:text-netlify-teal'
+                }`}>
                   Institutions <LuChevronDown className="ml-1 w-4 h-4" />
                 </button>
                 <AnimatePresence>
@@ -176,7 +191,11 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-white hover:bg-netlify-gray hover:text-netlify-teal rounded-lg transition-colors ml-auto"
+              className={`lg:hidden p-2 text-white rounded-lg transition-colors ml-auto ${
+                isTransparentMode
+                  ? 'hover:bg-white/10 hover:text-ges-gold'
+                  : 'hover:bg-netlify-gray hover:text-netlify-teal'
+              }`}
             >
               {isOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />}
             </button>
