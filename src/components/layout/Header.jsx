@@ -23,7 +23,7 @@ const Header = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'GES Life', path: '/ges-life' },
-    { name: 'International Education Pathway Program', path: '/international-pathway' },
+    { name: 'International Education Pathway Program', path: 'https://ipp-ug.netlify.app/', external: true },
     { name: 'GES Calendar', path: '/academic-calendar' },
   ];
 
@@ -72,19 +72,35 @@ const Header = () => {
           <div className="flex items-center gap-3 justify-end flex-1">
             <div className={`hidden lg:flex items-center space-x-1 ${isTransparentMode ? 'drop-shadow-lg' : ''}`}>
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    location.pathname === link.path
-                      ? 'text-netlify-dark bg-netlify-teal shadow-lg'
-                      : isTransparentMode
+                link.external ? (
+                  <a
+                    key={link.path}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                      isTransparentMode
                         ? 'text-white hover:bg-white/10 hover:text-ges-gold'
                         : 'text-white hover:bg-netlify-gray hover:text-netlify-teal'
-                  }`}
-                >
-                  {link.name}
-                </Link>
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                      location.pathname === link.path
+                        ? 'text-netlify-dark bg-netlify-teal shadow-lg'
+                        : isTransparentMode
+                          ? 'text-white hover:bg-white/10 hover:text-ges-gold'
+                          : 'text-white hover:bg-netlify-gray hover:text-netlify-teal'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
 
               {/* About Dropdown */}
@@ -213,18 +229,31 @@ const Header = () => {
             >
               <div className="p-4 space-y-2">
                 {navLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`block px-4 py-3 rounded-xl transition-colors ${
-                      location.pathname === link.path
-                        ? 'bg-netlify-teal text-netlify-dark font-bold'
-                        : 'text-white hover:bg-netlify-gray hover:text-netlify-teal'
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
+                  link.external ? (
+                    <a
+                      key={link.path}
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="block px-4 py-3 rounded-xl transition-colors text-white hover:bg-netlify-gray hover:text-netlify-teal"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`block px-4 py-3 rounded-xl transition-colors ${
+                        location.pathname === link.path
+                          ? 'bg-netlify-teal text-netlify-dark font-bold'
+                          : 'text-white hover:bg-netlify-gray hover:text-netlify-teal'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  )
                 ))}
                 
                 {/* About Dropdown for Mobile */}
