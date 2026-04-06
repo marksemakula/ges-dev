@@ -213,6 +213,7 @@ onUnmounted(() => { clearAuto(); if (animTimer) clearTimeout(animTimer); });
 
 const marqueeLogos = [
   { name: 'Kingdom of Buganda',              src: '/images/Flag_of_Buganda.svg' },
+  { name: 'Braemar College',                 src: '/images/braemar.webp', grayscale: true },
   { name: 'St. Andrew Kaggwa GHS',           src: '/images/Gombe High logo.png' },
   { name: 'Gombe Junior School',             src: '/images/Gombe Junior School logo.png' },
   { name: 'SISU',                            src: '/images/scooby-logo.png' },
