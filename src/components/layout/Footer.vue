@@ -172,12 +172,25 @@ const socials = [
 a.ges-footer__contact-item:hover { color: #8C1427; text-decoration: underline; text-decoration-color: #8C1427; text-underline-offset: 3px; }
 
 .ges-footer__heading {
-  font-size: 0.7rem;
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #0A2342;
   margin-bottom: 1rem;
+  padding-bottom: 0.45rem;
+}
+.ges-footer__heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 65%;
+  height: 3px;
+  background: #f4c542;
+  border-radius: 999px;
 }
 .ges-footer__list {
   list-style: none;
