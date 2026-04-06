@@ -1,0 +1,758 @@
+<template>
+  <div class="home">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__content container">
+        <div class="hero__text">
+          <h1 class="hero__title">Shaping Leaders,<br />Building Futures</h1>
+          <p class="hero__subtitle">
+            Gombe Education Service has provided world-class education since 1995 — fostering academic excellence, character, and global readiness across our network of institutions.
+          </p>
+
+        </div>
+
+      </div>
+      <div class="hero__bg-pattern" aria-hidden="true"></div>
+    </section>
+
+    <!-- Institutions Marquee -->
+    <section class="institutions">
+      <Vue3Marquee :duration="60" :pause-on-hover="true" :gradient="true" gradient-color="#0A2342" :gradient-width="100">
+        <a
+          v-for="logo in marqueeLogosExpanded"
+          :key="logo._key"
+          class="marquee__item"
+          :title="logo.name"
+        >
+          <img :src="logo.src" :alt="logo.name" :class="['marquee__logo', { 'marquee__logo--grayscale': logo.grayscale }]" />
+        </a>
+      </Vue3Marquee>
+    </section>
+
+    <!-- Institutions Carousel -->
+    <section class="section section--muted inst-section">
+      <div class="container">
+        <div class="inst-section__inner">
+          <!-- Carousel -->
+          <div class="inst-carousel" @mouseenter="clearAuto" @mouseleave="startAuto">
+            <div :class="['inst-carousel__stage', `stage--${slideDir}`, { 'is-animating': isAnimating }]">
+              <!-- Prev peek -->
+              <div
+                class="inst-carousel__peek inst-carousel__peek--left"
+                @click="prev"
+                role="button"
+                tabindex="0"
+                @keydown.enter="prev"
+                :aria-label="'Previous: ' + prevInst.name"
+              >
+                <Transition name="peek-fade" mode="out-in">
+                  <div :key="prevIndex" class="inst-tile inst-tile--peek">
+                    <div class="inst-tile__logo">
+                      <img :src="prevInst.logo" :alt="prevInst.name" />
+                    </div>
+                    <div class="inst-tile__body">
+                      <span class="inst-tile__type">{{ prevInst.type }}</span>
+                      <h3 class="inst-tile__name">{{ prevInst.name }}</h3>
+                    </div>
+                  </div>
+                </Transition>
+              </div>
+
+              <!-- Active tile -->
+              <div class="inst-carousel__slot">
+                <Transition :name="`slide-${slideDir}`">
+                  <a :key="activeIndex" :href="activeInst.url" class="inst-tile inst-tile--active">
+                    <div class="inst-tile__logo inst-tile__logo--lg">
+                      <img :src="activeInst.logo" :alt="activeInst.name" />
+                    </div>
+                    <div class="inst-tile__body">
+                      <span class="inst-tile__type">{{ activeInst.type }}</span>
+                      <h3 class="inst-tile__name">{{ activeInst.name }}</h3>
+                      <p class="inst-tile__desc">{{ activeInst.description }}</p>
+                    </div>
+                    <svg class="inst-tile__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </Transition>
+              </div>
+
+              <!-- Next peek -->
+              <div
+                class="inst-carousel__peek inst-carousel__peek--right"
+                @click="next"
+                role="button"
+                tabindex="0"
+                @keydown.enter="next"
+                :aria-label="'Next: ' + nextInst.name"
+              >
+                <Transition name="peek-fade" mode="out-in">
+                  <div :key="nextIndex" class="inst-tile inst-tile--peek">
+                    <div class="inst-tile__logo">
+                      <img :src="nextInst.logo" :alt="nextInst.name" />
+                    </div>
+                    <div class="inst-tile__body">
+                      <span class="inst-tile__type">{{ nextInst.type }}</span>
+                      <h3 class="inst-tile__name">{{ nextInst.name }}</h3>
+                    </div>
+                  </div>
+                </Transition>
+              </div>
+            </div>
+
+            <!-- Dots -->
+            <div class="inst-carousel__dots" role="tablist">
+              <button
+                v-for="(_, i) in institutions"
+                :key="i"
+                :class="['inst-carousel__dot', { 'is-active': i === activeIndex }]"
+                @click="goTo(i)"
+                :aria-label="`Go to ${institutions[i].name}`"
+              />
+            </div>
+          </div>
+
+          <!-- Board Chair with caption -->
+          <div class="inst-section__person">
+            <figure class="person-figure">
+              <img src="/images/David_Kiwalabye_Male-rbg.png" alt="David Kiwalabye Male" />
+              <figcaption class="person-quote">
+                <blockquote>
+                  "Our institutions are built on the conviction that every child deserves an education that nurtures their full potential — academically, morally, and as a citizen of the world."
+                </blockquote>
+                <cite>
+                  <strong>David Kiwalabye Male</strong>
+                  <span>Board Chair, Gombe Education Service</span>
+                </cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners logos -->
+    <section class="section partners">
+      <div class="container">
+        <p class="partners__label">Recognised & Accredited By</p>
+        <div class="partners__logos">
+          <div v-for="partner in partners" :key="partner.name" class="partners__logo">
+            <img :src="partner.src" :alt="partner.name" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+      <div class="container cta-banner__inner">
+        <div>
+          <h2 class="cta-banner__title">Ready to Join the GES Family?</h2>
+          <p class="cta-banner__sub">Contact any of our institutions to begin the admissions process.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <RouterLink to="/about" class="btn btn--white">Get in Touch</RouterLink>
+          <RouterLink to="/academic-calendar" class="btn btn--outline-white">View Calendar</RouterLink>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { Vue3Marquee } from 'vue3-marquee';
+
+const institutions = [
+  { name: 'St. Andrew Kaggwa GHS – Kawaala', type: 'Secondary School', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced secondary education with a focus on academic excellence.' },
+  { name: 'St. Andrew Kaggwa GHS – Bujuuko', type: 'Secondary School', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Nurturing tomorrow\'s leaders through quality education.' },
+  { name: 'Gombe Junior School – Kikajjo', type: 'Primary & Lower Secondary', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-kikajjo', url: 'https://gjs-kikajjo.vercel.app/', description: 'Building strong foundations for lifelong learning.' },
+  { name: 'Gombe Junior School – Boarding', type: 'Primary & Lower Secondary', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-boarding', url: 'https://gjs-boarding.vercel.app/', description: 'Residential schooling in a safe, nurturing environment.' },
+  { name: 'Gombe Junior School – Gulu', type: 'Primary & Lower Secondary', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/', description: 'Extending foundational education excellence to Northern Uganda.' },
+  { name: 'SISU – Katale Campus', type: 'International School', logo: '/images/scooby-logo.png', path: '/institutions/scooby-katale', url: 'https://sisu-katale.vercel.app/', description: 'International curriculum preparing students for global success.' },
+  { name: 'SISU – Gulu Campus', type: 'International School', logo: '/images/scooby-logo.png', path: '/institutions/scooby-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'Bringing international education to Northern Uganda.' },
+];
+
+/* ── Carousel state ── */
+const activeIndex = ref(0);
+const slideDir = ref<'left' | 'right'>('right');
+const prevIndex = computed(() => (activeIndex.value - 1 + institutions.length) % institutions.length);
+const nextIndex = computed(() => (activeIndex.value + 1) % institutions.length);
+const prevInst = computed(() => institutions[prevIndex.value]);
+const activeInst = computed(() => institutions[activeIndex.value]);
+const nextInst = computed(() => institutions[nextIndex.value]);
+
+let autoTimer: ReturnType<typeof setInterval> | null = null;
+let animTimer: ReturnType<typeof setTimeout> | null = null;
+const isAnimating = ref(false);
+
+function startAuto() {
+  if (autoTimer) clearInterval(autoTimer);
+  autoTimer = setInterval(() => {
+    slideDir.value = 'right';
+    activeIndex.value = nextIndex.value;
+    triggerAnim();
+  }, 5000);
+}
+function clearAuto() {
+  if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+}
+function triggerAnim() {
+  isAnimating.value = true;
+  if (animTimer) clearTimeout(animTimer);
+  animTimer = setTimeout(() => { isAnimating.value = false; }, 550);
+}
+function prev() { slideDir.value = 'left'; activeIndex.value = prevIndex.value; triggerAnim(); startAuto(); }
+function next() { slideDir.value = 'right'; activeIndex.value = nextIndex.value; triggerAnim(); startAuto(); }
+function goTo(i: number) {
+  slideDir.value = i > activeIndex.value ? 'right' : 'left';
+  activeIndex.value = i;
+  triggerAnim();
+  startAuto();
+}
+onMounted(startAuto);
+onUnmounted(() => { clearAuto(); if (animTimer) clearTimeout(animTimer); });
+
+const marqueeLogos = [
+  { name: 'Kingdom of Buganda',              src: '/images/Flag_of_Buganda.svg' },
+  { name: 'St. Andrew Kaggwa GHS',           src: '/images/Gombe High logo.png' },
+  { name: 'Gombe Junior School',             src: '/images/Gombe Junior School logo.png' },
+  { name: 'SISU',                            src: '/images/scooby-logo.png' },
+  { name: 'Jimmy Sekasi Business Institute', src: '/images/Jimmy Ssekasi Business Institute Logo.png' },
+  { name: 'KISU',                            src: '/images/KISU.png' },
+  { name: 'Ministry of Education',           src: '/images/MoES1.png', grayscale: true },
+  { name: 'UTB',                             src: '/images/UTB.png',   grayscale: true },
+];
+
+// Repeat 3× so content is always wider than any viewport
+const marqueeLogosExpanded = Array.from({ length: 3 }, (_, i) =>
+  marqueeLogos.map(l => ({ ...l, _key: `${l.src}-${i}` }))
+).flat();
+
+const partners = [
+  { name: 'Ministry of Education', src: '/images/MoES1.png' },
+  { name: 'NCHE', src: '/images/NCHE.png' },
+  { name: 'IEAC', src: '/images/IEAC.png' },
+  { name: 'Kingdom of Buganda', src: '/images/Flag_of_Buganda.svg' },
+  { name: 'Ministry of Local Government', src: '/images/molg-uganda.jpg' },
+];
+</script>
+
+<style scoped>
+/* ── Hero ── */
+.hero {
+  position: relative;
+  background: #8C1427;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 0;
+}
+.hero__bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 70% 20%, rgba(255,209,102,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 15% 85%, rgba(255,180,60,0.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(80,0,15,0.45) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero__content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .hero__content { grid-template-columns: 1fr auto; align-items: center; }
+}
+.hero__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #FFD166;
+  margin-bottom: 1rem;
+}
+.hero__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.12;
+  margin-bottom: 1.25rem;
+}
+.hero__subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: 2rem;
+}
+.hero__actions {
+  display: flex;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  min-width: 260px;
+}
+.hero__stat {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.hero__stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #00C7B7;
+  line-height: 1.1;
+}
+.hero__stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.25rem;
+}
+
+/* ── Shared ── */
+.section {
+  padding: 5rem 0;
+}
+.section--muted { background: #f8f9fc; }
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+.section-header {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 3rem;
+}
+.section-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00C7B7;
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: #0A2342;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.section-desc {
+  font-size: 0.975rem;
+  color: #6C757D;
+  line-height: 1.65;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  font-family: inherit;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.btn--primary {
+  background: #00C7B7;
+  color: #0A2342;
+  border-color: #00C7B7;
+}
+.btn--primary:hover { background: #00b5a7; border-color: #00b5a7; }
+.btn--outline {
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  border-color: rgba(255,255,255,0.3);
+}
+.btn--outline:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+.btn--white { background: #fff; color: #0A2342; border-color: #fff; }
+.btn--white:hover { background: #e8f0ff; }
+.btn--outline-white { background: transparent; color: #fff; border-color: rgba(255,255,255,0.5); }
+.btn--outline-white:hover { border-color: #fff; }
+
+/* ── Institutions Marquee ── */
+.institutions {
+  background: #0A2342;
+  padding: 2.5rem 0;
+}
+.marquee__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 2.5rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.marquee__logo {
+  height: 56px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.marquee__logo--grayscale {
+  filter: grayscale(100%) brightness(10);
+  opacity: 0.75;
+}
+.marquee__item:hover .marquee__logo {
+  opacity: 1;
+}
+.marquee__item:hover .marquee__logo--grayscale {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+
+/* ── Institutions Carousel ── */
+.inst-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(243, 244, 246, 0.85) 0%, rgba(229, 231, 235, 0.85) 100%),
+    url('/images/world-map-bg.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.inst-section > .container {
+  position: relative;
+  z-index: 1;
+}
+.inst-section__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: end;
+}
+@media (min-width: 900px) {
+  .inst-section__inner { grid-template-columns: 1fr auto; }
+}
+
+/* Carousel */
+.inst-carousel { width: 100%; max-width: 570px; margin: 0 auto; }
+.inst-carousel__stage {
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: stretch;
+  gap: 0.375rem;
+}
+.inst-carousel__peek {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.inst-carousel__peek--left {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 100%);
+}
+.inst-carousel__peek--right {
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, black 100%);
+  mask-image: linear-gradient(to left, transparent 0%, black 100%);
+}
+.inst-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+.inst-carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5e9f0;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s, transform 0.25s;
+}
+.inst-carousel__dot.is-active {
+  background: #8C1427;
+  transform: scale(1.4);
+}
+
+/* Shared tile base */
+.inst-tile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fff;
+  border: 1px solid #e5e9f0;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
+  min-width: 0;
+}
+
+/* Peek tile */
+.inst-tile--peek {
+  padding: 0.875rem 1rem;
+  opacity: 0.35;
+  pointer-events: none;
+  transform: scale(0.95);
+  width: 100%;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.inst-carousel__peek:hover .inst-tile--peek { opacity: 0.55; }
+
+/* Active (detailed) tile */
+.inst-tile--active {
+  padding: 1.5rem;
+  border-color: transparent;
+  box-shadow: 0 8px 32px rgba(140,20,39,0.1);
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 377px;
+}
+.inst-tile--active:hover {
+  box-shadow: 0 16px 48px rgba(140,20,39,0.22), 0 2px 8px rgba(10,35,66,0.08);
+  border-color: transparent;
+  transform: translateY(-3px);
+}
+
+/* Logo */
+.inst-tile__logo {
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inst-tile--active .inst-tile__logo {
+  margin-bottom: 1rem;
+}
+.inst-tile__logo img { width: 72px; height: 72px; object-fit: contain; }
+.inst-tile--active .inst-tile__logo img { width: 104px; height: 104px; }
+
+/* Body text */
+.inst-tile__body { flex: 1; min-width: 0; }
+.inst-tile__type {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8C1427;
+  margin-bottom: 0.2rem;
+}
+.inst-tile__name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0A2342;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.inst-tile--active .inst-tile__name {
+  font-size: 1.1rem;
+  white-space: normal;
+  margin-bottom: 0.5rem;
+}
+.inst-tile__desc {
+  font-size: 0.82rem;
+  color: #546e8a;
+  line-height: 1.55;
+  margin: 0;
+}
+.inst-tile__arrow {
+  flex-shrink: 0;
+  color: #8C1427;
+  margin-top: 1rem;
+  transition: transform 0.2s;
+}
+.inst-tile--active:hover .inst-tile__arrow { transform: translateX(4px); }
+
+/* ── Slide transitions ── */
+
+/* Stage has perspective so rotateY works on children */
+.inst-carousel__stage { perspective: 1100px; }
+
+.inst-carousel__slot {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  min-height: 377px;
+}
+
+/* Entering tile slides in on top (z-index 2) with a 3D twist */
+.slide-right-enter-active,
+.slide-left-enter-active {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease;
+}
+/* Leaving tile recedes behind — absolute so it doesn't affect layout */
+.slide-right-leave-active,
+.slide-left-leave-active {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: transform 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.45s ease;
+  pointer-events: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* slide-right (going forward): new enters from right with inward tilt, old recedes left + rotates away */
+.slide-right-enter-from { transform: translateX(110%) rotateY(-12deg); opacity: 0.6; }
+.slide-right-enter-to   { transform: translateX(0)    rotateY(0deg);   opacity: 1; }
+.slide-right-leave-from { transform: translateX(0)   scale(1)    rotateY(0deg);   opacity: 1; }
+.slide-right-leave-to   { transform: translateX(-20%) scale(0.78) rotateY(10deg); opacity: 0.08; }
+
+/* slide-left (going back): new enters from left with inward tilt, old recedes right + rotates away */
+.slide-left-enter-from  { transform: translateX(-110%) rotateY(12deg);  opacity: 0.6; }
+.slide-left-enter-to    { transform: translateX(0)     rotateY(0deg);   opacity: 1; }
+.slide-left-leave-from  { transform: translateX(0)    scale(1)    rotateY(0deg);    opacity: 1; }
+.slide-left-leave-to    { transform: translateX(20%)  scale(0.78) rotateY(-10deg);  opacity: 0.08; }
+
+/* Active tile glows more when animating (sense of coming forward) */
+.is-animating .inst-tile--active {
+  box-shadow: 0 20px 56px rgba(140,20,39,0.22), 0 4px 16px rgba(10,35,66,0.12);
+}
+
+/* ── Peek tile transitions ── */
+.peek-fade-enter-active { transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s; }
+.peek-fade-leave-active { transition: opacity 0.18s ease,   transform 0.18s ease; }
+.peek-fade-enter-from   { opacity: 0; transform: scale(0.88) translateY(8px); }
+.peek-fade-leave-to     { opacity: 0; transform: scale(0.88) translateY(-8px); }
+
+/* When going right: dim the right peek (it's about to become active) */
+.is-animating.stage--right .inst-carousel__peek--right .inst-tile--peek {
+  opacity: 0.12;
+  transition: opacity 0.35s ease;
+}
+/* When going left: dim the left peek */
+.is-animating.stage--left .inst-carousel__peek--left .inst-tile--peek {
+  opacity: 0.12;
+  transition: opacity 0.35s ease;
+}
+
+/* Person + Board Chair caption */
+.inst-section__person { display: flex; align-items: flex-end; justify-content: center; flex-shrink: 0; }
+.person-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  max-width: 100%;
+}
+.person-figure > img {
+  width: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+  opacity: 0.4;
+  filter: grayscale(20%);
+}
+.person-quote {
+  background: #fff;
+  border-left: 3px solid #8C1427;
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.25rem;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(10,35,66,0.08);
+}
+.person-quote blockquote {
+  margin: 0 0 0.9rem;
+  font-size: 0.96rem;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  color: #0A2342;
+  line-height: 1.72;
+}
+.person-quote cite { font-style: normal; display: block; }
+.person-quote cite strong {
+  display: block;
+  color: #8C1427;
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+.person-quote cite span { font-size: 0.84rem; color: #6b7a8d; }
+
+/* ── Partners ── */
+.partners { padding: 3rem 0; border-top: 1px solid #f0f2f6; }
+.partners__label {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 2rem;
+}
+.partners__logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+.partners__logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.5;
+  transition: opacity 0.2s, filter 0.2s;
+}
+.partners__logo:hover img { filter: grayscale(0); opacity: 1; }
+
+/* ── CTA ── */
+.cta-banner {
+  background: #0A2342;
+  padding: 4rem 0;
+}
+.cta-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.cta-banner__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.cta-banner__sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+}
+.cta-banner__actions {
+  display: flex;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+</style>

@@ -4,3 +4,51 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/institutions/sakghs-kawaala"
+  to = "https://sakghs-kawaala.vercel.app/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/institutions/sakghs-bujuuko"
+  to = "https://sakghs-bujuuko.vercel.app/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/institutions/gjs-kikajjo"
+  to = "https://gjs-kikajjo.vercel.app/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/institutions/gjs-boarding"
+  to = "https://gjs-boarding.vercel.app/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/institutions/gjs-gulu"
+  to = "https://gjs-gulu.vercel.app/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/institutions/gjs-about"
+  to = "https://gjs-gulu.vercel.app/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/institutions/scooby-katale"
+  to = "https://sisu-katale.vercel.app/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/institutions/scooby-gulu"
+  to = "https://sisu-gulu.vercel.app/"
+  status = 301
+  force = true
