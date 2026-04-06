@@ -8,16 +8,18 @@
           <p class="hero__subtitle">
             Gombe Education Service has provided world-class education since 1995 — fostering academic excellence, character, and global readiness across our network of institutions.
           </p>
-
         </div>
 
+        <div class="hero__visual">
+          <img src="/logo.png" alt="Gombe Education Service logo" class="hero__logo" />
+        </div>
       </div>
       <div class="hero__bg-pattern" aria-hidden="true"></div>
     </section>
 
     <!-- Institutions Marquee -->
     <section class="institutions">
-      <Vue3Marquee :duration="60" :pause-on-hover="true" :gradient="true" gradient-color="#0A2342" :gradient-width="100">
+      <Vue3Marquee :duration="60" :pause-on-hover="true" :gradient="true" gradient-color="#0A2342" gradient-width="100px">
         <a
           v-for="logo in marqueeLogosExpanded"
           :key="logo._key"
@@ -292,6 +294,17 @@ const partners = [
   line-height: 1.7;
   max-width: 540px;
   margin-bottom: 2rem;
+}
+.hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero__logo {
+  width: min(100%, 420px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.28));
 }
 .hero__actions {
   display: flex;
