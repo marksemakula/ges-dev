@@ -64,13 +64,19 @@
               <div class="inst-carousel__slot">
                 <Transition :name="`slide-${slideDir}`">
                   <a :key="activeIndex" :href="activeInst.url" class="inst-tile inst-tile--active">
-                    <div class="inst-tile__logo inst-tile__logo--lg">
-                      <img :src="activeInst.logo" :alt="activeInst.name" />
+                    <div class="inst-tile__media">
+                      <img src="/images/schoolgroup.jpg" alt="GES students learning together" />
                     </div>
-                    <div class="inst-tile__body">
-                      <span class="inst-tile__type">{{ activeInst.type }}</span>
-                      <h3 class="inst-tile__name">{{ activeInst.name }}</h3>
-                      <p class="inst-tile__desc">{{ activeInst.description }}</p>
+                    <div class="inst-tile__content">
+                      <div class="inst-tile__logo inst-tile__logo--lg">
+                        <img :src="activeInst.logo" :alt="activeInst.name" />
+                      </div>
+                      <div class="inst-tile__body inst-tile__body--active">
+                        <span class="inst-tile__type">{{ activeInst.type }}</span>
+                        <h3 class="inst-tile__name">{{ activeInst.name }}</h3>
+                        <p class="inst-tile__desc">{{ activeInst.description }}</p>
+                        <p class="inst-tile__more">Explore this institution to learn more about its programs, community, and student life.</p>
+                      </div>
                     </div>
                     <svg class="inst-tile__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                   </a>
@@ -468,12 +474,12 @@ const partners = [
 }
 
 /* Carousel */
-.inst-carousel { width: 100%; max-width: 570px; margin: 0 auto; }
+.inst-carousel { width: 100%; max-width: 680px; margin: 0 auto; }
 .inst-carousel__stage {
   display: grid;
-  grid-template-columns: 56px 1fr 56px;
+  grid-template-columns: 64px 1fr 64px;
   align-items: stretch;
-  gap: 0.375rem;
+  gap: 0.5rem;
 }
 .inst-carousel__peek {
   cursor: pointer;
@@ -539,17 +545,46 @@ const partners = [
 
 /* Active (detailed) tile */
 .inst-tile--active {
-  padding: 1.5rem;
+  position: relative;
+  padding: 0;
   border-color: transparent;
   box-shadow: 0 8px 32px rgba(140,20,39,0.1);
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 377px;
+  display: grid;
+  grid-template-rows: 120px auto;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-height: 390px;
+  overflow: hidden;
 }
 .inst-tile--active:hover {
   box-shadow: 0 16px 48px rgba(140,20,39,0.22), 0 2px 8px rgba(10,35,66,0.08);
   border-color: transparent;
   transform: translateY(-3px);
+}
+
+/* Active card media/content split */
+.inst-tile__media {
+  height: 100%;
+  min-height: 120px;
+  width: 100%;
+  overflow: hidden;
+  background: #d9dde7;
+}
+.inst-tile__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.inst-tile__content {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 1rem;
+  align-items: start;
+  align-content: start;
+  width: 100%;
+  min-height: 0;
+  padding: 0.25rem 1.25rem 0.65rem;
 }
 
 /* Logo */
@@ -563,10 +598,11 @@ const partners = [
   justify-content: center;
 }
 .inst-tile--active .inst-tile__logo {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  justify-content: flex-start;
 }
-.inst-tile__logo img { width: 72px; height: 72px; object-fit: contain; }
-.inst-tile--active .inst-tile__logo img { width: 104px; height: 104px; }
+.inst-tile__logo img { width: 120px; height: 120px; object-fit: contain; }
+.inst-tile--active .inst-tile__logo img { width: 220px; height: 220px; max-width: 100%; }
 
 /* Body text */
 .inst-tile__body { flex: 1; min-width: 0; }
@@ -589,7 +625,7 @@ const partners = [
   white-space: nowrap;
 }
 .inst-tile--active .inst-tile__name {
-  font-size: 1.1rem;
+  font-size: 1.22rem;
   white-space: normal;
   margin-bottom: 0.5rem;
 }
@@ -599,10 +635,22 @@ const partners = [
   line-height: 1.55;
   margin: 0;
 }
+.inst-tile__body--active .inst-tile__desc {
+  font-size: 0.92rem;
+}
+.inst-tile__more {
+  font-size: 0.85rem;
+  color: #6a7c93;
+  line-height: 1.55;
+  margin: 0.55rem 0 0;
+}
 .inst-tile__arrow {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.9rem;
   flex-shrink: 0;
   color: #8C1427;
-  margin-top: 1rem;
+  margin: 0;
   transition: transform 0.2s;
 }
 .inst-tile--active:hover .inst-tile__arrow { transform: translateX(4px); }
@@ -616,7 +664,17 @@ const partners = [
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  min-height: 377px;
+  min-height: 390px;
+}
+
+@media (max-width: 640px) {
+  .inst-tile__content {
+    grid-template-columns: 1fr;
+  }
+
+  .inst-tile--active .inst-tile__logo {
+    justify-content: center;
+  }
 }
 
 /* Entering tile slides in on top (z-index 2) with a 3D twist */
@@ -678,7 +736,7 @@ const partners = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 280px;
+  width: 430px;
   max-width: 100%;
 }
 .person-figure > img {
