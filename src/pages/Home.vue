@@ -307,7 +307,7 @@ const partners = [
   align-items: center;
 }
 .hero__logo {
-  width: min(100%, 420px);
+  width: min(100%, 378px);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.28));
