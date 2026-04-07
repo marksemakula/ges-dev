@@ -17,7 +17,7 @@
         </RouterLink>
 
         <a
-          href="https://ipp-ug.netlify.app/"
+          href="https://ipp-vert.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           class="ges-nav__link"

@@ -6,7 +6,9 @@
         <h1 class="page-hero__title">International Education<br />Pathway Programme</h1>
         <p class="page-hero__subtitle">Opening doors to world-class universities and international career opportunities for GES students.</p>
         <div class="hero-actions">
-          <a href="https://ipp-ug.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn--teal">Visit IPP Website →</a>
+          <a href="https://ipp-vert.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn--teal">Visit IPP Website →</a>
+</xai:function_call name="edit_file">
+<parameter name="path">TODO.md
         </div>
       </div>
     </section>
