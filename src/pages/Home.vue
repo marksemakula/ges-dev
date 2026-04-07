@@ -65,7 +65,7 @@
                 <Transition :name="`slide-${slideDir}`">
                   <a :key="activeIndex" :href="activeInst.url" class="inst-tile inst-tile--active">
                     <div class="inst-tile__media">
-                      <img src="/images/schoolgroup.jpg" alt="GES students learning together" />
+                      <img :src="activeInst.image" :alt="`${activeInst.name} students`" />
                     </div>
                     <div class="inst-tile__content">
                       <div class="inst-tile__logo inst-tile__logo--lg">
@@ -170,13 +170,13 @@ import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { Vue3Marquee } from 'vue3-marquee';
 
 const institutions = [
-  { name: 'St. Andrew Kaggwa GHS – Kawaala', type: 'Secondary School', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced secondary education with a focus on academic excellence.' },
-  { name: 'St. Andrew Kaggwa GHS – Bujuuko', type: 'Secondary School', logo: '/images/Gombe High logo.png', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Nurturing tomorrow\'s leaders through quality education.' },
-  { name: 'Gombe Junior School – Kikajjo', type: 'Primary & Lower Secondary', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-kikajjo', url: 'https://gjs-kikajjo.vercel.app/', description: 'Building strong foundations for lifelong learning.' },
-  { name: 'Gombe Junior School – Boarding', type: 'Primary & Lower Secondary', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-boarding', url: 'https://gjs-boarding.vercel.app/', description: 'Residential schooling in a safe, nurturing environment.' },
-  { name: 'Gombe Junior School – Gulu', type: 'Primary & Lower Secondary', logo: '/images/Gombe Junior School logo.png', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/', description: 'Extending foundational education excellence to Northern Uganda.' },
-  { name: 'SISU – Katale Campus', type: 'International School', logo: '/images/scooby-logo.png', path: '/institutions/scooby-katale', url: 'https://sisu-katale.vercel.app/', description: 'International curriculum preparing students for global success.' },
-  { name: 'SISU – Gulu Campus', type: 'International School', logo: '/images/scooby-logo.png', path: '/institutions/scooby-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'Bringing international education to Northern Uganda.' },
+  { name: 'St. Andrew Kaggwa GHS – Kawaala', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/classexam.jpg', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced secondary education with a focus on academic excellence.' },
+  { name: 'St. Andrew Kaggwa GHS – Bujuuko', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/gombebg.jpg', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Nurturing tomorrow\'s leaders through quality education.' },
+  { name: 'Gombe Junior School – Kikajjo', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/happgirl.jpg', path: '/institutions/gjs-kikajjo', url: 'https://gjs-kikajjo.vercel.app/', description: 'Building strong foundations for lifelong learning.' },
+  { name: 'Gombe Junior School – Boarding', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/schoolgroup.jpg', path: '/institutions/gjs-boarding', url: 'https://gjs-boarding.vercel.app/', description: 'Residential schooling in a safe, nurturing environment.' },
+  { name: 'Gombe Junior School – Gulu', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/apply1.jpg', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/', description: 'Extending foundational education excellence to Northern Uganda.' },
+  { name: 'SISU – Katale Campus', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/uni1.jpg', path: '/institutions/scooby-katale', url: 'https://sisu-katale.vercel.app/', description: 'International curriculum preparing students for global success.' },
+  { name: 'SISU – Gulu Campus', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/1611922513686.jpeg', path: '/institutions/scooby-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'Bringing international education to Northern Uganda.' },
 ];
 
 /* ── Carousel state ── */
@@ -770,7 +770,7 @@ const partners = [
   font-weight: 700;
   font-size: 0.98rem;
 }
-.person-quote cite span { font-size: 0.84rem; color: #6b7a8d; }
+.person-quote cite span { font-size: 0.84rem; color: #0A2342; font-weight: 600; }
 
 /* ── Partners ── */
 .partners { padding: 3rem 0; border-top: 1px solid #f0f2f6; }
