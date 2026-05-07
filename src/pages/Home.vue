@@ -34,8 +34,13 @@
     <!-- Institutions Carousel -->
     <section class="section section--muted inst-section">
       <div class="container">
+        <div class="inst-section__header">
+          <p class="inst-section__eyebrow">Our Network</p>
+          <h2 class="inst-section__title">Institutions Under GES</h2>
+        </div>
+
         <div class="inst-section__inner">
-          <!-- Carousel -->
+          <!-- Carousel (full width centered) -->
           <div class="inst-carousel" @mouseenter="clearAuto" @mouseleave="startAuto">
             <div :class="['inst-carousel__stage', `stage--${slideDir}`, { 'is-animating': isAnimating }]">
               <!-- Prev peek -->
@@ -118,20 +123,24 @@
             </div>
           </div>
 
-          <!-- Board Chair with caption -->
-          <div class="inst-section__person">
-            <figure class="person-figure">
+          <!-- Board Chair Quote Banner -->
+          <div class="quote-banner">
+            <div class="quote-banner__person">
               <img src="/images/David_Kiwalabye_Male-rbg.png" alt="David Kiwalabye Male" />
-              <figcaption class="person-quote">
-                <blockquote>
-                  "Our institutions are built on the conviction that every child deserves an education that nurtures their full potential — academically, morally, and as a citizen of the world."
-                </blockquote>
-                <cite>
+            </div>
+            <div class="quote-banner__content">
+              <svg class="quote-banner__icon" width="52" height="52" viewBox="0 0 24 24" fill="#8C1427" opacity="0.08"><path d="M6 17h3l2-4V7H5v6h3l-2 4zm8 0h3l2-4V7h-6v6h3l-2 4z"/></svg>
+              <blockquote class="quote-banner__text">
+                "Our institutions are built on the conviction that every child deserves an education that nurtures their full potential — academically, morally, and as a citizen of the world."
+              </blockquote>
+              <div class="quote-banner__author">
+                <div class="quote-banner__line"></div>
+                <div>
                   <strong>David Kiwalabye Male</strong>
                   <span>Board Chair, Gombe Education Service</span>
-                </cite>
-              </figcaption>
-            </figure>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -471,7 +480,7 @@ const partners = [
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
-  align-items: end;
+  align-items: center;
 }
 @media (min-width: 900px) {
   .inst-section__inner { grid-template-columns: 1fr auto; }
@@ -552,24 +561,25 @@ const partners = [
   position: relative;
   padding: 0;
   border-color: transparent;
-  box-shadow: 0 8px 32px rgba(140,20,39,0.1);
+  box-shadow: 0 12px 40px rgba(10,35,66,0.15), 0 4px 12px rgba(140,20,39,0.1);
   display: grid;
-  grid-template-rows: 120px auto;
+  grid-template-rows: 220px auto;
   align-items: stretch;
   justify-content: flex-start;
-  min-height: 390px;
+  min-height: 480px;
   overflow: hidden;
+  border-radius: 16px;
 }
 .inst-tile--active:hover {
-  box-shadow: 0 16px 48px rgba(140,20,39,0.22), 0 2px 8px rgba(10,35,66,0.08);
+  box-shadow: 0 20px 56px rgba(10,35,66,0.25), 0 8px 24px rgba(140,20,39,0.15);
   border-color: transparent;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 /* Active card media/content split */
 .inst-tile__media {
   height: 100%;
-  min-height: 120px;
+  min-height: 220px;
   width: 100%;
   overflow: hidden;
   background: #d9dde7;
@@ -666,9 +676,11 @@ const partners = [
 
 .inst-carousel__slot {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 10px;
-  min-height: 390px;
+  min-height: 480px;
+  padding: 30px;
+  margin: -30px;
 }
 
 @media (max-width: 640px) {
@@ -735,46 +747,125 @@ const partners = [
 }
 
 /* Person + Board Chair caption */
-.inst-section__person { display: flex; align-items: flex-end; justify-content: center; flex-shrink: 0; }
-.person-figure {
+.inst-section__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.inst-section__eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8C1427;
+  margin-bottom: 0.5rem;
+}
+.inst-section__title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: #0A2342;
+  line-height: 1.2;
+}
+/* Quote Banner */
+.quote-banner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 430px;
-  max-width: 100%;
+  position: relative;
+  z-index: 10;
+  max-width: 430px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
 }
-.person-figure > img {
+.quote-banner:hover {
+  transform: translateY(-4px);
+}
+.quote-banner__person {
   width: 100%;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 1.5rem;
+}
+.quote-banner__person img {
+  width: 85%;
+  max-height: 240px;
   object-fit: contain;
   object-position: bottom;
   display: block;
-  opacity: 0.4;
-  filter: grayscale(20%);
+  filter: grayscale(15%);
+  transition: filter 0.3s ease;
 }
-.person-quote {
-  background: #fff;
-  border-left: 3px solid #8C1427;
-  border-radius: 0 8px 8px 0;
-  padding: 1rem 1.25rem;
-  width: 100%;
-  box-shadow: 0 4px 20px rgba(10,35,66,0.08);
+.quote-banner:hover .quote-banner__person img {
+  filter: grayscale(0%);
 }
-.person-quote blockquote {
-  margin: 0 0 0.9rem;
-  font-size: 0.96rem;
+.quote-banner__content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(10, 35, 66, 0.08), 0 2px 10px rgba(140, 20, 39, 0.05);
+  padding: 2.5rem 3rem 2.5rem 2rem;
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: box-shadow 0.3s ease;
+}
+.quote-banner:hover .quote-banner__content {
+  box-shadow: 0 16px 50px rgba(10, 35, 66, 0.12), 0 4px 15px rgba(140, 20, 39, 0.08);
+}
+.quote-banner__icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+.quote-banner__text {
+  margin: 0 0 1.25rem;
+  font-size: 1.05rem;
   font-style: italic;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   color: #0A2342;
-  line-height: 1.72;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
-.person-quote cite { font-style: normal; display: block; }
-.person-quote cite strong {
+.quote-banner__author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.quote-banner__line {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, #8C1427, #c9412e);
+  flex-shrink: 0;
+}
+.quote-banner__author strong {
   display: block;
   color: #8C1427;
   font-weight: 700;
-  font-size: 0.98rem;
+  font-size: 1rem;
 }
-.person-quote cite span { font-size: 0.84rem; color: #0A2342; font-weight: 600; }
+.quote-banner__author span {
+  font-size: 0.85rem;
+  color: #546e8a;
+}
+@media (max-width: 768px) {
+  .quote-banner {
+    flex-direction: column;
+    margin-top: 2rem;
+    border-left: none;
+    border-top: 4px solid #8C1427;
+  }
+  .quote-banner__person {
+    width: 100%;
+    height: 200px;
+  }
+  .quote-banner__content {
+    padding: 2rem;
+  }
+}
 
 /* ── Partners ── */
 .partners { padding: 3rem 0; border-top: 1px solid #f0f2f6; }
