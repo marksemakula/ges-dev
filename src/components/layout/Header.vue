@@ -199,7 +199,7 @@ const institutions = [
 .ges-brand__name {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #fff;
+  color: #8C1427;
   line-height: 1.2;
   letter-spacing: 0.01em;
   transition: color 0.35s ease;
@@ -231,7 +231,7 @@ const institutions = [
   padding: 0.45rem 0.9rem 0.6rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.88);
+  color: #8C1427;
   text-decoration: none;
   border-radius: 6px;
   transition: color 0.2s ease;
@@ -258,7 +258,7 @@ const institutions = [
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 .ges-nav__link:hover {
-  color: #FFD166;
+  color: #6b0f1a;
 }
 .ges-nav__link:hover::after,
 .ges-nav__link--active::after {
@@ -349,7 +349,7 @@ const institutions = [
   display: block;
   width: 100%;
   height: 2px;
-  background: #fff;
+  background: #8C1427;
   border-radius: 2px;
   transition: transform 0.25s, opacity 0.25s, background 0.35s ease;
   transform-origin: center;

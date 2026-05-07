@@ -249,7 +249,11 @@ const partners = [
 /* ── Hero ── */
 .hero {
   position: relative;
-  background: #8C1427;
+  background: url('/images/world-map-bg.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 88vh;
   display: flex;
   align-items: center;
@@ -290,13 +294,13 @@ const partners = [
 .hero__title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
-  color: #fff;
+  color: #0A2342;
   line-height: 1.12;
   margin-bottom: 1.25rem;
 }
 .hero__subtitle {
   font-size: 1.05rem;
-  color: rgba(255,255,255,0.72);
+  color: #0A2342;
   line-height: 1.7;
   max-width: 540px;
   margin-bottom: 2rem;
