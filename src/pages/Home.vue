@@ -275,8 +275,7 @@ const partners = [
   inset: 0;
   background-image:
     radial-gradient(circle at 70% 20%, rgba(255,209,102,0.18) 0%, transparent 50%),
-    radial-gradient(circle at 15% 85%, rgba(255,180,60,0.10) 0%, transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(80,0,15,0.45) 0%, transparent 70%);
+    radial-gradient(circle at 15% 85%, rgba(255,180,60,0.10) 0%, transparent 45%);
   pointer-events: none;
 }
 .hero__content {
