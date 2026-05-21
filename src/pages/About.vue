@@ -17,38 +17,73 @@
           <h2 class="section-title">The GES Profile</h2>
         </div>
         <p class="intro-text">Gombe Education Service is a consortium of six institutions providing education from Kindergarten to Tertiary level: Scooby Doo International School- Uganda offering both National & International curricular, Gombe Junior School-Kikajjo which is entirely Day, Gombe Junior School which is purely boarding, St. Andrew Kaggwa Gombe High School – Kawaala, St Andrew Kaggwa Gombe high school- Bujuuko and Jimmy Sekasi Business Institute.</p>
-        <p class="intro-text">All GES Schools embrace and subscribe to the same Vision, Mission and Core Values.</p>
+        <p class="intro-text">All GES Schools embrace and subscribe to the same Vision and Mission.</p>
         
         <div class="institutions-grid">
           <div class="institution-card">
             <div class="institution-card__tag">Early Years</div>
             <h3>Scooby Doo International School Uganda</h3>
             <p>This is an early years independent international school offering both National & International curricular and brings together learners from different parts of Uganda from the age of 2-6years. Started in 2013.</p>
+            <div class="institution-contact">
+              <p><strong>📱 Phone:</strong> 0708 800 005 / 0708 800 006</p>
+              <p><strong>🌐 Website:</strong> <a href="https://www.scoobydoointernationalschooluganda.com" target="_blank" rel="noopener">scoobydoointernationalschooluganda.com</a></p>
+              <p><strong>📍 Location:</strong> Kikajjo-off Seguku Katale Road</p>
+            </div>
           </div>
           <div class="institution-card">
             <div class="institution-card__tag">Primary</div>
             <h3>Gombe Junior School</h3>
             <p>This school is one of our pioneer schools that started in 2013 as day & boarding. It academically excelled with 100% first grades in 2017 & 2022 emerging best in Wakiso District and ranked number 4 & 5 in Uganda respectively. Due to its growth, the day parents sought customized services which saw the creation of an independent day section.</p>
+            <div class="institution-contact">
+              <p><strong>📱 Phone:</strong> 0708 800 001 / 0708 800 003</p>
+              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombejuniorschool.com">info@gombejuniorschool.com</a></p>
+              <p><strong>🌐 Website:</strong> <a href="https://www.gombejuniorschool.com" target="_blank" rel="noopener">gombejuniorschool.com</a></p>
+              <p><strong>📍 Location:</strong> Kikajjo-Nateete-Nakawuka Road</p>
+            </div>
           </div>
           <div class="institution-card">
             <div class="institution-card__tag">Primary</div>
             <h3>Gombe Junior School Kikajjo</h3>
             <p>GJS-K was opened in 2019 after the separation of day scholars from Boarders to create for them their own school which is entirely day. The school has brought about transformation in the community around its location.</p>
+            <div class="institution-contact">
+              <p><strong>📱 Phone:</strong> 0708 800 002 / 0708 800 004</p>
+              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombejuniorschool.com">info@gombejuniorschool.com</a></p>
+              <p><strong>🌐 Website:</strong> <a href="https://www.gombejuniorschool.com" target="_blank" rel="noopener">gombejuniorschool.com</a></p>
+              <p><strong>📍 Location:</strong> Kikajjo-Nateete-Nakawuka Road</p>
+            </div>
           </div>
           <div class="institution-card">
             <div class="institution-card__tag">Secondary</div>
-            <h3>St. Andrew Kaggwa Gombe High School Kawaala</h3>
+            <h3>St. Andrew Kaggwa Gombe High School - Kawaala</h3>
             <p>St. Andrew Kaggwa Gombe School Kawaala is both 'O' and 'A' level mixed Day and Boarding school, that started in June 2016.</p>
+            <div class="institution-contact">
+              <p><strong>📱 Phone:</strong> 0708 700 001 / 0708 700 002</p>
+              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombehighschool.ac.ug">info@gombehighschool.ac.ug</a></p>
+              <p><strong>🌐 Website:</strong> <a href="https://www.gombehighschool.com" target="_blank" rel="noopener">gombehighschool.com</a></p>
+              <p><strong>📍 Location:</strong> Kawaala off kasube junction</p>
+            </div>
           </div>
           <div class="institution-card">
             <div class="institution-card__tag">Secondary</div>
-            <h3>St. Andrew Kaggwa Gombe High School Bujuuko</h3>
+            <h3>St. Andrew Kaggwa Gombe High School - Bujuuko</h3>
             <p>This is one of our new campuses that started in October 2022 and has brought about a paradigm shift from Kings College Bujuuko to St Andrew Kaggwa Gombe High School Bujuuko Campus. The school is O' and 'A' level mixed, both day & boarding school and meets the middle income Parents aspiration for better education services at an affordable fees.</p>
+            <div class="institution-contact">
+              <p><strong>📱 Phone:</strong> 0752 578 254 / 0784 329 051</p>
+              <p><strong>✉️ Email:</strong> <a href="mailto:standrewkaggwagombebujjuko@gmail.com">standrewkaggwagombebujjuko@gmail.com</a></p>
+              <p><strong>🌐 Website:</strong> <a href="https://www.gombehighschool.com" target="_blank" rel="noopener">gombehighschool.com</a></p>
+              <p><strong>📍 Location:</strong> Bujuuko Trading centre 20 miles from Kampala along Mityana Road</p>
+            </div>
           </div>
           <div class="institution-card">
             <div class="institution-card__tag">Tertiary</div>
             <h3>Jimmy Sekasi Business Institute</h3>
             <p>In a deliberate plan to build, a hybrid mid-level training college GES took over JSBI to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities and be direct partakers in their career destiny. It offers a unique blend of post-secondary school education and training in short courses, Certificates & Diplomas in Pastry and Baking, Barista skills, Mixology, Cookery skills, Basic Cake making and Decoration, ICT courses, Culinary arts, and Diploma courses in Fashion and Design, and Hairdressing and Beauty Therapy respectively.</p>
+            <div class="institution-contact">
+              <p><strong>📱 Phone:</strong> 0756 241 530 / 0772 472 570</p>
+              <p><strong>✉️ Email:</strong> <a href="mailto:info@jsbi.ac.ug">info@jsbi.ac.ug</a></p>
+              <p><strong>🌐 Website:</strong> <a href="https://gibst.ac.ug" target="_blank" rel="noopener">gibst.ac.ug</a></p>
+              <p><strong>📍 Location:</strong> 4925 Mbogo Rd, Kampala</p>
+            </div>
           </div>
         </div>
       </div>
@@ -85,17 +120,14 @@
         </div>
         <div class="approach-grid">
           <div class="approach-card">
-            <div class="approach-card__icon">👥</div>
             <h3>Leadership & Governance</h3>
             <p>The different school administration work under the guidance of SMC, Board of Governors & governing council respectively. The schools are also supported by different consultants in their area of specialization at the GES level.</p>
           </div>
           <div class="approach-card">
-            <div class="approach-card__icon">📚</div>
             <h3>Curriculum & Learning Approach</h3>
             <p>The schools offer MOE approved curriculum with a learner centred approach and ICT integration in smaller class sizes for effective academics, peer learning, personal growth, advanced co-curricular activities.</p>
           </div>
           <div class="approach-card">
-            <div class="approach-card__icon">🏫</div>
             <h3>Learning Environment</h3>
             <p>We provide ambiance conducive enough for effective learning and client satisfaction.</p>
           </div>
@@ -103,106 +135,11 @@
       </div>
     </section>
 
-    <!-- Core Values -->
-    <section class="section section--muted">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-eyebrow">What Guides Us</p>
-          <h2 class="section-title">Core Values</h2>
-        </div>
-        <div class="values-grid">
-          <div class="value-card" v-for="value in values" :key="value.title">
-            <div class="value-card__icon" v-html="value.svg"></div>
-            <h3 class="value-card__title">{{ value.title }}</h3>
-            <p class="value-card__desc">{{ value.description }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-
-    <!-- Contact Information -->
-    <section class="section section--muted">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-eyebrow">Get in Touch</p>
-          <h2 class="section-title">Contact Information</h2>
-          <p style="color: #6C757D; margin-top: 1rem;">Reach out to any of our institutions for admissions, inquiries, and more.</p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="contact-card__header">
-              <h4>Scooby Doo International School Uganda</h4>
-              <span class="contact-badge">Early Years</span>
-            </div>
-            <p><strong>📱 Phone:</strong> 0708 800 005 / 0708 800 006</p>
-            <p><strong>🌐 Website:</strong> www.scoobydoointernationalschooluganda.com</p>
-            <p><strong>📍 Location:</strong> Kikajjo-off Seguku Katale Road</p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card__header">
-              <h4>Gombe Junior School</h4>
-              <span class="contact-badge">Primary</span>
-            </div>
-            <p><strong>📱 Phone:</strong> 0708 800 001 / 0708 800 003</p>
-            <p><strong>✉️ Email:</strong> info@gombejuniorschool.com</p>
-            <p><strong>🌐 Website:</strong> www.gombejuniorschool.com</p>
-            <p><strong>📍 Location:</strong> Kikajjo-Nateete-Nakawuka Road</p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card__header">
-              <h4>Gombe Junior School Kikajjo</h4>
-              <span class="contact-badge">Primary</span>
-            </div>
-            <p><strong>📱 Phone:</strong> 0708 800 002 / 0708 800 004</p>
-            <p><strong>✉️ Email:</strong> info@gombejuniorschool.com</p>
-            <p><strong>🌐 Website:</strong> www.gombejuniorschool.com</p>
-            <p><strong>📍 Location:</strong> Kikajjo-Nateete-Nakawuka Road</p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card__header">
-              <h4>St. Andrew Kaggwa Gombe High School - Kawaala</h4>
-              <span class="contact-badge">Secondary</span>
-            </div>
-            <p><strong>📱 Phone:</strong> 0708 700 001 / 0708 700 002</p>
-            <p><strong>✉️ Email:</strong> info@gombehighschool.ac.ug</p>
-            <p><strong>🌐 Website:</strong> www.gombehighschool.com</p>
-            <p><strong>📍 Location:</strong> Kawaala off kasube junction</p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card__header">
-              <h4>St. Andrew Kaggwa Gombe High School - Bujuuko</h4>
-              <span class="contact-badge">Secondary</span>
-            </div>
-            <p><strong>📱 Phone:</strong> 0752 578 254 / 0784 329 051</p>
-            <p><strong>✉️ Email:</strong> standrewkaggwagombebujjuko@gmail.com</p>
-            <p><strong>🌐 Website:</strong> www.gombehighschool.com</p>
-            <p><strong>📍 Location:</strong> Bujuuko Trading centre 20 miles from Kampala along Mityana Road</p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card__header">
-              <h4>Jimmy Sekasi Business Institute</h4>
-              <span class="contact-badge">Tertiary</span>
-            </div>
-            <p><strong>📱 Phone:</strong> 0756 241 530 / 0772 472 570</p>
-            <p><strong>✉️ Email:</strong> info@jsbi.ac.ug</p>
-            <p><strong>🌐 Website:</strong> gibst.ac.ug</p>
-            <p><strong>📍 Location:</strong> 4925 Mbogo Rd, Kampala</p>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
 <script setup lang="ts">
-const values = [
-  { title: 'Excellence', description: 'We strive for excellence in all aspects of education, from academics to character development.', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>' },
-  { title: 'Integrity', description: 'We uphold the highest standards of honesty and ethical behaviour in all our interactions.', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' },
-  { title: 'Community', description: 'We foster a strong sense of community where everyone feels valued and supported.', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>' },
-  { title: 'Innovation', description: 'We embrace continuous improvement to stay at the forefront of educational excellence.', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>' },
-];
-
 const milestones = [
   { year: '1995', event: 'GES Founded', detail: 'Gombe Education Service established its first institution.' },
   { year: '2005', event: 'Network Expansion', detail: 'Opened two additional campuses to meet growing demand.' },
@@ -224,7 +161,7 @@ const milestones = [
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #00C7B7;
+  color: #FFD166;
   margin-bottom: 0.75rem;
 }
 .page-hero__title {
@@ -246,7 +183,7 @@ const milestones = [
 .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
 
 .section-header { text-align: center; max-width: 660px; margin: 0 auto 3.5rem; }
-.section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #00C7B7; margin-bottom: 0.5rem; }
+.section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8C1427; margin-bottom: 0.5rem; }
 .section-title { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: #0A2342; line-height: 1.2; margin: 0; }
 .intro-text { font-size: 1rem; color: #6C757D; line-height: 1.8; margin-bottom: 1.5rem; }
 
@@ -269,12 +206,12 @@ const milestones = [
 .institution-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(10,35,66,0.12);
-  border-color: #00C7B7;
+  border-color: var(--ges-gold);
 }
 .institution-card__tag {
   display: inline-block;
-  background: rgba(0,199,183,0.1);
-  color: #00C7B7;
+  background: rgba(140, 20, 39, 0.08);
+  color: #8C1427;
   padding: 0.3rem 0.9rem;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -313,22 +250,6 @@ const milestones = [
 .mv-card__title { font-size: 1.25rem; font-weight: 700; color: #0A2342; margin-bottom: 0.75rem; }
 .mv-card__text { font-size: 0.925rem; color: #6C757D; line-height: 1.7; }
 
-/* Values */
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-}
-@media (min-width: 1024px) { .values-grid { grid-template-columns: repeat(4, 1fr); } }
-.value-card { padding: 1.5rem; border: 1px solid #e5e9f0; border-radius: 12px; background: #fff; }
-.value-card__icon {
-  width: 40px; height: 40px; border-radius: 8px;
-  background: rgba(0,199,183,0.08); color: #00C7B7;
-  display: flex; align-items: center; justify-content: center; margin-bottom: 0.875rem;
-}
-.value-card__title { font-size: 1rem; font-weight: 700; color: #0A2342; margin-bottom: 0.4rem; }
-.value-card__desc { font-size: 0.85rem; color: #6C757D; line-height: 1.6; }
-
 /* History */
 .history-grid {
   display: grid;
@@ -351,60 +272,83 @@ const milestones = [
   flex-shrink: 0;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #00C7B7;
+  color: #8C1427;
   width: 48px;
   padding-top: 2px;
 }
 .timeline__event { font-size: 0.925rem; font-weight: 700; color: #0A2342; margin-bottom: 0.2rem; }
 .timeline__detail { font-size: 0.82rem; color: #6C757D; }
 
-.contact-grid {
+.institution-contact {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed #e5e9f0;
+}
+.institution-contact p {
+  margin: 0.45rem 0;
+  font-size: 0.875rem !important;
+  color: #4e5973;
+}
+.institution-contact strong {
+  color: #0A2342;
+}
+.institution-contact a {
+  color: #8C1427;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.institution-contact a:hover {
+  color: #6b0f1a;
+  text-decoration: underline;
+}
+
+/* Approach Grid & Card styles */
+.approach-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1.75rem;
+  margin-top: 1rem;
 }
-@media (min-width: 768px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
-.contact-card {
+@media (min-width: 768px) {
+  .approach-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.approach-card {
   background: #fff;
-  border-radius: 16px;
-  padding: 1.75rem;
+  border-radius: 14px;
+  padding: 2.25rem 2rem;
   border: 1px solid #e5e9f0;
-  box-shadow: 0 12px 30px rgba(10,35,66,0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
-.contact-card__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1rem;
+.approach-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--ges-gold);
+  opacity: 0.85;
 }
-.contact-card h4 { font-size: 1.1rem; color: #0A2342; margin: 0; line-height: 1.3; }
-.contact-badge {
-  background: rgba(0,199,183,0.12);
-  color: #007d73;
-  border-radius: 999px;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.75rem;
+.approach-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(10,35,66,0.1);
+  border-color: var(--ges-gold);
+}
+.approach-card h3 {
+  color: #0A2342;
+  font-size: 1.2rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  margin-bottom: 0.875rem;
+  line-height: 1.45;
 }
-.contact-card p { margin: 0.55rem 0; color: #4e5973; font-size: 0.95rem; line-height: 1.75; }
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-  font-family: inherit;
-  cursor: pointer;
-  border: 2px solid transparent;
+.approach-card p {
+  color: #6C757D;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
-.btn--primary { background: #00C7B7; color: #0A2342; border-color: #00C7B7; }
-.btn--primary:hover { background: #00b5a7; border-color: #00b5a7; }
 </style>
