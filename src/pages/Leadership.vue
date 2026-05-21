@@ -25,7 +25,6 @@
               <h3 class="leader-card__name">{{ leader.name }}</h3>
               <p class="leader-card__position">{{ leader.position }}</p>
               <p class="leader-card__bio">{{ leader.bio }}</p>
-              <p class="leader-card__edu">{{ leader.education }}</p>
               <div class="leader-card__links">
                 <a :href="`mailto:${leader.email}`" class="leader-link" aria-label="Email">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -54,7 +53,6 @@ const managementTeam = [
     name: 'Mrs. Harriet Mulyanti',
     position: 'GES Executive Chairperson',
     bio: 'Mrs. Harriet Mulyanti is the founding pillar and Executive Chairperson of Gombe Education Services. With over three decades of visionary educational leadership, she has guided the establishment and growth of the GES network, dedicating her career to raising the benchmarks of school governance, student character development, and academic excellence in the region.',
-    education: 'Master of Education in Planning and Administration',
     image: '/images/GES Executive Chairperson Mrs Harriet Mulyanti.JPG',
     email: 'harriet.mulyanti@ges.ac.ug',
     linkedin: 'https://linkedin.com/in/harriet-mulyanti'
@@ -63,7 +61,6 @@ const managementTeam = [
     name: 'Mr. Kiwalabye David Male',
     position: 'GES Managing Director',
     bio: 'Mr. Kiwalabye David Male serves as the Managing Director of Gombe Education Services. An experienced institutional administrator and strategist, he coordinates operations, developmental planning, and strategic partnerships across all institutions within the GES portfolio, ensuring absolute operational efficiency and sustainable growth.',
-    education: 'Master of Business Administration (Strategic Management)',
     image: '/images/GES MD - Kiwalabye David Male.jpg',
     email: 'david.male@ges.ac.ug',
     linkedin: 'https://linkedin.com/in/david-kiwalabye-male'
@@ -72,7 +69,6 @@ const managementTeam = [
     name: 'Daniella Nakayenga',
     position: 'GES Rector',
     bio: 'Daniella Nakayenga is the Rector of Gombe Education Services. Combining extensive pedagogical expertise with modern administrative strategies, she oversees curriculum implementation, standardisation of teaching practices, and the integration of international education models across all GES schools.',
-    education: 'PhD in Educational Leadership, Harvard University',
     image: '/images/GES Rector - Daniella Nakayenga.jpeg',
     email: 'daniella.nakayenga@ges.ac.ug',
     linkedin: 'https://linkedin.com/in/daniellanakayenga'
@@ -154,35 +150,71 @@ const managementTeam = [
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
-  max-width: 1140px;
+  max-width: 1280px;
   margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .leaders-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (min-width: 1024px) {
   .leaders-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .leader-card:first-child {
+    grid-column: span 2;
+  }
+  .leader-card:first-child .leader-card__photo {
+    width: 320px;
+  }
+  .leader-card:first-child .leader-card__bio {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .leader-card:first-child .leader-card__photo {
+    width: 360px;
   }
 }
 
 .leader-card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid rgba(197, 165, 114, 0.2);
   border-radius: 16px;
   overflow: hidden;
   background: #fff;
   box-shadow: 0 4px 20px rgba(10, 35, 66, 0.04);
 }
+
+@media (min-width: 640px) {
+  .leader-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
 .leader-card__photo {
-  height: 320px;
+  height: 280px;
+  width: 100%;
   overflow: hidden;
   background: var(--ges-cream);
   position: relative;
+  flex-shrink: 0;
 }
+
+@media (min-width: 640px) {
+  .leader-card__photo {
+    width: 200px;
+    height: auto;
+    min-height: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .leader-card__photo {
+    width: 230px;
+  }
+}
+
 .leader-card__photo img {
   width: 100%;
   height: 100%;
@@ -190,11 +222,23 @@ const managementTeam = [
   object-position: center top;
   transition: transform 0.5s ease;
 }
+
 .leader-card:hover .leader-card__photo img {
   transform: scale(1.04);
 }
+
 .leader-card__body {
-  padding: 1.75rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+  .leader-card__body {
+    padding: 2rem;
+  }
 }
 .leader-card__name {
   font-size: 1.15rem;
@@ -214,20 +258,7 @@ const managementTeam = [
   font-size: 0.88rem;
   color: var(--ges-slate);
   line-height: 1.65;
-  margin-bottom: 0.85rem;
-}
-.leader-card__edu {
-  font-size: 0.82rem;
-  color: var(--ges-gold);
-  font-weight: 500;
-  font-style: italic;
   margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-.leader-card__edu::before {
-  content: '🎓';
 }
 .leader-card__links {
   display: flex;
