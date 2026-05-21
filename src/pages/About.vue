@@ -4,19 +4,51 @@
     <section class="page-hero">
       <div class="container">
         <p class="page-hero__eyebrow">Who We Are</p>
-        <h1 class="page-hero__title">About GES</h1>
-        <p class="page-hero__subtitle">Gombe Education Service has been at the forefront of educational excellence for over 25 years, shaping minds and building futures across Uganda and beyond.</p>
+        <h1 class="page-hero__title">Gombe Education Service</h1>
+        <p class="page-hero__subtitle">A consortium of six institutions providing quality holistic education from Kindergarten to Tertiary level across Uganda.</p>
       </div>
     </section>
 
-    <!-- Stats -->
-    <section class="section stats-section">
+    <!-- GES Profile Overview -->
+    <section class="section">
       <div class="container">
-        <div class="stats-grid">
-          <div v-for="stat in stats" :key="stat.label" class="stat-card">
-            <div class="stat-card__icon" v-html="stat.svg"></div>
-            <div class="stat-card__value">{{ stat.value }}</div>
-            <div class="stat-card__label">{{ stat.label }}</div>
+        <div class="section-header">
+          <p class="section-eyebrow">Consortium Overview</p>
+          <h2 class="section-title">The GES Profile</h2>
+        </div>
+        <p class="intro-text">Gombe Education Service is a consortium of six institutions providing education from Kindergarten to Tertiary level: Scooby Doo International School- Uganda offering both National & International curricular, Gombe Junior School-Kikajjo which is entirely Day, Gombe Junior School which is purely boarding, St. Andrew Kaggwa Gombe High School – Kawaala, St Andrew Kaggwa Gombe high school- Bujuuko and Jimmy Sekasi Business Institute.</p>
+        <p class="intro-text">All GES Schools embrace and subscribe to the same Vision, Mission and Core Values.</p>
+        
+        <div class="institutions-grid">
+          <div class="institution-card">
+            <div class="institution-card__tag">Early Years</div>
+            <h3>Scooby Doo International School Uganda</h3>
+            <p>This is an early years independent international school offering both National & International curricular and brings together learners from different parts of Uganda from the age of 2-6years. Started in 2013.</p>
+          </div>
+          <div class="institution-card">
+            <div class="institution-card__tag">Primary</div>
+            <h3>Gombe Junior School</h3>
+            <p>This school is one of our pioneer schools that started in 2013 as day & boarding. It academically excelled with 100% first grades in 2017 & 2022 emerging best in Wakiso District and ranked number 4 & 5 in Uganda respectively. Due to its growth, the day parents sought customized services which saw the creation of an independent day section.</p>
+          </div>
+          <div class="institution-card">
+            <div class="institution-card__tag">Primary</div>
+            <h3>Gombe Junior School Kikajjo</h3>
+            <p>GJS-K was opened in 2019 after the separation of day scholars from Boarders to create for them their own school which is entirely day. The school has brought about transformation in the community around its location.</p>
+          </div>
+          <div class="institution-card">
+            <div class="institution-card__tag">Secondary</div>
+            <h3>St. Andrew Kaggwa Gombe High School Kawaala</h3>
+            <p>St. Andrew Kaggwa Gombe School Kawaala is both 'O' and 'A' level mixed Day and Boarding school, that started in June 2016.</p>
+          </div>
+          <div class="institution-card">
+            <div class="institution-card__tag">Secondary</div>
+            <h3>St. Andrew Kaggwa Gombe High School Bujuuko</h3>
+            <p>This is one of our new campuses that started in October 2022 and has brought about a paradigm shift from Kings College Bujuuko to St Andrew Kaggwa Gombe High School Bujuuko Campus. The school is O' and 'A' level mixed, both day & boarding school and meets the middle income Parents aspiration for better education services at an affordable fees.</p>
+          </div>
+          <div class="institution-card">
+            <div class="institution-card__tag">Tertiary</div>
+            <h3>Jimmy Sekasi Business Institute</h3>
+            <p>In a deliberate plan to build, a hybrid mid-level training college GES took over JSBI to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities and be direct partakers in their career destiny. It offers a unique blend of post-secondary school education and training in short courses, Certificates & Diplomas in Pastry and Baking, Barista skills, Mixology, Cookery skills, Basic Cake making and Decoration, ICT courses, Culinary arts, and Diploma courses in Fashion and Design, and Hairdressing and Beauty Therapy respectively.</p>
           </div>
         </div>
       </div>
@@ -30,29 +62,56 @@
             <div class="mv-card__icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
             </div>
-            <h2 class="mv-card__title">Our Mission</h2>
-            <p class="mv-card__text">To provide world-class education that empowers students with knowledge, skills, and values necessary for success in a rapidly changing global society. We are committed to fostering critical thinking, creativity, and character development in every student.</p>
+            <h2 class="mv-card__title">Vision</h2>
+            <p class="mv-card__text">At the helm of producing competent, responsible, self-reliant and flexible citizens.</p>
           </div>
           <div class="mv-card">
             <div class="mv-card__icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             </div>
-            <h2 class="mv-card__title">Our Vision</h2>
-            <p class="mv-card__text">To be the leading educational institution in East Africa, recognised globally for producing graduates who are intellectually capable, morally grounded, and equipped to lead transformative change in their communities and the world.</p>
+            <h2 class="mv-card__title">Mission</h2>
+            <p class="mv-card__text">To provide quality holistic education that fosters creativity, critical thinking and collaboration to produce competent global citizens.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Values -->
+    <!-- Governance & Learning Environment -->
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <p class="section-eyebrow">What We Stand For</p>
-          <h2 class="section-title">Our Core Values</h2>
+          <p class="section-eyebrow">Our Foundation</p>
+          <h2 class="section-title">How We Operate</h2>
+        </div>
+        <div class="approach-grid">
+          <div class="approach-card">
+            <div class="approach-card__icon">👥</div>
+            <h3>Leadership & Governance</h3>
+            <p>The different school administration work under the guidance of SMC, Board of Governors & governing council respectively. The schools are also supported by different consultants in their area of specialization at the GES level.</p>
+          </div>
+          <div class="approach-card">
+            <div class="approach-card__icon">📚</div>
+            <h3>Curriculum & Learning Approach</h3>
+            <p>The schools offer MOE approved curriculum with a learner centred approach and ICT integration in smaller class sizes for effective academics, peer learning, personal growth, advanced co-curricular activities.</p>
+          </div>
+          <div class="approach-card">
+            <div class="approach-card__icon">🏫</div>
+            <h3>Learning Environment</h3>
+            <p>We provide ambiance conducive enough for effective learning and client satisfaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section section--muted">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">What Guides Us</p>
+          <h2 class="section-title">Core Values</h2>
         </div>
         <div class="values-grid">
-          <div v-for="value in values" :key="value.title" class="value-card">
+          <div class="value-card" v-for="value in values" :key="value.title">
             <div class="value-card__icon" v-html="value.svg"></div>
             <h3 class="value-card__title">{{ value.title }}</h3>
             <p class="value-card__desc">{{ value.description }}</p>
@@ -61,23 +120,74 @@
       </div>
     </section>
 
-    <!-- History -->
+
+    <!-- Contact Information -->
     <section class="section section--muted">
-      <div class="container history-grid">
-        <div>
-          <p class="section-eyebrow">Our Story</p>
-          <h2 class="section-title">25+ Years of Educational Excellence</h2>
-          <p class="history-text">Founded in 1995, Gombe Education Service began with a single institution and a bold vision: to provide Ugandan students with education that rivals the world's best. Over the decades, we have grown into a network of seven institutions, each renowned for academic excellence and holistic development.</p>
-          <p class="history-text" style="margin-top:1rem;">Our journey has been marked by continuous innovation — from curriculum reform to digital integration — ensuring that GES graduates are prepared not just for examinations, but for life.</p>
-          <RouterLink to="/leadership" class="btn btn--primary" style="margin-top:1.75rem;display:inline-flex;">Meet Our Leadership</RouterLink>
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Get in Touch</p>
+          <h2 class="section-title">Contact Information</h2>
+          <p style="color: #6C757D; margin-top: 1rem;">Reach out to any of our institutions for admissions, inquiries, and more.</p>
         </div>
-        <div class="timeline">
-          <div v-for="milestone in milestones" :key="milestone.year" class="timeline__item">
-            <div class="timeline__year">{{ milestone.year }}</div>
-            <div class="timeline__content">
-              <h4 class="timeline__event">{{ milestone.event }}</h4>
-              <p class="timeline__detail">{{ milestone.detail }}</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-card__header">
+              <h4>Scooby Doo International School Uganda</h4>
+              <span class="contact-badge">Early Years</span>
             </div>
+            <p><strong>📱 Phone:</strong> 0708 800 005 / 0708 800 006</p>
+            <p><strong>🌐 Website:</strong> www.scoobydoointernationalschooluganda.com</p>
+            <p><strong>📍 Location:</strong> Kikajjo-off Seguku Katale Road</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__header">
+              <h4>Gombe Junior School</h4>
+              <span class="contact-badge">Primary</span>
+            </div>
+            <p><strong>📱 Phone:</strong> 0708 800 001 / 0708 800 003</p>
+            <p><strong>✉️ Email:</strong> info@gombejuniorschool.com</p>
+            <p><strong>🌐 Website:</strong> www.gombejuniorschool.com</p>
+            <p><strong>📍 Location:</strong> Kikajjo-Nateete-Nakawuka Road</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__header">
+              <h4>Gombe Junior School Kikajjo</h4>
+              <span class="contact-badge">Primary</span>
+            </div>
+            <p><strong>📱 Phone:</strong> 0708 800 002 / 0708 800 004</p>
+            <p><strong>✉️ Email:</strong> info@gombejuniorschool.com</p>
+            <p><strong>🌐 Website:</strong> www.gombejuniorschool.com</p>
+            <p><strong>📍 Location:</strong> Kikajjo-Nateete-Nakawuka Road</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__header">
+              <h4>St. Andrew Kaggwa Gombe High School - Kawaala</h4>
+              <span class="contact-badge">Secondary</span>
+            </div>
+            <p><strong>📱 Phone:</strong> 0708 700 001 / 0708 700 002</p>
+            <p><strong>✉️ Email:</strong> info@gombehighschool.ac.ug</p>
+            <p><strong>🌐 Website:</strong> www.gombehighschool.com</p>
+            <p><strong>📍 Location:</strong> Kawaala off kasube junction</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__header">
+              <h4>St. Andrew Kaggwa Gombe High School - Bujuuko</h4>
+              <span class="contact-badge">Secondary</span>
+            </div>
+            <p><strong>📱 Phone:</strong> 0752 578 254 / 0784 329 051</p>
+            <p><strong>✉️ Email:</strong> standrewkaggwagombebujjuko@gmail.com</p>
+            <p><strong>🌐 Website:</strong> www.gombehighschool.com</p>
+            <p><strong>📍 Location:</strong> Bujuuko Trading centre 20 miles from Kampala along Mityana Road</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__header">
+              <h4>Jimmy Sekasi Business Institute</h4>
+              <span class="contact-badge">Tertiary</span>
+            </div>
+            <p><strong>📱 Phone:</strong> 0756 241 530 / 0772 472 570</p>
+            <p><strong>✉️ Email:</strong> info@jsbi.ac.ug</p>
+            <p><strong>🌐 Website:</strong> gibst.ac.ug</p>
+            <p><strong>📍 Location:</strong> 4925 Mbogo Rd, Kampala</p>
           </div>
         </div>
       </div>
@@ -86,13 +196,6 @@
 </template>
 
 <script setup lang="ts">
-const stats = [
-  { value: '2,500+', label: 'Students Enrolled', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>' },
-  { value: '150+', label: 'Awards Received', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>' },
-  { value: '25+', label: 'Programmes Offered', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>' },
-  { value: '15+', label: 'Countries Represented', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>' },
-];
-
 const values = [
   { title: 'Excellence', description: 'We strive for excellence in all aspects of education, from academics to character development.', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>' },
   { title: 'Integrity', description: 'We uphold the highest standards of honesty and ethical behaviour in all our interactions.', svg: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' },
@@ -142,37 +245,46 @@ const milestones = [
 .section--muted { background: #f8f9fc; }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
 
-.section-header { text-align: center; max-width: 560px; margin: 0 auto 3rem; }
+.section-header { text-align: center; max-width: 660px; margin: 0 auto 3.5rem; }
 .section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #00C7B7; margin-bottom: 0.5rem; }
-.section-title { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: #0A2342; line-height: 1.2; }
+.section-title { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: #0A2342; line-height: 1.2; margin: 0; }
+.intro-text { font-size: 1rem; color: #6C757D; line-height: 1.8; margin-bottom: 1.5rem; }
 
-/* Stats */
-.stats-grid {
+/* Institutions Grid */
+.institutions-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
 }
-@media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
-.stat-card {
-  text-align: center;
-  padding: 2rem 1rem;
-  border: 1px solid #e5e9f0;
-  border-radius: 12px;
+@media (min-width: 768px) { .institutions-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .institutions-grid { grid-template-columns: repeat(3, 1fr); } }
+.institution-card {
   background: #fff;
+  border-radius: 14px;
+  padding: 2.25rem;
+  border: 1px solid #e5e9f0;
+  transition: all 0.3s ease;
+  position: relative;
 }
-.stat-card__icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: rgba(0,199,183,0.08);
+.institution-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(10,35,66,0.12);
+  border-color: #00C7B7;
+}
+.institution-card__tag {
+  display: inline-block;
+  background: rgba(0,199,183,0.1);
   color: #00C7B7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 0.875rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-.stat-card__value { font-size: 2rem; font-weight: 700; color: #0A2342; line-height: 1; }
-.stat-card__label { font-size: 0.8rem; color: #6C757D; margin-top: 0.35rem; }
+.institution-card h3 { color: #0A2342; font-size: 1.25rem; margin-bottom: 0.875rem; line-height: 1.4; }
+.institution-card p { color: #6C757D; font-size: 0.95rem; line-height: 1.7; }
 
 /* Mission / Vision */
 .mv-grid {
@@ -245,6 +357,39 @@ const milestones = [
 }
 .timeline__event { font-size: 0.925rem; font-weight: 700; color: #0A2342; margin-bottom: 0.2rem; }
 .timeline__detail { font-size: 0.82rem; color: #6C757D; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
+.contact-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  border: 1px solid #e5e9f0;
+  box-shadow: 0 12px 30px rgba(10,35,66,0.05);
+}
+.contact-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.contact-card h4 { font-size: 1.1rem; color: #0A2342; margin: 0; line-height: 1.3; }
+.contact-badge {
+  background: rgba(0,199,183,0.12);
+  color: #007d73;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.contact-card p { margin: 0.55rem 0; color: #4e5973; font-size: 0.95rem; line-height: 1.75; }
 
 .btn {
   display: inline-flex;
