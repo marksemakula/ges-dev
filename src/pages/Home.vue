@@ -137,7 +137,7 @@
                 <div class="quote-banner__line"></div>
                 <div>
                   <strong>David Kiwalabye Male</strong>
-                  <span>Board Chair, Gombe Education Service</span>
+                  <span>Managing Director, Gombe Education Service</span>
                 </div>
               </div>
             </div>
