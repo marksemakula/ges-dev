@@ -8,6 +8,11 @@
           <p class="hero__subtitle">
             Gombe Education Service has provided world-class education since 1995 — fostering academic excellence, character, and global readiness across our network of institutions.
           </p>
+
+          <div class="hero__actions">
+            <RouterLink to="/about" class="btn-rescue btn-rescue--primary">Get in Touch</RouterLink>
+            <RouterLink to="/about" class="btn-rescue btn-rescue--outline">Learn More</RouterLink>
+          </div>
         </div>
 
         <div class="hero__visual">
@@ -264,7 +269,7 @@ const partners = [
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 88vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -300,19 +305,26 @@ const partners = [
   color: #FFD166;
   margin-bottom: 1rem;
 }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6,10,14,0.55) 0%, rgba(6,10,14,0.55) 100%);
+  z-index: 0;
+}
 .hero__title {
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  color: #0A2342;
-  line-height: 1.12;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.06;
   margin-bottom: 1.25rem;
 }
 .hero__subtitle {
   font-size: 1.05rem;
-  color: #0A2342;
-  line-height: 1.7;
-  max-width: 540px;
-  margin-bottom: 2rem;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.6;
+  max-width: 560px;
+  margin-bottom: 1.5rem;
 }
 .hero__visual {
   display: flex;

@@ -1,5 +1,5 @@
-/* Import Ubuntu font */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+/* Import fonts — clean sans-serif similar to rescue.org */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -13,10 +13,11 @@
 }
 
 body {
-  font-family: 'Ubuntu', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  color: #1A1A1A;
 }
 
 /* Hide preloader from old theme templates */
@@ -36,83 +37,143 @@ div[class*="preloader"] {
   min-height: 100vh;
 }
 
-/* GES Design Tokens */
+/* ── Rescue.org Design Tokens ── */
 :root {
-  --ges-navy: #0A2342;
-  --ges-gold: #C5A572;
-  --ges-cream: #F8F5F0;
-  --ges-teal: #2A9D8F;
-  --ges-burgundy: #8A1538;
-  --ges-slate: #6C757D;
+  --rescue-yellow: #EFC131;
+  --rescue-yellow-hover: #D9AE28;
+  --rescue-dark: #1A1A1A;
+  --rescue-charcoal: #3D3D3D;
+  --rescue-grey-bg: #F0F0F0;
+  --rescue-grey-light: #F5F5F5;
+  --rescue-white: #FFFFFF;
+  --rescue-text: #1A1A1A;
+  --rescue-text-secondary: #555555;
+  --rescue-border: #E0E0E0;
+
+  /* Legacy tokens for compatibility */
+  --ges-navy: #1A1A1A;
+  --ges-gold: #EFC131;
+  --ges-cream: #F5F5F5;
+  --ges-teal: #EFC131;
+  --ges-burgundy: #EFC131;
+  --ges-slate: #555555;
 }
 
-/* Corporate Typography Scale */
-h1 { 
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+/* ── Typography Scale ── */
+h1 {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--rescue-dark);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
   line-height: 1.2;
+  color: var(--rescue-dark);
 }
 
-h2 { 
-  font-size: clamp(2rem, 4vw, 2.5rem);
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 600;
   line-height: 1.3;
+  color: var(--rescue-dark);
 }
 
-h3 { 
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 500;
+h4 {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-weight: 600;
   line-height: 1.4;
+  color: var(--rescue-dark);
 }
 
-h4 { 
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-  font-weight: 500;
-  line-height: 1.4;
+/* ── Rescue.org Section Heading Accent (yellow left border) ── */
+.section-heading-accent {
+  border-left: 5px solid var(--rescue-yellow);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Modern card hover effects */
-.ges-card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* ── Rescue.org Button Styles ── */
+.btn-rescue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  border-radius: 0; /* Square corners like rescue.org */
 }
 
-.ges-card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(10, 35, 66, 0.1);
+.btn-rescue--primary {
+  background: var(--rescue-yellow);
+  color: var(--rescue-dark);
+  border-color: var(--rescue-yellow);
+}
+.btn-rescue--primary:hover {
+  background: var(--rescue-yellow-hover);
+  border-color: var(--rescue-yellow-hover);
 }
 
-/* Custom scrollbar */
+.btn-rescue--outline {
+  background: transparent;
+  color: var(--rescue-dark);
+  border-color: var(--rescue-dark);
+}
+.btn-rescue--outline:hover {
+  background: var(--rescue-dark);
+  color: var(--rescue-white);
+}
+
+.btn-rescue--white {
+  background: var(--rescue-white);
+  color: var(--rescue-dark);
+  border-color: var(--rescue-white);
+}
+.btn-rescue--white:hover {
+  background: var(--rescue-grey-light);
+}
+
+.btn-rescue--outline-white {
+  background: transparent;
+  color: var(--rescue-white);
+  border-color: rgba(255,255,255,0.5);
+}
+.btn-rescue--outline-white:hover {
+  border-color: var(--rescue-white);
+  background: rgba(255,255,255,0.1);
+}
+
+/* ── Custom scrollbar ── */
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: var(--ges-gold);
+  background: var(--rescue-yellow);
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ges-navy);
+  background: var(--rescue-dark);
 }
 
-/* Animation utilities */
+/* ── Animation utilities ── */
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-slide-up {
@@ -120,286 +181,54 @@ h4 {
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Gradient text effect */
-.text-gradient {
-  background: linear-gradient(135deg, var(--ges-gold), var(--ges-teal));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glass morphism effect */
+/* ── Glass morphism ── */
 .glass {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Button animations */
+/* ── Button compatibility classes ── */
 .btn-primary {
-  @apply bg-ges-gold text-ges-navy px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg transform hover:scale-105;
+  @apply bg-yellow-500 text-gray-900 px-6 py-3 font-medium transition-all duration-300 hover:bg-yellow-600;
 }
 
 .btn-secondary {
-  @apply border-2 border-ges-gold text-ges-gold px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-ges-gold hover:text-ges-navy;
+  @apply border-2 border-gray-900 text-gray-900 px-6 py-3 font-medium transition-all duration-300 hover:bg-gray-900 hover:text-white;
 }
 
-/* Enhanced Floating shapes animation */
-.floating-shape {
-  animation: float 6s ease-in-out infinite;
-  will-change: transform;
+/* ── Infinite scroll animation for logo carousel ── */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
 }
 
-.floating-shape:nth-child(2) {
-  animation-delay: -2s;
-  animation-duration: 7s;
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+  width: fit-content;
+}
+.animate-scroll:hover {
+  animation-play-state: paused;
 }
 
-.floating-shape:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 8s;
-}
-
-.floating-shape:nth-child(4) {
-  animation-delay: -1s;
-  animation-duration: 9s;
-}
-
-.floating-shape:nth-child(5) {
-  animation-delay: -3s;
-  animation-duration: 6.5s;
-}
-
-.floating-shape:nth-child(6) {
-  animation-delay: -5s;
-  animation-duration: 7.5s;
-}
-
-/* Enhanced float animation with rotation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  33% {
-    transform: translateY(-20px) rotate(5deg);
-  }
-  66% {
-    transform: translateY(10px) rotate(-5deg);
-  }
-}
-
-/* Shimmer effect for loading states */
-.shimmer {
-  position: relative;
-  overflow: hidden;
-}
-
-.shimmer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-/* Pulse animation for attention */
-.pulse-glow {
-  animation: pulseGlow 2s ease-in-out infinite;
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(197, 165, 114, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 20px 10px rgba(197, 165, 114, 0);
-  }
-}
-
-/* Ken Burns effect for images */
-.ken-burns {
-  animation: kenBurns 10s ease-out;
-}
-
-@keyframes kenBurns {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-/* Bounce in animation */
-.bounce-in {
-  animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Slide animations from all directions */
-.slide-in-left {
-  animation: slideInLeft 0.6s ease-out;
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.slide-in-right {
-  animation: slideInRight 0.6s ease-out;
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.slide-in-top {
-  animation: slideInTop 0.6s ease-out;
-}
-
-@keyframes slideInTop {
-  from {
-    opacity: 0;
-    transform: translateY(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.slide-in-bottom {
-  animation: slideInBottom 0.6s ease-out;
-}
-
-@keyframes slideInBottom {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Rotate and fade in */
-.rotate-fade-in {
-  animation: rotateFadeIn 0.8s ease-out;
-}
-
-@keyframes rotateFadeIn {
-  from {
-    opacity: 0;
-    transform: rotate(-15deg) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: rotate(0) scale(1);
-  }
-}
-
-/* Scale pulse animation */
-.scale-pulse {
-  animation: scalePulse 2s ease-in-out infinite;
-}
-
-@keyframes scalePulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-/* Custom loading spinner */
-.spinner {
-  border: 3px solid rgba(197, 165, 114, 0.3);
-  border-top: 3px solid var(--ges-gold);
-  border-radius: 50%;
+/* ── Social icon button ── */
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
-  animation: spin 1s linear infinite;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.1);
+  transition: background 0.2s ease;
 }
+.social-icon-btn:hover { background: rgba(255,255,255,0.2); }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Responsive typography */
-@media (max-width: 768px) {
-  .text-responsive {
-    font-size: 0.9rem;
-  }
-}
-
-/* Print styles */
-@media print {
-  .no-print {
-    display: none;
-  }
-}
-
-/* View Transitions API */
+/* ── View Transitions API ── */
 @view-transition {
   navigation: auto;
 }
@@ -413,224 +242,21 @@ h4 {
 ::view-transition-old(root) {
   animation-name: fade-scale-out;
 }
-
 ::view-transition-new(root) {
   animation-name: fade-scale-in;
 }
 
-/* Smooth morphing for institution cards */
-::view-transition-old(institution-*),
-::view-transition-new(institution-*) {
-  animation-duration: 0.8s;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  mix-blend-mode: normal;
-  overflow: clip;
-}
-
 @keyframes fade-scale-out {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.9);
-  }
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.9); }
 }
 
 @keyframes fade-scale-in {
-  from {
-    opacity: 0;
-    transform: scale(1.1);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(1.1); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-/* Social icon button container */
-.social-icon-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 9999px;
-  background: rgba(255,255,255,0.1);
-  transition: background 0.2s ease;
-}
-.social-icon-btn:hover { background: rgba(255,255,255,0.2); }
-
-/* Infinite scroll animation for logo carousel */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.333%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 30s linear infinite;
-  width: fit-content;
-}
-
-.animate-scroll:hover {
-  animation-play-state: paused;
-}
-
-/* Gradient backgrounds with animation */
-.gradient-animate {
-  background: linear-gradient(
-    45deg,
-    var(--ges-navy),
-    var(--ges-teal),
-    var(--ges-gold),
-    var(--ges-purple)
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-/* Enhanced hero overlay */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at center,
-    transparent 0%,
-    rgba(0, 0, 0, 0.3) 100%
-  );
-  pointer-events: none;
-}
-
-/* Smooth parallax effect base */
-.parallax {
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* Card shine effect on hover */
-.card-shine {
-  position: relative;
-  overflow: hidden;
-}
-
-.card-shine::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.1) 50%,
-    transparent 70%
-  );
-  transform: translateX(-100%) translateY(-100%) rotate(45deg);
-  transition: transform 0.6s;
-}
-
-.card-shine:hover::after {
-  transform: translateX(100%) translateY(100%) rotate(45deg);
-}
-
-/* Glow effect for focused elements */
-.focus-glow:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(197, 165, 114, 0.4);
-  transition: box-shadow 0.2s ease;
-}
-
-/* Text reveal animation */
-.text-reveal {
-  overflow: hidden;
-}
-
-.text-reveal span {
-  display: inline-block;
-  animation: textReveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) backwards;
-}
-
-@keyframes textReveal {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Stagger delay utility classes */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
-.stagger-6 { animation-delay: 0.6s; }
-
-/* Enhanced image loading effect */
-.image-load {
-  animation: imageLoad 1s ease-out;
-}
-
-@keyframes imageLoad {
-  0% {
-    opacity: 0;
-    filter: blur(20px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-/* Backdrop blur utilities */
-.backdrop-blur-xs {
-  backdrop-filter: blur(2px);
-}
-
-.backdrop-blur-sm {
-  backdrop-filter: blur(4px);
-}
-
-.backdrop-blur-DEFAULT {
-  backdrop-filter: blur(8px);
-}
-
-.backdrop-blur-md {
-  backdrop-filter: blur(12px);
-}
-
-.backdrop-blur-lg {
-  backdrop-filter: blur(16px);
-}
-
-.backdrop-blur-xl {
-  backdrop-filter: blur(24px);
-}
-
-.backdrop-blur-2xl {
-  backdrop-filter: blur(40px);
-}
-
-/* Performance optimizations */
+/* ── Performance ── */
 .gpu-accelerated {
   transform: translateZ(0);
   will-change: transform;
@@ -638,49 +264,32 @@ h4 {
   perspective: 1000px;
 }
 
-/* 3D Card Flip Animation Support */
-.card-flip-container {
-  perspective: 1000px;
-  transform-style: preserve-3d;
-}
-
-.card-flip {
-  transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.card-flip-front,
-.card-flip-back {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
-}
-
-.card-flip-back {
-  transform: rotateY(180deg);
-}
-
-/* Smooth transitions for route changes */
+/* ── Smooth route transitions ── */
 .page-transition-enter {
   opacity: 0;
   transform: translateY(20px);
 }
-
 .page-transition-enter-active {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
-
 .page-transition-exit {
   opacity: 1;
   transform: translateY(0);
 }
-
 .page-transition-exit-active {
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+}
+
+/* ── Print ── */
+@media print {
+  .no-print { display: none; }
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .text-responsive { font-size: 0.9rem; }
 }
