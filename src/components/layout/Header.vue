@@ -134,7 +134,6 @@ const mobileOpen = ref(false);
 
 const navLinks = [
   { name: 'HOME', path: '/' },
-  { name: 'GES LIFE', path: '/ges-life' },
   { name: 'CALENDAR', path: '/academic-calendar' },
   { name: 'BLOG', path: '/blog' },
 ];

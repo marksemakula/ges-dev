@@ -25,10 +25,6 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.93 5.93l.82-.84a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 +256 (0) 700 000 000
               </span>
-              <span class="ges-footer__contact-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Gombe, Uganda
-              </span>
             </div>
           </div>
 
@@ -67,12 +63,6 @@
     <!-- Footer layout 2 - black utility band (rescue.org rpll-footer-layout-2) -->
     <div class="ges-footer__layout2">
       <div class="ges-footer__container">
-        <div class="ges-footer__partners">
-          <p class="ges-footer__partners-label">Recognised &amp; Accredited By</p>
-          <div class="ges-footer__partners-logos">
-            <img v-for="p in partners" :key="p.name" :src="p.src" :alt="p.name" :title="p.name" />
-          </div>
-        </div>
         <div class="ges-footer__utility-row">
           <p class="ges-footer__copy">&copy; {{ year }} Gombe Education Service. All rights reserved.</p>
           <div class="ges-footer__powered">
@@ -106,14 +96,6 @@ const institutions = [
   { name: 'GJS – Gulu', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/' },
   { name: 'SISU – Katale', path: '/institutions/scooby-katale', url: 'https://sisu-katale.vercel.app/' },
   { name: 'SISU – Gulu', path: '/institutions/scooby-gulu', url: 'https://sisu-gulu.vercel.app/' },
-];
-
-const partners = [
-  { name: 'Ministry of Education', src: '/images/MoES1.png' },
-  { name: 'NCHE', src: '/images/NCHE.png' },
-  { name: 'IEAC', src: '/images/IEAC.png' },
-  { name: 'Kingdom of Buganda', src: '/images/Flag_of_Buganda.svg' },
-  { name: 'Ministry of Local Government', src: '/images/molg-uganda.jpg' },
 ];
 
 const socials = [
@@ -238,7 +220,6 @@ a.ges-footer__contact-item:hover {
 .ges-footer__social-row {
   margin-top: 2.25rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #d2d2d2;
 }
 .ges-footer__social {
   display: flex;
@@ -265,44 +246,12 @@ a.ges-footer__contact-item:hover {
   background: #000;
   padding: 1.75rem 0;
 }
-.ges-footer__partners {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-.ges-footer__partners-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #fff;
-}
-.ges-footer__partners-logos {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1.5rem;
-}
-.ges-footer__partners-logos img {
-  height: 36px;
-  width: auto;
-  filter: grayscale(1) brightness(1.6);
-  opacity: 0.8;
-  transition: filter 0.2s, opacity 0.2s;
-}
-.ges-footer__partners-logos img:hover {
-  filter: none;
-  opacity: 1;
-}
 .ges-footer__utility-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
-  padding-top: 1.25rem;
 }
 .ges-footer__copy {
   font-size: 0.8rem;

@@ -130,7 +130,7 @@
     <section class="rpl-section rpl-section--grey">
       <div class="container-rpl">
         <div class="rpl-section-heading">
-          <h2 class="rpl-section-heading__title">News and featured stories</h2>
+          <h2 class="rpl-section-heading__title">News and featured Articles</h2>
         </div>
         <div class="news-grid">
           <RouterLink to="/blog" class="news-highlight">
@@ -271,14 +271,14 @@ const institutions = [
 
 /* ── Featured posts (from GES Blog) ── */
 const featuredPosts = [
-  { id: '1', title: 'The Future of Education: Embracing Digital Learning', excerpt: 'Exploring how digital transformation is reshaping the educational landscape and preparing students for tomorrow\'s challenges.', category: 'Innovation', image: '/images/science.avif' },
-  { id: '2', title: 'Building Character Through Education', excerpt: 'How GES integrates character development into our curriculum to nurture well-rounded individuals.', category: 'Character', image: '/images/java-house.avif' },
-  { id: '3', title: 'STEM Education Excellence at GES', excerpt: 'Discover how our STEM programmes are preparing students for careers in science, technology, engineering, and mathematics.', category: 'STEM', image: '/images/TD.jpg' },
+  { id: '1', title: 'The Future of Education: Embracing Digital Learning', excerpt: 'Exploring how digital transformation is reshaping the educational landscape and preparing students for tomorrow\'s challenges.', category: 'Innovation', image: '/images/TD.jpg' },
+  { id: '2', title: 'Building Character Through Education', excerpt: 'How GES integrates character development into our curriculum to nurture well-rounded individuals.', category: 'Character', image: '/images/15-09-2015-12-03-57_DSCN1414.jpg' },
+  { id: '3', title: 'STEM Education Excellence at GES', excerpt: 'Discover how our STEM programmes are preparing students for careers in science, technology, engineering, and mathematics.', category: 'STEM', image: '/images/IMG_9718.JPG' },
 ];
 
 /* ── Get involved ── */
 const involved = [
-  { title: 'GES Life', path: '/ges-life', image: '/images/ARTS.jpg', desc: 'Explore moments from daily life across our schools - arts, sports, and community.' },
+  { title: 'Calendar', path: '/academic-calendar', image: '/images/26-08-2015-12-49-54__MG_8635.jpg', desc: 'View term dates, holidays, and key events across all GES institutions.' },
   { title: 'Mentorship Portal', path: '/mentorship', image: '/images/IMG_9873.JPG', desc: 'Connect with mentors and grow through guidance from the GES community.' },
   { title: 'International Pathway', path: '/international-pathway', image: '/images/ieppheader.png', desc: 'Discover the International Pathway Programme and global study opportunities.' },
 ];
