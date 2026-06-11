@@ -346,9 +346,10 @@ const involved = [
   }
 }
 .hero-split__logo {
-  height: 144px;
+  height: 173px; /* +20% */
   width: auto;
   align-self: flex-start;
+  margin-top: 1.5rem; /* slightly lower */
   margin-bottom: 1.25rem;
 }
 .hero-split__title {
