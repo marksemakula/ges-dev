@@ -4,9 +4,10 @@
     <section class="hero-split">
       <div class="hero-split__inner">
         <div class="hero-split__content">
+          <img src="/logo.png" alt="Gombe Education Service" class="hero-split__logo" />
           <h1 class="hero-split__title">Shaping Leaders,<br />Building Futures</h1>
           <p class="hero-split__text">
-            Gombe Education Service has provided world-class education since 1995 — fostering academic excellence, character, and global readiness across our network of institutions.
+            Gombe Education Service has provided world-class education since 1995 - fostering academic excellence, character, and global readiness across our network of institutions.
           </p>
           <div class="hero-split__actions">
             <RouterLink to="/about" class="btn-rescue btn-rescue--primary">
@@ -31,6 +32,12 @@
           </div>
         </div>
       </div>
+      <div class="hero-split__recognised">
+        <span class="hero-split__recognised-label">Recognised by</span>
+        <div class="hero-split__recognised-logos">
+          <img v-for="logo in recognisedBy" :key="logo.name" :src="logo.src" :alt="logo.name" :title="logo.name" />
+        </div>
+      </div>
     </section>
 
     <!-- ── Mission statement + impact (rescue.org rplc-infographic-standard) ── -->
@@ -39,7 +46,7 @@
         <div class="rpl-section-heading rpl-section-heading--center">
           <h2 class="rpl-section-heading__title">We nurture academic excellence, character and global readiness</h2>
           <p class="rpl-section-heading__intro">
-            A consortium of institutions providing quality holistic education from Kindergarten to Tertiary level across Uganda — all embracing the same vision and mission.
+            A consortium of institutions providing quality holistic education from Kindergarten to Tertiary level across Uganda - all embracing the same vision and mission.
           </p>
         </div>
         <div class="partners-marquee">
@@ -61,7 +68,7 @@
           </div>
           <div class="quote-cta__content">
             <blockquote class="quote-cta__text">
-              "Our institutions are built on the conviction that every child deserves an education that nurtures their full potential — academically, morally, and as a citizen of the world."
+              "Our institutions are built on the conviction that every child deserves an education that nurtures their full potential - academically, morally, and as a citizen of the world."
             </blockquote>
             <div class="quote-cta__author">
               <strong>Owek. Kyewalabye Male David</strong>
@@ -79,7 +86,7 @@
         <div class="rpl-section-heading">
           <h2 class="rpl-section-heading__title">Institutions Under GES</h2>
           <p class="rpl-section-heading__intro">
-            Explore our network of institutions — each offering quality programs, vibrant communities, and rich student life.
+            Explore our network of institutions - each offering quality programs, vibrant communities, and rich student life.
           </p>
         </div>
         <div class="rpl-grid-3">
@@ -211,6 +218,15 @@ function goToSlide(i: number) {
 onMounted(startSlides);
 onUnmounted(() => { if (slideTimer) clearInterval(slideTimer); });
 
+/* ── Recognised by (hero strip) ── */
+const recognisedBy = [
+  { name: 'Ministry of Education', src: '/images/MoES1.png' },
+  { name: 'UTB',                   src: '/images/UTB.png' },
+  { name: 'Kingdom of Buganda',    src: '/images/Flag_of_Buganda.svg' },
+  { name: 'Braemar College',       src: '/images/braemar.webp' },
+  { name: 'KISU',                  src: '/images/KISU.png' },
+];
+
 /* ── Partners carousel ── */
 const partnerLogos = [
   { name: 'Kingdom of Buganda',              src: '/images/Flag_of_Buganda.svg' },
@@ -245,7 +261,7 @@ const featuredPosts = [
 
 /* ── Get involved ── */
 const involved = [
-  { title: 'GES Life', path: '/ges-life', image: '/images/ARTS.jpg', desc: 'Explore moments from daily life across our schools — arts, sports, and community.' },
+  { title: 'GES Life', path: '/ges-life', image: '/images/ARTS.jpg', desc: 'Explore moments from daily life across our schools - arts, sports, and community.' },
   { title: 'Mentorship Portal', path: '/mentorship', image: '/images/IMG_9873.JPG', desc: 'Connect with mentors and grow through guidance from the GES community.' },
   { title: 'International Pathway', path: '/international-pathway', image: '/images/ieppheader.png', desc: 'Discover the International Pathway Programme and global study opportunities.' },
 ];
@@ -270,7 +286,7 @@ const involved = [
   grid-template-columns: 1fr;
 }
 @media (min-width: 1024px) {
-  .hero-split__inner { grid-template-columns: 5fr 7fr; align-items: stretch; }
+  .hero-split__inner { grid-template-columns: 1fr auto; align-items: center; }
 }
 .hero-split__content {
   padding: 3rem 1.5rem;
@@ -280,6 +296,12 @@ const involved = [
 }
 @media (min-width: 1024px) {
   .hero-split__content { padding: 4.5rem 3rem 4.5rem 1.5rem; }
+}
+.hero-split__logo {
+  height: 144px;
+  width: auto;
+  align-self: flex-start;
+  margin-bottom: 1.25rem;
 }
 .hero-split__title {
   font-size: clamp(2.4rem, 5vw, 3.6rem);
@@ -307,7 +329,14 @@ const involved = [
   overflow: hidden;
 }
 @media (min-width: 1024px) {
-  .hero-split__media { min-height: 520px; }
+  /* Carousel anchored to the right with breathing room */
+  .hero-split__media {
+    width: 520px;
+    min-height: 400px;
+    justify-self: end;
+    margin: 3rem 1.5rem 3rem 0;
+    border-radius: 8px;
+  }
 }
 .hero-split__img {
   position: absolute;
@@ -341,6 +370,41 @@ const involved = [
 }
 .hero-fade-enter-active, .hero-fade-leave-active { transition: opacity 0.8s ease; }
 .hero-fade-enter-from, .hero-fade-leave-to { opacity: 0; }
+
+/* ── Recognised by strip (inside hero) ── */
+.hero-split__recognised {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  border-top: 1px solid var(--rescue-border, #E0E0E0);
+}
+.hero-split__recognised-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rescue-text-secondary, #555);
+}
+.hero-split__recognised-logos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.hero-split__recognised-logos img {
+  height: 40px;
+  width: auto;
+  max-width: 110px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.75;
+  transition: filter 0.2s, opacity 0.2s;
+}
+.hero-split__recognised-logos img:hover { filter: none; opacity: 1; }
 
 /* ── Partners carousel (black & white, auto-scrolling) ── */
 .partners-marquee {

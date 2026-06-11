@@ -1,4 +1,4 @@
-/* Import fonts — Ubuntu across the entire project */
+/* Import fonts - Ubuntu across the entire project */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
 @tailwind base;
@@ -16,13 +16,13 @@ html {
   font-family: 'Ubuntu', system-ui, -apple-system, sans-serif;
 }
 
-/* Force Ubuntu on every element — overrides any lingering component or
+/* Force Ubuntu on every element - overrides any lingering component or
    library style. Safe: all icons in this project are inline SVGs. */
 *, *::before, *::after {
   font-family: 'Ubuntu', system-ui, -apple-system, sans-serif !important;
 }
 
-/* Form controls don't inherit fonts by default — force Ubuntu everywhere */
+/* Form controls don't inherit fonts by default - force Ubuntu everywhere */
 button, input, select, textarea {
   font-family: inherit;
 }

@@ -4,7 +4,7 @@
       <div class="container">
         <p class="page-hero__eyebrow">Campus Life</p>
         <h1 class="page-hero__title">GES Life</h1>
-        <p class="page-hero__subtitle">A glimpse into the vibrant community life across all GES institutions — from sports and arts to community service and academic achievements.</p>
+        <p class="page-hero__subtitle">A glimpse into the vibrant community life across all GES institutions - from sports and arts to community service and academic achievements.</p>
       </div>
     </section>
 

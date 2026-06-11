@@ -1,6 +1,6 @@
 <template>
   <footer class="ges-footer">
-    <!-- Footer layout 1 — light grey band (rescue.org rpll-footer-layout-1) -->
+    <!-- Footer layout 1 - light grey band (rescue.org rpll-footer-layout-1) -->
     <div class="ges-footer__layout1">
       <div class="ges-footer__container">
         <div class="ges-footer__grid">
@@ -64,7 +64,7 @@
       </div>
     </div>
 
-    <!-- Footer layout 2 — black utility band (rescue.org rpll-footer-layout-2) -->
+    <!-- Footer layout 2 - black utility band (rescue.org rpll-footer-layout-2) -->
     <div class="ges-footer__layout2">
       <div class="ges-footer__container">
         <div class="ges-footer__partners">

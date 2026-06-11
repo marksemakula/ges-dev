@@ -18,7 +18,7 @@
             <p class="section-eyebrow">About the Programme</p>
             <h2 class="section-title">Your Gateway to Global Education</h2>
             <p class="ipp-text">The International Education Pathway Programme (IPP) is GES's flagship initiative connecting Ugandan students to top universities worldwide. Through strategic partnerships with institutions in the UK, USA, Canada, and Australia, we provide a structured pathway from secondary school to higher education abroad.</p>
-            <p class="ipp-text" style="margin-top:1rem;">Our dedicated counsellors support students through every step — from choosing the right university to visa applications and pre-departure preparation.</p>
+            <p class="ipp-text" style="margin-top:1rem;">Our dedicated counsellors support students through every step - from choosing the right university to visa applications and pre-departure preparation.</p>
           </div>
           <div class="ipp-features">
             <div v-for="feature in features" :key="feature.title" class="ipp-feature">
