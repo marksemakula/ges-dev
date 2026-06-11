@@ -400,7 +400,6 @@ const involved = [
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-attachment: fixed; /* images stay static while the page scrolls */
   animation: hero-drift 16s ease-in-out infinite alternate; /* gentle motion */
 }
 @keyframes hero-drift {
