@@ -139,13 +139,14 @@ const navLinks = [
 ];
 
 const institutions = [
-  { name: 'St. Andrew Kaggwa GHS – Kawaala', shortName: 'SAKGHS Kawaala', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced Secondary Education' },
-  { name: 'St. Andrew Kaggwa GHS – Bujuuko', shortName: 'SAKGHS Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Advanced Secondary Education' },
-  { name: 'Gombe Junior School – Kikajjo', shortName: 'GJS Kikajjo', path: '/institutions/gjs-kikajjo', url: 'https://gjs-kikajjo.vercel.app/', description: 'Primary & Lower Secondary' },
-  { name: 'Gombe Junior School – Boarding', shortName: 'GJS Boarding', path: '/institutions/gjs-boarding', url: 'https://gjs-boarding.vercel.app/', description: 'Primary & Lower Secondary' },
-  { name: 'Gombe Junior School – Gulu', shortName: 'GJS Gulu', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/', description: 'Primary & Lower Secondary' },
-  { name: 'SISU – Katale Campus', shortName: 'SISU Katale', path: '/institutions/scooby-katale', url: 'https://sisu-katale.vercel.app/', description: 'International Curriculum' },
-  { name: 'SISU – Gulu Campus', shortName: 'SISU Gulu', path: '/institutions/scooby-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'International Curriculum' },
+  { name: 'Jimmy Sekasi Business Institute', shortName: 'JSBI', path: '/institutions/jsbi', url: 'https://jsbi.vercel.app/', description: 'Business & Vocational Training' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', shortName: 'SAKGHS Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Advanced Secondary Education' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', shortName: 'SAKGHS Kawaala', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced Secondary Education' },
+  { name: 'Gombe Junior School - Kampala', shortName: 'GJS Kampala', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/', description: 'Primary Education' },
+  { name: 'Gombe Junior School - Gulu', shortName: 'GJS Gulu', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/', description: 'Primary Education' },
+  { name: 'ScoobyDoo International School Uganda - Kampala', shortName: 'SISU Kampala', path: '/institutions/sisu-kampala', url: 'https://sisu-katale.vercel.app/', description: 'International Curriculum' },
+  { name: 'ScoobyDoo International School Uganda - Gulu', shortName: 'SISU Gulu', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'International Curriculum' },
+  { name: 'International Education Pathways Program', shortName: 'IEPP', path: '/institutions/iepp', url: 'https://ipp-vert.vercel.app/', description: 'Global Study Pathways' },
 ];
 </script>
 

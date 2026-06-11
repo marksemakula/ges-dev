@@ -89,13 +89,14 @@ const quickLinks = [
 ];
 
 const institutions = [
-  { name: 'Jimmy Sekasi Business Institute', path: '/institutions/jsbi', url: '#' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/' },
+  { name: 'Jimmy Sekasi Business Institute', path: '/institutions/jsbi', url: 'https://jsbi.vercel.app/' },
   { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/' },
-  { name: 'Gombe Junior School - Kampala (Day & Boarding)', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/' },
-  { name: 'Gombe Junior School - Gulu (Day)', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/' },
+  { name: 'Gombe Junior School - Kampala', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/' },
+  { name: 'Gombe Junior School - Gulu', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/' },
   { name: 'ScoobyDoo International School Uganda - Kampala', path: '/institutions/sisu-kampala', url: 'https://sisu-katale.vercel.app/' },
   { name: 'ScoobyDoo International School Uganda - Gulu', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/' },
+  { name: 'International Education Pathways Program', path: '/institutions/iepp', url: 'https://ipp-vert.vercel.app/' },
 ];
 
 const socials = [
