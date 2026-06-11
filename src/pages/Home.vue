@@ -49,13 +49,6 @@
             A consortium of institutions providing quality holistic education from Kindergarten to Tertiary level across Uganda - all embracing the same vision and mission.
           </p>
         </div>
-        <div class="partners-marquee">
-          <Vue3Marquee :duration="40" :pause-on-hover="true" :clone="true">
-            <div v-for="logo in partnerLogos" :key="logo.name" class="partners-marquee__item" :title="logo.name">
-              <img :src="logo.src" :alt="logo.name" class="partners-marquee__logo" />
-            </div>
-          </Vue3Marquee>
-        </div>
       </div>
     </section>
 
@@ -89,21 +82,49 @@
             Explore our network of institutions - each offering quality programs, vibrant communities, and rich student life.
           </p>
         </div>
-        <div class="rpl-grid-3">
-          <a v-for="inst in institutions" :key="inst.path" :href="inst.url" class="rpl-card">
-            <div class="rpl-card__media">
-              <img :src="inst.image" :alt="`${inst.name} students`" loading="lazy" />
-              <img :src="inst.logo" :alt="`${inst.name} logo`" class="rpl-card__badge" loading="lazy" />
+        <ul class="inst-list">
+          <li class="inst-list__item">
+            <div class="teaser-hl">
+              <a :href="institutions[0].url" :aria-label="institutions[0].name" class="teaser-hl__link">
+                <div class="teaser-hl__media">
+                  <img :src="institutions[0].image" :alt="`${institutions[0].name} students`" loading="lazy" />
+                  <img :src="institutions[0].logo" :alt="`${institutions[0].name} logo`" class="teaser-badge" loading="lazy" />
+                </div>
+                <div class="teaser-hl__text">
+                  <div class="teaser-slug">{{ institutions[0].type }}</div>
+                  <h3 class="teaser-hl__title">{{ institutions[0].name }}</h3>
+                  <div class="teaser-hl__summary">{{ institutions[0].description }}</div>
+                  <div class="teaser-link teaser-link--inverse" role="link">Visit school</div>
+                </div>
+              </a>
             </div>
-            <div class="rpl-card__body">
-              <span class="rpl-card__type">{{ inst.type }}</span>
-              <h3 class="rpl-card__title">
-                {{ inst.name }}
-                <svg class="rpl-card__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </h3>
-              <p class="rpl-card__desc">{{ inst.description }}</p>
+          </li>
+          <li v-for="inst in institutions.slice(1)" :key="inst.path" class="inst-list__item">
+            <div class="teaser-std">
+              <a :href="inst.url" :aria-label="inst.name" class="teaser-std__link">
+                <div class="teaser-std__media">
+                  <img :src="inst.image" :alt="`${inst.name} students`" loading="lazy" />
+                  <img :src="inst.logo" :alt="`${inst.name} logo`" class="teaser-badge" loading="lazy" />
+                </div>
+                <div class="teaser-std__text">
+                  <div class="teaser-slug">{{ inst.type }}</div>
+                  <div class="teaser-std__title">
+                    <h3>{{ inst.name }}</h3>
+                  </div>
+                  <div class="teaser-std__cta">
+                    <div class="teaser-link" role="link">Learn more</div>
+                  </div>
+                </div>
+              </a>
             </div>
-          </a>
+          </li>
+        </ul>
+        <div class="partners-marquee">
+          <Vue3Marquee :duration="40" :pause-on-hover="true" :clone="true">
+            <div v-for="logo in partnerLogos" :key="logo.name" class="partners-marquee__item" :title="logo.name">
+              <img :src="logo.src" :alt="logo.name" class="partners-marquee__logo" />
+            </div>
+          </Vue3Marquee>
         </div>
       </div>
     </section>
@@ -242,14 +263,13 @@ const partnerLogos = [
 
 /* ── Institutions ── */
 const institutions = [
-  { name: 'St. Andrew Kaggwa GHS – Kawaala', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/IMG_9718.JPG', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced secondary education with a focus on academic excellence.' },
-  { name: 'St. Andrew Kaggwa GHS – Bujuuko', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/Gombe High School - Bujuuko.png', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Nurturing tomorrow\'s leaders through quality education.' },
-  { name: 'Gombe Junior School – Kikajjo', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/IMG_1737.JPG', path: '/institutions/gjs-kikajjo', url: 'https://gjs-kikajjo.vercel.app/', description: 'Building strong foundations for lifelong learning.' },
-  { name: 'Gombe Junior School – Boarding', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/IMG_1697.JPG', path: '/institutions/gjs-boarding', url: 'https://gjs-boarding.vercel.app/', description: 'Residential schooling in a safe, nurturing environment.' },
-  { name: 'Gombe Junior School – Gulu', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/IMG_1685.JPG', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/', description: 'Extending foundational education excellence to Northern Uganda.' },
-  { name: 'SISU – Katale Campus', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-12-55-02_1.jpg', path: '/institutions/scooby-katale', url: 'https://sisu-katale.vercel.app/', description: 'International curriculum preparing students for global success.' },
-  { name: 'SISU – Gulu Campus', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-01-12-29_IMG_3773.jpg', path: '/institutions/scooby-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'Bringing international education to Northern Uganda.' },
   { name: 'Jimmy Sekasi Business Institute', type: 'Vocational Institute', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', image: '/images/JIMMY SEKASI.JPG', path: '/institutions/jsbi', url: '#', description: 'Equipping students with practical business, vocational, and hands-on skills.' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/IMG_9718.JPG', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced secondary education with a focus on academic excellence.' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/Gombe High School - Bujuuko.png', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Nurturing tomorrow\'s leaders through quality education.' },
+  { name: 'Gombe Junior School - Kampala (Day & Boarding)', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/IMG_1737.JPG', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/', description: 'Building strong foundations for lifelong learning.' },
+  { name: 'Gombe Junior School - Gulu (Day)', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/IMG_1685.JPG', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/', description: 'Extending foundational education excellence to Northern Uganda.' },
+  { name: 'ScoobyDoo International School Uganda - Kampala', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-12-55-02_1.jpg', path: '/institutions/sisu-kampala', url: 'https://sisu-katale.vercel.app/', description: 'International curriculum preparing students for global success.' },
+  { name: 'ScoobyDoo International School Uganda - Gulu', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-01-12-29_IMG_3773.jpg', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'Bringing international education to Northern Uganda.' },
 ];
 
 /* ── Featured posts (from GES Blog) ── */
@@ -408,7 +428,7 @@ const involved = [
 
 /* ── Partners carousel (black & white, auto-scrolling) ── */
 .partners-marquee {
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   overflow: hidden;
 }
 .partners-marquee__item {
@@ -443,6 +463,152 @@ const involved = [
   padding: 4px 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
+
+/* ── Institutions teaser list (rescue.org rpll-two-column-list--highlighted) ── */
+.inst-list {
+  display: grid;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2rem;
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+@media (min-width: 64rem) {
+  .inst-list { grid-template-columns: 1fr 1fr; }
+  .inst-list__item:first-child { grid-column: 1 / 3; }
+}
+.inst-list__item { overflow: hidden; }
+
+/* Highlighted teaser (rplc-teaser-highlighted) */
+.teaser-hl__link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+.teaser-hl__media {
+  position: relative;
+  line-height: 0;
+}
+.teaser-hl__media img:first-child {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.teaser-hl__text {
+  position: relative;
+  z-index: 5;
+  background: var(--rescue-yellow, #FFC72C);
+  margin: -2rem 1rem 0;
+  padding: 2rem;
+}
+@media (min-width: 64rem) {
+  .teaser-hl__link { flex-direction: row; align-items: center; }
+  .teaser-hl__media { flex: 1 1 auto; min-width: 0; }
+  .teaser-hl__text {
+    flex: 0 0 auto;
+    width: 26.5rem;
+    margin: 0 0 0 -11.625rem;
+  }
+}
+@media (min-width: 77.5rem) {
+  .teaser-hl__text { width: 40rem; }
+}
+.teaser-hl__title {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  color: var(--rescue-dark, #1A1A1A);
+}
+.teaser-hl__summary {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  color: var(--rescue-dark, #1A1A1A);
+}
+
+/* Standard teaser (rplc-teaser-standard) */
+.teaser-std { height: 100%; }
+.teaser-std__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+.teaser-std__media {
+  position: relative;
+  line-height: 0;
+}
+.teaser-std__media img:first-child {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.teaser-std__text {
+  position: relative;
+  z-index: 5;
+  background: #fff;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: -3rem 1rem 0;
+  padding: 2rem;
+}
+.teaser-std__title { flex: 1; }
+.teaser-std__title h3 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.5em;
+  color: var(--rescue-dark, #1A1A1A);
+}
+.teaser-std__cta {
+  align-self: flex-start;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Slug, school badge and yellow-highlight link (rpla-slug / rpla-link--type-one) */
+.teaser-slug {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 0.5em;
+  color: var(--rescue-dark, #1A1A1A);
+}
+.teaser-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+}
+.teaser-link {
+  display: inline;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #800020;
+  background: var(--rescue-yellow, #FFC72C);
+  box-shadow: 0 0 0 0.2em var(--rescue-yellow, #FFC72C);
+  border-bottom: 0.1em solid var(--rescue-yellow, #FFC72C);
+  transition: border-color 0.15s;
+}
+.teaser-std__link:hover .teaser-link { border-bottom-color: #800020; }
+.teaser-link--inverse {
+  color: #fff;
+  background: #800020;
+  box-shadow: 0 0 0 0.2em #800020;
+  border-bottom: 0.1em solid #800020;
+}
+.teaser-hl__link:hover .teaser-link--inverse { border-bottom-color: #fff; }
 
 /* ── Quote CTA (call-to-action-2) ── */
 .quote-cta {
