@@ -1,5 +1,17 @@
 <template>
   <header :class="['ges-header', { 'ges-header--scrolled': scrolled }]">
+    <!-- Top utility bar (rescue.org rplc-global-navigation__top-wrapper) -->
+    <div class="ges-topbar">
+      <div class="ges-topbar__inner">
+        <span class="ges-topbar__tagline">Excellence in Education Since 1995</span>
+        <div class="ges-topbar__socials">
+          <a v-for="s in topSocials" :key="s.label" :href="s.href" :aria-label="s.label" target="_blank" rel="noopener noreferrer" class="ges-topbar__social-link">
+            <span v-html="s.svg"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Main nav -->
     <nav class="ges-nav container">
       <!-- Logo / Brand -->
@@ -78,6 +90,9 @@
           </RouterLink>
         </div>
 
+      <!-- Mobile Reachout CTA (rescue.org mobile-call-to-action-menu) -->
+      <RouterLink to="/about" class="ges-nav__reachout">Reachout</RouterLink>
+
       <!-- Mobile Hamburger -->
       <button class="ges-hamburger" @click="mobileOpen = !mobileOpen" aria-label="Toggle menu">
         <span :class="['ges-hamburger__bar', { 'ges-hamburger__bar--open-1': mobileOpen }]"></span>
@@ -148,15 +163,23 @@ const institutions = [
   { name: 'ScoobyDoo International School Uganda - Gulu', shortName: 'SISU Gulu', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'International Curriculum' },
   { name: 'International Education Pathways Program', shortName: 'IEPP', path: '/institutions/iepp', url: 'https://ipp-vert.vercel.app/', description: 'Global Study Pathways' },
 ];
+
+/* Top bar social icons (rescue.org rplm-social-share, inverse) */
+const topSocials = [
+  { label: 'Facebook',  href: '#', svg: '<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M9.052 15.04V8.626h2.17l.34-2.51H9.086V4.522c0-.712.204-1.22 1.255-1.22h1.324V1.06c-.239-.032-1.019-.1-1.935-.1-1.9 0-3.223 1.153-3.223 3.325v1.832h-2.17v2.51h2.17v6.412H9.05z"/></svg>' },
+  { label: 'Instagram', href: '#', svg: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>' },
+  { label: 'YouTube',   href: '#', svg: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#7A0001" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>' },
+  { label: 'TikTok',    href: '#', svg: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>' },
+  { label: 'LinkedIn',  href: '#', svg: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>' },
+  { label: 'X (Twitter)', href: '#', svg: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.636 5.906-5.636zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>' },
+];
 </script>
 
 <style scoped>
 /* ── Main Header ── */
 .ges-header {
-  position: fixed;
+  position: sticky; /* in normal flow above the hero; sticks on scroll */
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 100;
   background: var(--rescue-white, #fff);
   border-bottom: 1px solid var(--rescue-border, #E0E0E0);
@@ -164,6 +187,50 @@ const institutions = [
 }
 .ges-header--scrolled {
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+/* ── Top utility bar (rescue.org top-wrapper, GES maroon) ── */
+.ges-topbar {
+  display: none;
+  background: #7A0001;
+  color: #fff;
+  overflow: hidden;
+  max-height: 48px;
+  transition: max-height 0.25s ease;
+}
+@media (min-width: 1024px) {
+  .ges-topbar { display: block; }
+}
+.ges-header--scrolled .ges-topbar { max-height: 0; }
+.ges-topbar__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem 0 11.5rem; /* clear the white logo island */
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ges-topbar__tagline {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.ges-topbar__socials {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+.ges-topbar__social-link {
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.15s, color 0.15s;
+}
+.ges-topbar__social-link:hover {
+  opacity: 1;
+  color: var(--rescue-yellow, #FFC72C);
 }
 
 /* ── Nav ── */
@@ -177,7 +244,7 @@ const institutions = [
   height: 64px;
 }
 
-/* ── Brand ── */
+/* ── Brand (white island card on desktop, rescue.org branding-link) ── */
 .ges-brand {
   display: flex;
   align-items: center;
@@ -187,6 +254,48 @@ const institutions = [
 .ges-brand__logo {
   height: 48px;
   width: auto;
+}
+@media (min-width: 1024px) {
+  .ges-nav { position: relative; }
+  .ges-brand {
+    position: absolute;
+    top: -48px;
+    left: 1.5rem;
+    height: calc(100% + 48px);
+    width: 8.5rem;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    justify-content: center;
+    z-index: 5;
+    transition: top 0.25s ease, height 0.25s ease;
+  }
+  .ges-brand__logo {
+    height: 85%;
+    width: 85%;
+    object-fit: contain;
+  }
+  .ges-header--scrolled .ges-brand {
+    top: 0;
+    height: 100%;
+  }
+  /* keep nav links clear of the island */
+  .ges-nav__links { margin-left: 9rem; }
+}
+
+/* ── Mobile Reachout CTA ── */
+.ges-nav__reachout {
+  margin-left: auto;
+  margin-right: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--rescue-dark, #1A1A1A);
+  text-decoration: none;
+}
+@media (min-width: 1024px) {
+  .ges-nav__reachout { display: none; }
 }
 
 /* ── Desktop Nav Links ── */

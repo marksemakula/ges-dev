@@ -320,7 +320,6 @@ const involved = [
 /* ── Hero split (rescue.org style) ── */
 .hero-split {
   background: var(--rescue-grey-bg, #F0F0F0);
-  padding-top: 64px; /* clear fixed header */
   display: grid;
   grid-template-columns: 1fr;
 }
