@@ -340,9 +340,9 @@ const involved = [
   justify-content: center;
 }
 @media (min-width: 1024px) {
-  /* Keep text aligned with the 1280px page container */
+  /* Keep text aligned with the 1280px page container; top padding clears the floating navbar */
   .hero-split__content {
-    padding: 4.5rem 3rem 4.5rem max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem));
+    padding: 9rem 3rem 4.5rem max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem));
   }
 }
 .hero-split__logo {

@@ -1,26 +1,27 @@
 <template>
   <header :class="['ges-header', { 'ges-header--scrolled': scrolled }]">
-    <!-- Top utility bar (rescue.org rplc-global-navigation__top-wrapper) -->
-    <div class="ges-topbar">
-      <div class="ges-topbar__inner">
-        <span class="ges-topbar__tagline">Excellence in Education Since 1995</span>
-        <div class="ges-topbar__socials">
-          <a v-for="s in topSocials" :key="s.label" :href="s.href" :aria-label="s.label" target="_blank" rel="noopener noreferrer" class="ges-topbar__social-link">
-            <span v-html="s.svg"></span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main nav -->
-    <nav class="ges-nav container">
-      <!-- Logo / Brand -->
+    <!-- Floating island navbar (rescue.org global navigation card) -->
+    <div class="ges-island">
+      <!-- Logo card -->
       <RouterLink to="/" class="ges-brand">
         <img src="/logo.png" alt="GES" class="ges-brand__logo" />
       </RouterLink>
 
-      <!-- Desktop Nav -->
-      <div class="ges-nav__links">
+      <div class="ges-island__body">
+        <!-- Maroon strip -->
+        <div class="ges-topbar">
+          <span class="ges-topbar__tagline">Excellence in Education Since 1995</span>
+          <div class="ges-topbar__socials">
+            <a v-for="s in topSocials" :key="s.label" :href="s.href" :aria-label="s.label" target="_blank" rel="noopener noreferrer" class="ges-topbar__social-link">
+              <span v-html="s.svg"></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Main nav row -->
+        <nav class="ges-nav">
+          <!-- Desktop Nav -->
+          <div class="ges-nav__links">
         <RouterLink
           v-for="link in navLinks"
           :key="link.path"
@@ -82,24 +83,26 @@
         </div>
       </div>
 
-        <!-- CTA Button (desktop) -->
-        <div class="ges-nav__cta">
-          <RouterLink to="/about" class="ges-nav__donate" aria-label="Get in touch">
-            <span class="ges-nav__donate-text">Get in Touch</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </RouterLink>
-        </div>
+          <!-- Search + CTA (desktop) -->
+          <div class="ges-nav__cta">
+            <button class="ges-nav__search" aria-label="Search">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+            <RouterLink to="/about" class="ges-nav__donate" aria-label="Reachout">Reachout</RouterLink>
+          </div>
 
-      <!-- Mobile Reachout CTA (rescue.org mobile-call-to-action-menu) -->
-      <RouterLink to="/about" class="ges-nav__reachout">Reachout</RouterLink>
+          <!-- Mobile Reachout CTA -->
+          <RouterLink to="/about" class="ges-nav__reachout">Reachout</RouterLink>
 
-      <!-- Mobile Hamburger -->
-      <button class="ges-hamburger" @click="mobileOpen = !mobileOpen" aria-label="Toggle menu">
-        <span :class="['ges-hamburger__bar', { 'ges-hamburger__bar--open-1': mobileOpen }]"></span>
-        <span :class="['ges-hamburger__bar', { 'ges-hamburger__bar--open-2': mobileOpen }]"></span>
-        <span :class="['ges-hamburger__bar', { 'ges-hamburger__bar--open-3': mobileOpen }]"></span>
-      </button>
-    </nav>
+          <!-- Mobile Hamburger -->
+          <button class="ges-hamburger" @click="mobileOpen = !mobileOpen" aria-label="Toggle menu">
+            <span :class="['ges-hamburger__bar', { 'ges-hamburger__bar--open-1': mobileOpen }]"></span>
+            <span :class="['ges-hamburger__bar', { 'ges-hamburger__bar--open-2': mobileOpen }]"></span>
+            <span :class="['ges-hamburger__bar', { 'ges-hamburger__bar--open-3': mobileOpen }]"></span>
+          </button>
+        </nav>
+      </div>
+    </div>
 
     <!-- Mobile Menu -->
     <Transition name="mobile-menu">
@@ -176,50 +179,76 @@ const topSocials = [
 </script>
 
 <style scoped>
-/* ── Main Header ── */
+/* ── Main Header: floating island over the hero ── */
 .ges-header {
-  position: sticky; /* in normal flow above the hero; sticks on scroll */
-  top: 0;
+  position: relative;
   z-index: 100;
-  background: var(--rescue-white, #fff);
-  border-bottom: 1px solid var(--rescue-border, #E0E0E0);
-  transition: box-shadow 0.3s ease;
 }
-.ges-header--scrolled {
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+@media (min-width: 1024px) {
+  .ges-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2.25rem 1.5rem 0;
+  }
+  .ges-header--scrolled {
+    position: fixed;
+  }
 }
 
-/* ── Top utility bar (rescue.org top-wrapper, GES maroon) ── */
+/* ── Island card ── */
+.ges-island {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid var(--rescue-border, #E0E0E0);
+}
+@media (min-width: 1024px) {
+  .ges-island {
+    max-width: 1240px;
+    margin: 0 auto;
+    align-items: stretch;
+    border: none;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+  }
+}
+.ges-island__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ── Maroon strip (rescue.org top-wrapper, GES maroon) ── */
 .ges-topbar {
   display: none;
   background: #7A0001;
   color: #fff;
-  overflow: hidden;
-  max-height: 48px;
-  transition: max-height 0.25s ease;
-}
-@media (min-width: 1024px) {
-  .ges-topbar { display: block; }
-}
-.ges-header--scrolled .ges-topbar { max-height: 0; }
-.ges-topbar__inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem 0 11.5rem; /* clear the white logo island */
-  height: 48px;
-  display: flex;
+  height: 34px;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1.25rem;
+  overflow: hidden;
+  transition: height 0.25s ease;
+}
+@media (min-width: 1024px) {
+  .ges-topbar { display: flex; }
+  /* morph into a minimized navbar on scroll */
+  .ges-header--scrolled .ges-topbar { height: 0; }
+  .ges-header--scrolled .ges-nav { height: 52px; }
+  .ges-header--scrolled .ges-brand__logo { height: 70%; }
 }
 .ges-topbar__tagline {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 .ges-topbar__socials {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
+  gap: 0.9rem;
 }
 .ges-topbar__social-link {
   color: #fff;
@@ -232,56 +261,49 @@ const topSocials = [
   opacity: 1;
   color: var(--rescue-yellow, #FFC72C);
 }
+.ges-topbar__social-link svg { width: 12px; height: 12px; }
 
-/* ── Nav ── */
+/* ── Nav row ── */
 .ges-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;
-  max-width: 1280px;
-  margin: 0 auto;
+  background: #fff;
   height: 64px;
+  padding: 0 1rem;
+  flex: 1;
+}
+@media (min-width: 1024px) {
+  .ges-nav { height: 56px; padding: 0 0 0 0.5rem; flex: initial; transition: height 0.25s ease; border-bottom-right-radius: 8px; }
 }
 
-/* ── Brand (white island card on desktop, rescue.org branding-link) ── */
+/* ── Brand (white logo card, left end of the island) ── */
 .ges-brand {
   display: flex;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
   flex-shrink: 0;
+  background: #fff;
+  padding-left: 1rem;
 }
 .ges-brand__logo {
   height: 48px;
   width: auto;
 }
 @media (min-width: 1024px) {
-  .ges-nav { position: relative; }
-  .ges-brand {
-    position: absolute;
-    top: -48px;
-    left: 1.5rem;
-    height: calc(100% + 48px);
-    width: 8.5rem;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    justify-content: center;
-    z-index: 5;
-    transition: top 0.25s ease, height 0.25s ease;
-  }
+  .ges-brand { width: 7.5rem; padding-left: 0; }
   .ges-brand__logo {
-    height: 85%;
-    width: 85%;
+    height: 80%;
+    width: 80%;
     object-fit: contain;
   }
-  .ges-header--scrolled .ges-brand {
-    top: 0;
-    height: 100%;
-  }
-  /* keep nav links clear of the island */
-  .ges-nav__links { margin-left: 9rem; }
+}
+
+/* separators between nav items, like the reference */
+@media (min-width: 1024px) {
+  .ges-nav__links > * + * { border-left: 1px solid var(--rescue-border, #E0E0E0); }
+  .ges-nav__link { padding: 0.45rem 1.1rem; }
 }
 
 /* ── Mobile Reachout CTA ── */
@@ -341,36 +363,48 @@ const topSocials = [
   background: var(--rescue-yellow, #EFC131);
 }
 
-/* ── Nav CTA ── */
+/* ── Nav CTA: search + yellow Reachout capping the card's right end ── */
 .ges-nav__cta {
   display: none;
 }
 @media (min-width: 1024px) {
-  .ges-nav__cta { display: flex; align-items: center; margin-left: 1rem; }
+  .ges-nav__cta {
+    display: flex;
+    align-items: stretch;
+    align-self: stretch;
+    margin-left: 1rem;
+  }
 }
+.ges-nav__search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  background: none;
+  border: none;
+  border-left: 1px solid var(--rescue-border, #E0E0E0);
+  cursor: pointer;
+  color: var(--rescue-dark, #1A1A1A);
+  transition: color 0.15s;
+}
+.ges-nav__search:hover { color: #7A0001; }
 .ges-nav__donate {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.55rem 1rem;
+  justify-content: center;
+  padding: 0 1.75rem;
   background: var(--rescue-yellow, #EFC131);
   color: var(--rescue-dark, #1A1A1A);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 800;
   text-decoration: none;
-  border: 2px solid var(--rescue-yellow, #EFC131);
   cursor: pointer;
-  transition: background 0.15s, transform 0.12s;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  box-shadow: 0 6px 18px rgba(233,184,60,0.12);
+  transition: background 0.15s;
+  letter-spacing: 0.02em;
 }
 .ges-nav__donate:hover {
   background: var(--rescue-yellow-hover, #D9AE28);
-  transform: translateY(-1px);
 }
-.ges-nav__donate-text { display: inline-block; }
 
 /* ── Dropdown ── */
 .ges-dropdown {
