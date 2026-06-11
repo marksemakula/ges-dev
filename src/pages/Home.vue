@@ -291,6 +291,11 @@ const involved = [
   padding: 0 1.5rem;
 }
 
+/* Mission heading - same size as the leadership quote text */
+.rpl-section-heading--center .rpl-section-heading__title {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+}
+
 /* ── Hero split (rescue.org style) ── */
 .hero-split {
   background: var(--rescue-grey-bg, #F0F0F0);
@@ -461,6 +466,7 @@ const involved = [
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
+/* ── Mission heading colour ── */
 /* ── Institutions teaser list (rescue.org rpll-two-column-list--highlighted) ── */
 .inst-list {
   display: grid;
