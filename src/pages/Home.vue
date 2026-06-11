@@ -57,7 +57,7 @@
       <div class="container-rpl">
         <div class="quote-cta">
           <div class="quote-cta__media">
-            <img src="/images/Owek. Kyewalabye David Male.jpg" alt="Owek. Kyewalabye Male David" />
+            <img src="/images/Owek. Kyewalabye David Male.png" alt="Owek. Kyewalabye Male David" />
           </div>
           <div class="quote-cta__content">
             <blockquote class="quote-cta__text">
@@ -78,9 +78,6 @@
       <div class="container-rpl">
         <div class="rpl-section-heading">
           <h2 class="rpl-section-heading__title">Institutions Under GES</h2>
-          <p class="rpl-section-heading__intro">
-            Explore our network of institutions - each offering quality programs, vibrant communities, and rich student life.
-          </p>
         </div>
         <ul class="inst-list">
           <li class="inst-list__item">

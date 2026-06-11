@@ -53,7 +53,7 @@ const managementTeam = [
     name: 'Owek. Kyewalabye Male David',
     position: 'GES Managing Director',
     bio: 'Owek. Kyewalabye Male David serves as the Managing Director of Gombe Education Services. An experienced institutional administrator and strategist, he coordinates operations, developmental planning, and strategic partnerships across all institutions within the GES portfolio, ensuring absolute operational efficiency and sustainable growth.',
-    image: '/images/Owek. Kyewalabye David Male.jpg',
+    image: '/images/Owek. Kyewalabye David Male.png',
     email: 'david.male@ges.ac.ug',
     linkedin: 'https://linkedin.com/in/david-kiwalabye-male'
   },
