@@ -2,7 +2,7 @@
   <div class="home">
     <!-- ── Hero split display (rescue.org rplc-hero-split-display) ── -->
     <section class="hero-split">
-      <div class="hero-split__inner">
+      <div class="hero-split__left">
         <div class="hero-split__content">
           <img src="/logo.png" alt="Gombe Education Service" class="hero-split__logo" />
           <h1 class="hero-split__title">Shaping Leaders,<br />Building Futures</h1>
@@ -17,25 +17,24 @@
             <RouterLink to="/about" class="btn-rescue btn-rescue--outline">Learn More</RouterLink>
           </div>
         </div>
-        <div class="hero-split__media">
-          <Transition v-for="(img, i) in slideshowImages" :key="img" name="hero-fade">
-            <img v-show="i === slideIndex" :src="img" alt="Students of Gombe Education Service" class="hero-split__img" />
-          </Transition>
-          <div class="hero-split__dots">
-            <button
-              v-for="(_, i) in slideshowImages"
-              :key="i"
-              :class="['hero-split__dot', { 'is-active': i === slideIndex }]"
-              :aria-label="`Slide ${i + 1}`"
-              @click="goToSlide(i)"
-            />
+        <div class="hero-split__recognised">
+          <span class="hero-split__recognised-label">Recognised by</span>
+          <div class="hero-split__recognised-logos">
+            <img v-for="logo in recognisedBy" :key="logo.name" :src="logo.src" :alt="logo.name" :title="logo.name" />
           </div>
         </div>
       </div>
-      <div class="hero-split__recognised">
-        <span class="hero-split__recognised-label">Recognised by</span>
-        <div class="hero-split__recognised-logos">
-          <img v-for="logo in recognisedBy" :key="logo.name" :src="logo.src" :alt="logo.name" :title="logo.name" />
+      <div class="hero-split__media">
+        <div v-for="s in 3" :key="s" class="hero-split__slice">
+          <Transition name="hero-fade">
+            <div
+              :key="sliceImage(s - 1)"
+              class="hero-split__img"
+              :style="[{ backgroundImage: `url('${sliceImage(s - 1)}')` }, sliceStyles[s - 1]]"
+              role="img"
+              aria-label="Students of Gombe Education Service"
+            />
+          </Transition>
         </div>
       </div>
     </section>
@@ -221,20 +220,42 @@ const slideshowImages = [
   '/images/slideshow/slideshow_5.jpg',
 ];
 const slideIndex = ref(0);
+const sliceIndices = ref([0, 1, 2]);
+
+/* Random framing per swap so different parts of each image show */
+function randomPos() {
+  const r = () => `${Math.round(15 + Math.random() * 70)}%`;
+  return {
+    '--drift-from': `${r()} ${r()}`,
+    '--drift-to': `${r()} ${r()}`,
+  };
+}
+const sliceStyles = ref([randomPos(), randomPos(), randomPos()]);
 let slideTimer: ReturnType<typeof setInterval> | null = null;
+let staggerTimeouts: ReturnType<typeof setTimeout>[] = [];
 
 function startSlides() {
   if (slideTimer) clearInterval(slideTimer);
   slideTimer = setInterval(() => {
     slideIndex.value = (slideIndex.value + 1) % slideshowImages.length;
+    staggerTimeouts.forEach(clearTimeout);
+    /* each slice swaps its photo at a different moment */
+    staggerTimeouts = [0, 1, 2].map((s) =>
+      setTimeout(() => {
+        sliceIndices.value[s] = (slideIndex.value + s) % slideshowImages.length;
+        sliceStyles.value[s] = randomPos();
+      }, s * 1400)
+    );
   }, 5000);
 }
-function goToSlide(i: number) {
-  slideIndex.value = i;
-  startSlides();
+function sliceImage(s: number) {
+  return slideshowImages[sliceIndices.value[s]];
 }
 onMounted(startSlides);
-onUnmounted(() => { if (slideTimer) clearInterval(slideTimer); });
+onUnmounted(() => {
+  if (slideTimer) clearInterval(slideTimer);
+  staggerTimeouts.forEach(clearTimeout);
+});
 
 /* ── Recognised by (hero strip) ── */
 const recognisedBy = [
@@ -300,24 +321,30 @@ const involved = [
 .hero-split {
   background: var(--rescue-grey-bg, #F0F0F0);
   padding-top: 64px; /* clear fixed header */
-}
-.hero-split__inner {
-  max-width: 1280px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
 }
 @media (min-width: 1024px) {
-  .hero-split__inner { grid-template-columns: 1fr auto; align-items: center; }
+  /* Image column: full section height, 30% width, flush right */
+  .hero-split { grid-template-columns: 7fr 3fr; }
+}
+.hero-split__left {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 .hero-split__content {
+  flex: 1;
   padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 @media (min-width: 1024px) {
-  .hero-split__content { padding: 4.5rem 3rem 4.5rem 1.5rem; }
+  /* Keep text aligned with the 1280px page container */
+  .hero-split__content {
+    padding: 4.5rem 3rem 4.5rem max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem));
+  }
 }
 .hero-split__logo {
   height: 144px;
@@ -346,63 +373,56 @@ const involved = [
   gap: 0.85rem;
 }
 .hero-split__media {
-  position: relative;
-  min-height: 320px;
+  display: flex;
+  flex-direction: row;
+  min-height: 360px;
   overflow: hidden;
 }
-@media (min-width: 1024px) {
-  /* Carousel anchored to the right with breathing room */
-  .hero-split__media {
-    width: 520px;
-    min-height: 400px;
-    justify-self: end;
-    margin: 3rem 1.5rem 3rem 0;
-    border-radius: 8px;
-  }
+.hero-split__slice {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+/* Narrow burgundy lines only between the images */
+.hero-split__slice + .hero-split__slice::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 6px;
+  background: #800020;
+  z-index: 2;
 }
 .hero-split__img {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-attachment: fixed; /* images stay static while the page scrolls */
+  animation: hero-drift 16s ease-in-out infinite alternate; /* gentle motion */
 }
-.hero-split__dots {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
-  z-index: 2;
-}
-.hero-split__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255,255,255,0.55);
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.2s, transform 0.2s;
-}
-.hero-split__dot.is-active {
-  background: var(--rescue-yellow, #FFC72C);
-  transform: scale(1.2);
+@keyframes hero-drift {
+  from { background-position: var(--drift-from, 47% 44%); }
+  to   { background-position: var(--drift-to, 53% 56%); }
 }
 .hero-fade-enter-active, .hero-fade-leave-active { transition: opacity 0.8s ease; }
 .hero-fade-enter-from, .hero-fade-leave-to { opacity: 0; }
 
-/* ── Recognised by strip (inside hero) ── */
+/* ── Recognised by strip (inside hero, left column) ── */
 .hero-split__recognised {
-  max-width: 1280px;
-  margin: 0 auto;
   padding: 1.25rem 1.5rem 2rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem 2.5rem;
   border-top: 1px solid var(--rescue-border, #E0E0E0);
+}
+@media (min-width: 1024px) {
+  .hero-split__recognised {
+    padding-left: max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem));
+  }
 }
 .hero-split__recognised-label {
   font-size: 0.8rem;
