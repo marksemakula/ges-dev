@@ -89,13 +89,13 @@ const quickLinks = [
 ];
 
 const institutions = [
-  { name: 'SAKGHS – Kawaala', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/' },
-  { name: 'SAKGHS – Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/' },
-  { name: 'GJS – Kikajjo', path: '/institutions/gjs-kikajjo', url: 'https://gjs-kikajjo.vercel.app/' },
-  { name: 'GJS – Boarding', path: '/institutions/gjs-boarding', url: 'https://gjs-boarding.vercel.app/' },
-  { name: 'GJS – Gulu', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/' },
-  { name: 'SISU – Katale', path: '/institutions/scooby-katale', url: 'https://sisu-katale.vercel.app/' },
-  { name: 'SISU – Gulu', path: '/institutions/scooby-gulu', url: 'https://sisu-gulu.vercel.app/' },
+  { name: 'Jimmy Sekasi Business Institute', path: '/institutions/jsbi', url: '#' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/' },
+  { name: 'Gombe Junior School - Kampala (Day & Boarding)', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/' },
+  { name: 'Gombe Junior School - Gulu (Day)', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/' },
+  { name: 'ScoobyDoo International School Uganda - Kampala', path: '/institutions/sisu-kampala', url: 'https://sisu-katale.vercel.app/' },
+  { name: 'ScoobyDoo International School Uganda - Gulu', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/' },
 ];
 
 const socials = [
