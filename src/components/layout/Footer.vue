@@ -1,66 +1,84 @@
 <template>
   <footer class="ges-footer">
-    <div class="ges-footer__main container">
-      <div class="ges-footer__grid">
-        <!-- Brand -->
-        <div class="ges-footer__brand">
-          <RouterLink to="/" class="ges-footer__logo-link">
-            <img src="/logo.png" alt="GES" class="ges-footer__logo" />
-            <div>
-              <p class="ges-footer__org">Gombe Education Service</p>
-              <p class="ges-footer__since">Excellence Since 1995</p>
+    <!-- Footer layout 1 — light grey band (rescue.org rpll-footer-layout-1) -->
+    <div class="ges-footer__layout1">
+      <div class="ges-footer__container">
+        <div class="ges-footer__grid">
+          <!-- Brand -->
+          <div class="ges-footer__brand">
+            <RouterLink to="/" class="ges-footer__logo-link">
+              <img src="/logo.png" alt="GES" class="ges-footer__logo" />
+              <div>
+                <p class="ges-footer__org">Gombe Education Service</p>
+                <p class="ges-footer__since">Excellence Since 1995</p>
+              </div>
+            </RouterLink>
+            <p class="ges-footer__desc">
+              Committed to providing world-class education and nurturing future leaders through innovative learning and holistic development.
+            </p>
+            <div class="ges-footer__contact">
+              <a href="mailto:info@ges.ac.ug" class="ges-footer__contact-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+                info@ges.ac.ug
+              </a>
+              <span class="ges-footer__contact-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.93 5.93l.82-.84a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +256 (0) 700 000 000
+              </span>
+              <span class="ges-footer__contact-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Gombe, Uganda
+              </span>
             </div>
-          </RouterLink>
-          <p class="ges-footer__desc">
-            Committed to providing world-class education and nurturing future leaders through innovative learning and holistic development.
-          </p>
-          <div class="ges-footer__contact">
-            <a href="mailto:info@ges.ac.ug" class="ges-footer__contact-item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
-              info@ges.ac.ug
-            </a>
-            <span class="ges-footer__contact-item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.93 5.93l.82-.84a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              +256 (0) 700 000 000
-            </span>
-            <span class="ges-footer__contact-item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Gombe, Uganda
-            </span>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="ges-footer__heading">Quick Links</h4>
+            <ul class="ges-footer__list">
+              <li v-for="link in quickLinks" :key="link.path">
+                <RouterLink :to="link.path" class="ges-footer__link">{{ link.name }}</RouterLink>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Institutions -->
+          <div class="ges-footer__institutions">
+            <h4 class="ges-footer__heading">Our Institutions</h4>
+            <ul class="ges-footer__list">
+              <li v-for="inst in institutions" :key="inst.path">
+                <a :href="inst.url" class="ges-footer__link">{{ inst.name }}</a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- Quick Links -->
-        <div>
-          <h4 class="ges-footer__heading">Quick Links</h4>
-          <ul class="ges-footer__list">
-            <li v-for="link in quickLinks" :key="link.path">
-              <RouterLink :to="link.path" class="ges-footer__link">{{ link.name }}</RouterLink>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Institutions -->
-        <div class="ges-footer__institutions">
-          <h4 class="ges-footer__heading">Our Institutions</h4>
-          <ul class="ges-footer__list">
-            <li v-for="inst in institutions" :key="inst.path">
-              <a :href="inst.url" class="ges-footer__link">{{ inst.name }}</a>
-            </li>
-          </ul>
+        <!-- Social icons row -->
+        <div class="ges-footer__social-row">
+          <div class="ges-footer__social">
+            <a v-for="s in socials" :key="s.label" :href="s.href" :aria-label="s.label" target="_blank" rel="noopener noreferrer" class="ges-footer__social-link">
+              <span v-html="s.svg"></span>
+            </a>
+          </div>
         </div>
       </div>
-      <!-- Bottom row: copyright + social -->
-      <div class="ges-footer__bottom-row">
-        <p class="ges-footer__copy">&copy; {{ year }} Gombe Education Service. All rights reserved.</p>
-        <div class="ges-footer__social">
-          <a v-for="s in socials" :key="s.label" :href="s.href" :aria-label="s.label" target="_blank" rel="noopener noreferrer" class="ges-footer__social-link">
-            <span v-html="s.svg"></span>
-          </a>
+    </div>
+
+    <!-- Footer layout 2 — black utility band (rescue.org rpll-footer-layout-2) -->
+    <div class="ges-footer__layout2">
+      <div class="ges-footer__container">
+        <div class="ges-footer__partners">
+          <p class="ges-footer__partners-label">Recognised &amp; Accredited By</p>
+          <div class="ges-footer__partners-logos">
+            <img v-for="p in partners" :key="p.name" :src="p.src" :alt="p.name" :title="p.name" />
+          </div>
         </div>
-        <div class="ges-footer__powered">
-          <span class="ges-footer__powered-label">Powered by</span>
-          <img src="/images/Inzozi-grayscale1.png" alt="Inzozi Logo" class="ges-footer__powered-logo" />
+        <div class="ges-footer__utility-row">
+          <p class="ges-footer__copy">&copy; {{ year }} Gombe Education Service. All rights reserved.</p>
+          <div class="ges-footer__powered">
+            <span class="ges-footer__powered-label">Powered by</span>
+            <img src="/images/Inzozi-grayscale1.png" alt="Inzozi Logo" class="ges-footer__powered-logo" />
+          </div>
         </div>
       </div>
     </div>
@@ -90,6 +108,14 @@ const institutions = [
   { name: 'SISU – Gulu', path: '/institutions/scooby-gulu', url: 'https://sisu-gulu.vercel.app/' },
 ];
 
+const partners = [
+  { name: 'Ministry of Education', src: '/images/MoES1.png' },
+  { name: 'NCHE', src: '/images/NCHE.png' },
+  { name: 'IEAC', src: '/images/IEAC.png' },
+  { name: 'Kingdom of Buganda', src: '/images/Flag_of_Buganda.svg' },
+  { name: 'Ministry of Local Government', src: '/images/molg-uganda.jpg' },
+];
+
 const socials = [
   { label: 'LinkedIn',  href: 'https://linkedin.com/company/ges',    svg: '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>' },
   { label: 'X (Twitter)', href: 'https://x.com/ges',                 svg: '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.636 5.906-5.636zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>' },
@@ -102,15 +128,16 @@ const socials = [
 </script>
 
 <style scoped>
-.ges-footer {
-  background: #e8e8e8;
-  border-top: 1px solid #d0d0d0;
-  font-family: 'Ubuntu', sans-serif;
-}
-.ges-footer__main {
+.ges-footer__container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 3.5rem 1.5rem 2.5rem;
+  padding: 0 1.5rem;
+}
+
+/* ── Layout 1: light grey band ── */
+.ges-footer__layout1 {
+  background: #E9E9E9;
+  padding: 3.5rem 0 2rem;
 }
 .ges-footer__grid {
   display: grid;
@@ -122,7 +149,6 @@ const socials = [
 }
 @media (min-width: 1024px) {
   .ges-footer__grid { grid-template-columns: 1.8fr 1fr 1.4fr; }
-  .ges-footer__institutions { display: block; }
 }
 .ges-footer__institutions { display: none; }
 @media (min-width: 768px) { .ges-footer__institutions { display: block; } }
@@ -137,20 +163,20 @@ const socials = [
 .ges-footer__logo { height: 84px; width: auto; }
 .ges-footer__org {
   font-size: 0.95rem;
-  font-weight: 700;
-  color: #0A2342;
+  font-weight: 800;
+  color: var(--rescue-dark, #1A1A1A);
   line-height: 1.2;
 }
 .ges-footer__since {
   font-size: 0.65rem;
-  font-weight: 600;
-  color: #8C1427;
+  font-weight: 700;
+  color: var(--rescue-charcoal, #3D3D3D);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 .ges-footer__desc {
   font-size: 0.875rem;
-  color: #222;
+  color: var(--rescue-charcoal, #3D3D3D);
   line-height: 1.65;
   margin-bottom: 1.25rem;
   max-width: 340px;
@@ -165,32 +191,27 @@ const socials = [
   align-items: center;
   gap: 0.5rem;
   font-size: 0.8rem;
-  color: #222;
+  color: var(--rescue-dark, #1A1A1A);
   text-decoration: none;
   transition: color 0.15s;
 }
-a.ges-footer__contact-item:hover { color: #8C1427; text-decoration: underline; text-decoration-color: #8C1427; text-underline-offset: 3px; }
+a.ges-footer__contact-item:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--rescue-yellow, #FFC72C);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
 
 .ges-footer__heading {
-  position: relative;
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #0A2342;
+  color: var(--rescue-dark, #1A1A1A);
   margin-bottom: 1rem;
-  padding-bottom: 0.45rem;
-}
-.ges-footer__heading::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 65%;
-  height: 3px;
-  background: #f4c542;
-  border-radius: 999px;
+  border-bottom: 3px solid var(--rescue-yellow, #FFC72C);
+  display: inline-block;
+  padding-bottom: 0.4rem;
 }
 .ges-footer__list {
   list-style: none;
@@ -202,38 +223,91 @@ a.ges-footer__contact-item:hover { color: #8C1427; text-decoration: underline; t
 }
 .ges-footer__link {
   font-size: 0.875rem;
-  color: #222;
+  font-weight: 600;
+  color: var(--rescue-dark, #1A1A1A);
   text-decoration: none;
   transition: color 0.15s;
   text-underline-offset: 3px;
 }
-.ges-footer__link:hover { color: #8C1427; text-decoration: underline; text-decoration-color: #8C1427; }
-
-.ges-footer__bottom-row {
-  margin-top: 2rem;
-  padding-top: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+.ges-footer__link:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--rescue-yellow, #FFC72C);
+  text-decoration-thickness: 2px;
 }
-.ges-footer__copy {
-  font-size: 0.8rem;
-  color: #333;
+
+.ges-footer__social-row {
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #d2d2d2;
 }
 .ges-footer__social {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.9rem;
 }
 .ges-footer__social-link {
-  color: #444;
-  transition: color 0.15s;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--rescue-dark, #1A1A1A);
+  color: #fff;
+  transition: background 0.15s, color 0.15s;
 }
-.ges-footer__social-link:hover { color: #8C1427; text-decoration: underline; text-decoration-color: #8C1427; text-underline-offset: 3px; }
+.ges-footer__social-link:hover {
+  background: var(--rescue-yellow, #FFC72C);
+  color: var(--rescue-dark, #1A1A1A);
+}
 
+/* ── Layout 2: black utility band ── */
+.ges-footer__layout2 {
+  background: #000;
+  padding: 1.75rem 0;
+}
+.ges-footer__partners {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.ges-footer__partners-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.ges-footer__partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+.ges-footer__partners-logos img {
+  height: 36px;
+  width: auto;
+  filter: grayscale(1) brightness(1.6);
+  opacity: 0.8;
+  transition: filter 0.2s, opacity 0.2s;
+}
+.ges-footer__partners-logos img:hover {
+  filter: none;
+  opacity: 1;
+}
+.ges-footer__utility-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.25rem;
+}
+.ges-footer__copy {
+  font-size: 0.8rem;
+  color: #fff;
+}
 .ges-footer__powered {
   display: flex;
   align-items: center;
@@ -241,10 +315,10 @@ a.ges-footer__contact-item:hover { color: #8C1427; text-decoration: underline; t
 }
 .ges-footer__powered-label {
   font-size: 0.75rem;
-  color: #555;
+  color: #fff;
 }
 .ges-footer__powered-logo {
-  height: 70px;
+  height: 56px;
   width: auto;
   opacity: 0.75;
   transition: opacity 0.2s;

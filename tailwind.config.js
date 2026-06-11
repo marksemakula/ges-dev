@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'ges-navy': '#0e1117',
-        'ges-gold': '#00C7B7',
-        'ges-cream': '#F8F5F0',
-        'ges-teal': '#00C7B7',
-        'ges-burgundy': '#1a1f2e',
-        'ges-slate': '#64748b',
+        'ges-navy': '#1A1A1A',
+        'ges-gold': '#FFC72C',
+        'ges-cream': '#F5F5F5',
+        'ges-teal': '#FFC72C',
+        'ges-burgundy': '#1A1A1A',
+        'ges-slate': '#555555',
         'ges-blue': '#3b82f6',
         'ges-orange': '#f97316',
         'ges-purple': '#a855f7',

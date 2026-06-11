@@ -73,8 +73,8 @@ const terms = [
 
 <style scoped>
 .page { min-height: 100vh; }
-.page-hero { background: #0A2342; padding: 7rem 0 4rem; text-align: center; }
-.page-hero__eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #00C7B7; margin-bottom: 0.75rem; }
+.page-hero { background: #1A1A1A; padding: 7rem 0 4rem; text-align: center; }
+.page-hero__eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFC72C; margin-bottom: 0.75rem; }
 .page-hero__title { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 700; color: #fff; margin-bottom: 1rem; }
 .page-hero__subtitle { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto; line-height: 1.7; }
 .section { padding: 5rem 0; }
@@ -83,14 +83,14 @@ const terms = [
 .terms-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
 @media (min-width: 1024px) { .terms-grid { grid-template-columns: repeat(3, 1fr); } }
 
-.term-card { border: 1px solid #e5e9f0; border-radius: 12px; overflow: hidden; background: #fff; }
-.term-card__header { background: #0A2342; padding: 1.25rem 1.5rem; }
+.term-card { border: 1px solid #E0E0E0; border-radius: 12px; overflow: hidden; background: #fff; }
+.term-card__header { background: #1A1A1A; padding: 1.25rem 1.5rem; }
 .term-card__name { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
-.term-card__dates { font-size: 0.8rem; color: #00C7B7; font-weight: 500; }
+.term-card__dates { font-size: 0.8rem; color: #E6B219; font-weight: 500; }
 .term-card__events { list-style: none; padding: 0; margin: 0; }
-.term-event { display: flex; align-items: center; gap: 0.625rem; padding: 0.875rem 1.25rem; border-bottom: 1px solid #f0f2f6; }
+.term-event { display: flex; align-items: center; gap: 0.625rem; padding: 0.875rem 1.25rem; border-bottom: 1px solid #F0F0F0; }
 .term-event:last-child { border-bottom: none; }
-.term-event__date { font-size: 0.75rem; font-weight: 700; color: #0A2342; min-width: 52px; }
+.term-event__date { font-size: 0.75rem; font-weight: 700; color: #1A1A1A; min-width: 52px; }
 .term-event__name { font-size: 0.875rem; color: #374151; flex: 1; }
 .term-event__tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 0.18rem 0.5rem; border-radius: 4px; white-space: nowrap; }
 .term-event__tag--opening { background: #d1fae5; color: #065f46; }

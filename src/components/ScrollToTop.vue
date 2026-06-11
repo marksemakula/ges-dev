@@ -34,7 +34,7 @@ function scrollTop() {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: #0A2342;
+  background: #1A1A1A;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -45,7 +45,7 @@ function scrollTop() {
   transition: background 0.2s, transform 0.2s;
 }
 .scroll-top-btn:hover {
-  background: #00C7B7;
+  background: #E6B219;
   transform: translateY(-2px);
 }
 .scroll-top-enter-active, .scroll-top-leave-active {

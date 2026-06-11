@@ -19,13 +19,13 @@
 </template>
 
 <style scoped>
-.admin-page { min-height: 100vh; background: #f8f9fc; }
-.admin-header { background: #0A2342; padding: 6rem 0 2.5rem; }
+.admin-page { min-height: 100vh; background: #F5F5F5; }
+.admin-header { background: #1A1A1A; padding: 6rem 0 2.5rem; }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
 .admin-header__title { font-size: 2rem; font-weight: 700; color: #fff; }
 .admin-header__sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0.25rem; }
 .admin-body { padding: 3rem 1.5rem; }
-.admin-notice { display: flex; gap: 1rem; align-items: flex-start; background: #fff; border: 1px solid #e5e9f0; border-radius: 12px; padding: 1.5rem; max-width: 500px; color: #f59e0b; }
-.admin-notice__title { font-size: 1rem; font-weight: 700; color: #0A2342; margin-bottom: 0.25rem; }
-.admin-notice__text { font-size: 0.875rem; color: #6C757D; line-height: 1.6; }
+.admin-notice { display: flex; gap: 1rem; align-items: flex-start; background: #fff; border: 1px solid #E0E0E0; border-radius: 12px; padding: 1.5rem; max-width: 500px; color: #f59e0b; }
+.admin-notice__title { font-size: 1rem; font-weight: 700; color: #1A1A1A; margin-bottom: 0.25rem; }
+.admin-notice__text { font-size: 0.875rem; color: #555555; line-height: 1.6; }
 </style>

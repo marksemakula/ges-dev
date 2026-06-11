@@ -1,5 +1,5 @@
-/* Import fonts — clean sans-serif similar to rescue.org */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* Import fonts — Ubuntu across the entire project */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,8 +12,23 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: 'Ubuntu', system-ui, -apple-system, sans-serif;
+}
+
+/* Force Ubuntu on every element — overrides any lingering component or
+   library style. Safe: all icons in this project are inline SVGs. */
+*, *::before, *::after {
+  font-family: 'Ubuntu', system-ui, -apple-system, sans-serif !important;
+}
+
+/* Form controls don't inherit fonts by default — force Ubuntu everywhere */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Ubuntu', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -39,8 +54,8 @@ div[class*="preloader"] {
 
 /* ── Rescue.org Design Tokens ── */
 :root {
-  --rescue-yellow: #EFC131;
-  --rescue-yellow-hover: #D9AE28;
+  --rescue-yellow: #FFC72C;
+  --rescue-yellow-hover: #E6B219;
   --rescue-dark: #1A1A1A;
   --rescue-charcoal: #3D3D3D;
   --rescue-grey-bg: #F0F0F0;
@@ -52,10 +67,10 @@ div[class*="preloader"] {
 
   /* Legacy tokens for compatibility */
   --ges-navy: #1A1A1A;
-  --ges-gold: #EFC131;
+  --ges-gold: #FFC72C;
   --ges-cream: #F5F5F5;
-  --ges-teal: #EFC131;
-  --ges-burgundy: #EFC131;
+  --ges-teal: #FFC72C;
+  --ges-burgundy: #FFC72C;
   --ges-slate: #555555;
 }
 
@@ -149,6 +164,168 @@ h4 {
 .btn-rescue--outline-white:hover {
   border-color: var(--rescue-white);
   background: rgba(255,255,255,0.1);
+}
+
+/* ── Rescue.org Shared Components ── */
+
+/* Section heading block: bold title + intro paragraph (rplm-section-heading) */
+.rpl-section {
+  padding: 4rem 0;
+}
+.rpl-section--grey {
+  background: var(--rescue-grey-bg);
+}
+.rpl-section-heading {
+  max-width: 820px;
+  margin-bottom: 2.5rem;
+}
+.rpl-section-heading__title {
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--rescue-dark);
+}
+.rpl-section-heading__intro {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--rescue-charcoal);
+}
+.rpl-section-heading--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Yellow slug label (rpla-slug) */
+.rpl-slug {
+  display: inline-block;
+  background: var(--rescue-yellow);
+  color: var(--rescue-dark);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+}
+
+/* Teaser image link box (rplc-teaser-image-link-box-1) */
+.rpl-card {
+  display: block;
+  text-decoration: none;
+  background: var(--rescue-white);
+  border: 1px solid var(--rescue-border);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  height: 100%;
+}
+.rpl-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+}
+.rpl-card__media {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--rescue-grey-light);
+}
+.rpl-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.rpl-card:hover .rpl-card__media img {
+  transform: scale(1.04);
+}
+.rpl-card__body {
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+.rpl-card__title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--rescue-dark);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+.rpl-card__title .rpl-card__arrow {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  transition: transform 0.2s ease;
+}
+.rpl-card:hover .rpl-card__arrow {
+  transform: translateX(4px);
+}
+.rpl-card__desc {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--rescue-text-secondary);
+}
+.rpl-card__type {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rescue-text-secondary);
+  margin-bottom: 0.35rem;
+}
+
+/* Three / two column card lists (rpll-three-column-list) */
+.rpl-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 640px) { .rpl-grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .rpl-grid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+/* Arrow text link (rpla-link with chevron) */
+.rpl-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--rescue-dark);
+  text-decoration: none;
+  border-bottom: 2px solid var(--rescue-yellow);
+  padding-bottom: 2px;
+  transition: border-color 0.15s, color 0.15s;
+}
+.rpl-link:hover {
+  color: var(--rescue-charcoal);
+  border-bottom-color: var(--rescue-dark);
+}
+
+/* Impact stats (rplc-infographic / Our impact) */
+.rpl-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 768px) { .rpl-stats { grid-template-columns: repeat(3, 1fr); } }
+.rpl-stat__number {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--rescue-dark);
+}
+.rpl-stat__label {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--rescue-charcoal);
+}
+.rpl-stat__rule {
+  width: 56px;
+  height: 5px;
+  background: var(--rescue-yellow);
+  margin-bottom: 1rem;
 }
 
 /* ── Custom scrollbar ── */

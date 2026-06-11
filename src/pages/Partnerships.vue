@@ -97,5 +97,5 @@ const partners = [
 
 .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.7rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s; font-family: inherit; cursor: pointer; border: 2px solid transparent; z-index: 1; position: relative; }
 .btn--primary { background: var(--ges-burgundy); color: #fff; border-color: var(--ges-burgundy); }
-.btn--primary:hover { background: #700f2b; border-color: #700f2b; transform: translateY(-1px); }
+.btn--primary:hover { background: #1A1A1A; border-color: #1A1A1A; transform: translateY(-1px); }
 </style>

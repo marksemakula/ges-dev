@@ -50,20 +50,20 @@
 <script setup lang="ts">
 const managementTeam = [
   {
+    name: 'Owek. Kyewalabye Male David',
+    position: 'GES Managing Director',
+    bio: 'Owek. Kyewalabye Male David serves as the Managing Director of Gombe Education Services. An experienced institutional administrator and strategist, he coordinates operations, developmental planning, and strategic partnerships across all institutions within the GES portfolio, ensuring absolute operational efficiency and sustainable growth.',
+    image: '/images/Owek. Kyewalabye David Male.jpg',
+    email: 'david.male@ges.ac.ug',
+    linkedin: 'https://linkedin.com/in/david-kiwalabye-male'
+  },
+  {
     name: 'Mrs. Harriet Mulyanti',
     position: 'GES Executive Chairperson',
     bio: 'Mrs. Harriet Mulyanti is the founding pillar and Executive Chairperson of Gombe Education Services. With over three decades of visionary educational leadership, she has guided the establishment and growth of the GES network, dedicating her career to raising the benchmarks of school governance, student character development, and academic excellence in the region.',
     image: '/images/GES Executive Chairperson Mrs Harriet Mulyanti.JPG',
     email: 'harriet.mulyanti@ges.ac.ug',
     linkedin: 'https://linkedin.com/in/harriet-mulyanti'
-  },
-  {
-    name: 'Mr. Kiwalabye David Male',
-    position: 'GES Managing Director',
-    bio: 'Mr. Kiwalabye David Male serves as the Managing Director of Gombe Education Services. An experienced institutional administrator and strategist, he coordinates operations, developmental planning, and strategic partnerships across all institutions within the GES portfolio, ensuring absolute operational efficiency and sustainable growth.',
-    image: '/images/GES MD - Kiwalabye David Male.jpg',
-    email: 'david.male@ges.ac.ug',
-    linkedin: 'https://linkedin.com/in/david-kiwalabye-male'
   },
   {
     name: 'Daniella Nakayenga',

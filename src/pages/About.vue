@@ -152,7 +152,7 @@ const milestones = [
 <style scoped>
 .page { min-height: 100vh; }
 .page-hero {
-  background: #0A2342;
+  background: #1A1A1A;
   padding: 7rem 0 4rem;
   text-align: center;
 }
@@ -161,7 +161,7 @@ const milestones = [
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #FFD166;
+  color: #FFC72C;
   margin-bottom: 0.75rem;
 }
 .page-hero__title {
@@ -179,13 +179,13 @@ const milestones = [
 }
 
 .section { padding: 5rem 0; }
-.section--muted { background: #f8f9fc; }
+.section--muted { background: #F5F5F5; }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
 
 .section-header { text-align: center; max-width: 660px; margin: 0 auto 3.5rem; }
-.section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8C1427; margin-bottom: 0.5rem; }
-.section-title { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: #0A2342; line-height: 1.2; margin: 0; }
-.intro-text { font-size: 1rem; color: #6C757D; line-height: 1.8; margin-bottom: 1.5rem; }
+.section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #E6B219; margin-bottom: 0.5rem; }
+.section-title { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: #1A1A1A; line-height: 1.2; margin: 0; }
+.intro-text { font-size: 1rem; color: #555555; line-height: 1.8; margin-bottom: 1.5rem; }
 
 /* Institutions Grid */
 .institutions-grid {
@@ -199,7 +199,7 @@ const milestones = [
   background: #fff;
   border-radius: 14px;
   padding: 2.25rem;
-  border: 1px solid #e5e9f0;
+  border: 1px solid #E0E0E0;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -211,7 +211,7 @@ const milestones = [
 .institution-card__tag {
   display: inline-block;
   background: rgba(140, 20, 39, 0.08);
-  color: #8C1427;
+  color: #E6B219;
   padding: 0.3rem 0.9rem;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -220,8 +220,8 @@ const milestones = [
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.institution-card h3 { color: #0A2342; font-size: 1.25rem; margin-bottom: 0.875rem; line-height: 1.4; }
-.institution-card p { color: #6C757D; font-size: 0.95rem; line-height: 1.7; }
+.institution-card h3 { color: #1A1A1A; font-size: 1.25rem; margin-bottom: 0.875rem; line-height: 1.4; }
+.institution-card p { color: #555555; font-size: 0.95rem; line-height: 1.7; }
 
 /* Mission / Vision */
 .mv-grid {
@@ -234,21 +234,21 @@ const milestones = [
   background: #fff;
   border-radius: 12px;
   padding: 2rem;
-  border: 1px solid #e5e9f0;
+  border: 1px solid #E0E0E0;
 }
 .mv-card__icon {
   width: 48px;
   height: 48px;
   border-radius: 10px;
   background: rgba(10,35,66,0.06);
-  color: #0A2342;
+  color: #1A1A1A;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.125rem;
 }
-.mv-card__title { font-size: 1.25rem; font-weight: 700; color: #0A2342; margin-bottom: 0.75rem; }
-.mv-card__text { font-size: 0.925rem; color: #6C757D; line-height: 1.7; }
+.mv-card__title { font-size: 1.25rem; font-weight: 700; color: #1A1A1A; margin-bottom: 0.75rem; }
+.mv-card__text { font-size: 0.925rem; color: #555555; line-height: 1.7; }
 
 /* History */
 .history-grid {
@@ -257,7 +257,7 @@ const milestones = [
   gap: 3rem;
 }
 @media (min-width: 1024px) { .history-grid { grid-template-columns: 1fr 1fr; align-items: start; } }
-.history-text { font-size: 0.95rem; color: #6C757D; line-height: 1.7; }
+.history-text { font-size: 0.95rem; color: #555555; line-height: 1.7; }
 
 /* Timeline */
 .timeline { display: flex; flex-direction: column; gap: 0; }
@@ -265,24 +265,24 @@ const milestones = [
   display: flex;
   gap: 1.25rem;
   padding: 1.125rem 0;
-  border-bottom: 1px solid #e5e9f0;
+  border-bottom: 1px solid #E0E0E0;
 }
 .timeline__item:last-child { border-bottom: none; }
 .timeline__year {
   flex-shrink: 0;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #8C1427;
+  color: #E6B219;
   width: 48px;
   padding-top: 2px;
 }
-.timeline__event { font-size: 0.925rem; font-weight: 700; color: #0A2342; margin-bottom: 0.2rem; }
-.timeline__detail { font-size: 0.82rem; color: #6C757D; }
+.timeline__event { font-size: 0.925rem; font-weight: 700; color: #1A1A1A; margin-bottom: 0.2rem; }
+.timeline__detail { font-size: 0.82rem; color: #555555; }
 
 .institution-contact {
   margin-top: 1.5rem;
   padding-top: 1.25rem;
-  border-top: 1px dashed #e5e9f0;
+  border-top: 1px dashed #E0E0E0;
 }
 .institution-contact p {
   margin: 0.45rem 0;
@@ -290,10 +290,10 @@ const milestones = [
   color: #4e5973;
 }
 .institution-contact strong {
-  color: #0A2342;
+  color: #1A1A1A;
 }
 .institution-contact a {
-  color: #8C1427;
+  color: #E6B219;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
@@ -319,7 +319,7 @@ const milestones = [
   background: #fff;
   border-radius: 14px;
   padding: 2.25rem 2rem;
-  border: 1px solid #e5e9f0;
+  border: 1px solid #E0E0E0;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -340,14 +340,14 @@ const milestones = [
   border-color: var(--ges-gold);
 }
 .approach-card h3 {
-  color: #0A2342;
+  color: #1A1A1A;
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.875rem;
   line-height: 1.45;
 }
 .approach-card p {
-  color: #6C757D;
+  color: #555555;
   font-size: 0.95rem;
   line-height: 1.7;
 }

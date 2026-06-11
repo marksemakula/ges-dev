@@ -1,15 +1,15 @@
 // GES Life Gallery Images
 export const galleryImages = [
   {
-    src: '/images/annie-spratt-V-XM4kkWpng-unsplash.jpg',
+    src: '/images/IMG_9718.JPG',
     alt: 'GES students in class',
   },
   {
-    src: '/images/raissa-lara-lutolf-fasel-ivKWcUFJQtE-unsplash.jpg',
+    src: '/images/IMG_1737.JPG',
     alt: 'Modern campus facilities',
   },
   {
-    src: '/images/schoolgroup.jpg',
+    src: '/images/IMG_1697.JPG',
     alt: 'School group photo',
   },
   {
@@ -21,19 +21,19 @@ export const galleryImages = [
     alt: 'Java House partnership',
   },
   {
-    src: '/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg',
+    src: '/images/IMG_1685.JPG',
     alt: 'Outdoor learning',
   },
   {
-    src: '/images/premium_photo-1661861141158-be08023174e6.avif',
+    src: '/images/science.avif',
     alt: 'Science lab',
   },
   {
-    src: '/images/premium_photo-1666956837879-fafe054d850c.avif',
+    src: '/images/IMG_9873.JPG',
     alt: 'Sports day',
   },
   {
-    src: '/images/premium_photo-1723050053847-2aaf8ad2c74c.avif',
+    src: '/images/ARTS.jpg',
     alt: 'Art and creativity',
   },
 ];

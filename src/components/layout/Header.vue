@@ -1,19 +1,5 @@
 <template>
   <header :class="['ges-header', { 'ges-header--scrolled': scrolled }]">
-    <!-- Top utility bar -->
-    <div class="ges-topbar">
-      <div class="ges-topbar__inner container">
-        <span class="ges-topbar__info">Excellence in Education Since 1995</span>
-        <div class="ges-topbar__links">
-          <a href="mailto:info@ges.ac.ug" class="ges-topbar__link">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
-            info@ges.ac.ug
-          </a>
-          <a href="https://ipp-vert.vercel.app/" target="_blank" rel="noopener noreferrer" class="ges-topbar__link">IPP</a>
-        </div>
-      </div>
-    </div>
-
     <!-- Main nav -->
     <nav class="ges-nav container">
       <!-- Logo / Brand -->
@@ -165,44 +151,6 @@ const institutions = [
 </script>
 
 <style scoped>
-/* ── Top Utility Bar ── */
-.ges-topbar {
-  background: #0B0B0C; /* dark utility bar like rescue.org */
-  padding: 0.35rem 0;
-  font-size: 0.75rem;
-}
-.ges-topbar__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-.ges-topbar__info {
-  color: rgba(255,255,255,0.7);
-  font-weight: 500;
-}
-.ges-topbar__links {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-.ges-topbar__link {
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  transition: color 0.15s;
-}
-.ges-topbar__link:hover {
-  color: var(--rescue-yellow, #EFC131);
-}
-@media (max-width: 768px) {
-  .ges-topbar { display: none; }
-}
-
 /* ── Main Header ── */
 .ges-header {
   position: fixed;
