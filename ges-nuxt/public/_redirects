@@ -1,0 +1,14 @@
+# Institution sub-sites — real 301 redirects.
+# The trailing "!" forces the redirect even if a prerendered stub exists.
+/institutions/sakghs-kawaala  https://sakghs-kawaala.vercel.app/  301!
+/institutions/sakghs-bujuuko  https://sakghs-bujuuko.vercel.app/  301!
+/institutions/gjs-kikajjo     https://gjs-kikajjo.vercel.app/     301!
+/institutions/gjs-boarding    https://gjs-boarding.vercel.app/    301!
+/institutions/gjs-gulu        https://gjs-gulu.vercel.app/        301!
+/institutions/gjs-about       https://gjs-gulu.vercel.app/        301!
+/institutions/scooby-katale   https://sisu-katale.vercel.app/     301!
+/institutions/scooby-gulu     https://sisu-gulu.vercel.app/       301!
+
+# NOTE: intentionally NO "/* /index.html 200" SPA catch-all.
+# Nuxt prerenders every page and emits 404.html, so Netlify serves the real
+# pages and a proper 404 status (not a soft redirect to the homepage).

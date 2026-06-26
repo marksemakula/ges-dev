@@ -1,0 +1,19 @@
+# Netlify build config for the GES Nuxt site.
+#
+# Use this with a Netlify site whose "Base directory" is set to: ges-nuxt
+# (Site settings → Build & deploy → Base directory). All paths below are
+# resolved relative to that base directory.
+#
+# This builds the fully static (prerendered) site. Every route becomes real
+# HTML, which is what makes it crawlable. Redirects come from public/_redirects.
+
+[build]
+  command = "npm run generate"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# If you later need true per-request SSR (server functions) instead of static,
+# switch the command to "npm run build" and remove the publish line — Netlify
+# auto-detects Nuxt and wires up the server + redirects from nuxt.config.

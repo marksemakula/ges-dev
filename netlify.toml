@@ -1,10 +1,15 @@
+# Production now builds and serves the Nuxt SSR/SSG site in ges-nuxt/.
+# (Previously: command="npm run build", publish="dist" -> the root Vite SPA.
+#  To roll back, restore those two lines or `git revert` this commit, then push.)
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command = "cd ges-nuxt && npm install && npm run generate"
+  publish = "ges-nuxt/.output/public"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
 
+# Institution sub-sites: true 301s at Netlify's edge (run before any file is
+# served, so they take precedence over Nuxt's prerendered redirect stubs).
 [[redirects]]
   from = "/institutions/sakghs-kawaala"
   to = "https://sakghs-kawaala.vercel.app/"
