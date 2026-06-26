@@ -117,7 +117,7 @@
         </ul>
         <div class="partners-marquee">
           <ClientOnly>
-            <Vue3Marquee :duration="40" :pause-on-hover="true" :clone="true">
+            <Vue3Marquee :duration="40" :pause-on-hover="true" :clone="true" :gradient="true" :gradient-color="[240, 240, 240]" gradient-length="150px">
               <div v-for="logo in partnerLogos" :key="logo.name" class="partners-marquee__item" :title="logo.name">
                 <img :src="logo.src" :alt="logo.name" class="partners-marquee__logo" />
               </div>
