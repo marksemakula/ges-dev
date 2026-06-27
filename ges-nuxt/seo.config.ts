@@ -154,6 +154,7 @@ export const institutions: Institution[] = [
  */
 export const socials: string[] = [
   'https://www.linkedin.com/company/ges',
+  'https://www.facebook.com/share/18cQvvPYgX/',
   'https://x.com/ges',
   'https://www.instagram.com/ges',
   'https://www.youtube.com/@ges',
