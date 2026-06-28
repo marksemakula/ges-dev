@@ -1,9 +1,14 @@
 # Production now builds and serves the Nuxt SSR/SSG site in ges-nuxt/.
 # (Previously: command="npm run build", publish="dist" -> the root Vite SPA.
 #  To roll back, restore those two lines or `git revert` this commit, then push.)
+#
+# "base" tells Netlify to cd into ges-nuxt FIRST, install deps ONLY there,
+# then run the build command. Without it Netlify also installs the root
+# package.json deps (the old Vite SPA), which wastes memory and can crash.
 [build]
-  command = "cd ges-nuxt && npm ci && npm run generate"
-  publish = "ges-nuxt/.output/public"
+  base = "ges-nuxt"
+  command = "npm ci && npm run generate"
+  publish = ".output/public"
 
 [build.environment]
   NODE_VERSION = "22"
