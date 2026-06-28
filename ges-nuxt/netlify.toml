@@ -8,11 +8,12 @@
 # HTML, which is what makes it crawlable. Redirects come from public/_redirects.
 
 [build]
-  command = "npm run generate"
+  command = "npm ci && npm run generate"
   publish = ".output/public"
 
 [build.environment]
   NODE_VERSION = "22"
+  NUXT_TELEMETRY_DISABLED = "1"
 
 # If you later need true per-request SSR (server functions) instead of static,
 # switch the command to "npm run build" and remove the publish line — Netlify

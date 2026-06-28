@@ -2,11 +2,12 @@
 # (Previously: command="npm run build", publish="dist" -> the root Vite SPA.
 #  To roll back, restore those two lines or `git revert` this commit, then push.)
 [build]
-  command = "cd ges-nuxt && npm install && npm run generate"
+  command = "cd ges-nuxt && npm ci && npm run generate"
   publish = "ges-nuxt/.output/public"
 
 [build.environment]
   NODE_VERSION = "22"
+  NUXT_TELEMETRY_DISABLED = "1"
 
 # Institution sub-sites: true 301s at Netlify's edge (run before any file is
 # served, so they take precedence over Nuxt's prerendered redirect stubs).
