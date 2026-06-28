@@ -109,7 +109,7 @@ export const institutions: Institution[] = [
   {
     name: 'Jimmy Sekasi Business Institute',
     alt: ['JSBI', 'Jimmy Sekasi Business Institute Uganda'],
-    url: 'https://jsbi.vercel.app/',
+    url: 'https://www.gibst.ac.ug/',
   },
   {
     name: 'St. Andrew Kaggwa Gombe High School – Bujuuko',

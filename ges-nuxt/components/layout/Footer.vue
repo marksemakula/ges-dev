@@ -89,7 +89,7 @@ const quickLinks = [
 ];
 
 const institutions = [
-  { name: 'Jimmy Sekasi Business Institute', path: '/institutions/jsbi', url: 'https://jsbi.vercel.app/' },
+  { name: 'Jimmy Sekasi Business Institute', path: '/institutions/jsbi', url: 'https://www.gibst.ac.ug/' },
   { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/' },
   { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/' },
   { name: 'Gombe Junior School - Kampala', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/' },
