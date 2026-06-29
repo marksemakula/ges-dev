@@ -16,7 +16,7 @@
           <p class="section-eyebrow">Consortium Overview</p>
           <h2 class="section-title">The GES Profile</h2>
         </div>
-        <p class="intro-text">Gombe Education Service is a consortium of six institutions providing education from Kindergarten to Tertiary level: Scooby Doo International School- Uganda offering both National & International curricular, Gombe Junior School-Kikajjo which is entirely Day, Gombe Junior School which is purely boarding, St. Andrew Kaggwa Gombe High School – Kawaala, St Andrew Kaggwa Gombe high school- Bujuuko and Jimmy Sekasi Business Institute.</p>
+        <p class="intro-text">Gombe Education Service is a consortium of six institutions providing education from Kindergarten to Tertiary level: Scooby Doo International School- Uganda offering both National & International curricular, Gombe Junior School-Kikajjo which is entirely Day, Gombe Junior School which is purely boarding, St. Andrew Kaggwa Gombe High School – Kawaala, St Andrew Kaggwa Gombe high school- Bujuuko and Gombe Institute of Business Science & Technology (GIBST).</p>
         <p class="intro-text">All GES Schools embrace and subscribe to the same Vision and Mission.</p>
         
         <div class="institutions-grid">
@@ -76,7 +76,7 @@
           </div>
           <div class="institution-card">
             <div class="institution-card__tag">Tertiary</div>
-            <h3>Jimmy Sekasi Business Institute</h3>
+            <h3>Gombe Institute of Business Science & Technology (GIBST)</h3>
             <p>In a deliberate plan to build, a hybrid mid-level training college GES took over JSBI to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities and be direct partakers in their career destiny. It offers a unique blend of post-secondary school education and training in short courses, Certificates & Diplomas in Pastry and Baking, Barista skills, Mixology, Cookery skills, Basic Cake making and Decoration, ICT courses, Culinary arts, and Diploma courses in Fashion and Design, and Hairdressing and Beauty Therapy respectively.</p>
             <div class="institution-contact">
               <p><strong>📱 Phone:</strong> 0756 241 530 / 0772 472 570</p>
@@ -145,7 +145,7 @@ const milestones = [
   { year: '2005', event: 'Network Expansion', detail: 'Opened two additional campuses to meet growing demand.' },
   { year: '2015', event: 'International Partnerships', detail: 'Secured partnerships with UNESCO and University of Cambridge.' },
   { year: '2020', event: 'Digital Transformation', detail: 'Launched digital learning platforms across all institutions.' },
-  { year: '2024', event: 'JSBI Launched', detail: 'Jimmy Sekasi Business Institute opened for higher education.' },
+  { year: '2024', event: 'GIBST Launched', detail: 'Gombe Institute of Business Science & Technology (GIBST) opened for higher education.' },
 ];
 </script>
 

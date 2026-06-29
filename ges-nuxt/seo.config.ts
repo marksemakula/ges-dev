@@ -87,10 +87,10 @@ export const routeSeo: Record<string, RouteSeo> = {
     breadcrumb: 'International Pathway',
   },
   '/institutions/jsbi': {
-    title: 'Jimmy Sekasi Business Institute (JSBI) – GES',
+    title: 'Gombe Institute of Business Science & Technology (GIBST) – GES',
     description:
-      'Jimmy Sekasi Business Institute (JSBI), part of Gombe Education Service, offers business and vocational training in Uganda. Explore courses, admissions and campus.',
-    breadcrumb: 'Jimmy Sekasi Business Institute',
+      'Gombe Institute of Business Science & Technology (GIBST), part of Gombe Education Service, offers business and vocational training in Uganda. Explore courses, admissions and campus.',
+    breadcrumb: 'Gombe Institute of Business Science & Technology (GIBST)',
   },
 }
 
@@ -107,8 +107,8 @@ export interface Institution {
 
 export const institutions: Institution[] = [
   {
-    name: 'Jimmy Sekasi Business Institute',
-    alt: ['JSBI', 'Jimmy Sekasi Business Institute Uganda'],
+    name: 'Gombe Institute of Business Science & Technology (GIBST)',
+    alt: ['GIBST', 'Gombe Institute of Business Science & Technology Uganda'],
     url: 'https://www.gibst.ac.ug/',
   },
   {

@@ -1,10 +1,10 @@
 <template>
   <InstitutionLayout
-    name="Jimmy Sekasi Business Institute"
-    short-name="JSBI"
+    name="Gombe Institute of Business Science & Technology (GIBST)"
+    short-name="GIBST"
     type="Higher Education · Business & Entrepreneurship"
     tagline="Equipping Uganda's next generation of entrepreneurs and business leaders."
-    description="The Jimmy Sekasi Business Institute (JSBI) is GES's flagship higher education institution, offering professional business and entrepreneurship programmes. Working closely with industry partners, JSBI combines academic rigour with real-world application to produce graduates ready to lead and innovate."
+    description="The Gombe Institute of Business Science & Technology (GIBST) is GES's flagship higher education institution, offering professional business and entrepreneurship programmes. Working closely with industry partners, GIBST combines academic rigour with real-world application to produce graduates ready to lead and innovate."
     logo="/images/Jimmy Ssekasi Business Institute Logo.png"
     email="info@jsbi.ac.ug"
     accent="#8B4513"

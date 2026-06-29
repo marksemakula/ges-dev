@@ -31,7 +31,7 @@
           <!-- Quick Links -->
           <div>
             <h4 class="ges-footer__heading">Quick Links</h4>
-            <ul class="ges-footer__list">
+            <ul class="ges-footer__list ges-footer__list--2col">
               <li v-for="link in quickLinks" :key="link.path">
                 <RouterLink :to="link.path" class="ges-footer__link">{{ link.name }}</RouterLink>
               </li>
@@ -41,7 +41,7 @@
           <!-- Institutions -->
           <div class="ges-footer__institutions">
             <h4 class="ges-footer__heading">Our Institutions</h4>
-            <ul class="ges-footer__list">
+            <ul class="ges-footer__list ges-footer__list--2col">
               <li v-for="inst in institutions" :key="inst.path">
                 <a :href="inst.url" class="ges-footer__link">{{ inst.name }}</a>
               </li>
@@ -89,7 +89,7 @@ const quickLinks = [
 ];
 
 const institutions = [
-  { name: 'Jimmy Sekasi Business Institute', path: '/institutions/jsbi', url: 'https://www.gibst.ac.ug/' },
+  { name: 'Gombe Institute of Business Science & Technology (GIBST)', path: '/institutions/jsbi', url: 'https://www.gibst.ac.ug/' },
   { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/' },
   { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/' },
   { name: 'Gombe Junior School - Kampala', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/' },
@@ -113,7 +113,7 @@ const socials = [
 
 <style scoped>
 .ges-footer__container {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -121,18 +121,18 @@ const socials = [
 /* ── Layout 1: light grey band ── */
 .ges-footer__layout1 {
   background: #E9E9E9;
-  padding: 3.5rem 0 2rem;
+  padding: 3rem 0 1.75rem;
 }
 .ges-footer__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 @media (min-width: 768px) {
-  .ges-footer__grid { grid-template-columns: 1.6fr 1fr; }
+  .ges-footer__grid { grid-template-columns: 1.4fr 1fr 1.6fr; }
 }
-@media (min-width: 1024px) {
-  .ges-footer__grid { grid-template-columns: 1.8fr 1fr 1.4fr; }
+@media (min-width: 1200px) {
+  .ges-footer__grid { grid-template-columns: 1.2fr 1fr 1.8fr; }
 }
 .ges-footer__institutions { display: none; }
 @media (min-width: 768px) { .ges-footer__institutions { display: block; } }
@@ -203,7 +203,16 @@ a.ges-footer__contact-item:hover {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
+}
+.ges-footer__list--2col {
+  columns: 2;
+  column-gap: 1.5rem;
+  display: block;
+}
+.ges-footer__list--2col li {
+  break-inside: avoid;
+  margin-bottom: 0.4rem;
 }
 .ges-footer__link {
   font-size: 0.875rem;

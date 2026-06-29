@@ -107,7 +107,7 @@ const Home: React.FC = () => {
   const logos: Logo[] = [
     { name: 'KISU', src: '/images/KISU.png' },
     { name: 'MoES', src: '/images/MoES.png' },
-    { name: 'Jimmy Sekasi Business Institute', src: '/images/Jimmy Ssekasi Business Institute Logo.png' },
+    { name: 'Gombe Institute of Business Science & Technology (GIBST)', src: '/images/Jimmy Ssekasi Business Institute Logo.png' },
     { name: 'Gombe High School', src: '/images/Gombe High logo.png' },
     { name: 'Gombe Junior School', src: '/images/Gombe Junior School logo.png' },
     { name: 'Scooby Doo International School', src: '/images/scooby-logo.png' },
@@ -241,8 +241,8 @@ const Home: React.FC = () => {
       return 'Gombe Junior School Kikajjo GJS-K was opened in 2019 after the separation of day scholars from Boarders to create for them their own school which is entirely day. The school has brought about transformation in the community around its location.';
     if (inst.includes('Gombe Junior School'))
       return 'This school is one of our pioneer schools that started in 2013 as day & boarding. It academically excelled with 100% first grades in 2017 & 2022 emerging best in Wakiso District and ranked number 4 & 5 in Uganda respectively.';
-    if (inst.includes('Jimmy Sekasi Business Institute'))
-      return 'In a deliberate plan to build a hybrid mid-level training college GES took over JSBI to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities.';
+    if (inst.includes('Gombe Institute of Business Science & Technology'))
+      return 'In a deliberate plan to build a hybrid mid-level training college GES took over GIBST to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities.';
     if (currentInstitution.path.includes('sakghs-kawaala'))
       return 'St. Andrew Kaggwa Gombe School Kawaala is both \'O\' and \'A\' level mixed Day and Boarding school, that started in June 2016.';
     if (currentInstitution.path.includes('sakghs-bujuuko'))
