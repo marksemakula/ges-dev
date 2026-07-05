@@ -153,7 +153,7 @@ const mobileOpen = ref(false);
 const navLinks = [
   { name: 'HOME', path: '/' },
   { name: 'CALENDAR', path: '/academic-calendar' },
-  { name: 'BLOG', path: '/blog' },
+  { name: 'UPDATES', path: '/#news' },
 ];
 
 const institutions = [

@@ -143,7 +143,7 @@
     </section>
 
     <!-- ── News: editorial zigzag grid ── -->
-    <section class="rpl-section">
+    <section id="news" class="rpl-section">
       <div class="container-rpl">
         <div class="rpl-section-heading">
           <h2 class="rpl-section-heading__title">News and featured Articles</h2>

@@ -9,8 +9,18 @@ const externalRedirect = (url: string) => () => {
 
 const router = createRouter({
   history: createWebHistory(),
-  scrollBehavior(_to, _from, savedPosition) {
+  scrollBehavior(to, _from, savedPosition) {
     if (savedPosition) return savedPosition;
+    if (to.hash) {
+      // Same-page: the target already exists, scroll to it immediately.
+      if (typeof document !== 'undefined' && document.querySelector(to.hash)) {
+        return { el: to.hash, top: 80, behavior: 'smooth' as const };
+      }
+      // Cross-page: wait for the lazy-loaded page to render, then scroll.
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ el: to.hash, top: 80, behavior: 'smooth' as const }), 350);
+      });
+    }
     return { top: 0, behavior: 'smooth' };
   },
   routes: [
