@@ -10,7 +10,7 @@
       <div class="ges-island__body">
         <!-- Maroon strip -->
         <div class="ges-topbar">
-          <span class="ges-topbar__tagline">Excellence in Education Since 1995</span>
+          <span class="ges-topbar__tagline">Excellence in Education Since 2013</span>
           <div class="ges-topbar__socials">
             <a v-for="s in topSocials" :key="s.label" :href="s.href" :aria-label="s.label" target="_blank" rel="noopener noreferrer" class="ges-topbar__social-link">
               <span v-html="s.svg"></span>

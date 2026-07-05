@@ -22,7 +22,7 @@
           <span class="hero-cine__title-accent">Building Futures</span>
         </h1>
         <p class="hero-cine__text">
-          Gombe Education Service has provided world-class education since 1995 - fostering academic excellence, character, and global readiness across our network of institutions.
+          Gombe Education Service has provided world-class education since 2013 - fostering academic excellence, character, and global readiness across our network of institutions.
         </p>
         <div class="hero-cine__actions">
           <RouterLink to="/about" class="btn-rescue btn-rescue--primary">
