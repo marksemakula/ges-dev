@@ -283,7 +283,7 @@ const partnerLogos = [
   { name: 'St. Andrew Kaggwa GHS',           src: '/images/Gombe High logo.png' },
   { name: 'Gombe Junior School',             src: '/images/Gombe Junior School logo.png' },
   { name: 'SISU',                            src: '/images/scooby-logo.png' },
-  { name: 'Jimmy Sekasi Business Institute', src: '/images/Jimmy Ssekasi Business Institute Logo.png' },
+  { name: 'Gombe Institute of Business Science & Technology (GIBST)', src: '/images/Jimmy Ssekasi Business Institute Logo.png' },
   { name: 'KISU',                            src: '/images/KISU.png' },
   { name: 'Ministry of Education',           src: '/images/MoES1.png' },
   { name: 'UTB',                             src: '/images/UTB.png' },
@@ -291,7 +291,7 @@ const partnerLogos = [
 
 /* ── Institutions ── */
 const institutions = [
-  { name: 'Jimmy Sekasi Business Institute', type: 'Vocational Institute', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', image: '/images/JIMMY SEKASI.JPG', path: '/institutions/jsbi', url: 'https://www.gibst.ac.ug/', description: 'Equipping students with practical business, vocational, and hands-on skills.' },
+  { name: 'Gombe Institute of Business Science & Technology (GIBST)', type: 'Vocational Institute', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', image: '/images/JIMMY SEKASI.JPG', path: '/institutions/jsbi', url: 'https://www.gibst.ac.ug/', description: 'Equipping students with practical business, vocational, and hands-on skills.' },
   { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/Gombe High School - Bujuuko.png', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Nurturing tomorrow\'s leaders through quality education.' },
   { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/IMG_9718.JPG', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced secondary education with a focus on academic excellence.' },
   { name: 'Gombe Junior School - Kampala', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/IMG_1737.JPG', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/', description: 'Building strong foundations for lifelong learning.' },
