@@ -89,13 +89,13 @@ const quickLinks = [
 ];
 
 const institutions = [
-  { name: 'Gombe Institute of Business Science & Technology (GIBST)', path: '/institutions/jsbi', url: 'https://www.gibst.ac.ug/' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/' },
-  { name: 'Gombe Junior School - Kampala', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/' },
-  { name: 'Gombe Junior School - Gulu', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/' },
-  { name: 'ScoobyDoo International School Uganda - Kampala', path: '/institutions/sisu-kampala', url: 'https://sisu-katale.vercel.app/' },
-  { name: 'ScoobyDoo International School Uganda - Gulu', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/' },
+  { name: 'Gombe Institute of Business Science & Technology (GIBST)', path: '/institutions/jsbi', url: 'http://gibst.ac.ug/' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'http://gombehighschool.ac.ug/' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', path: '/institutions/sakghs-kawaala', url: 'http://gombehighschool.ac.ug/' },
+  { name: 'Gombe Junior School - Kampala', path: '/institutions/gjs-kampala', url: 'http://gombejuniorschool.ac.ug/' },
+  { name: 'Gombe Junior School - Gulu', path: '/institutions/gjs-gulu', url: 'http://gombejuniorschool.ac.ug/' },
+  { name: 'ScoobyDoo International School Uganda - Kampala', path: '/institutions/sisu-kampala', url: 'http://scoobydoointernational.ac.ug/' },
+  { name: 'ScoobyDoo International School Uganda - Gulu', path: '/institutions/sisu-gulu', url: 'http://scoobydoointernational.ac.ug/' },
   { name: 'International Education Pathways Program', path: '/institutions/iepp', url: 'https://ipp-vert.vercel.app/' },
 ];
 
