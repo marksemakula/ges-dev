@@ -210,7 +210,11 @@ const topSocials = [
     margin: 0 auto;
     align-items: stretch;
     border: none;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 12px 32px rgba(0, 0, 0, 0.16);
+    transition: box-shadow 0.25s ease;
+  }
+  .ges-header--scrolled .ges-island {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.12);
   }
 }
 .ges-island__body {
@@ -350,17 +354,26 @@ const topSocials = [
 .ges-nav__link:hover {
   color: var(--rescue-charcoal, #3D3D3D);
 }
-.ges-nav__link--active {
-  color: var(--rescue-dark, #1A1A1A);
-}
-.ges-nav__link--active::after {
+.ges-nav__link::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0.85rem;
   right: 0.85rem;
   height: 3px;
-  background: var(--rescue-yellow, #EFC131);
+  background: var(--rescue-yellow, #FFC72C);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+.ges-nav__link:hover::after {
+  transform: scaleX(1);
+}
+.ges-nav__link--active {
+  color: var(--rescue-dark, #1A1A1A);
+}
+.ges-nav__link--active::after {
+  transform: scaleX(1);
 }
 
 /* ── Nav CTA: search + yellow Reachout capping the card's right end ── */
@@ -393,7 +406,7 @@ const topSocials = [
   align-items: center;
   justify-content: center;
   padding: 0 1.75rem;
-  background: var(--rescue-yellow, #EFC131);
+  background: var(--rescue-yellow, #FFC72C);
   color: var(--rescue-dark, #1A1A1A);
   font-size: 0.95rem;
   font-weight: 800;
@@ -403,7 +416,7 @@ const topSocials = [
   letter-spacing: 0.02em;
 }
 .ges-nav__donate:hover {
-  background: var(--rescue-yellow-hover, #D9AE28);
+  background: var(--rescue-yellow-hover, #E6B219);
 }
 
 /* ── Dropdown ── */
@@ -441,7 +454,7 @@ const topSocials = [
 }
 .ges-dropdown__item:hover {
   background: var(--rescue-grey-light, #F5F5F5);
-  border-left-color: var(--rescue-yellow, #EFC131);
+  border-left-color: var(--rescue-yellow, #FFC72C);
 }
 .ges-dropdown__item-name {
   font-size: 0.85rem;
@@ -527,7 +540,7 @@ const topSocials = [
   text-align: center;
   padding: 0.75rem;
   margin-top: 1rem;
-  background: var(--rescue-yellow, #EFC131);
+  background: var(--rescue-yellow, #FFC72C);
   color: var(--rescue-dark, #1A1A1A);
   font-size: 0.9rem;
   font-weight: 700;
@@ -535,7 +548,7 @@ const topSocials = [
   transition: background 0.2s;
 }
 .ges-mobile-menu__cta:hover {
-  background: var(--rescue-yellow-hover, #D9AE28);
+  background: var(--rescue-yellow-hover, #E6B219);
 }
 
 /* ── Transitions ── */
