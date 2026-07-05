@@ -136,7 +136,7 @@ const Home: React.FC = () => {
       path: "/institutions/scooby-katale",
       url: "https://sisu-katale.vercel.app/",
       type: "International",
-      image: "/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg",
+      image: "/images/sisu-katale-triptych.jpeg",
     },
     {
       name: "Scooby Doo International School Uganda (SISU) - Gulu Campus",
