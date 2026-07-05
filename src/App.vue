@@ -37,9 +37,9 @@ const REVEAL_SELECTORS = [
   '.rpl-stat',
   '.teaser-hl',
   '.teaser-std',
-  '.news-highlight',
-  '.news-teaser',
-  '.quote-cta',
+  '.news-ed__feature',
+  '.news-ed__teaser',
+  '.quote-band__inner',
 ].join(', ');
 
 let revealObserver: IntersectionObserver | null = null;

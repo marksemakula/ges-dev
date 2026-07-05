@@ -1,45 +1,50 @@
 <template>
   <div class="home">
-    <!-- ── Hero split display (rescue.org rplc-hero-split-display) ── -->
-    <section class="hero-split">
-      <div class="hero-split__left">
-        <div class="hero-split__content">
-          <img src="/logo.png" alt="Gombe Education Service" class="hero-split__logo" />
-          <h1 class="hero-split__title">Shaping Leaders,<br />Building Futures</h1>
-          <p class="hero-split__text">
-            Gombe Education Service has provided world-class education since 1995 - fostering academic excellence, character, and global readiness across our network of institutions.
-          </p>
-          <div class="hero-split__actions">
-            <RouterLink to="/about" class="btn-rescue btn-rescue--primary">
-              Get in Touch
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </RouterLink>
-            <RouterLink to="/about" class="btn-rescue btn-rescue--outline">Learn More</RouterLink>
-          </div>
+    <!-- ── Cinematic full-bleed hero ── -->
+    <section class="hero-cine">
+      <div class="hero-cine__slides">
+        <Transition name="hero-fade">
+          <div
+            :key="currentSlide"
+            class="hero-cine__img"
+            :style="{ backgroundImage: `url('${slideshowImages[currentSlide]}')` }"
+            role="img"
+            aria-label="Students of Gombe Education Service"
+          />
+        </Transition>
+      </div>
+      <div class="hero-cine__overlay"></div>
+
+      <div class="container-rpl hero-cine__content">
+        <img src="/logo.png" alt="Gombe Education Service" class="hero-cine__logo" />
+        <h1 class="hero-cine__title">
+          Shaping Leaders,<br />
+          <span class="hero-cine__title-accent">Building Futures</span>
+        </h1>
+        <p class="hero-cine__text">
+          Gombe Education Service has provided world-class education since 1995 - fostering academic excellence, character, and global readiness across our network of institutions.
+        </p>
+        <div class="hero-cine__actions">
+          <RouterLink to="/about" class="btn-rescue btn-rescue--primary">
+            Get in Touch
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </RouterLink>
+          <RouterLink to="/about" class="btn-rescue btn-rescue--outline-white">Learn More</RouterLink>
         </div>
-        <div class="hero-split__recognised">
-          <span class="hero-split__recognised-label">Recognised by</span>
-          <div class="hero-split__recognised-logos">
+      </div>
+
+      <!-- Recognised-by glass strip pinned to the hero's bottom edge -->
+      <div class="hero-cine__strip">
+        <div class="container-rpl hero-cine__strip-inner">
+          <span class="hero-cine__strip-label">Recognised by</span>
+          <div class="hero-cine__strip-logos">
             <img v-for="logo in recognisedBy" :key="logo.name" :src="logo.src" :alt="logo.name" :title="logo.name" />
           </div>
         </div>
       </div>
-      <div class="hero-split__media">
-        <div v-for="s in 3" :key="s" class="hero-split__slice">
-          <Transition name="hero-fade">
-            <div
-              :key="sliceImage(s - 1)"
-              class="hero-split__img"
-              :style="[{ backgroundImage: `url('${sliceImage(s - 1)}')` }, sliceStyles[s - 1]]"
-              role="img"
-              aria-label="Students of Gombe Education Service"
-            />
-          </Transition>
-        </div>
-      </div>
     </section>
 
-    <!-- ── Mission statement + impact (rescue.org rplc-infographic-standard) ── -->
+    <!-- ── Mission statement (rescue.org rplc-infographic-standard) ── -->
     <section class="rpl-section">
       <div class="container-rpl">
         <div class="rpl-section-heading rpl-section-heading--center">
@@ -51,51 +56,62 @@
       </div>
     </section>
 
-    <!-- ── Leadership quote (rescue.org rplc-special / call-to-action-2) ── -->
-    <section class="rpl-section">
-      <div class="container-rpl">
-        <div class="quote-cta">
-          <div class="quote-cta__media">
-            <img src="/images/Owek. Kyewalabye David Male.png" alt="Owek. Kyewalabye Male David" />
+    <!-- ── Leadership quote: full-width black band ── -->
+    <section class="quote-band">
+      <div class="container-rpl quote-band__inner">
+        <div class="quote-band__media">
+          <img src="/images/Owek. Kyewalabye David Male.png" alt="Owek. Kyewalabye Male David" />
+        </div>
+        <div class="quote-band__content">
+          <span class="quote-band__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote class="quote-band__text">
+            Our institutions are built on the conviction that every child deserves an education that nurtures their full potential - academically, morally, and as a citizen of the world.
+          </blockquote>
+          <div class="quote-band__author">
+            <strong>Owek. Kyewalabye Male David</strong>
+            <span>Managing Director, Gombe Education Service</span>
           </div>
-          <div class="quote-cta__content">
-            <blockquote class="quote-cta__text">
-              "Our institutions are built on the conviction that every child deserves an education that nurtures their full potential - academically, morally, and as a citizen of the world."
-            </blockquote>
-            <div class="quote-cta__author">
-              <strong>Owek. Kyewalabye Male David</strong>
-              <span>Managing Director, Gombe Education Service</span>
-            </div>
-            <RouterLink to="/leadership" class="btn-rescue btn-rescue--primary quote-cta__btn">Meet Our Leadership</RouterLink>
-          </div>
+          <RouterLink to="/leadership" class="btn-rescue btn-rescue--primary quote-band__btn">Meet Our Leadership</RouterLink>
         </div>
       </div>
     </section>
 
-    <!-- ── Institutions (rescue.org rplc-image-link-boxes-1) ── -->
+    <!-- ── Institutions: highlighted teaser + scroll-snap carousel ── -->
     <section class="rpl-section rpl-section--grey">
       <div class="container-rpl">
         <div class="rpl-section-heading">
           <h2 class="rpl-section-heading__title">Institutions Under GES</h2>
         </div>
-        <ul class="inst-list">
-          <li class="inst-list__item">
-            <div class="teaser-hl">
-              <a :href="institutions[0].url" :aria-label="institutions[0].name" class="teaser-hl__link">
-                <div class="teaser-hl__media">
-                  <img :src="institutions[0].image" :alt="`${institutions[0].name} students`" loading="lazy" />
-                  <img :src="institutions[0].logo" :alt="`${institutions[0].name} logo`" class="teaser-badge" loading="lazy" />
-                </div>
-                <div class="teaser-hl__text">
-                  <div class="teaser-slug">{{ institutions[0].type }}</div>
-                  <h3 class="teaser-hl__title">{{ institutions[0].name }}</h3>
-                  <div class="teaser-hl__summary">{{ institutions[0].description }}</div>
-                  <div class="teaser-link teaser-link--inverse" role="link">Visit school</div>
-                </div>
-              </a>
+
+        <div class="teaser-hl">
+          <a :href="institutions[0].url" :aria-label="institutions[0].name" class="teaser-hl__link">
+            <div class="teaser-hl__media">
+              <img :src="institutions[0].image" :alt="`${institutions[0].name} students`" loading="lazy" />
+              <img :src="institutions[0].logo" :alt="`${institutions[0].name} logo`" class="teaser-badge" loading="lazy" />
             </div>
-          </li>
-          <li v-for="inst in institutions.slice(1)" :key="inst.path" class="inst-list__item">
+            <div class="teaser-hl__text">
+              <div class="teaser-slug">{{ institutions[0].type }}</div>
+              <h3 class="teaser-hl__title">{{ institutions[0].name }}</h3>
+              <div class="teaser-hl__summary">{{ institutions[0].description }}</div>
+              <div class="teaser-link teaser-link--inverse" role="link">Visit school</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="inst-carousel-head">
+          <p class="inst-carousel-head__hint">Explore our schools</p>
+          <div class="inst-carousel-head__controls">
+            <button class="inst-carousel-arrow" aria-label="Scroll institutions left" @click="scrollCarousel(-1)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            </button>
+            <button class="inst-carousel-arrow" aria-label="Scroll institutions right" @click="scrollCarousel(1)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div ref="carouselRef" class="inst-carousel">
+          <div v-for="inst in institutions.slice(1)" :key="inst.path" class="inst-carousel__card">
             <div class="teaser-std">
               <a :href="inst.url" :aria-label="inst.name" class="teaser-std__link">
                 <div class="teaser-std__media">
@@ -113,8 +129,9 @@
                 </div>
               </a>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
+
         <div class="partners-marquee">
           <Vue3Marquee :duration="40" :pause-on-hover="true" :clone="true" :gradient="true" :gradient-color="[240, 240, 240]" gradient-length="150px">
             <div v-for="logo in partnerLogos" :key="logo.name" class="partners-marquee__item" :title="logo.name">
@@ -125,34 +142,40 @@
       </div>
     </section>
 
-    <!-- ── News and featured stories (rescue.org rplc-news-and-features) ── -->
-    <section class="rpl-section rpl-section--grey">
+    <!-- ── News: editorial zigzag grid ── -->
+    <section class="rpl-section">
       <div class="container-rpl">
         <div class="rpl-section-heading">
           <h2 class="rpl-section-heading__title">News and featured Articles</h2>
         </div>
-        <div class="news-grid">
-          <RouterLink to="/blog" class="news-highlight">
-            <div class="news-highlight__media">
+        <div class="news-ed">
+          <RouterLink to="/blog" class="news-ed__feature">
+            <div class="news-ed__feature-media">
               <img :src="featuredPosts[0].image" :alt="featuredPosts[0].title" loading="lazy" />
+              <span class="rpl-slug news-ed__feature-slug">{{ featuredPosts[0].category }}</span>
             </div>
-            <div class="news-highlight__body">
-              <span class="rpl-slug">{{ featuredPosts[0].category }}</span>
-              <h3 class="news-highlight__title">{{ featuredPosts[0].title }}</h3>
-              <p class="news-highlight__excerpt">{{ featuredPosts[0].excerpt }}</p>
+            <div class="news-ed__feature-body">
+              <h3 class="news-ed__feature-title">{{ featuredPosts[0].title }}</h3>
+              <p class="news-ed__feature-excerpt">{{ featuredPosts[0].excerpt }}</p>
               <span class="rpl-link">Read more
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>
           </RouterLink>
-          <div class="news-side">
-            <RouterLink v-for="post in featuredPosts.slice(1)" :key="post.id" to="/blog" class="news-teaser">
-              <div class="news-teaser__media">
+          <div class="news-ed__side">
+            <RouterLink
+              v-for="(post, i) in featuredPosts.slice(1)"
+              :key="post.id"
+              to="/blog"
+              class="news-ed__teaser"
+              :class="`news-ed__teaser--${i + 1}`"
+            >
+              <div class="news-ed__teaser-media">
                 <img :src="post.image" :alt="post.title" loading="lazy" />
               </div>
-              <div class="news-teaser__body">
+              <div class="news-ed__teaser-body">
                 <span class="rpl-slug">{{ post.category }}</span>
-                <h3 class="news-teaser__title">{{ post.title }}</h3>
+                <h3 class="news-ed__teaser-title">{{ post.title }}</h3>
                 <span class="rpl-link">Read more
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </span>
@@ -169,7 +192,7 @@
     </section>
 
     <!-- ── Get involved (rescue.org rplc-image-link-boxes-1) ── -->
-    <section class="rpl-section">
+    <section class="rpl-section rpl-section--grey">
       <div class="container-rpl">
         <div class="rpl-section-heading">
           <h2 class="rpl-section-heading__title">Get involved</h2>
@@ -211,7 +234,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { Vue3Marquee } from 'vue3-marquee';
 
-/* ── Hero slideshow ── */
+/* ── Hero slideshow (single full-bleed crossfade + ken burns) ── */
 const slideshowImages = [
   '/images/slideshow/slideshow_1.jpg',
   '/images/slideshow/slideshow_2.jpg',
@@ -219,43 +242,27 @@ const slideshowImages = [
   '/images/slideshow/slideshow_4.jpg',
   '/images/slideshow/slideshow_5.jpg',
 ];
-const slideIndex = ref(0);
-const sliceIndices = ref([0, 1, 2]);
-
-/* Random framing per swap so different parts of each image show */
-function randomPos() {
-  const r = () => `${Math.round(15 + Math.random() * 70)}%`;
-  return {
-    '--drift-from': `${r()} ${r()}`,
-    '--drift-to': `${r()} ${r()}`,
-  };
-}
-const sliceStyles = ref([randomPos(), randomPos(), randomPos()]);
+const currentSlide = ref(0);
 let slideTimer: ReturnType<typeof setInterval> | null = null;
-let staggerTimeouts: ReturnType<typeof setTimeout>[] = [];
 
-function startSlides() {
-  if (slideTimer) clearInterval(slideTimer);
+onMounted(() => {
   slideTimer = setInterval(() => {
-    slideIndex.value = (slideIndex.value + 1) % slideshowImages.length;
-    staggerTimeouts.forEach(clearTimeout);
-    /* each slice swaps its photo at a different moment */
-    staggerTimeouts = [0, 1, 2].map((s) =>
-      setTimeout(() => {
-        sliceIndices.value[s] = (slideIndex.value + s) % slideshowImages.length;
-        sliceStyles.value[s] = randomPos();
-      }, s * 1400)
-    );
-  }, 5000);
-}
-function sliceImage(s: number) {
-  return slideshowImages[sliceIndices.value[s]];
-}
-onMounted(startSlides);
+    currentSlide.value = (currentSlide.value + 1) % slideshowImages.length;
+  }, 6000);
+});
 onUnmounted(() => {
   if (slideTimer) clearInterval(slideTimer);
-  staggerTimeouts.forEach(clearTimeout);
 });
+
+/* ── Institutions carousel ── */
+const carouselRef = ref<HTMLElement | null>(null);
+function scrollCarousel(dir: number) {
+  const el = carouselRef.value;
+  if (!el) return;
+  const card = el.querySelector('.inst-carousel__card') as HTMLElement | null;
+  const step = card ? card.offsetWidth + 24 : 400;
+  el.scrollBy({ left: dir * step, behavior: 'smooth' });
+}
 
 /* ── Recognised by (hero strip) ── */
 const recognisedBy = [
@@ -281,12 +288,12 @@ const partnerLogos = [
 
 /* ── Institutions ── */
 const institutions = [
+  { name: 'ScoobyDoo International School Uganda - Kampala', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/sisu-katale-triptych.jpeg', path: '/institutions/sisu-kampala', url: 'https://sisu-katale.vercel.app/', description: 'International curriculum preparing students for global success.' },
   { name: 'Gombe Institute of Business Science & Technology (GIBST)', type: 'Vocational Institute', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', image: '/images/JIMMY SEKASI.JPG', path: '/institutions/jsbi', url: 'https://www.gibst.ac.ug/', description: 'Equipping students with practical business, vocational, and hands-on skills.' },
   { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/Gombe High School - Bujuuko.png', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Nurturing tomorrow\'s leaders through quality education.' },
   { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/IMG_9718.JPG', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced secondary education with a focus on academic excellence.' },
   { name: 'Gombe Junior School - Kampala', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/IMG_1737.JPG', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/', description: 'Building strong foundations for lifelong learning.' },
   { name: 'Gombe Junior School - Gulu', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/IMG_1685.JPG', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/', description: 'Extending foundational education excellence to Northern Uganda.' },
-  { name: 'ScoobyDoo International School Uganda - Kampala', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/sisu-katale-triptych.jpeg', path: '/institutions/sisu-kampala', url: 'https://sisu-katale.vercel.app/', description: 'International curriculum preparing students for global success.' },
   { name: 'ScoobyDoo International School Uganda - Gulu', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-01-12-29_IMG_3773.jpg', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'Bringing international education to Northern Uganda.' },
 ];
 
@@ -317,199 +324,240 @@ const involved = [
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
 }
 
-/* ── Hero split (rescue.org style) ── */
-.hero-split {
-  background: var(--rescue-grey-bg, #F0F0F0);
-  display: grid;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 1024px) {
-  /* Image column: full section height, 30% width, flush right */
-  .hero-split { grid-template-columns: 7fr 3fr; }
-}
-.hero-split__left {
+/* ── Cinematic full-bleed hero ── */
+.hero-cine {
+  position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0;
+  min-height: max(86vh, 620px);
+  background: var(--rescue-dark, #1A1A1A);
+  overflow: hidden;
 }
-.hero-split__content {
+.hero-cine__slides {
+  position: absolute;
+  inset: 0;
+}
+.hero-cine__img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: 50% 35%;
+  background-repeat: no-repeat;
+  animation: hero-kenburns 14s ease-out forwards;
+}
+@keyframes hero-kenburns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-cine__img { animation: none; }
+}
+.hero-fade-enter-active, .hero-fade-leave-active { transition: opacity 1.1s ease; }
+.hero-fade-enter-from, .hero-fade-leave-to { opacity: 0; }
+
+.hero-cine__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(80deg, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0.28) 40%, rgba(10, 10, 10, 0) 65%);
+  pointer-events: none;
+}
+
+.hero-cine__content {
+  position: relative;
+  z-index: 2;
   flex: 1;
-  padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  padding-top: 6.5rem;
+  padding-bottom: 3rem;
+  animation: fadeIn 0.9s ease-out both;
 }
 @media (min-width: 1024px) {
-  /* Keep text aligned with the 1280px page container; top padding clears the floating navbar */
-  .hero-split__content {
-    padding: 9rem 3rem 4.5rem max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem));
-  }
+  .hero-cine__content { padding-top: 9.5rem; }
 }
-.hero-split__logo {
-  height: 173px; /* +20% */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-cine__logo {
+  height: 96px;
   width: auto;
   align-self: flex-start;
-  margin-top: 1.5rem; /* slightly lower */
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45));
 }
-.hero-split__title {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
+.hero-cine__title {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.06;
   letter-spacing: -0.02em;
-  color: var(--rescue-dark, #1A1A1A);
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+  max-width: 820px;
 }
-.hero-split__text {
-  margin-top: 1.25rem;
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: var(--rescue-charcoal, #3D3D3D);
-  max-width: 480px;
+.hero-cine__title-accent {
+  background-image: linear-gradient(var(--rescue-yellow, #FFC72C), var(--rescue-yellow, #FFC72C));
+  background-size: 100% 0.16em;
+  background-position: 0 94%;
+  background-repeat: no-repeat;
+  padding-bottom: 0.06em;
 }
-.hero-split__actions {
-  margin-top: 1.75rem;
+.hero-cine__text {
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 560px;
+}
+.hero-cine__actions {
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
 }
-.hero-split__media {
-  display: flex;
-  flex-direction: row;
-  min-height: 360px;
-  overflow: hidden;
-}
-.hero-split__slice {
-  position: relative;
-  flex: 1;
-  overflow: hidden;
-}
-/* Narrow burgundy lines only between the images */
-.hero-split__slice + .hero-split__slice::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 6px;
-  background: #800020;
-  z-index: 2;
-}
-.hero-split__img {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  animation: hero-drift 16s ease-in-out infinite alternate; /* gentle motion */
-}
-/* subtle vignette for depth over the hero photos */
-.hero-split__slice::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 65%, rgba(0,0,0,0.22) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-@keyframes hero-drift {
-  from { background-position: var(--drift-from, 47% 44%); }
-  to   { background-position: var(--drift-to, 53% 56%); }
-}
-.hero-fade-enter-active, .hero-fade-leave-active { transition: opacity 0.8s ease; }
-.hero-fade-enter-from, .hero-fade-leave-to { opacity: 0; }
 
-/* ── Recognised by strip (inside hero, left column) ── */
-.hero-split__recognised {
-  padding: 1.25rem 1.5rem 2rem;
+/* Recognised-by glass strip */
+.hero-cine__strip {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 3px solid var(--rescue-yellow, #FFC72C);
+}
+.hero-cine__strip-inner {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem 2.5rem;
-  border-top: 1px solid var(--rescue-border, #E0E0E0);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
-@media (min-width: 1024px) {
-  .hero-split__recognised {
-    padding-left: max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem));
-  }
-}
-.hero-split__recognised-label {
-  font-size: 0.8rem;
+.hero-cine__strip-label {
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--rescue-text-secondary, #555);
 }
-.hero-split__recognised-logos {
+.hero-cine__strip-logos {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.75rem;
 }
-.hero-split__recognised-logos img {
-  height: 40px;
+.hero-cine__strip-logos img {
+  height: 36px;
   width: auto;
-  max-width: 110px;
+  max-width: 105px;
   object-fit: contain;
   filter: grayscale(1);
-  opacity: 0.75;
+  opacity: 0.8;
   transition: filter 0.2s, opacity 0.2s;
 }
-.hero-split__recognised-logos img:hover { filter: none; opacity: 1; }
+.hero-cine__strip-logos img:hover { filter: none; opacity: 1; }
 
-/* ── Partners carousel (black & white, auto-scrolling) ── */
-.partners-marquee {
-  margin-top: 2.5rem;
-  overflow: hidden;
+/* ── Leadership quote: black band ── */
+.quote-band {
+  background: var(--rescue-dark, #1A1A1A);
+  padding: 4.5rem 0;
 }
-.partners-marquee__item {
+.quote-band__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .quote-band__inner { grid-template-columns: 300px 1fr; gap: 4rem; }
+}
+.quote-band__media img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  filter: grayscale(1) contrast(1.05);
+  box-shadow: 12px 12px 0 var(--rescue-yellow, #FFC72C);
+}
+.quote-band__content {
+  position: relative;
+}
+.quote-band__mark {
+  display: block;
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 0.5;
+  color: var(--rescue-yellow, #FFC72C);
+  margin-bottom: 1.25rem;
+}
+.quote-band__text {
+  font-size: clamp(1.3rem, 2.6vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: #fff;
+}
+.quote-band__author {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.quote-band__author strong { font-size: 1rem; color: var(--rescue-yellow, #FFC72C); }
+.quote-band__author span { font-size: 0.85rem; color: rgba(255, 255, 255, 0.65); margin-top: 2px; }
+.quote-band__btn { margin-top: 1.75rem; }
+
+/* ── Institutions carousel ── */
+.inst-carousel-head {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2.5rem 0 1rem;
+}
+.inst-carousel-head__hint {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rescue-text-secondary, #555);
+}
+.inst-carousel-head__controls {
+  display: flex;
+  gap: 0.5rem;
+}
+.inst-carousel-arrow {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  padding: 0 2.5rem;
+  width: 44px;
+  height: 44px;
+  background: var(--rescue-dark, #1A1A1A);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
 }
-.partners-marquee__logo {
-  height: 56px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.75;
-  transition: filter 0.2s, opacity 0.2s;
+.inst-carousel-arrow:hover {
+  background: var(--rescue-yellow, #FFC72C);
+  color: var(--rescue-dark, #1A1A1A);
+  transform: translateY(-2px);
 }
-.partners-marquee__item:hover .partners-marquee__logo {
-  filter: none;
-  opacity: 1;
+.inst-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-
-/* ── Institution card logo badge ── */
-.rpl-card__badge {
-  position: absolute;
-  bottom: 0.75rem;
-  left: 0.75rem;
-  height: 44px !important;
-  width: auto !important;
-  object-fit: contain !important;
-  background: #fff;
-  padding: 4px 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+.inst-carousel::-webkit-scrollbar { display: none; }
+.inst-carousel__card {
+  flex: 0 0 min(380px, 82vw);
+  scroll-snap-align: start;
 }
-
-/* ── Mission heading colour ── */
-/* ── Institutions teaser list (rescue.org rpll-two-column-list--highlighted) ── */
-.inst-list {
-  display: grid;
-  grid-column-gap: 1.5rem;
-  grid-row-gap: 2rem;
-  grid-template-columns: 1fr;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-@media (min-width: 64rem) {
-  .inst-list { grid-template-columns: 1fr 1fr; }
-  .inst-list__item:first-child { grid-column: 1 / 3; }
-}
-.inst-list__item { overflow: hidden; }
 
 /* Highlighted teaser (rplc-teaser-highlighted) */
 .teaser-hl__link {
@@ -521,8 +569,6 @@ const involved = [
 .teaser-hl__media {
   position: relative;
   line-height: 0;
-}
-.teaser-hl__media {
   overflow: hidden;
 }
 .teaser-hl__media img:first-child {
@@ -581,8 +627,6 @@ const involved = [
 .teaser-std__media {
   position: relative;
   line-height: 0;
-}
-.teaser-std__media {
   overflow: hidden;
 }
 .teaser-std__media img:first-child {
@@ -606,9 +650,9 @@ const involved = [
 }
 .teaser-std__title { flex: 1; }
 .teaser-std__title h3 {
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.35;
   margin-bottom: 0.5em;
   color: var(--rescue-dark, #1A1A1A);
 }
@@ -655,103 +699,120 @@ const involved = [
 }
 .teaser-hl__link:hover .teaser-link--inverse { border-bottom-color: #fff; }
 
-/* ── Quote CTA (call-to-action-2) ── */
-.quote-cta {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  background: var(--rescue-grey-light, #F5F5F5);
-  border-left: 6px solid var(--rescue-yellow, #FFC72C);
-  padding: 2.5rem;
-  align-items: center;
+/* ── Partners carousel (black & white, auto-scrolling) ── */
+.partners-marquee {
+  margin-top: 2.5rem;
+  overflow: hidden;
 }
-@media (min-width: 900px) {
-  .quote-cta { grid-template-columns: 280px 1fr; gap: 3rem; }
-}
-.quote-cta__media img {
-  width: 100%;
-  max-width: 280px;
-  margin: 0 auto;
-  display: block;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-}
-.quote-cta__text {
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--rescue-dark, #1A1A1A);
-}
-.quote-cta__author {
-  margin-top: 1.25rem;
+.partners-marquee__item {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.5rem;
 }
-.quote-cta__author strong { font-size: 1rem; color: var(--rescue-dark, #1A1A1A); }
-.quote-cta__author span { font-size: 0.85rem; color: var(--rescue-text-secondary, #555); }
-.quote-cta__btn { margin-top: 1.5rem; }
+.partners-marquee__logo {
+  height: 56px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.75;
+  transition: filter 0.2s, opacity 0.2s;
+}
+.partners-marquee__item:hover .partners-marquee__logo {
+  filter: none;
+  opacity: 1;
+}
 
-/* ── News grid (rplc-news-and-features) ── */
-.news-grid {
+/* ── News: editorial zigzag ── */
+.news-ed {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 @media (min-width: 1024px) {
-  .news-grid { grid-template-columns: 7fr 5fr; }
+  .news-ed { grid-template-columns: 7fr 5fr; gap: 3rem; }
 }
-.news-highlight {
+.news-ed__feature {
   display: block;
   text-decoration: none;
-  background: var(--rescue-white, #fff);
-  border: 1px solid var(--rescue-border, #E0E0E0);
-  transition: box-shadow 0.2s, transform 0.2s;
 }
-.news-highlight:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.12); transform: translateY(-3px); }
-.news-highlight__media { aspect-ratio: 16 / 9; overflow: hidden; }
-.news-highlight__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.2, 0.6, 0.3, 1); }
-.news-highlight:hover .news-highlight__media img { transform: scale(1.04); }
-.news-highlight__body { padding: 1.5rem; }
-.news-highlight__title {
-  margin-top: 0.75rem;
-  font-size: 1.5rem;
+.news-ed__feature-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.news-ed__feature-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+.news-ed__feature:hover .news-ed__feature-media img { transform: scale(1.04); }
+.news-ed__feature-slug {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.9rem;
+}
+.news-ed__feature-body {
+  padding: 1.5rem 0 0;
+  border-bottom: 4px solid var(--rescue-yellow, #FFC72C);
+  padding-bottom: 1.5rem;
+}
+.news-ed__feature-title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 800;
   line-height: 1.2;
+  letter-spacing: -0.01em;
   color: var(--rescue-dark, #1A1A1A);
 }
-.news-highlight__excerpt {
-  margin: 0.6rem 0 1rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
+.news-ed__feature-excerpt {
+  margin: 0.75rem 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--rescue-text-secondary, #555);
+  max-width: 560px;
 }
-.news-side {
+.news-ed__side {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.5rem;
+  justify-content: center;
 }
-.news-teaser {
+.news-ed__teaser {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 1rem;
+  grid-template-columns: 150px 1fr;
+  gap: 1.25rem;
   text-decoration: none;
-  background: var(--rescue-white, #fff);
-  border: 1px solid var(--rescue-border, #E0E0E0);
-  transition: box-shadow 0.2s, transform 0.2s;
-  flex: 1;
+  align-items: start;
 }
-.news-teaser:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.12); transform: translateY(-3px); }
-.news-teaser__media { overflow: hidden; }
-.news-teaser__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.2, 0.6, 0.3, 1); }
-.news-teaser:hover .news-teaser__media img { transform: scale(1.05); }
-.news-teaser__body { padding: 1rem 1rem 1rem 0; }
-.news-teaser__title {
-  margin: 0.5rem 0 0.75rem;
-  font-size: 1.05rem;
+@media (min-width: 1024px) {
+  /* zigzag offsets */
+  .news-ed__teaser--1 { margin-right: 2.5rem; }
+  .news-ed__teaser--2 { margin-left: 2.5rem; }
+}
+.news-ed__teaser-media {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+.news-ed__teaser-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+.news-ed__teaser:hover .news-ed__teaser-media img { transform: scale(1.06); }
+.news-ed__teaser-body .rpl-slug { font-size: 0.65rem; }
+.news-ed__teaser-title {
+  margin: 0.6rem 0 0.75rem;
+  font-size: 1.1rem;
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.3;
   color: var(--rescue-dark, #1A1A1A);
 }
-.news-more { margin-top: 2rem; }
+.news-more { margin-top: 2.5rem; }
 
 /* ── CTA band ── */
 .cta-band {
