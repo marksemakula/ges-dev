@@ -299,7 +299,7 @@ const institutions = [
 
 /* ── Featured posts (from GES Blog) ── */
 const featuredPosts = [
-  { id: '1', title: 'The Future of Education: Embracing Digital Learning', excerpt: 'Exploring how digital transformation is reshaping the educational landscape and preparing students for tomorrow\'s challenges.', category: 'Innovation', image: '/images/TD.jpg' },
+  { id: '1', title: 'The Future of Education: Embracing Digital Learning', excerpt: 'Exploring how digital transformation is reshaping the educational landscape and preparing students for tomorrow\'s challenges.', category: 'Innovation', image: '/images/Future of Education, Embracing Digital Learning.jpeg' },
   { id: '2', title: 'Building Character Through Education', excerpt: 'How GES integrates character development into our curriculum to nurture well-rounded individuals.', category: 'Character', image: '/images/IMG_1707.JPG' },
   { id: '3', title: 'STEM Education Excellence at GES', excerpt: 'Discover how our STEM programmes are preparing students for careers in science, technology, engineering, and mathematics.', category: 'STEM', image: '/images/IMG_9718.JPG' },
 ];
@@ -307,7 +307,7 @@ const featuredPosts = [
 /* ── Get involved ── */
 const involved = [
   { title: 'Calendar', path: '/academic-calendar', image: '/images/SISU-Kampala53.jpeg', desc: 'View term dates, holidays, and key events across all GES institutions.' },
-  { title: 'Mentorship', path: '/mentorship', image: '/images/Mentorship.jpeg', desc: 'Connect with mentors and grow through guidance from the GES community.' },
+  { title: 'Mentorship', path: '#', image: '/images/Mentorship.jpeg', desc: 'Connect with mentors and grow through guidance from the GES community.' },
   { title: 'International Pathway', path: '/international-pathway', image: '/images/ieppheader.png', desc: 'Discover the International Pathway Programme and global study opportunities.' },
 ];
 </script>
