@@ -10,7 +10,7 @@
               <img src="/logo.png" alt="GES" class="ges-footer__logo" />
               <div>
                 <p class="ges-footer__org">Gombe Education Service</p>
-                <p class="ges-footer__since">Excellence Since 1995</p>
+                <p class="ges-footer__since">Excellence Since 2013</p>
               </div>
             </RouterLink>
             <p class="ges-footer__desc">

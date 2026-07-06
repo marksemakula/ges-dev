@@ -141,7 +141,7 @@
 
 <script setup lang="ts">
 const milestones = [
-  { year: '1995', event: 'GES Founded', detail: 'Gombe Education Service established its first institution.' },
+  { year: '2013', event: 'GES Founded', detail: 'Gombe Education Service established its first institution.' },
   { year: '2005', event: 'Network Expansion', detail: 'Opened two additional campuses to meet growing demand.' },
   { year: '2015', event: 'International Partnerships', detail: 'Secured partnerships with UNESCO and University of Cambridge.' },
   { year: '2020', event: 'Digital Transformation', detail: 'Launched digital learning platforms across all institutions.' },

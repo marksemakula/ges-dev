@@ -307,7 +307,7 @@ const featuredPosts = [
 /* ── Get involved ── */
 const involved = [
   { title: 'Calendar', path: '/academic-calendar', image: '/images/SISU-Kampala53.jpeg', desc: 'View term dates, holidays, and key events across all GES institutions.' },
-  { title: 'Mentorship', path: '/mentorship', image: '/images/IMG_1707.JPG', desc: 'Connect with mentors and grow through guidance from the GES community.' },
+  { title: 'Mentorship', path: '/mentorship', image: '/images/Mentorship.jpeg', desc: 'Connect with mentors and grow through guidance from the GES community.' },
   { title: 'International Pathway', path: '/international-pathway', image: '/images/ieppheader.png', desc: 'Discover the International Pathway Programme and global study opportunities.' },
 ];
 </script>
