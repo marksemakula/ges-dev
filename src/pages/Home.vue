@@ -270,7 +270,7 @@ const recognisedBy = [
   { name: 'UTB',                   src: '/images/UTB.png' },
   { name: 'Kingdom of Buganda',    src: '/images/Flag_of_Buganda.svg' },
   { name: 'Braemar College',       src: '/images/braemar.webp' },
-  { name: 'KISU',                  src: '/images/KISU.png' },
+  { name: 'SAI',                   src: '/images/sai-brand-logo.png' },
 ];
 
 /* ── Partners carousel ── */
@@ -281,7 +281,7 @@ const partnerLogos = [
   { name: 'Gombe Junior School',             src: '/images/Gombe Junior School logo.png' },
   { name: 'SISU',                            src: '/images/scooby-logo.png' },
   { name: 'Gombe Institute of Business Science & Technology (GIBST)', src: '/images/Jimmy Ssekasi Business Institute Logo.png' },
-  { name: 'KISU',                            src: '/images/KISU.png' },
+  { name: 'SAI',                             src: '/images/sai-brand-logo.png' },
   { name: 'Ministry of Education',           src: '/images/MoES1.png' },
   { name: 'UTB',                             src: '/images/UTB.png' },
 ];

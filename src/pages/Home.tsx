@@ -105,7 +105,7 @@ const Home: React.FC = () => {
   ];
 
   const logos: Logo[] = [
-    { name: 'KISU', src: '/images/KISU.png' },
+    { name: 'SAI', src: '/images/sai-brand-logo.png' },
     { name: 'MoES', src: '/images/MoES.png' },
     { name: 'Gombe Institute of Business Science & Technology (GIBST)', src: '/images/Jimmy Ssekasi Business Institute Logo.png' },
     { name: 'Gombe High School', src: '/images/Gombe High logo.png' },
