@@ -22,7 +22,7 @@
           <span class="hero-cine__title-accent">Building Futures</span>
         </h1>
         <p class="hero-cine__text">
-          Gombe Education Service has provided world-class education since 2013 - fostering academic excellence, character, and global readiness across our network of institutions.
+          <span>Gombe Education Service has provided world-class education since 2013 - fostering academic excellence, character, and global readiness across our network of institutions.</span>
         </p>
         <div class="hero-cine__actions">
           <RouterLink to="/about" class="btn-rescue btn-rescue--primary">
@@ -387,7 +387,7 @@ const involved = [
   width: auto;
   align-self: flex-start;
   margin-bottom: 1.5rem;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.7)) drop-shadow(0 6px 24px rgba(0,0,0,0.55));
 }
 .hero-cine__title {
   font-size: clamp(2.6rem, 6vw, 4.4rem);
@@ -395,7 +395,7 @@ const involved = [
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: #fff;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8), 0 4px 28px rgba(0,0,0,0.6);
   max-width: 820px;
 }
 .hero-cine__title-accent {
@@ -408,9 +408,16 @@ const involved = [
 .hero-cine__text {
   margin-top: 1.5rem;
   font-size: clamp(1rem, 1.5vw, 1.15rem);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.5;
+  color: #1A1A1A;
   max-width: 560px;
+}
+.hero-cine__text span {
+  background: #FFC72C;
+  padding: 0.25em 0.4em;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 .hero-cine__actions {
   margin-top: 2rem;
