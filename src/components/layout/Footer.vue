@@ -96,7 +96,7 @@ const institutions = [
   { name: 'Gombe Junior School - Gulu', path: '/institutions/gjs-gulu', url: 'http://gombejuniorschool.ac.ug/' },
   { name: 'ScoobyDoo International School Uganda - Kampala', path: '/institutions/sisu-kampala', url: 'http://scoobydoointernational.ac.ug/' },
   { name: 'ScoobyDoo International School Uganda - Gulu', path: '/institutions/sisu-gulu', url: 'http://scoobydoointernational.ac.ug/' },
-  { name: 'International Education Pathways Program', path: '/institutions/iepp', url: 'https://ipp-vert.vercel.app/' },
+  { name: 'International Education Pathways Program', path: '/institutions/iepp', url: 'https://ipp.ges.ac.ug' },
 ];
 
 const socials = [

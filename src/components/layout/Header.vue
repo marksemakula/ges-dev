@@ -164,7 +164,7 @@ const institutions = [
   { name: 'Gombe Junior School - Gulu', shortName: 'GJS Gulu', path: '/institutions/gjs-gulu', url: 'http://gombejuniorschool.ac.ug/', description: 'Primary Education' },
   { name: 'ScoobyDoo International School Uganda - Kampala', shortName: 'SISU Kampala', path: '/institutions/sisu-kampala', url: 'http://scoobydoointernational.ac.ug/', description: 'International Curriculum' },
   { name: 'ScoobyDoo International School Uganda - Gulu', shortName: 'SISU Gulu', path: '/institutions/sisu-gulu', url: 'http://scoobydoointernational.ac.ug/', description: 'International Curriculum' },
-  { name: 'International Education Pathways Program', shortName: 'IEPP', path: '/institutions/iepp', url: 'https://ipp-vert.vercel.app/', description: 'Global Study Pathways' },
+  { name: 'International Education Pathways Program', shortName: 'IPP', path: '/institutions/iepp', url: 'https://ipp.ges.ac.ug', description: 'Global Study Pathways' },
 ];
 
 /* Top bar social icons (rescue.org rplm-social-share, inverse) */
