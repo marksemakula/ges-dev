@@ -32,7 +32,7 @@ const router = createRouter({
     { path: '/ges-life', component: () => import('../pages/GESLifeFeed.vue') },
     { path: '/mentorship', component: () => import('../pages/MentorshipPortal.vue') },
     { path: '/academic-calendar', component: () => import('../pages/AcademicCalendar.vue') },
-    { path: '/international-pathway', component: () => import('../pages/InternationalPathway.vue') },
+    { path: '/international-pathway', beforeEnter: externalRedirect('https://ipp.ges.ac.ug') },
     { path: '/admin', component: () => import('../pages/admin/AdminPanel.vue') },
     // Institution redirects
     { path: '/institutions/sakghs-kawaala', beforeEnter: externalRedirect('https://sakghs-kawaala.vercel.app/') },
