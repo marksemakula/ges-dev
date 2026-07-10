@@ -311,11 +311,14 @@ import { Vue3Marquee } from 'vue3-marquee';
 
 /* ── Hero slideshow (single full-bleed crossfade + ken burns) ── */
 const slideshowImages = [
-  '/images/slideshow/slideshow_1.jpg',
-  '/images/slideshow/slideshow_2.jpg',
-  '/images/slideshow/slideshow_3.jpg',
   '/images/slideshow/slideshow_4.jpg',
+  '/images/slideshow/slideshow_6.png',
+  '/images/slideshow/IMG_6935.JPG',
+  '/images/slideshow/Slideshow Sport (1).png',
   '/images/slideshow/slideshow_5.jpg',
+  '/images/slideshow/hero-triptych-gulu.jpeg',
+  '/images/slideshow/IMG_9718.JPG',
+  '/images/slideshow/_MG_7424.JPG',
 ];
 const currentSlide = ref(0);
 let slideTimer: ReturnType<typeof setInterval> | null = null;
