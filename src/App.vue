@@ -40,6 +40,7 @@ const REVEAL_SELECTORS = [
   '.news-ed__feature',
   '.news-ed__teaser',
   '.quote-band__inner',
+  '.ges-journey-preface',
 ].join(', ');
 
 let revealObserver: IntersectionObserver | null = null;

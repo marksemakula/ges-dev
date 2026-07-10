@@ -53,6 +53,22 @@
             A consortium of institutions providing quality holistic education from Kindergarten to Tertiary level across Uganda - all embracing the same vision and mission.
           </p>
         </div>
+
+        <!-- GES Journey Preface -->
+        <div class="ges-journey-preface">
+          <div class="ges-journey-preface__card">
+            <span class="rpl-slug ges-journey-preface__slug">The GES Journey</span>
+            <blockquote class="ges-journey-preface__quote">
+              &ldquo;Our vision has always been to provide learners with a complete educational journey. The future holds tremendous promise for Gombe Education Service, and we look forward to shaping it together with our learners, parents, staff, partners, and the communities we proudly serve.&rdquo;
+            </blockquote>
+            <div class="ges-journey-preface__action">
+              <button @click="openJourneyModal" class="btn-rescue btn-rescue--primary" aria-haspopup="dialog" aria-controls="journey-modal">
+                Read the GES Journey
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -228,6 +244,65 @@
       </div>
     </section>
   </div>
+
+  <!-- ── GES Journey Modal ── -->
+  <Teleport to="body">
+    <Transition name="journey-modal-fade">
+      <div v-if="isJourneyModalOpen" class="journey-modal-backdrop" @click="closeJourneyModal">
+        <div class="journey-modal" @click.stop role="dialog" aria-modal="true" aria-labelledby="journey-modal-title" id="journey-modal">
+          <!-- Modal Header -->
+          <div class="journey-modal__header">
+            <div class="journey-modal__title-area">
+              <span class="rpl-slug journey-modal__slug">GES History</span>
+              <h2 id="journey-modal-title" class="journey-modal__title">The GES Journey</h2>
+              <p class="journey-modal__subtitle">A Dozen Questions with the Director of Gombe Education Service</p>
+            </div>
+            <button class="journey-modal__close-btn" @click="closeJourneyModal" aria-label="Close modal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+
+          <!-- Modal Body (Scrollable) -->
+          <div class="journey-modal__body">
+            <!-- Interview Preface Intro -->
+            <div class="journey-modal__intro">
+              <div class="journey-modal__intro-text">
+                <p>
+                  For more than a decade, Gombe Education Service (GES) has grown from a single vision into one of Uganda's leading education providers, offering holistic learning from early childhood to higher education. Behind this remarkable journey is <strong>Owekitiibwa Kyewalabye Male David</strong>, whose passion for transforming education was inspired by his own experiences as a parent.
+                </p>
+                <p>
+                  In this exclusive interview, he shares the story behind the founding of GES, the challenges that shaped its growth, and the vision that continues to inspire its future.
+                </p>
+              </div>
+              <div class="journey-modal__intro-media">
+                <img src="/images/Owek. Kyewalabye David Male.png" alt="Owekitiibwa Kyewalabye Male David" class="journey-modal__director-img" />
+              </div>
+            </div>
+
+            <!-- Q&A List -->
+            <div class="journey-modal__qa-list">
+              <div v-for="(qa, index) in interviewQA" :key="index" class="journey-modal__qa-item">
+                <h3 class="journey-modal__question">
+                  <span class="journey-modal__question-number">{{ index + 1 }}</span>
+                  {{ qa.question }}
+                </h3>
+                <div class="journey-modal__answer">
+                  <p v-for="(p, pIdx) in qa.paragraphs" :key="pIdx">{{ p }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="journey-modal__footer">
+            <button @click="closeJourneyModal" class="btn-rescue btn-rescue--outline">
+              Close Reader
+            </button>
+          </div>
+        </div>
+      </div>
+    </Transition>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
@@ -245,13 +320,35 @@ const slideshowImages = [
 const currentSlide = ref(0);
 let slideTimer: ReturnType<typeof setInterval> | null = null;
 
+/* ── GES Journey Modal ── */
+const isJourneyModalOpen = ref(false);
+
+function openJourneyModal() {
+  isJourneyModalOpen.value = true;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeJourneyModal() {
+  isJourneyModalOpen.value = false;
+  document.body.style.overflow = '';
+}
+
+function handleKeyDown(e: KeyboardEvent) {
+  if (e.key === 'Escape' && isJourneyModalOpen.value) {
+    closeJourneyModal();
+  }
+}
+
 onMounted(() => {
   slideTimer = setInterval(() => {
     currentSlide.value = (currentSlide.value + 1) % slideshowImages.length;
   }, 6000);
+  window.addEventListener('keydown', handleKeyDown);
 });
+
 onUnmounted(() => {
   if (slideTimer) clearInterval(slideTimer);
+  window.removeEventListener('keydown', handleKeyDown);
 });
 
 /* ── Institutions carousel ── */
@@ -310,9 +407,141 @@ const involved = [
   { title: 'Mentorship', path: '#', image: '/images/Mentorship.jpeg', desc: 'Connect with mentors and grow through guidance from the GES community.' },
   { title: 'International Pathway', path: 'https://ipp.ges.ac.ug', image: '/images/ieppheader.png', desc: 'Discover the International Pathway Programme and global study opportunities.' },
 ];
+
+/* ── The GES Journey Interview Q&A ── */
+const interviewQA = [
+  {
+    question: "How did you start Gombe Education Service Schools?",
+    paragraphs: [
+      "Our journey began with a simple conversation and a shared dream.",
+      "At that time, our eldest sons were studying at a boarding school where my wife had developed a close friendship with one of the deputy head teachers, Mr. Ssekitoleko Zaake. When he was transferred to head another branch of the same school, my wife visited him to congratulate him. During their conversation, he suggested that we should consider starting a school of our own.",
+      "She later arranged a meeting between Mr. Ssekitoleko and me. After extensive discussions, we agreed to pursue the idea together. His proposal was to establish both a nursery and primary school on the same site where I operated a poultry project. However, I believed that nursery and primary learners deserved separate environments tailored to their different developmental needs.",
+      "I therefore revisited the owners of Stella Maris Primary School in Kikajjo, whom I had previously approached about purchasing the school. Fortunately, they agreed to sell it to us.",
+      "We immediately began renovating the old and dilapidated facilities, transforming Stella Maris Primary School into what is now Gombe Junior School, our boarding primary school. At the same time, we converted the former poultry houses into Scooby Doo Care and Nursery School, creating a dedicated nursery that would serve as a feeder to the primary school.",
+      "In 2013, both schools officially opened their doors to the public, marking the beginning of what has since grown into Gombe Education Service.",
+      "The transition was not without challenges. We revised the school fees from UGX 200,000 to UGX 800,000 for boarding learners and from UGX 70,000 to UGX 500,000 for day scholars. As expected, many families were unable to continue, and only two learners remained from Stella Maris Primary School. One of them, Nakkazi Rachael, is today a teacher at Gombe Junior School—a testament to the lasting impact of the GES journey."
+    ]
+  },
+  {
+    question: "What was life like for you as a parent before starting Gombe Schools?",
+    paragraphs: [
+      "My experiences as a parent greatly influenced the vision behind Gombe Education Service.",
+      "One of my greatest frustrations involved my eldest son, Timothy, who is naturally left-handed. At nursery school, he was forced to write with his right hand, despite this going against the way he naturally learned. Watching my child struggle simply because the education system failed to appreciate individual differences deeply concerned me.",
+      "My second son, Titus, was an exceptionally talented pianist at church. However, after spending just one term in boarding school, his piano skills began to decline. When I asked why, he explained that there was no piano at school. It saddened me to see such a remarkable talent left unsupported simply because the learning environment did not value co-curricular development.",
+      "These experiences convinced me that education should nurture every aspect of a child's potential—not just academic achievement.",
+      "My wife also faced daily challenges with our younger children who attended day school. She had to wake up as early as 4:00 a.m. to prepare them before the morning traffic. After returning home late each evening, she still had to supervise homework, leaving little time for family life.",
+      "Gradually, our home had become an extension of the classroom. We believed there had to be a better way."
+    ]
+  },
+  {
+    question: "Why did you choose to start Gombe Education Service Schools?",
+    paragraphs: [
+      "Our personal experiences inspired a much bigger vision.",
+      "We wanted to build schools that provide holistic education—where academic excellence is balanced with character development, creativity, sports, music, technology, leadership, and life skills. We envisioned schools where every child could discover and develop their unique talents while enjoying a happy and fulfilling learning experience.",
+      "Our mission was to spare other parents from the frustrations we had encountered. We believed that the challenges we experienced should become opportunities for other families to enjoy a better education.",
+      "From the very beginning, we wanted children to arrive at school well-rested, healthy, and ready to learn rather than exhausted from early morning routines. We also sought to reduce unnecessary homework, allowing families to spend meaningful time together instead of turning every evening into another school session.",
+      "These principles became the foundation upon which Gombe Education Service was built and continue to guide us today as we strive to nurture learners who are academically competent, morally upright, creative, confident, and prepared to make a positive impact on society."
+    ]
+  },
+  {
+    question: "Why the names Scooby Doo and Gombe?",
+    paragraphs: [
+      "Every name tells a story, and the names of our schools reflect both our commitment to children and our respect for the legacy of education.",
+      "Scooby Doo was one of the most popular cartoon characters among young children on M-Net at the time. We chose the name because it was familiar, cheerful, and immediately connected with children. We wanted our nursery school to be a place where learning began with joy, curiosity, and happiness.",
+      "The name Gombe carries a much deeper personal significance. It was the name of my late grandfather, a man whose passion for education profoundly shaped my life. He was my first teacher, educating us at home before taking us to school each day on his bicycle, as there were no cars available.",
+      "His commitment to education was extraordinary. I vividly remember a time when strong winds blew the roof off one of the classrooms at the local school. Without hesitation, he dismantled the iron sheets from our family bathroom and donated them to help restore the classroom. His selflessness and belief in the transformative power of education left an enduring impression on me.",
+      "Naming our schools after him is our way of honouring his legacy and ensuring that his passion for learning continues to inspire future generations."
+    ]
+  },
+  {
+    question: "Most schools combine day and boarding learners. Why did you choose to establish separate schools?",
+    paragraphs: [
+      "Our decision was driven by the desire to provide the best possible learning experience for every child.",
+      "Boarding learners have a very different daily routine from day scholars. They begin their academic activities before 7:00 a.m. and often continue learning until after 8:00 p.m. During weekends and public holidays, they also participate in structured academic programmes.",
+      "Many parents of day scholars felt their children were disadvantaged and therefore insisted on extra evening \"prep\" lessons to keep pace with their boarding counterparts. We realised that both groups had unique needs that could be better served in separate learning environments.",
+      "In 2019, we established a dedicated day school designed specifically for day learners and their families. This model allows each school to provide programmes that best suit the lifestyle, wellbeing, and learning needs of its students."
+    ]
+  },
+  {
+    question: "Along the way, you ventured into secondary education. Why?",
+    paragraphs: [
+      "As our learners completed primary school, many parents expressed concern that they struggled to adjust to the secondary schools they joined.",
+      "After experiencing Gombe Junior School's holistic approach to education, they found themselves in environments that placed almost exclusive emphasis on academics. They missed the balanced lifestyle they had become accustomed to—including co-curricular activities, ICT integration, nutritious meals, leadership opportunities, clubs, life skills, and values-based education.",
+      "Listening to the voices of our parents and learners, we recognised the need to provide continuity.",
+      "This inspired us to acquire St. Andrew Kaggwa and Daniels Primary and Secondary Schools, which we transformed into Gombe High School – Kawaala, officially opening in 2016.",
+      "Our journey continued in 2022 with the acquisition of King's College Bujuuko, which became Gombe High School – Bujuuko and welcomed its first learners in 2023.",
+      "Today, both campuses continue the GES philosophy of holistic education, preparing students not only for academic success but also for responsible leadership and lifelong achievement."
+    ]
+  },
+  {
+    question: "The International Pathway Programme is now part of the GES brand. What inspired it?",
+    paragraphs: [
+      "The International Pathway Programme (IPP) was born from our own family's experience.",
+      "After our eldest son, Timothy, completed his education at Rainbow International School, we found that there were limited opportunities in Uganda that aligned with his academic aspirations. We therefore enrolled him at Braemar College in Toronto, Canada.",
+      "We discovered that students wishing to join Canadian universities after O-Level are required to complete the Ontario Secondary School Diploma (OSSD) as a preparatory qualification.",
+      "This inspired a partnership with Braemar College to enable East African students to study the OSSD while remaining in Uganda for one year before proceeding to university abroad. The programme proved to be both affordable and practical. It allowed students to remain close to their families during an important stage of their development while significantly reducing the time and cost of pursuing international education.",
+      "As demand grew, we expanded the initiative beyond Canada by transforming the Canada Pathway Programme (CPP) into the International Pathway Programme (IPP).",
+      "Today, IPP provides students with affordable pathways to quality universities in Canada, the United Kingdom, the United States, Germany, Australia, Cyprus, the United Arab Emirates, and other international destinations, opening doors to a truly global education."
+    ]
+  },
+  {
+    question: "GES recently acquired Jimmy Sekasi Business Institute (JSBI). Why the move into higher education?",
+    paragraphs: [
+      "Our vision has always been to provide learners with a complete educational journey.",
+      "The knowledge, skills, and values we nurture from nursery through secondary education reach their fullest potential when learners have opportunities to continue into higher education within the same philosophy of excellence.",
+      "To complete this educational pathway, we acquired Jimmy Sekasi Business Institute (JSBI) and established the Gombe Institute of Business, Science and Technology (GIBST).",
+      "Our goal is to produce graduates who are academically competent, professionally skilled, innovative, and ready to contribute meaningfully to society. Looking ahead, we aspire to expand our programmes and eventually offer university degree courses, making GES a comprehensive centre for lifelong learning."
+    ]
+  },
+  {
+    question: "Every success comes with challenges. What have been the biggest obstacles during this journey?",
+    paragraphs: [
+      "Like every worthwhile journey, ours has been marked by significant challenges.",
+      "One of the most difficult moments was parting ways with the principal with whom we had originally shared the vision of building a truly holistic school. Although our paths eventually diverged, his contribution to laying the foundation of GES remains an important part of our story.",
+      "The education sector has also become increasingly competitive, with substantial investment driving up operational costs. New schools are often compelled to invest at levels previously associated with long-established institutions, making sustainable growth much more difficult.",
+      "Another challenge has been the tendency for many parents to judge schools solely by examination results. While academic excellence is important, we believe education should also develop character, creativity, leadership, practical skills, and values. Holistic education requires investment in sports facilities, ICT infrastructure, science laboratories, clubs, and enrichment programmes—areas that deserve greater support from all stakeholders.",
+      "The COVID-19 pandemic presented perhaps our greatest test. School closures, declining enrolment, continuing loan obligations, and the responsibility of supporting staff created unprecedented pressure on the institution.",
+      "On a personal level, the greatest loss was the passing of my wife and fellow Director, whose unwavering commitment helped shape Gombe Education Service. She devoted herself tirelessly to the schools and was a passionate advocate for the education and empowerment of the girl child.",
+      "Today, of the three individuals who first envisioned GES, I am the only one still here. Yet despite every challenge, our mission has remained unchanged. With faith in God, the dedication of our staff, and the continued trust of our parents and learners, we have remained resilient and continue to move forward with confidence."
+    ]
+  },
+  {
+    question: "How have you been able to overcome these challenges and achieve this level of success?",
+    paragraphs: [
+      "Our greatest strength has been the people who believe in and share our vision. Over the years, we have been blessed with committed teams who understand what Gombe Education Service stands for and have remained dedicated to our mission of providing holistic education.",
+      "Our governance boards have also played an invaluable role from the very beginning. Their guidance, support, and strategic oversight have helped us navigate challenges and remain focused on our long-term goals.",
+      "Our parents have been another pillar of our success. They believed in us even when our infrastructure was far from ideal. Beyond paying school fees, many became ambassadors for our schools by recommending us to other families, donating books, contributing resources, and supporting school events. Their trust gave us the confidence to continue growing.",
+      "Our learners themselves have been our greatest testimony. Many choose to remain with us throughout their educational journey because of the unique care, values, and learning environment we provide. Even when circumstances lead parents to transfer them elsewhere, many learners express a strong desire to return, reflecting the lasting impact of the GES experience.",
+      "I am also deeply grateful to my family, especially my late wife, Rose. She stood by the schools through every stage of their growth and remained fully committed until her passing. During the COVID-19 lockdown, I remember her waking up early every morning to prepare Zoom lesson meeting IDs and personally following every lesson from Nursery through Senior Six. She devoted her life to ensuring that our learners continued receiving quality education despite the challenges.",
+      "Above all, we acknowledge that every success we have achieved has been by God's grace. Throughout our journey, the Church has been a constant source of encouragement and support. In particular, I am grateful to Bishop Wilberforce Kityo Luwalira, who has stood with our family and Gombe Education Service through both our triumphs and our most difficult moments."
+    ]
+  },
+  {
+    question: "As an experienced school proprietor, what advice would you give to parents and fellow school owners?",
+    paragraphs: [
+      "Parents play a vital role in their children's education. Their responsibility goes far beyond paying school fees. They should actively participate in school life, maintain close relationships with teachers, and remain involved in their children's academic, emotional, and personal development. Education is a shared responsibility, and teachers and parents are partners in raising the next generation.",
+      "To fellow school proprietors, I encourage us to work together in restoring an education system that develops the whole child rather than focusing solely on examination results. Academic excellence is important, but it should be complemented by character formation, creativity, innovation, leadership, practical skills, and strong values.",
+      "Every school, regardless of its size or resources, can contribute to nurturing learners who are confident, compassionate, and prepared to solve the challenges of tomorrow.",
+      "I also encourage school owners to build institutions that can outlive them. Strong governance, capable leadership, and sustainable systems ensure that a school's vision continues to thrive even after its founders have retired or are no longer present."
+    ]
+  },
+  {
+    question: "Paint for us a picture of the future of Gombe Education Service.",
+    paragraphs: [
+      "The future of Gombe Education Service is one of continued growth, innovation, and greater impact.",
+      "As we embark on the next chapter of our journey, our ambition is to extend our influence beyond our school campuses into the communities we serve, across Uganda, and throughout the world. We aspire to produce graduates who are not only academically accomplished but also ethical leaders, responsible citizens, and agents of positive change.",
+      "Our vision is for GES to become a place where our values are not merely displayed on classroom walls or recited during assemblies, but are lived every day by our learners, staff, alumni, and the wider community.",
+      "We aim to be a centre of educational excellence that inspires others through innovation, holistic learning, and a steadfast commitment to developing the full potential of every learner.",
+      "As we continue to expand our educational pathways—from early childhood through higher education—we remain guided by the same purpose that inspired our founding: to transform lives through education that prepares learners for success in school, in life, and in service to society.",
+      "The future holds tremendous promise for Gombe Education Service, and we look forward to shaping it together with our learners, parents, staff, partners, and the communities we proudly serve."
+    ]
+  }
+];
 </script>
 
 <style scoped>
+@import url('https://fonts.cdnfonts.com/css/times-new-roman');
+
 .container-rpl {
   max-width: 1280px;
   margin: 0 auto;
@@ -854,4 +1083,212 @@ const involved = [
   border-color: var(--rescue-dark, #1A1A1A);
 }
 .btn-rescue--dark:hover { background: #000; }
+
+/* ── GES Journey Preface ── */
+.ges-journey-preface {
+  margin-top: 1.5rem;
+}
+.ges-journey-preface__card {
+  max-width: 100%;
+  background: var(--rescue-white, #ffffff);
+  border: 1px solid var(--rescue-border, #E0E0E0);
+  border-left: 6px solid var(--rescue-yellow, #FFC72C);
+  padding: 1.5rem 2rem;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.ges-journey-preface__slug {
+  margin-bottom: 0.75rem;
+}
+.ges-journey-preface__quote {
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--rescue-charcoal, #3D3D3D);
+  margin-bottom: 1rem;
+  font-style: italic;
+  text-align: justify;
+}
+.ges-journey-preface__action {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* ── GES Journey Modal ── */
+.journey-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.journey-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 900px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.4);
+  border-top: 5px solid #8C1427; /* Brand Burgundy */
+  outline: none;
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+}
+.journey-modal__header {
+  padding: 2rem 2.5rem 1.5rem;
+  border-bottom: 1px solid var(--rescue-border, #E0E0E0);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.journey-modal__title-area {
+  flex: 1;
+}
+.journey-modal__slug {
+  margin-bottom: 0.5rem;
+}
+.journey-modal__title {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 800;
+  color: var(--rescue-dark, #1A1A1A);
+  line-height: 1.15;
+}
+.journey-modal__subtitle {
+  font-size: 1rem;
+  color: #8C1427;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+.journey-modal__close-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--rescue-charcoal, #3D3D3D);
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.journey-modal__close-btn:hover {
+  color: #8C1427;
+  transform: rotate(90deg);
+}
+.journey-modal__body {
+  padding: 2.5rem;
+  overflow-y: auto;
+  flex: 1;
+  background: #fafafa;
+}
+.journey-modal__intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px dashed var(--rescue-border, #E0E0E0);
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .journey-modal__intro {
+    grid-template-columns: 1fr 200px;
+  }
+}
+.journey-modal__intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--rescue-charcoal, #3D3D3D);
+  margin-bottom: 1rem;
+}
+.journey-modal__intro-text p:last-child {
+  margin-bottom: 0;
+}
+.journey-modal__intro-media {
+  display: flex;
+  justify-content: center;
+}
+.journey-modal__director-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--rescue-yellow, #FFC72C);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  filter: grayscale(1) contrast(1.05);
+}
+.journey-modal__qa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.journey-modal__qa-item {
+  border-left: 4px solid var(--rescue-yellow, #FFC72C);
+  padding-left: 1.75rem;
+}
+.journey-modal__question {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--rescue-dark, #1A1A1A);
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+.journey-modal__question-number {
+  background: #8C1427;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  line-height: 1;
+}
+.journey-modal__answer p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #333333;
+  margin-bottom: 1.1rem;
+  text-align: justify;
+}
+.journey-modal__answer p:last-child {
+  margin-bottom: 0;
+}
+.journey-modal__footer {
+  padding: 1.5rem 2.5rem;
+  border-top: 1px solid var(--rescue-border, #E0E0E0);
+  display: flex;
+  justify-content: flex-end;
+  background: var(--rescue-grey-light, #F5F5F5);
+}
+
+/* ── Journey Modal Transitions ── */
+.journey-modal-fade-enter-active,
+.journey-modal-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.journey-modal-fade-enter-from,
+.journey-modal-fade-leave-to {
+  opacity: 0;
+}
+.journey-modal-fade-enter-active .journey-modal,
+.journey-modal-fade-leave-active .journey-modal {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+.journey-modal-fade-enter-from .journey-modal,
+.journey-modal-fade-leave-to .journey-modal {
+  transform: translateY(20px) scale(0.97);
+  opacity: 0;
+}
 </style>
