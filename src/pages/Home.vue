@@ -243,66 +243,66 @@
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- ── GES Journey Modal ── -->
-  <Teleport to="body">
-    <Transition name="journey-modal-fade">
-      <div v-if="isJourneyModalOpen" class="journey-modal-backdrop" @click="closeJourneyModal">
-        <div class="journey-modal" @click.stop role="dialog" aria-modal="true" aria-labelledby="journey-modal-title" id="journey-modal">
-          <!-- Modal Header -->
-          <div class="journey-modal__header">
-            <div class="journey-modal__title-area">
-              <span class="rpl-slug journey-modal__slug">GES History</span>
-              <h2 id="journey-modal-title" class="journey-modal__title">The GES Journey</h2>
-              <p class="journey-modal__subtitle">A Dozen Questions with the Director of Gombe Education Service</p>
-            </div>
-            <button class="journey-modal__close-btn" @click="closeJourneyModal" aria-label="Close modal">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </button>
-          </div>
-
-          <!-- Modal Body (Scrollable) -->
-          <div class="journey-modal__body">
-            <!-- Interview Preface Intro -->
-            <div class="journey-modal__intro">
-              <div class="journey-modal__intro-text">
-                <p>
-                  For more than a decade, Gombe Education Service (GES) has grown from a single vision into one of Uganda's leading education providers, offering holistic learning from early childhood to higher education. Behind this remarkable journey is <strong>Owekitiibwa Kyewalabye Male David</strong>, whose passion for transforming education was inspired by his own experiences as a parent.
-                </p>
-                <p>
-                  In this exclusive interview, he shares the story behind the founding of GES, the challenges that shaped its growth, and the vision that continues to inspire its future.
-                </p>
+    <!-- ── GES Journey Modal ── -->
+    <Teleport to="body">
+      <Transition name="journey-modal-fade">
+        <div v-if="isJourneyModalOpen" class="journey-modal-backdrop" @click="closeJourneyModal">
+          <div class="journey-modal" @click.stop role="dialog" aria-modal="true" aria-labelledby="journey-modal-title" id="journey-modal">
+            <!-- Modal Header -->
+            <div class="journey-modal__header">
+              <div class="journey-modal__title-area">
+                <span class="rpl-slug journey-modal__slug">GES History</span>
+                <h2 id="journey-modal-title" class="journey-modal__title">The GES Journey</h2>
+                <p class="journey-modal__subtitle">A Dozen Questions with the Director of Gombe Education Service</p>
               </div>
-              <div class="journey-modal__intro-media">
-                <img src="/images/Owek. Kyewalabye David Male.png" alt="Owekitiibwa Kyewalabye Male David" class="journey-modal__director-img" />
-              </div>
+              <button class="journey-modal__close-btn" @click="closeJourneyModal" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
             </div>
 
-            <!-- Q&A List -->
-            <div class="journey-modal__qa-list">
-              <div v-for="(qa, index) in interviewQA" :key="index" class="journey-modal__qa-item">
-                <h3 class="journey-modal__question">
-                  <span class="journey-modal__question-number">{{ index + 1 }}</span>
-                  {{ qa.question }}
-                </h3>
-                <div class="journey-modal__answer">
-                  <p v-for="(p, pIdx) in qa.paragraphs" :key="pIdx">{{ p }}</p>
+            <!-- Modal Body (Scrollable) -->
+            <div class="journey-modal__body">
+              <!-- Interview Preface Intro -->
+              <div class="journey-modal__intro">
+                <div class="journey-modal__intro-text">
+                  <p>
+                    For more than a decade, Gombe Education Service (GES) has grown from a single vision into one of Uganda's leading education providers, offering holistic learning from early childhood to higher education. Behind this remarkable journey is <strong>Owekitiibwa Kyewalabye Male David</strong>, whose passion for transforming education was inspired by his own experiences as a parent.
+                  </p>
+                  <p>
+                    In this exclusive interview, he shares the story behind the founding of GES, the challenges that shaped its growth, and the vision that continues to inspire its future.
+                  </p>
+                </div>
+                <div class="journey-modal__intro-media">
+                  <img src="/images/Owek. Kyewalabye David Male.png" alt="Owekitiibwa Kyewalabye Male David" class="journey-modal__director-img" />
+                </div>
+              </div>
+
+              <!-- Q&A List -->
+              <div class="journey-modal__qa-list">
+                <div v-for="(qa, index) in interviewQA" :key="index" class="journey-modal__qa-item">
+                  <h3 class="journey-modal__question">
+                    <span class="journey-modal__question-number">{{ index + 1 }}</span>
+                    {{ qa.question }}
+                  </h3>
+                  <div class="journey-modal__answer">
+                    <p v-for="(p, pIdx) in qa.paragraphs" :key="pIdx">{{ p }}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Modal Footer -->
-          <div class="journey-modal__footer">
-            <button @click="closeJourneyModal" class="btn-rescue btn-rescue--outline">
-              Close Reader
-            </button>
+            <!-- Modal Footer -->
+            <div class="journey-modal__footer">
+              <button @click="closeJourneyModal" class="btn-rescue btn-rescue--outline">
+                Close Reader
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </Transition>
-  </Teleport>
+      </Transition>
+    </Teleport>
+  </div>
 </template>
 
 <script setup lang="ts">
