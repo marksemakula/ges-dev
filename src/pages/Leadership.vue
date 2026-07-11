@@ -407,8 +407,12 @@ const managementTeam = [
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  position: sticky;
-  top: 100px;
+}
+@media (min-width: 1024px) {
+  .director-profile__photo-wrap {
+    position: sticky;
+    top: 100px;
+  }
 }
 .director-profile__photo {
   border-radius: 20px;
