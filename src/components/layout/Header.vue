@@ -157,13 +157,13 @@ const navLinks = [
 ];
 
 const institutions = [
-  { name: 'Gombe Institute of Business Science & Technology (GIBST)', shortName: 'GIBST', path: '/institutions/jsbi', url: 'http://gibst.ac.ug/', description: 'Business & Vocational Training' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', shortName: 'SAKGHS Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'http://gombehighschool.ac.ug/', description: 'Advanced Secondary Education' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', shortName: 'SAKGHS Kawaala', path: '/institutions/sakghs-kawaala', url: 'http://gombehighschool.ac.ug/', description: 'Advanced Secondary Education' },
-  { name: 'Gombe Junior School - Kampala', shortName: 'GJS Kampala', path: '/institutions/gjs-kampala', url: 'http://gombejuniorschool.ac.ug/', description: 'Primary Education' },
-  { name: 'Gombe Junior School - Gulu', shortName: 'GJS Gulu', path: '/institutions/gjs-gulu', url: 'http://gombejuniorschool.ac.ug/', description: 'Primary Education' },
   { name: 'ScoobyDoo International School Uganda - Kampala', shortName: 'SISU Kampala', path: '/institutions/sisu-kampala', url: 'http://scoobydoointernational.ac.ug/', description: 'International Curriculum' },
   { name: 'ScoobyDoo International School Uganda - Gulu', shortName: 'SISU Gulu', path: '/institutions/sisu-gulu', url: 'http://scoobydoointernational.ac.ug/', description: 'International Curriculum' },
+  { name: 'Gombe Junior School - Kampala', shortName: 'GJS Kampala', path: '/institutions/gjs-kampala', url: 'http://gombejuniorschool.ac.ug/', description: 'Primary Education' },
+  { name: 'Gombe Junior School - Gulu', shortName: 'GJS Gulu', path: '/institutions/gjs-gulu', url: 'http://gombejuniorschool.ac.ug/', description: 'Primary Education' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', shortName: 'SAKGHS Kawaala', path: '/institutions/sakghs-kawaala', url: 'http://gombehighschool.ac.ug/', description: 'Advanced Secondary Education' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', shortName: 'SAKGHS Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'http://gombehighschool.ac.ug/', description: 'Advanced Secondary Education' },
+  { name: 'Gombe Institute of Business Science & Technology (GIBST)', shortName: 'GIBST', path: '/institutions/jsbi', url: 'http://gibst.ac.ug/', description: 'Business & Vocational Training' },
   { name: 'International Education Pathways Program', shortName: 'IPP', path: '/institutions/iepp', url: 'https://ipp.ges.ac.ug', description: 'Global Study Pathways' },
 ];
 
