@@ -322,7 +322,7 @@ const slideshowImages = [
   '/images/slideshow/slideshow_6.png',
   '/images/slideshow/IMG_6935.JPG',
   '/images/slideshow/GES Founders.png',
-  '/images/slideshow/slideshow_5.jpg',
+  '/images/slideshow/prayer.png',
   '/images/slideshow/hero-triptych-gulu.jpeg',
   '/images/slideshow/IMG_9718.JPG',
   '/images/slideshow/_MG_7424.JPG',
