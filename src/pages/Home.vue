@@ -1186,6 +1186,21 @@ const interviewQA = [
   border-radius: 0;
   overflow: hidden;
 }
+.journey-modal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/Mrs. Rosalind Tanayita Kyewalabye.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
 .journey-modal__header {
   padding: 2rem 2.5rem 1.5rem;
   border-bottom: 1px solid var(--rescue-border, #E0E0E0);
@@ -1193,6 +1208,9 @@ const interviewQA = [
   justify-content: space-between;
   align-items: flex-start;
   gap: 1.5rem;
+  background: #ffffff;
+  position: relative;
+  z-index: 2;
 }
 .journey-modal__title-area {
   flex: 1;
@@ -1231,7 +1249,9 @@ const interviewQA = [
   padding: 2.5rem;
   overflow-y: auto;
   flex: 1;
-  background: #fafafa;
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 .journey-modal__intro {
   display: grid;
@@ -1241,10 +1261,13 @@ const interviewQA = [
   padding-bottom: 2.5rem;
   border-bottom: 1px dashed var(--rescue-border, #E0E0E0);
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .journey-modal__intro {
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 1fr 320px;
+    gap: 3rem;
   }
 }
 .journey-modal__intro-text p {
@@ -1261,8 +1284,10 @@ const interviewQA = [
   justify-content: center;
 }
 .journey-modal__director-img {
-  width: 160px;
-  height: 160px;
+  width: 320px;
+  height: 320px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--rescue-yellow, #FFC72C);
@@ -1273,6 +1298,8 @@ const interviewQA = [
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  position: relative;
+  z-index: 1;
 }
 .journey-modal__qa-item {
   border-left: 4px solid var(--rescue-yellow, #FFC72C);
@@ -1315,6 +1342,8 @@ const interviewQA = [
   display: flex;
   justify-content: flex-end;
   background: var(--rescue-grey-light, #F5F5F5);
+  position: relative;
+  z-index: 2;
 }
 
 /* ── Journey Modal Transitions ── */
