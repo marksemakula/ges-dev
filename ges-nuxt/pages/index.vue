@@ -55,18 +55,25 @@
     <section class="rpl-section">
       <div class="container-rpl">
         <div class="quote-cta">
-          <div class="quote-cta__media">
+          <div class="quote-cta__media quote-cta__media--left">
             <img src="/images/Owek. Kyewalabye David Male.png" alt="Owek. Kyewalabye Male David" />
+            <div class="quote-cta__author">
+              <strong>Owek. Kyewalabye Male David</strong>
+              <span>Managing Director, Gombe Education Service</span>
+            </div>
           </div>
           <div class="quote-cta__content">
             <blockquote class="quote-cta__text">
               "Our institutions are built on the conviction that every child deserves an education that nurtures their full potential - academically, morally, and as a citizen of the world."
             </blockquote>
-            <div class="quote-cta__author">
-              <strong>Owek. Kyewalabye Male David</strong>
-              <span>Managing Director, Gombe Education Service</span>
-            </div>
             <RouterLink to="/leadership" class="btn-rescue btn-rescue--primary quote-cta__btn">Meet Our Leadership</RouterLink>
+          </div>
+          <div class="quote-cta__media quote-cta__media--right">
+            <img src="/images/Mrs. Rosalind Tanayita Kyewalabye.png" alt="Mrs. Rosalind Tanayita Kyewalabye" />
+            <div class="quote-cta__author">
+              <strong>Late Mrs. Rosalind Tanayita Kyewalabye</strong>
+              <span>Co-Founder - Gombe Education Service</span>
+            </div>
           </div>
         </div>
       </div>
@@ -652,25 +659,57 @@ const involved = [
   padding: 2.5rem;
   align-items: center;
 }
-@media (min-width: 900px) {
-  .quote-cta { grid-template-columns: 280px 1fr; gap: 3rem; }
-}
 .quote-cta__media img {
   width: 100%;
-  max-width: 280px;
+  max-width: 260px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
   margin: 0 auto;
   display: block;
 }
+.quote-cta__content {
+  position: relative;
+}
+@media (max-width: 1023px) {
+  .quote-cta__content {
+    order: -1;
+    text-align: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .quote-cta {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .quote-cta__content {
+    grid-column: 1 / -1;
+  }
+  .quote-cta__media--left {
+    justify-self: right;
+  }
+  .quote-cta__media--right {
+    justify-self: left;
+  }
+}
+@media (min-width: 1024px) {
+  .quote-cta {
+    grid-template-columns: 260px 1fr 260px;
+    gap: 3.5rem;
+  }
+}
 .quote-cta__text {
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.1rem, 2.1vw, 1.45rem);
   font-weight: 700;
   line-height: 1.4;
   color: var(--rescue-dark, #1A1A1A);
 }
-.quote-cta__author {
+.quote-cta__media .quote-cta__author {
   margin-top: 1.25rem;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 .quote-cta__author strong { font-size: 1rem; color: var(--rescue-dark, #1A1A1A); }
 .quote-cta__author span { font-size: 0.85rem; color: var(--rescue-text-secondary, #555); }

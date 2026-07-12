@@ -75,19 +75,26 @@
     <!-- ── Leadership quote: full-width black band ── -->
     <section class="quote-band">
       <div class="container-rpl quote-band__inner">
-        <div class="quote-band__media">
+        <div class="quote-band__media quote-band__media--left">
           <img src="/images/Owek. Kyewalabye David Male.png" alt="Owek. Kyewalabye Male David" />
+          <div class="quote-band__author">
+            <strong>Owek. Kyewalabye Male David</strong>
+            <span>Managing Director, Gombe Education Service</span>
+          </div>
         </div>
         <div class="quote-band__content">
           <span class="quote-band__mark" aria-hidden="true">&ldquo;</span>
           <blockquote class="quote-band__text">
             Our institutions are built on the conviction that every child deserves an education that nurtures their full potential - academically, morally, and as a citizen of the world.
           </blockquote>
-          <div class="quote-band__author">
-            <strong>Owek. Kyewalabye Male David</strong>
-            <span>Managing Director, Gombe Education Service</span>
-          </div>
           <RouterLink to="/leadership" class="btn-rescue btn-rescue--primary quote-band__btn">Meet Our Leadership</RouterLink>
+        </div>
+        <div class="quote-band__media quote-band__media--right">
+          <img src="/images/Mrs. Rosalind Tanayita Kyewalabye.png" alt="Mrs. Rosalind Tanayita Kyewalabye" />
+          <div class="quote-band__author">
+            <strong>Late Mrs. Rosalind Tanayita Kyewalabye</strong>
+            <span>Co-Founder - Gombe Education Service</span>
+          </div>
         </div>
       </div>
     </section>
@@ -710,19 +717,51 @@ const interviewQA = [
   gap: 2.5rem;
   align-items: center;
 }
-@media (min-width: 900px) {
-  .quote-band__inner { grid-template-columns: 300px 1fr; gap: 4rem; }
-}
 .quote-band__media img {
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
   margin: 0 auto;
   display: block;
   filter: grayscale(1) contrast(1.05);
+}
+.quote-band__media--left img {
   box-shadow: 12px 12px 0 var(--rescue-yellow, #FFC72C);
+}
+.quote-band__media--right img {
+  box-shadow: -12px 12px 0 var(--rescue-yellow, #FFC72C);
 }
 .quote-band__content {
   position: relative;
+}
+@media (max-width: 1023px) {
+  .quote-band__content {
+    order: -1;
+    text-align: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .quote-band__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .quote-band__content {
+    grid-column: 1 / -1;
+  }
+  .quote-band__media--left {
+    justify-self: right;
+  }
+  .quote-band__media--right {
+    justify-self: left;
+  }
+}
+@media (min-width: 1024px) {
+  .quote-band__inner {
+    grid-template-columns: 280px 1fr 280px;
+    gap: 4rem;
+  }
 }
 .quote-band__mark {
   display: block;
@@ -733,15 +772,17 @@ const interviewQA = [
   margin-bottom: 1.25rem;
 }
 .quote-band__text {
-  font-size: clamp(1.3rem, 2.6vw, 1.85rem);
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
   font-weight: 700;
   line-height: 1.4;
   color: #fff;
 }
-.quote-band__author {
-  margin-top: 1.5rem;
+.quote-band__media .quote-band__author {
+  margin-top: 1.25rem;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 .quote-band__author strong { font-size: 1rem; color: var(--rescue-yellow, #FFC72C); }
 .quote-band__author span { font-size: 0.85rem; color: rgba(255, 255, 255, 0.65); margin-top: 2px; }
