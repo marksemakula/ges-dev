@@ -37,7 +37,7 @@
                   <span class="sidebar__icon" aria-hidden="true">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
                   </span>
-                  <span>Director, Gombe Education Service</span>
+                  <span>Executive Director, Gombe Education Service</span>
                 </li>
                 <li>
                   <span class="sidebar__icon" aria-hidden="true">
@@ -77,9 +77,9 @@
                 </li>
               </ul>
               <div class="sidebar__contact">
-                <a href="mailto:director@ges.ac.ug" class="sidebar__contact-link" aria-label="Email Owekitiibwa Kyewalabye Male David">
+                <a href="mailto:ed@ges.ac.ug" class="sidebar__contact-link" aria-label="Email Owekitiibwa Kyewalabye Male David">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
-                  director@ges.ac.ug
+                  ed@ges.ac.ug
                 </a>
               </div>
             </div>
@@ -89,7 +89,7 @@
           <div class="director-profile__bio-wrap">
             <header class="director-profile__header">
               <h2 class="director-profile__name" itemprop="name">Owekitiibwa Kyewalabye Male David</h2>
-              <p class="director-profile__title" itemprop="jobTitle">Director – Gombe Education Service &amp; Gombe Medical Hospital</p>
+              <p class="director-profile__title" itemprop="jobTitle">Executive Director – Gombe Education Service &amp; Gombe Medical Hospital</p>
               <div class="director-profile__tags" aria-label="Areas of expertise">
                 <span class="profile-tag">Educationalist</span>
                 <span class="profile-tag">Business Executive</span>
@@ -181,11 +181,11 @@ import { onMounted, onUnmounted } from 'vue';
 
 /* ── Dynamic SEO ─────────────────────────────────────────────────────────── */
 const PAGE_TITLE =
-  'Owekitiibwa Kyewalabye Male David – Director | Gombe Education Service';
+  'Owekitiibwa Kyewalabye Male David – Executive Director | Gombe Education Service';
 const PAGE_DESC =
-  'Owekitiibwa Kyewalabye Male David is the Director of Gombe Education Service (GES) and Gombe Medical Hospital. A distinguished Ugandan educationalist, author of Buganda Kika, former Minister for Culture in Buganda Kingdom, former MD of Buganda Land Board, Rotarian, and business executive.';
+  'Owekitiibwa Kyewalabye Male David is the Executive Director of Gombe Education Service (GES) and Gombe Medical Hospital. A distinguished Ugandan educationalist, author of Buganda Kika, former Minister for Culture in Buganda Kingdom, former MD of Buganda Land Board, Rotarian, and business executive.';
 const PAGE_KEYWORDS =
-  'Owekitiibwa Kyewalabye Male David, GES Director, Gombe Education Service, Gombe Medical Hospital, Buganda Kingdom, Buganda Land Board, Buganda Kika book, Namirembe Diocese, Rotary Club Rubaga Lake View, Uganda education leader, BUCADEF, Buganda Cultural Development Foundation';
+  'Owekitiibwa Kyewalabye Male David, GES Executive Director, Gombe Education Service, Gombe Medical Hospital, Buganda Kingdom, Buganda Land Board, Buganda Kika book, Namirembe Diocese, Rotary Club Rubaga Lake View, Uganda education leader, BUCADEF, Buganda Cultural Development Foundation';
 
 let previousTitle = '';
 let injectedMeta: HTMLElement[] = [];
