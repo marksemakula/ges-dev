@@ -319,10 +319,10 @@ import { Vue3Marquee } from 'vue3-marquee';
 /* ── Hero slideshow (single full-bleed crossfade + ken burns) ── */
 const slideshowImages = [
   '/images/slideshow/slideshow_4.jpg',
-  '/images/slideshow/slideshow_6.png',
+  '/images/slideshow/slideshow_6.jpg',
   '/images/slideshow/IMG_6935.JPG',
-  '/images/slideshow/GES Founders.png',
-  '/images/slideshow/prayer.png',
+  '/images/slideshow/GES Founders.jpg',
+  '/images/slideshow/prayer.jpg',
   '/images/slideshow/hero-triptych-gulu.jpeg',
   '/images/slideshow/IMG_9718.JPG',
   '/images/slideshow/_MG_7424.JPG',
@@ -582,11 +582,16 @@ const interviewQA = [
   background-size: cover;
   background-position: 50% 35%;
   background-repeat: no-repeat;
-  animation: hero-kenburns 14s ease-out forwards;
+  /* Zoom OUT (1.08 -> 1) rather than in: the browser rasterises the layer
+     once, so ending at scale(1) keeps the frame pixel-crisp instead of
+     GPU-upscaled and blurry. Duration ~= the 6s slide interval. */
+  animation: hero-kenburns 7s ease-out forwards;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 @keyframes hero-kenburns {
-  from { transform: scale(1); }
-  to   { transform: scale(1.08); }
+  from { transform: scale(1.08) translateZ(0); }
+  to   { transform: scale(1) translateZ(0); }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-cine__img { animation: none; }
