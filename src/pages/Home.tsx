@@ -180,7 +180,7 @@ const Home: React.FC = () => {
       path: "/institutions/gjs-gulu",
       url: "https://gjs-gulu.vercel.app/",
       type: "Day School",
-      image: "/images/heather-suggitt-AjB5qK2rnbU-unsplash.jpg",
+      image: "/images/GJS Gulu class.jpeg",
     },
     {
       name: "St. Andrew Kaggwa Gombe High School - Kawaala",
