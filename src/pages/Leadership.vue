@@ -3,7 +3,7 @@
     <!-- SEO: Page Hero -->
     <section class="page-hero">
       <div class="container animate-fade-in">
-        <p class="page-hero__eyebrow">School Management</p>
+        <p class="page-hero__eyebrow">Governance</p>
         <h1 class="page-hero__title">Our Leadership</h1>
         <p class="page-hero__subtitle">Meet the visionary leaders who drive excellence, governance, and academic innovation across all Gombe Education Services institutions.</p>
       </div>
