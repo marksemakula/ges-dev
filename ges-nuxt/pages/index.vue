@@ -17,12 +17,6 @@
             <RouterLink to="/about" class="btn-rescue btn-rescue--outline">Learn More</RouterLink>
           </div>
         </div>
-        <div class="hero-split__recognised">
-          <span class="hero-split__recognised-label">Recognised by</span>
-          <div class="hero-split__recognised-logos">
-            <img v-for="logo in recognisedBy" :key="logo.name" :src="logo.src" :alt="logo.name" :title="logo.name" />
-          </div>
-        </div>
       </div>
       <div class="hero-split__media">
         <div v-for="s in 3" :key="s" class="hero-split__slice">
@@ -35,6 +29,21 @@
               aria-label="Students of Gombe Education Service"
             />
           </Transition>
+        </div>
+      </div>
+      <div class="hero-split__recognised">
+        <div class="hero-split__recognised-block">
+          <span class="hero-split__recognised-label">Recognised by</span>
+          <div class="hero-split__recognised-logos">
+            <img
+              v-for="logo in recognisedBy"
+              :key="logo.name"
+              :src="logo.src"
+              :alt="logo.name"
+              :title="logo.name"
+              :style="{ '--logo-scale': logoScales[logo.name] || 1, '--gap-mult': gapBefore[logo.name] || 1 }"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -276,12 +285,42 @@ onUnmounted(() => {
 
 /* ── Recognised by (hero strip) ── */
 const recognisedBy = [
-  { name: 'Ministry of Education', src: '/images/MoES1.png' },
-  { name: 'UTB',                   src: '/images/UTB.png' },
-  { name: 'Kingdom of Buganda',    src: '/images/Flag_of_Buganda.svg' },
-  { name: 'Braemar College',       src: '/images/braemar.webp' },
-  { name: 'KISU',                  src: '/images/KISU.png' },
-];
+  { name: 'Ministry of Education',   src: '/images/MoES1.png' },
+  { name: 'British Council',         src: '/images/British Council.png' },
+  { name: 'Kingdom of Buganda',      src: '/images/Flag_of_Buganda.svg' },
+  { name: 'Braemar College',         src: '/images/braemar.webp' },
+  { name: 'KISU',                    src: '/images/KISU.png' },
+  { name: 'IEAC',                    src: '/images/IEAC.png' },
+  { name: 'UNESCO',                  src: '/images/UNESCO.png' },
+  { name: 'Microsoft Education',     src: '/images/MicroSoft Education.png' },
+  { name: 'World Bank',              src: '/images/World Bank.png' },
+  { name: 'University of Cambridge', src: '/images/University_of_Cambridge-Logo.png' },
+  { name: 'Aga Khan Foundation',     src: '/images/Aga Khan Foundation.png' },
+  { name: 'NCHE',                    src: '/images/NCHE.png' },
+]
+
+/* Height multiplier per logo (1 = base size) */
+const logoScales: Record<string, number> = {
+  'British Council': 2,
+  'University of Cambridge': 2,
+  'Microsoft Education': 2,
+  'NCHE': 2,
+  'Aga Khan Foundation': 2,
+  'World Bank': 2.2,
+  'UNESCO': 2.8,
+  'IEAC': 1.4,
+  'SAI': 1.1,
+};
+/* Gap to the left neighbour, in multiples of the base gap (1 = base) */
+const gapBefore: Record<string, number> = {
+  'Braemar College': 2,
+  'SAI': 4,
+  'KISU': 4,
+  'IEAC': 4,
+  'UNESCO': 2,
+  'Microsoft Education': 2,
+  'World Bank': 2,
+};
 
 /* ── Partners carousel ── */
 const partnerLogos = [
@@ -301,10 +340,10 @@ const institutions = [
   { name: 'Gombe Institute of Business Science & Technology (GIBST)', type: 'Vocational Institute', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', image: '/images/JIMMY SEKASI.JPG', path: '/institutions/jsbi', url: 'https://www.gibst.ac.ug/', description: 'Equipping students with practical business, vocational, and hands-on skills.' },
   { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/Gombe High School - Bujuuko.png', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Nurturing tomorrow\'s leaders through quality education.' },
   { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/IMG_9718.JPG', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced secondary education with a focus on academic excellence.' },
+  { name: 'ScoobyDoo International School Uganda - Gulu', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-01-12-29_IMG_3773.jpg', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'Bringing international education to Northern Uganda.' },
   { name: 'Gombe Junior School - Kampala', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/GJS - Kampala.JPG', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/', description: 'Building strong foundations for lifelong learning.' },
   { name: 'Gombe Junior School - Gulu', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/GJS Gulu class.jpeg', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/', description: 'Extending foundational education excellence to Northern Uganda.' },
   { name: 'ScoobyDoo International School Uganda - Kampala', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-12-55-02_1.jpg', path: '/institutions/sisu-kampala', url: 'https://sisu-katale.vercel.app/', description: 'International curriculum preparing students for global success.' },
-  { name: 'ScoobyDoo International School Uganda - Gulu', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-01-12-29_IMG_3773.jpg', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'Bringing international education to Northern Uganda.' },
 ];
 
 /* ── Featured posts (from GES Blog) ── */
@@ -430,15 +469,20 @@ const involved = [
 .hero-split__recognised {
   padding: 1.25rem 1.5rem 2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem 2.5rem;
   border-top: 1px solid var(--rescue-border, #E0E0E0);
 }
+.hero-split__recognised-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  gap: 0.75rem;
+}
 @media (min-width: 1024px) {
-  .hero-split__recognised {
-    padding-left: max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem));
-  }
+  .hero-split__recognised { grid-column: 1 / -1; }
 }
 .hero-split__recognised-label {
   font-size: 0.8rem;
@@ -450,19 +494,23 @@ const involved = [
 .hero-split__recognised-logos {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0.375rem;
+  max-width: 100%;
 }
 .hero-split__recognised-logos img {
-  height: 40px;
+  flex-shrink: 0;
+  height: calc(clamp(20px, 2vw, 40px) * var(--logo-scale, 1));
   width: auto;
-  max-width: 110px;
-  object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.75;
-  transition: filter 0.2s, opacity 0.2s;
+  margin-left: calc(0.375rem * (var(--gap-mult, 1) - 1));
+  opacity: 0.9;
+  transition: opacity 0.2s;
 }
-.hero-split__recognised-logos img:hover { filter: none; opacity: 1; }
+.hero-split__recognised-logos img:hover { opacity: 1; }
+@media (max-width: 767px) {
+  .hero-split__recognised-logos { flex-wrap: wrap; }
+}
 
 /* ── Partners carousel (black & white, auto-scrolling) ── */
 .partners-marquee {

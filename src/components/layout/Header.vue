@@ -206,7 +206,7 @@ const topSocials = [
 }
 @media (min-width: 1024px) {
   .ges-island {
-    max-width: 1240px;
+    max-width: 1360px;
     margin: 0 auto;
     align-items: stretch;
     border: none;
@@ -240,11 +240,11 @@ const topSocials = [
   .ges-topbar { display: flex; }
   /* morph into a minimized navbar on scroll */
   .ges-header--scrolled .ges-topbar { height: 0; }
-  .ges-header--scrolled .ges-nav { height: 52px; }
+  .ges-header--scrolled .ges-nav { height: 57px; }
   .ges-header--scrolled .ges-brand__logo { height: 70%; }
 }
 .ges-topbar__tagline {
-  font-size: 0.72rem;
+  font-size: 0.79rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   white-space: nowrap;
@@ -278,7 +278,7 @@ const topSocials = [
   flex: 1;
 }
 @media (min-width: 1024px) {
-  .ges-nav { height: 56px; padding: 0 0 0 0.5rem; flex: initial; transition: height 0.25s ease; border-bottom-right-radius: 8px; }
+  .ges-nav { height: 62px; padding: 0 0 0 0.5rem; flex: initial; transition: height 0.25s ease; border-bottom-right-radius: 8px; }
 }
 
 /* ── Brand (white logo card, left end of the island) ── */
@@ -336,7 +336,7 @@ const topSocials = [
 .ges-nav__link {
   position: relative;
   padding: 0.5rem 0.85rem;
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--rescue-dark, #1A1A1A);
   text-decoration: none;
@@ -408,7 +408,7 @@ const topSocials = [
   padding: 0 1.75rem;
   background: var(--rescue-yellow, #FFC72C);
   color: var(--rescue-dark, #1A1A1A);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 800;
   text-decoration: none;
   cursor: pointer;
@@ -457,12 +457,12 @@ const topSocials = [
   border-left-color: var(--rescue-yellow, #FFC72C);
 }
 .ges-dropdown__item-name {
-  font-size: 0.85rem;
+  font-size: 0.94rem;
   font-weight: 600;
   color: var(--rescue-dark, #1A1A1A);
 }
 .ges-dropdown__item-desc {
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: var(--rescue-text-secondary, #555);
   margin-top: 2px;
 }

@@ -36,9 +36,18 @@
       <!-- Recognised-by glass strip pinned to the hero's bottom edge -->
       <div class="hero-cine__strip">
         <div class="container-rpl hero-cine__strip-inner">
-          <span class="hero-cine__strip-label">Recognised by</span>
-          <div class="hero-cine__strip-logos">
-            <img v-for="logo in recognisedBy" :key="logo.name" :src="logo.src" :alt="logo.name" :title="logo.name" />
+          <div class="hero-cine__strip-block">
+            <span class="hero-cine__strip-label">Recognised by</span>
+            <div class="hero-cine__strip-logos">
+              <img
+                v-for="logo in recognisedBy"
+                :key="logo.name"
+                :src="logo.src"
+                :alt="logo.name"
+                :title="logo.name"
+                :style="{ '--logo-scale': logoScales[logo.name] || 1, '--gap-mult': gapBefore[logo.name] || 1 }"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -373,12 +382,42 @@ function scrollCarousel(dir: number) {
 
 /* ── Recognised by (hero strip) ── */
 const recognisedBy = [
-  { name: 'Ministry of Education', src: '/images/MoES1.png' },
-  { name: 'UTB',                   src: '/images/UTB.png' },
-  { name: 'Kingdom of Buganda',    src: '/images/Flag_of_Buganda.svg' },
-  { name: 'Braemar College',       src: '/images/braemar.webp' },
-  { name: 'SAI',                   src: '/images/sai-brand-logo.png' },
-];
+  { name: 'Ministry of Education',   src: '/images/MoES1.png' },
+  { name: 'British Council',         src: '/images/British Council.png' },
+  { name: 'Kingdom of Buganda',      src: '/images/Flag_of_Buganda.svg' },
+  { name: 'Braemar College',         src: '/images/braemar.webp' },
+  { name: 'SAI',                     src: '/images/sai-brand-logo.png' },
+  { name: 'IEAC',                    src: '/images/IEAC.png' },
+  { name: 'UNESCO',                  src: '/images/UNESCO.png' },
+  { name: 'Microsoft Education',     src: '/images/MicroSoft Education.png' },
+  { name: 'World Bank',              src: '/images/World Bank.png' },
+  { name: 'University of Cambridge', src: '/images/University_of_Cambridge-Logo.png' },
+  { name: 'Aga Khan Foundation',     src: '/images/Aga Khan Foundation.png' },
+  { name: 'NCHE',                    src: '/images/NCHE.png' },
+]
+
+/* Height multiplier per logo (1 = base size) */
+const logoScales: Record<string, number> = {
+  'British Council': 2,
+  'University of Cambridge': 2,
+  'Microsoft Education': 2,
+  'NCHE': 2,
+  'Aga Khan Foundation': 2,
+  'World Bank': 2.2,
+  'UNESCO': 2.8,
+  'IEAC': 1.4,
+  'SAI': 1.1,
+};
+/* Gap to the left neighbour, in multiples of the base gap (1 = base) */
+const gapBefore: Record<string, number> = {
+  'Braemar College': 2,
+  'SAI': 4,
+  'KISU': 4,
+  'IEAC': 4,
+  'UNESCO': 2,
+  'Microsoft Education': 2,
+  'World Bank': 2,
+};
 
 /* ── Partners carousel ── */
 const partnerLogos = [
@@ -396,10 +435,10 @@ const partnerLogos = [
 /* ── Institutions ── */
 const institutions = [
   { name: 'ScoobyDoo International School Uganda - Kampala', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/sisu-katale-triptych.jpeg', path: '/institutions/sisu-kampala', url: 'http://scoobydoointernational.ac.ug/', description: 'International curriculum preparing students for global success.' },
-  { name: 'ScoobyDoo International School Uganda - Gulu', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/hero-triptych-gulu.jpeg', path: '/institutions/sisu-gulu', url: 'http://scoobydoointernational.ac.ug/', description: 'Bringing international education to Northern Uganda.' },
   { name: 'Gombe Junior School - Kampala', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/GJS - Kampala.JPG', path: '/institutions/gjs-kampala', url: 'http://gombejuniorschool.ac.ug/', description: 'Building strong foundations for lifelong learning.' },
   { name: 'Gombe Junior School - Gulu', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/GJS Gulu class.jpeg', path: '/institutions/gjs-gulu', url: 'http://gombejuniorschool.ac.ug/', description: 'Extending foundational education excellence to Northern Uganda.' },
   { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/IMG_9718.JPG', path: '/institutions/sakghs-kawaala', url: 'http://gombehighschool.ac.ug/', description: 'Advanced secondary education with a focus on academic excellence.' },
+  { name: 'ScoobyDoo International School Uganda - Gulu', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/hero-triptych-gulu.jpeg', path: '/institutions/sisu-gulu', url: 'http://scoobydoointernational.ac.ug/', description: 'Bringing international education to Northern Uganda.' },
   { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/Gombe High School - Bujuuko.png', path: '/institutions/sakghs-bujuuko', url: 'http://gombehighschool.ac.ug/', description: 'Nurturing tomorrow\'s leaders through quality education.' },
   { name: 'Gombe Institute of Business Science & Technology (GIBST)', type: 'Vocational Institute', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', image: '/images/JIMMY SEKASI.JPG', path: '/institutions/jsbi', url: 'http://gibst.ac.ug/', description: 'Equipping students with practical business, vocational, and hands-on skills.' },
 ];
@@ -553,7 +592,7 @@ const interviewQA = [
 @import url('https://fonts.cdnfonts.com/css/times-new-roman');
 
 .container-rpl {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -681,11 +720,19 @@ const interviewQA = [
 }
 .hero-cine__strip-inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem 2.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  max-width: none;
+  width: 100%;
+}
+.hero-cine__strip-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  gap: 0.75rem;
 }
 .hero-cine__strip-label {
   font-size: 0.75rem;
@@ -693,23 +740,28 @@ const interviewQA = [
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--rescue-text-secondary, #555);
+  flex-shrink: 0;
 }
 .hero-cine__strip-logos {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1.75rem;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0.375rem;
+  max-width: 100%;
 }
 .hero-cine__strip-logos img {
-  height: 36px;
+  flex-shrink: 0;
+  height: calc(clamp(20px, 2vw, 40px) * var(--logo-scale, 1));
   width: auto;
-  max-width: 105px;
-  object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.8;
-  transition: filter 0.2s, opacity 0.2s;
+  margin-left: calc(0.375rem * (var(--gap-mult, 1) - 1));
+  opacity: 0.9;
+  transition: opacity 0.2s;
 }
-.hero-cine__strip-logos img:hover { filter: none; opacity: 1; }
+.hero-cine__strip-logos img:hover { opacity: 1; }
+@media (max-width: 767px) {
+  .hero-cine__strip-logos { flex-wrap: wrap; }
+}
 
 /* ── Leadership quote: black band ── */
 .quote-band {
