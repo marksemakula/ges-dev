@@ -628,6 +628,7 @@ const interviewQA = [
   background-size: cover;
   background-position: 50% 35%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   /* Zoom OUT (1.08 -> 1) rather than in: the browser rasterises the layer
      once, so ending at scale(1) keeps the frame pixel-crisp instead of
      GPU-upscaled and blurry. Duration ~= the 6s slide interval. */

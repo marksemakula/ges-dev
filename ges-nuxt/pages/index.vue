@@ -456,6 +456,7 @@ const involved = [
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  background-attachment: fixed;
   animation: hero-drift 16s ease-in-out infinite alternate; /* gentle motion */
 }
 @keyframes hero-drift {

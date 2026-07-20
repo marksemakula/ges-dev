@@ -45,7 +45,7 @@ useSchemaOrg([
   defineOrganization({
     '@type': 'EducationalOrganization',
     name: siteConfig.name,
-    alternateName: ['GES', 'Gombe Education Services'],
+    alternateName: ['GES', 'Gombe', 'Gombe Education Services'],
     url: siteConfig.url,
     logo: siteConfig.url + '/logo.png',
     foundingDate: '1995',
@@ -67,6 +67,23 @@ useSchemaOrg([
       availableLanguage: ['en'],
     },
     sameAs: socials,
+    // Ties brand-adjacent name searches (leadership names) back to GES as an entity.
+    founder: [
+      {
+        '@type': 'Person',
+        name: 'Rosalind Tanayita Kyewalabye',
+        alternateName: ['Mrs. Rosalind Tanayita Kyewalabye'],
+        jobTitle: 'Co-Founder',
+      },
+    ],
+    employee: [
+      {
+        '@type': 'Person',
+        name: 'Owek. Kyewalabye Male David',
+        alternateName: ['Owekitiibwa Kyewalabye Male', 'Kyewalabye Male', 'Owekitiibwa Kyewalabye Male David'],
+        jobTitle: 'Managing Director',
+      },
+    ],
     subOrganization: institutions.map((i) => ({
       '@type': 'EducationalOrganization',
       name: i.name,

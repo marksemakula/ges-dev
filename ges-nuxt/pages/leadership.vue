@@ -48,9 +48,12 @@
 </template>
 
 <script setup lang="ts">
+import { siteConfig } from '~/seo.config'
+
 const managementTeam = [
   {
     name: 'Owek. Kyewalabye Male David',
+    alternateName: ['Owekitiibwa Kyewalabye Male', 'Kyewalabye Male', 'Owekitiibwa Kyewalabye Male David'],
     position: 'GES Managing Director',
     bio: 'Owek. Kyewalabye Male David serves as the Managing Director of Gombe Education Services. An experienced institutional administrator and strategist, he coordinates operations, developmental planning, and strategic partnerships across all institutions within the GES portfolio, ensuring absolute operational efficiency and sustainable growth.',
     image: '/images/Owek. Kyewalabye David Male.png',
@@ -74,6 +77,26 @@ const managementTeam = [
     linkedin: 'https://linkedin.com/in/daniellanakayenga'
   }
 ];
+
+// Person JSON-LD per leader, mirroring the visible profile cards above.
+// Each needs its own explicit @id — without one, nuxt-schema-org's Person/
+// Organization resolvers all collapse onto the single site "identity" node
+// and clobber each other's fields instead of creating separate graph nodes.
+const slugify = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+
+useSchemaOrg(
+  managementTeam.map((leader) => definePerson({
+    '@id': `${siteConfig.url}/leadership#${slugify(leader.name)}`,
+    name: leader.name,
+    ...(leader.alternateName ? { alternateName: leader.alternateName } : {}),
+    jobTitle: leader.position,
+    description: leader.bio,
+    image: siteConfig.url + encodeURI(leader.image),
+    email: leader.email,
+    sameAs: [leader.linkedin],
+    worksFor: { '@id': `${siteConfig.url}/#identity` },
+  }))
+)
 </script>
 
 <style scoped>

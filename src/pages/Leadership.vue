@@ -213,9 +213,10 @@ function injectJsonLD() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Owekitiibwa Kyewalabye Male David',
+    alternateName: ['Owekitiibwa Kyewalabye Male', 'Kyewalabye Male', 'Owek. Kyewalabye Male David'],
     jobTitle: 'Director',
     worksFor: [
-      { '@type': 'Organization', name: 'Gombe Education Service', url: 'https://ges-ug.netlify.app' },
+      { '@type': 'Organization', name: 'Gombe Education Service', url: 'https://ges.ac.ug' },
       { '@type': 'Organization', name: 'Gombe Medical Hospital' }
     ],
     description: PAGE_DESC,
@@ -250,7 +251,7 @@ onMounted(() => {
   injectMeta('og:title', PAGE_TITLE, 'property');
   injectMeta('og:description', PAGE_DESC, 'property');
   injectMeta('og:type', 'profile', 'property');
-  injectMeta('og:url', 'https://ges-ug.netlify.app/leadership', 'property');
+  injectMeta('og:url', 'https://ges.ac.ug/leadership', 'property');
   injectMeta('twitter:title', PAGE_TITLE);
   injectMeta('twitter:description', PAGE_DESC);
 
@@ -261,7 +262,7 @@ onMounted(() => {
     canonical.rel = 'canonical';
     document.head.appendChild(canonical);
   }
-  canonical.href = 'https://ges-ug.netlify.app/leadership';
+  canonical.href = 'https://ges.ac.ug/leadership';
 
   injectJsonLD();
 });
