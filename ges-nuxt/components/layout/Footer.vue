@@ -26,6 +26,15 @@
                 0708 700 006
               </span>
             </div>
+
+            <!-- Social icons -->
+            <div class="ges-footer__social-row">
+              <div class="ges-footer__social">
+                <a v-for="s in socials" :key="s.label" :href="s.href" :aria-label="s.label" target="_blank" rel="noopener noreferrer" class="ges-footer__social-link">
+                  <span v-html="s.svg"></span>
+                </a>
+              </div>
+            </div>
           </div>
 
           <!-- Quick Links -->
@@ -46,15 +55,6 @@
                 <a :href="inst.url" class="ges-footer__link">{{ inst.name }}</a>
               </li>
             </ul>
-          </div>
-        </div>
-
-        <!-- Social icons row -->
-        <div class="ges-footer__social-row">
-          <div class="ges-footer__social">
-            <a v-for="s in socials" :key="s.label" :href="s.href" :aria-label="s.label" target="_blank" rel="noopener noreferrer" class="ges-footer__social-link">
-              <span v-html="s.svg"></span>
-            </a>
           </div>
         </div>
       </div>
@@ -113,6 +113,8 @@ const socials = [
 
 <style scoped>
 .ges-footer__container {
+  position: relative;
+  z-index: 1;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -120,8 +122,22 @@ const socials = [
 
 /* ── Layout 1: light grey band ── */
 .ges-footer__layout1 {
+  position: relative;
   background: #E9E9E9;
   padding: 3rem 0 1.75rem;
+  overflow: hidden;
+}
+.ges-footer__layout1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/Footer2.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: grayscale(100%);
+  opacity: 0.08;
+  pointer-events: none;
 }
 .ges-footer__grid {
   display: grid;
@@ -214,6 +230,12 @@ a.ges-footer__contact-item:hover {
   break-inside: avoid;
   margin-bottom: 0.4rem;
 }
+.ges-footer__institutions .ges-footer__list--2col li:first-child {
+  column-span: all;
+}
+.ges-footer__institutions .ges-footer__list--2col li:first-child .ges-footer__link {
+  white-space: nowrap;
+}
 .ges-footer__link {
   font-size: 0.875rem;
   font-weight: 600;
@@ -229,27 +251,27 @@ a.ges-footer__contact-item:hover {
 }
 
 .ges-footer__social-row {
-  margin-top: 2.25rem;
-  padding-top: 1.5rem;
+  margin-top: 1rem;
 }
 .ges-footer__social {
   display: flex;
-  gap: 0.9rem;
+  gap: 0.5rem;
 }
 .ges-footer__social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--rescue-dark, #1A1A1A);
-  color: #fff;
-  transition: background 0.15s, color 0.15s;
+  width: 28px;
+  height: 28px;
+  color: #000;
+  transition: color 0.15s;
+}
+.ges-footer__social-link :deep(svg) {
+  width: 22px;
+  height: 22px;
 }
 .ges-footer__social-link:hover {
-  background: var(--rescue-yellow, #FFC72C);
-  color: var(--rescue-dark, #1A1A1A);
+  color: var(--rescue-yellow, #FFC72C);
 }
 
 /* ── Layout 2: black utility band ── */

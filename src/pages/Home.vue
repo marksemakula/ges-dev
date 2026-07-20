@@ -1185,10 +1185,26 @@ const interviewQA = [
 
 /* ── CTA band ── */
 .cta-band {
+  position: relative;
   background: linear-gradient(105deg, #FFD35C 0%, var(--rescue-yellow, #FFC72C) 45%, #F0B814 100%);
   padding: 2.5rem 0;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/footer.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: grayscale(100%);
+  opacity: 0.08;
+  pointer-events: none;
 }
 .cta-band__inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
