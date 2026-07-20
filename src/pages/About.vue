@@ -77,7 +77,7 @@
           <div class="institution-card">
             <div class="institution-card__tag">Tertiary</div>
             <h3>Gombe Institute of Business Science & Technology (GIBST)</h3>
-            <p>In a deliberate plan to build, a hybrid mid-level training college GES took over GIBST to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities and be direct partakers in their career destiny. It offers a unique blend of post-secondary school education and training in short courses, Certificates & Diplomas in Pastry and Baking, Barista skills, Mixology, Cookery skills, Basic Cake making and Decoration, ICT courses, Culinary arts, and Diploma courses in Fashion and Design, and Hairdressing and Beauty Therapy respectively.</p>
+            <p>In a deliberate plan to build, a hybrid mid-level training college GES took over Jimmy Sekasi Business Institute to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities and be direct partakers in their career destiny. It offers a unique blend of post-secondary school education and training in short courses, Certificates & Diplomas in Pastry and Baking, Barista skills, Mixology, Cookery skills, Basic Cake making and Decoration, ICT courses, Culinary arts, and Diploma courses in Fashion and Design, and Hairdressing and Beauty Therapy respectively.</p>
             <div class="institution-contact">
               <p><strong>📱 Phone:</strong> 0756 241 530 / 0772 472 570</p>
               <p><strong>✉️ Email:</strong> <a href="mailto:info@gibst.ac.ug">info@gibst.ac.ug</a></p>
