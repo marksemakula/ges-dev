@@ -48,7 +48,7 @@ useSchemaOrg([
     alternateName: ['GES', 'Gombe', 'Gombe Education Services'],
     url: siteConfig.url,
     logo: siteConfig.url + '/logo.png',
-    foundingDate: '1995',
+    foundingDate: '2013',
     description: siteConfig.description,
     email: siteConfig.email,
     telephone: siteConfig.telephone,

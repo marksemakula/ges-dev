@@ -10,7 +10,7 @@
       <div class="ges-island__body">
         <!-- Maroon strip -->
         <div class="ges-topbar">
-          <span class="ges-topbar__tagline">Excellence in Education Since 1995</span>
+          <span class="ges-topbar__tagline">Excellence in Education Since 2013</span>
           <div class="ges-topbar__socials">
             <a v-for="s in topSocials" :key="s.label" :href="s.href" :aria-label="s.label" target="_blank" rel="noopener noreferrer" class="ges-topbar__social-link">
               <span v-html="s.svg"></span>
@@ -153,19 +153,18 @@ const mobileOpen = ref(false);
 const navLinks = [
   { name: 'HOME', path: '/' },
   { name: 'CALENDAR', path: '/academic-calendar' },
-  { name: 'BLOG', path: '/blog' },
+  { name: 'UPDATES', path: '/#news' },
 ];
 
-// Internal landing pages on ges.ac.ug (each links out to the school's own site).
 const institutions = [
-  { name: 'Gombe Institute of Business Science & Technology (GIBST)', shortName: 'GIBST', path: '/institutions/jsbi', description: 'Business & Vocational Training' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', shortName: 'SAKGHS Bujuuko', path: '/institutions/sakghs-bujuuko', description: 'Advanced Secondary Education' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', shortName: 'SAKGHS Kawaala', path: '/institutions/sakghs-kawaala', description: 'Advanced Secondary Education' },
-  { name: 'Gombe Junior School - Kampala', shortName: 'GJS Kampala', path: '/institutions/gjs-kampala', description: 'Primary Education' },
-  { name: 'Gombe Junior School - Gulu', shortName: 'GJS Gulu', path: '/institutions/gjs-gulu', description: 'Primary Education' },
   { name: 'ScoobyDoo International School Uganda - Kampala', shortName: 'SISU Kampala', path: '/institutions/sisu-kampala', description: 'International Curriculum' },
   { name: 'ScoobyDoo International School Uganda - Gulu', shortName: 'SISU Gulu', path: '/institutions/sisu-gulu', description: 'International Curriculum' },
-  { name: 'International Education Pathways Program', shortName: 'IEPP', path: '/international-pathway', description: 'Global Study Pathways' },
+  { name: 'Gombe Junior School - Kampala', shortName: 'GJS Kampala', path: '/institutions/gjs-kampala', description: 'Primary Education' },
+  { name: 'Gombe Junior School - Gulu', shortName: 'GJS Gulu', path: '/institutions/gjs-gulu', description: 'Primary Education' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', shortName: 'SAKGHS Kawaala', path: '/institutions/sakghs-kawaala', description: 'Advanced Secondary Education' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', shortName: 'SAKGHS Bujuuko', path: '/institutions/sakghs-bujuuko', description: 'Advanced Secondary Education' },
+  { name: 'Gombe Institute of Business Science & Technology (GIBST)', shortName: 'GIBST', path: '/institutions/jsbi', description: 'Business & Vocational Training' },
+  { name: 'International Education Pathways Program', shortName: 'IPP', path: '/international-pathway', description: 'Global Study Pathways' },
 ];
 
 /* Top bar social icons (rescue.org rplm-social-share, inverse) */
@@ -207,11 +206,15 @@ const topSocials = [
 }
 @media (min-width: 1024px) {
   .ges-island {
-    max-width: 1240px;
+    max-width: 1360px;
     margin: 0 auto;
     align-items: stretch;
     border: none;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 12px 32px rgba(0, 0, 0, 0.16);
+    transition: box-shadow 0.25s ease;
+  }
+  .ges-header--scrolled .ges-island {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.12);
   }
 }
 .ges-island__body {
@@ -237,11 +240,11 @@ const topSocials = [
   .ges-topbar { display: flex; }
   /* morph into a minimized navbar on scroll */
   .ges-header--scrolled .ges-topbar { height: 0; }
-  .ges-header--scrolled .ges-nav { height: 52px; }
+  .ges-header--scrolled .ges-nav { height: 57px; }
   .ges-header--scrolled .ges-brand__logo { height: 70%; }
 }
 .ges-topbar__tagline {
-  font-size: 0.72rem;
+  font-size: 0.79rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   white-space: nowrap;
@@ -275,7 +278,7 @@ const topSocials = [
   flex: 1;
 }
 @media (min-width: 1024px) {
-  .ges-nav { height: 56px; padding: 0 0 0 0.5rem; flex: initial; transition: height 0.25s ease; border-bottom-right-radius: 8px; }
+  .ges-nav { height: 62px; padding: 0 0 0 0.5rem; flex: initial; transition: height 0.25s ease; border-bottom-right-radius: 8px; }
 }
 
 /* ── Brand (white logo card, left end of the island) ── */
@@ -333,7 +336,7 @@ const topSocials = [
 .ges-nav__link {
   position: relative;
   padding: 0.5rem 0.85rem;
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--rescue-dark, #1A1A1A);
   text-decoration: none;
@@ -351,17 +354,26 @@ const topSocials = [
 .ges-nav__link:hover {
   color: var(--rescue-charcoal, #3D3D3D);
 }
-.ges-nav__link--active {
-  color: var(--rescue-dark, #1A1A1A);
-}
-.ges-nav__link--active::after {
+.ges-nav__link::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0.85rem;
   right: 0.85rem;
   height: 3px;
-  background: var(--rescue-yellow, #EFC131);
+  background: var(--rescue-yellow, #FFC72C);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+.ges-nav__link:hover::after {
+  transform: scaleX(1);
+}
+.ges-nav__link--active {
+  color: var(--rescue-dark, #1A1A1A);
+}
+.ges-nav__link--active::after {
+  transform: scaleX(1);
 }
 
 /* ── Nav CTA: search + yellow Reachout capping the card's right end ── */
@@ -394,9 +406,9 @@ const topSocials = [
   align-items: center;
   justify-content: center;
   padding: 0 1.75rem;
-  background: var(--rescue-yellow, #EFC131);
+  background: var(--rescue-yellow, #FFC72C);
   color: var(--rescue-dark, #1A1A1A);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 800;
   text-decoration: none;
   cursor: pointer;
@@ -404,7 +416,7 @@ const topSocials = [
   letter-spacing: 0.02em;
 }
 .ges-nav__donate:hover {
-  background: var(--rescue-yellow-hover, #D9AE28);
+  background: var(--rescue-yellow-hover, #E6B219);
 }
 
 /* ── Dropdown ── */
@@ -442,15 +454,15 @@ const topSocials = [
 }
 .ges-dropdown__item:hover {
   background: var(--rescue-grey-light, #F5F5F5);
-  border-left-color: var(--rescue-yellow, #EFC131);
+  border-left-color: var(--rescue-yellow, #FFC72C);
 }
 .ges-dropdown__item-name {
-  font-size: 0.85rem;
+  font-size: 0.94rem;
   font-weight: 600;
   color: var(--rescue-dark, #1A1A1A);
 }
 .ges-dropdown__item-desc {
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: var(--rescue-text-secondary, #555);
   margin-top: 2px;
 }
@@ -528,7 +540,7 @@ const topSocials = [
   text-align: center;
   padding: 0.75rem;
   margin-top: 1rem;
-  background: var(--rescue-yellow, #EFC131);
+  background: var(--rescue-yellow, #FFC72C);
   color: var(--rescue-dark, #1A1A1A);
   font-size: 0.9rem;
   font-weight: 700;
@@ -536,7 +548,7 @@ const topSocials = [
   transition: background 0.2s;
 }
 .ges-mobile-menu__cta:hover {
-  background: var(--rescue-yellow-hover, #D9AE28);
+  background: var(--rescue-yellow-hover, #E6B219);
 }
 
 /* ── Transitions ── */

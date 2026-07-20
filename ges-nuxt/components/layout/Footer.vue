@@ -10,7 +10,7 @@
               <img src="/logo.png" alt="GES" class="ges-footer__logo" />
               <div>
                 <p class="ges-footer__org">Gombe Education Service</p>
-                <p class="ges-footer__since">Excellence Since 1995</p>
+                <p class="ges-footer__since">Excellence Since 2013</p>
               </div>
             </RouterLink>
             <p class="ges-footer__desc">
@@ -23,7 +23,7 @@
               </a>
               <span class="ges-footer__contact-item">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.93 5.93l.82-.84a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                0708 700 006
+                0760 064 471
               </span>
             </div>
 
@@ -40,7 +40,7 @@
           <!-- Quick Links -->
           <div>
             <h4 class="ges-footer__heading">Quick Links</h4>
-            <ul class="ges-footer__list ges-footer__list--2col">
+            <ul class="ges-footer__list">
               <li v-for="link in quickLinks" :key="link.path">
                 <RouterLink :to="link.path" class="ges-footer__link">{{ link.name }}</RouterLink>
               </li>
@@ -50,7 +50,7 @@
           <!-- Institutions -->
           <div class="ges-footer__institutions">
             <h4 class="ges-footer__heading">Our Institutions</h4>
-            <ul class="ges-footer__list ges-footer__list--2col">
+            <ul class="ges-footer__list">
               <li v-for="inst in institutions" :key="inst.path">
                 <RouterLink :to="inst.path" class="ges-footer__link">{{ inst.name }}</RouterLink>
               </li>
@@ -88,8 +88,6 @@ const quickLinks = [
   { name: 'Academic Calendar', path: '/academic-calendar' },
 ];
 
-// Internal landing pages on ges.ac.ug — same-domain links feed Google's
-// sitelinks for the GES brand result; each page links out to the school site.
 const institutions = [
   { name: 'Gombe Institute of Business Science & Technology (GIBST)', path: '/institutions/jsbi' },
   { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', path: '/institutions/sakghs-bujuuko' },
@@ -117,7 +115,7 @@ const socials = [
 .ges-footer__container {
   position: relative;
   z-index: 1;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -126,7 +124,7 @@ const socials = [
 .ges-footer__layout1 {
   position: relative;
   background: #E9E9E9;
-  padding: 3rem 0 1.75rem;
+  padding: 3.5rem 0 2rem;
   overflow: hidden;
 }
 .ges-footer__layout1::before {
@@ -144,13 +142,13 @@ const socials = [
 .ges-footer__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 @media (min-width: 768px) {
-  .ges-footer__grid { grid-template-columns: 1.4fr 1fr 1.6fr; }
+  .ges-footer__grid { grid-template-columns: 1.6fr 1fr; }
 }
-@media (min-width: 1200px) {
-  .ges-footer__grid { grid-template-columns: 1.2fr 1fr 1.8fr; }
+@media (min-width: 1024px) {
+  .ges-footer__grid { grid-template-columns: 1.8fr 1fr 1.4fr; }
 }
 .ges-footer__institutions { display: none; }
 @media (min-width: 768px) { .ges-footer__institutions { display: block; } }
@@ -221,22 +219,7 @@ a.ges-footer__contact-item:hover {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-}
-.ges-footer__list--2col {
-  columns: 2;
-  column-gap: 1.5rem;
-  display: block;
-}
-.ges-footer__list--2col li {
-  break-inside: avoid;
-  margin-bottom: 0.4rem;
-}
-.ges-footer__institutions .ges-footer__list--2col li:first-child {
-  column-span: all;
-}
-.ges-footer__institutions .ges-footer__list--2col li:first-child .ges-footer__link {
-  white-space: nowrap;
+  gap: 0.5rem;
 }
 .ges-footer__link {
   font-size: 0.875rem;
@@ -245,6 +228,10 @@ a.ges-footer__contact-item:hover {
   text-decoration: none;
   transition: color 0.15s;
   text-underline-offset: 3px;
+}
+.ges-footer__institutions .ges-footer__list li:first-child .ges-footer__link {
+  white-space: nowrap;
+  font-size: 0.8125rem;
 }
 .ges-footer__link:hover {
   text-decoration: underline;

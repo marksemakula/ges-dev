@@ -24,6 +24,13 @@
       </div>
     </section>
 
+    <!-- Brand Logo -->
+    <section class="brand-logo-section">
+      <div class="container brand-logo-container">
+        <img src="/images/sai-brand-logo.png" alt="SAI Brand Logo" class="brand-logo-img" />
+      </div>
+    </section>
+
     <!-- Quick Info -->
     <section class="section quick-info">
       <div class="container">
@@ -143,6 +150,12 @@ withDefaults(defineProps<{
 .inst-hero__title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 0.875rem; }
 .inst-hero__tagline { font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.65; max-width: 520px; margin-bottom: 2rem; }
 .inst-hero__actions { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+
+/* Brand Logo */
+.brand-logo-section { background: #fff; padding: 2.5rem 0; border-bottom: 1px solid #E0E0E0; }
+.brand-logo-container { display: flex; align-items: center; justify-content: center; }
+.brand-logo-img { max-height: 100px; width: auto; object-fit: contain; transition: opacity 0.2s ease; }
+.brand-logo-img:hover { opacity: 0.85; }
 
 /* Quick info bar */
 .quick-info { padding: 2.5rem 0; border-bottom: 1px solid #E0E0E0; }

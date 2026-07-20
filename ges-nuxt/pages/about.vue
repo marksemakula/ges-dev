@@ -26,7 +26,7 @@
             <p>This is an early years independent international school offering both National & International curricular and brings together learners from different parts of Uganda from the age of 2-6years. Started in 2013.</p>
             <div class="institution-contact">
               <p><strong>📱 Phone:</strong> 0708 800 005 / 0708 800 006</p>
-              <p><strong>🌐 Website:</strong> <a href="https://www.scoobydoointernationalschooluganda.com" target="_blank" rel="noopener">scoobydoointernationalschooluganda.com</a></p>
+              <p><strong>🌐 Website:</strong> <a href="https://www.scoobydoointernationalschool.ac.ug" target="_blank" rel="noopener">scoobydoointernationalschooluganda.ac.ug</a></p>
               <p><strong>📍 Location:</strong> Kikajjo-off Seguku Katale Road</p>
             </div>
           </div>
@@ -36,8 +36,8 @@
             <p>This school is one of our pioneer schools that started in 2013 as day & boarding. It academically excelled with 100% first grades in 2017 & 2022 emerging best in Wakiso District and ranked number 4 & 5 in Uganda respectively. Due to its growth, the day parents sought customized services which saw the creation of an independent day section.</p>
             <div class="institution-contact">
               <p><strong>📱 Phone:</strong> 0708 800 001 / 0708 800 003</p>
-              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombejuniorschool.com">info@gombejuniorschool.com</a></p>
-              <p><strong>🌐 Website:</strong> <a href="https://www.gombejuniorschool.com" target="_blank" rel="noopener">gombejuniorschool.com</a></p>
+              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombejuniorschool.ac.ug">info@gombejuniorschool.ac.ug</a></p>
+              <p><strong>🌐 Website:</strong> <a href="https://www.gombejuniorschool.ac.ug" target="_blank" rel="noopener">gombejuniorschool.ac.ug</a></p>
               <p><strong>📍 Location:</strong> Kikajjo-Nateete-Nakawuka Road</p>
             </div>
           </div>
@@ -47,8 +47,8 @@
             <p>GJS-K was opened in 2019 after the separation of day scholars from Boarders to create for them their own school which is entirely day. The school has brought about transformation in the community around its location.</p>
             <div class="institution-contact">
               <p><strong>📱 Phone:</strong> 0708 800 002 / 0708 800 004</p>
-              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombejuniorschool.com">info@gombejuniorschool.com</a></p>
-              <p><strong>🌐 Website:</strong> <a href="https://www.gombejuniorschool.com" target="_blank" rel="noopener">gombejuniorschool.com</a></p>
+              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombejuniorschool.ac.ug">info@gombejuniorschool.ac.ug</a></p>
+              <p><strong>🌐 Website:</strong> <a href="https://www.gombejuniorschool.ac.ug" target="_blank" rel="noopener">gombejuniorschool.ac.ug</a></p>
               <p><strong>📍 Location:</strong> Kikajjo-Nateete-Nakawuka Road</p>
             </div>
           </div>
@@ -59,7 +59,7 @@
             <div class="institution-contact">
               <p><strong>📱 Phone:</strong> 0708 700 001 / 0708 700 002</p>
               <p><strong>✉️ Email:</strong> <a href="mailto:info@gombehighschool.ac.ug">info@gombehighschool.ac.ug</a></p>
-              <p><strong>🌐 Website:</strong> <a href="https://www.gombehighschool.com" target="_blank" rel="noopener">gombehighschool.com</a></p>
+              <p><strong>🌐 Website:</strong> <a href="https://www.gombehighschool.ac.ug" target="_blank" rel="noopener">gombehighschool.ac.ug</a></p>
               <p><strong>📍 Location:</strong> Kawaala off kasube junction</p>
             </div>
           </div>
@@ -69,18 +69,18 @@
             <p>This is one of our new campuses that started in October 2022 and has brought about a paradigm shift from Kings College Bujuuko to St Andrew Kaggwa Gombe High School Bujuuko Campus. The school is O' and 'A' level mixed, both day & boarding school and meets the middle income Parents aspiration for better education services at an affordable fees.</p>
             <div class="institution-contact">
               <p><strong>📱 Phone:</strong> 0752 578 254 / 0784 329 051</p>
-              <p><strong>✉️ Email:</strong> <a href="mailto:standrewkaggwagombebujjuko@gmail.com">standrewkaggwagombebujjuko@gmail.com</a></p>
-              <p><strong>🌐 Website:</strong> <a href="https://www.gombehighschool.com" target="_blank" rel="noopener">gombehighschool.com</a></p>
+              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombehighschool.ac.ug">info@gombehighschool.ac.ug</a></p>
+              <p><strong>🌐 Website:</strong> <a href="https://www.gombehighschool.ac.ug" target="_blank" rel="noopener">gombehighschool.ac.ug</a></p>
               <p><strong>📍 Location:</strong> Bujuuko Trading centre 20 miles from Kampala along Mityana Road</p>
             </div>
           </div>
           <div class="institution-card">
             <div class="institution-card__tag">Tertiary</div>
             <h3>Gombe Institute of Business Science & Technology (GIBST)</h3>
-            <p>In a deliberate plan to build, a hybrid mid-level training college GES took over JSBI to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities and be direct partakers in their career destiny. It offers a unique blend of post-secondary school education and training in short courses, Certificates & Diplomas in Pastry and Baking, Barista skills, Mixology, Cookery skills, Basic Cake making and Decoration, ICT courses, Culinary arts, and Diploma courses in Fashion and Design, and Hairdressing and Beauty Therapy respectively.</p>
+            <p>In a deliberate plan to build, a hybrid mid-level training college GES took over Jimmy Sekasi Business Institute to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities and be direct partakers in their career destiny. It offers a unique blend of post-secondary school education and training in short courses, Certificates & Diplomas in Pastry and Baking, Barista skills, Mixology, Cookery skills, Basic Cake making and Decoration, ICT courses, Culinary arts, and Diploma courses in Fashion and Design, and Hairdressing and Beauty Therapy respectively.</p>
             <div class="institution-contact">
               <p><strong>📱 Phone:</strong> 0756 241 530 / 0772 472 570</p>
-              <p><strong>✉️ Email:</strong> <a href="mailto:info@jsbi.ac.ug">info@jsbi.ac.ug</a></p>
+              <p><strong>✉️ Email:</strong> <a href="mailto:info@gibst.ac.ug">info@gibst.ac.ug</a></p>
               <p><strong>🌐 Website:</strong> <a href="https://gibst.ac.ug" target="_blank" rel="noopener">gibst.ac.ug</a></p>
               <p><strong>📍 Location:</strong> 4925 Mbogo Rd, Kampala</p>
             </div>
@@ -141,7 +141,7 @@
 
 <script setup lang="ts">
 const milestones = [
-  { year: '1995', event: 'GES Founded', detail: 'Gombe Education Service established its first institution.' },
+  { year: '2013', event: 'GES Founded', detail: 'Gombe Education Service established its first institution.' },
   { year: '2005', event: 'Network Expansion', detail: 'Opened two additional campuses to meet growing demand.' },
   { year: '2015', event: 'International Partnerships', detail: 'Secured partnerships with UNESCO and University of Cambridge.' },
   { year: '2020', event: 'Digital Transformation', detail: 'Launched digital learning platforms across all institutions.' },

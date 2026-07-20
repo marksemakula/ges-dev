@@ -1,4 +1,0 @@
-const ScrollToTop_vue_vue_type_style_index_0_scoped_cb41a9c5_lang = ".scroll-top-btn[data-v-cb41a9c5]{align-items:center;background:#1a1a1a;border:none;border-radius:10px;bottom:2rem;box-shadow:0 4px 16px #0a234240;color:#fff;cursor:pointer;display:flex;height:44px;justify-content:center;position:fixed;right:2rem;transition:background .2s,transform .2s;width:44px;z-index:99}.scroll-top-btn[data-v-cb41a9c5]:hover{background:#e6b219;transform:translateY(-2px)}.scroll-top-enter-active[data-v-cb41a9c5],.scroll-top-leave-active[data-v-cb41a9c5]{transition:opacity .25s,transform .25s}.scroll-top-enter-from[data-v-cb41a9c5],.scroll-top-leave-to[data-v-cb41a9c5]{opacity:0;transform:translateY(12px)}";
-
-export { ScrollToTop_vue_vue_type_style_index_0_scoped_cb41a9c5_lang as S };
-//# sourceMappingURL=entry-styles-2.mjs-CHpcs-61.mjs.map

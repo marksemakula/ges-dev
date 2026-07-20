@@ -1,1 +1,0 @@
-import{_ as a,o as n,c as r,b as o,m as s}from"./DC98D_EV.js";const t={};function c(e,l){return n(),r("div",null,[o("main",null,[s(e.$slots,"default")])])}const _=a(t,[["render",c]]);export{_ as default};

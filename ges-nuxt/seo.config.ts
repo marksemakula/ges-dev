@@ -13,9 +13,9 @@ export const siteConfig = {
   url: 'https://ges.ac.ug',
   name: 'Gombe Education Service',
   description:
-    'Gombe Education Service (GES) has delivered quality education in Uganda since 1995 through Gombe High School, Gombe Junior School, ScoobyDoo International and JSBI.',
+    'Gombe Education Service (GES) has delivered quality education in Uganda since 2013 through Gombe High School, Gombe Junior School, ScoobyDoo International and JSBI.',
   email: 'info@ges.ac.ug',
-  telephone: '+256708700006',
+  telephone: '+256760064471',
 }
 
 export interface RouteSeo {
@@ -35,7 +35,7 @@ export const routeSeo: Record<string, RouteSeo> = {
   '/': {
     title: 'Gombe Education Service (GES) – Schools in Uganda',
     description:
-      'Gombe Education Service (GES) has delivered quality education in Uganda since 1995 through Gombe High School, Gombe Junior School, ScoobyDoo International and JSBI.',
+      'Gombe Education Service (GES) has delivered quality education in Uganda since 2013 through Gombe High School, Gombe Junior School, ScoobyDoo International and JSBI.',
     breadcrumb: 'Home',
   },
   '/about': {
@@ -47,7 +47,7 @@ export const routeSeo: Record<string, RouteSeo> = {
   '/leadership': {
     title: 'Leadership – Gombe Education Service',
     description:
-      'Meet the leadership and management committee guiding Gombe Education Service (GES) and its network of schools across Uganda, driving excellence since 1995.',
+      'Meet the leadership and management committee guiding Gombe Education Service (GES) and its network of schools across Uganda, driving excellence since 2013.',
     breadcrumb: 'Leadership',
   },
   '/blog': {
