@@ -98,55 +98,137 @@ export const routeSeo: Record<string, RouteSeo> = {
  * The GES institution network. Rendered into Organization > subOrganization
  * JSON-LD so Google associates every school name with GES. `alt` values feed
  * `alternateName` to catch common search variants.
+ *
+ * `path` is the institution's landing page ON ges.ac.ug (required for Google
+ * to surface institutions as sitelinks under the GES result — sitelinks only
+ * ever show same-domain pages). `externalUrl` is the school's own site,
+ * exposed as schema.org `sameAs` and linked from the landing page.
  */
 export interface Institution {
+  slug: string
   name: string
   alt: string[]
-  url: string
+  /** Internal landing page path on ges.ac.ug */
+  path: string
+  /** The institution's own website */
+  externalUrl: string
+  type: string
+  description: string
+  logo: string
+  image: string
 }
 
 export const institutions: Institution[] = [
   {
+    slug: 'jsbi',
     name: 'Gombe Institute of Business Science & Technology (GIBST)',
     alt: ['GIBST', 'Gombe Institute of Business Science & Technology Uganda'],
-    url: 'https://www.gibst.ac.ug/',
+    path: '/institutions/jsbi',
+    externalUrl: 'https://www.gibst.ac.ug/',
+    type: 'Vocational Institute',
+    description:
+      'Gombe Institute of Business Science & Technology (GIBST) equips students with practical business, vocational and hands-on skills for the modern workplace, as part of the Gombe Education Service network.',
+    logo: '/images/Jimmy Ssekasi Business Institute Logo.png',
+    image: '/images/JIMMY SEKASI.JPG',
   },
   {
+    slug: 'sakghs-bujuuko',
     name: 'St. Andrew Kaggwa Gombe High School – Bujuuko',
     alt: ['SAKGHS Bujuuko', 'St. Andrew Kaggwa Gombe High School', 'Gombe High School'],
-    url: 'https://sakghs-bujuuko.vercel.app/',
+    path: '/institutions/sakghs-bujuuko',
+    externalUrl: 'https://bujuuko.gombehighschool.ac.ug/',
+    type: 'Secondary School',
+    description:
+      'St. Andrew Kaggwa Gombe High School – Bujuuko is a secondary school in the Gombe Education Service network, nurturing tomorrow\'s leaders through quality education, character formation and academic excellence.',
+    logo: '/images/Gombe High logo.png',
+    image: '/images/Gombe High School - Bujuuko.png',
   },
   {
+    slug: 'sakghs-kawaala',
     name: 'St. Andrew Kaggwa Gombe High School – Kawaala',
     alt: ['SAKGHS Kawaala', 'St. Andrew Kaggwa Gombe High School', 'Gombe High School'],
-    url: 'https://sakghs-kawaala.vercel.app/',
+    path: '/institutions/sakghs-kawaala',
+    externalUrl: 'https://kawaala.gombehighschool.ac.ug/',
+    type: 'Secondary School',
+    description:
+      'St. Andrew Kaggwa Gombe High School – Kawaala offers advanced secondary education in Kampala with a focus on academic excellence, as part of the Gombe Education Service network.',
+    logo: '/images/Gombe High logo.png',
+    image: '/images/IMG_9718.JPG',
   },
   {
+    slug: 'gjs-kampala',
     name: 'Gombe Junior School – Kampala',
     alt: ['GJS Kampala', 'Gombe Junior School'],
-    url: 'https://gjs-kikajjo.vercel.app/',
+    path: '/institutions/gjs-kampala',
+    externalUrl: 'https://kikajjo.gombejuniorschool.ac.ug/',
+    type: 'UNEB Licensed Primary School',
+    description:
+      'Gombe Junior School – Kampala is a UNEB licensed primary school in the Gombe Education Service network, building strong foundations for lifelong learning.',
+    logo: '/images/Gombe Junior School logo.png',
+    image: '/images/GJS - Kampala.JPG',
   },
   {
+    slug: 'gjs-gulu',
     name: 'Gombe Junior School – Gulu',
     alt: ['GJS Gulu', 'Gombe Junior School'],
-    url: 'https://gjs-gulu.vercel.app/',
+    path: '/institutions/gjs-gulu',
+    externalUrl: 'https://gulu.gombejuniorschool.ac.ug/',
+    type: 'UNEB Licensed Primary School',
+    description:
+      'Gombe Junior School – Gulu extends the Gombe Education Service tradition of foundational education excellence to Northern Uganda as a UNEB licensed primary school.',
+    logo: '/images/Gombe Junior School logo.png',
+    image: '/images/GJS Gulu class.jpeg',
   },
   {
+    slug: 'sisu-kampala',
     name: 'ScoobyDoo International School Uganda – Kampala',
     alt: ['SISU Kampala', 'ScoobyDoo International School Uganda', 'Scoobydoo International School'],
-    url: 'https://sisu-katale.vercel.app/',
+    path: '/institutions/sisu-kampala',
+    externalUrl: 'https://katale.scoobydoointernational.ac.ug/',
+    type: 'International School',
+    description:
+      'ScoobyDoo International School Uganda – Kampala delivers an international curriculum preparing students for global success, as part of the Gombe Education Service network.',
+    logo: '/images/scooby-logo.png',
+    image: '/images/26-08-2015-12-55-02_1.jpg',
   },
   {
+    slug: 'sisu-gulu',
     name: 'ScoobyDoo International School Uganda – Gulu',
     alt: ['SISU Gulu', 'ScoobyDoo International School Uganda', 'Scoobydoo International School'],
-    url: 'https://sisu-gulu.vercel.app/',
+    path: '/institutions/sisu-gulu',
+    externalUrl: 'https://gulu.scoobydoointernational.ac.ug/',
+    type: 'International School',
+    description:
+      'ScoobyDoo International School Uganda – Gulu brings international education to Northern Uganda, as part of the Gombe Education Service network.',
+    logo: '/images/scooby-logo.png',
+    image: '/images/26-08-2015-01-12-29_IMG_3773.jpg',
   },
   {
+    slug: 'iepp',
     name: 'International Education Pathways Program',
     alt: ['IEPP', 'International Education Pathways'],
-    url: 'https://ipp-vert.vercel.app/',
+    path: '/international-pathway',
+    externalUrl: 'https://ipp.ges.ac.ug/',
+    type: 'International Programme',
+    description:
+      'The International Education Pathways Program (IEPP) opens global study and university opportunities for students across the Gombe Education Service network.',
+    logo: '/logo.png',
+    image: '/images/ieppheader.png',
   },
 ]
+
+// Per-institution landing page meta. jsbi and the IEPP page already have
+// hand-written routeSeo entries above / their own pages, so only fill gaps.
+for (const inst of institutions) {
+  if (!routeSeo[inst.path]) {
+    routeSeo[inst.path] = {
+      title: `${inst.name} – GES`,
+      description: inst.description,
+      breadcrumb: inst.name,
+      ogImage: inst.image,
+    }
+  }
+}
 
 /**
  * Official social profiles -> Organization > sameAs.

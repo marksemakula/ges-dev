@@ -1,0 +1,1 @@
+import{d as o,o as t,c as s,B as e,O as r,b as n,m as l,P as p}from"./DC98D_EV.js";const u=o({__name:"default",setup(c){return(a,d)=>(t(),s("div",null,[e(r),n("main",null,[l(a.$slots,"default")]),e(p)]))}});export{u as default};

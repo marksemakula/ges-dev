@@ -52,7 +52,7 @@
             <h4 class="ges-footer__heading">Our Institutions</h4>
             <ul class="ges-footer__list ges-footer__list--2col">
               <li v-for="inst in institutions" :key="inst.path">
-                <a :href="inst.url" class="ges-footer__link">{{ inst.name }}</a>
+                <RouterLink :to="inst.path" class="ges-footer__link">{{ inst.name }}</RouterLink>
               </li>
             </ul>
           </div>
@@ -88,15 +88,17 @@ const quickLinks = [
   { name: 'Academic Calendar', path: '/academic-calendar' },
 ];
 
+// Internal landing pages on ges.ac.ug — same-domain links feed Google's
+// sitelinks for the GES brand result; each page links out to the school site.
 const institutions = [
-  { name: 'Gombe Institute of Business Science & Technology (GIBST)', path: '/institutions/jsbi', url: 'https://www.gibst.ac.ug/' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/' },
-  { name: 'Gombe Junior School - Kampala', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/' },
-  { name: 'Gombe Junior School - Gulu', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/' },
-  { name: 'ScoobyDoo International School Uganda - Kampala', path: '/institutions/sisu-kampala', url: 'https://sisu-katale.vercel.app/' },
-  { name: 'ScoobyDoo International School Uganda - Gulu', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/' },
-  { name: 'International Education Pathways Program', path: '/institutions/iepp', url: 'https://ipp-vert.vercel.app/' },
+  { name: 'Gombe Institute of Business Science & Technology (GIBST)', path: '/institutions/jsbi' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', path: '/institutions/sakghs-bujuuko' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', path: '/institutions/sakghs-kawaala' },
+  { name: 'Gombe Junior School - Kampala', path: '/institutions/gjs-kampala' },
+  { name: 'Gombe Junior School - Gulu', path: '/institutions/gjs-gulu' },
+  { name: 'ScoobyDoo International School Uganda - Kampala', path: '/institutions/sisu-kampala' },
+  { name: 'ScoobyDoo International School Uganda - Gulu', path: '/institutions/sisu-gulu' },
+  { name: 'International Education Pathways Program', path: '/international-pathway' },
 ];
 
 const socials = [

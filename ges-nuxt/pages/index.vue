@@ -97,7 +97,7 @@
         <ul class="inst-list">
           <li class="inst-list__item">
             <div class="teaser-hl">
-              <a :href="institutions[0].url" :aria-label="institutions[0].name" class="teaser-hl__link">
+              <NuxtLink :to="institutions[0].path" :aria-label="institutions[0].name" class="teaser-hl__link">
                 <div class="teaser-hl__media">
                   <img :src="institutions[0].image" :alt="`${institutions[0].name} students`" loading="lazy" />
                   <img :src="institutions[0].logo" :alt="`${institutions[0].name} logo`" class="teaser-badge" loading="lazy" />
@@ -108,12 +108,12 @@
                   <div class="teaser-hl__summary">{{ institutions[0].description }}</div>
                   <div class="teaser-link teaser-link--inverse" role="link">Visit school</div>
                 </div>
-              </a>
+              </NuxtLink>
             </div>
           </li>
           <li v-for="inst in institutions.slice(1)" :key="inst.path" class="inst-list__item">
             <div class="teaser-std">
-              <a :href="inst.url" :aria-label="inst.name" class="teaser-std__link">
+              <NuxtLink :to="inst.path" :aria-label="inst.name" class="teaser-std__link">
                 <div class="teaser-std__media">
                   <img :src="inst.image" :alt="`${inst.name} students`" loading="lazy" />
                   <img :src="inst.logo" :alt="`${inst.name} logo`" class="teaser-badge" loading="lazy" />
@@ -127,7 +127,7 @@
                     <div class="teaser-link" role="link">Learn more</div>
                   </div>
                 </div>
-              </a>
+              </NuxtLink>
             </div>
           </li>
         </ul>
@@ -338,12 +338,12 @@ const partnerLogos = [
 /* ── Institutions ── */
 const institutions = [
   { name: 'Gombe Institute of Business Science & Technology (GIBST)', type: 'Vocational Institute', logo: '/images/Jimmy Ssekasi Business Institute Logo.png', image: '/images/JIMMY SEKASI.JPG', path: '/institutions/jsbi', url: 'https://www.gibst.ac.ug/', description: 'Equipping students with practical business, vocational, and hands-on skills.' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/Gombe High School - Bujuuko.png', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Nurturing tomorrow\'s leaders through quality education.' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/IMG_9718.JPG', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced secondary education with a focus on academic excellence.' },
-  { name: 'ScoobyDoo International School Uganda - Gulu', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-01-12-29_IMG_3773.jpg', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'Bringing international education to Northern Uganda.' },
-  { name: 'Gombe Junior School - Kampala', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/GJS - Kampala.JPG', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/', description: 'Building strong foundations for lifelong learning.' },
-  { name: 'Gombe Junior School - Gulu', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/GJS Gulu class.jpeg', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/', description: 'Extending foundational education excellence to Northern Uganda.' },
-  { name: 'ScoobyDoo International School Uganda - Kampala', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-12-55-02_1.jpg', path: '/institutions/sisu-kampala', url: 'https://sisu-katale.vercel.app/', description: 'International curriculum preparing students for global success.' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/Gombe High School - Bujuuko.png', path: '/institutions/sakghs-bujuuko', url: 'https://bujuuko.gombehighschool.ac.ug/', description: 'Nurturing tomorrow\'s leaders through quality education.' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', type: 'Secondary School', logo: '/images/Gombe High logo.png', image: '/images/IMG_9718.JPG', path: '/institutions/sakghs-kawaala', url: 'https://kawaala.gombehighschool.ac.ug/', description: 'Advanced secondary education with a focus on academic excellence.' },
+  { name: 'ScoobyDoo International School Uganda - Gulu', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-01-12-29_IMG_3773.jpg', path: '/institutions/sisu-gulu', url: 'https://gulu.scoobydoointernational.ac.ug/', description: 'Bringing international education to Northern Uganda.' },
+  { name: 'Gombe Junior School - Kampala', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/GJS - Kampala.JPG', path: '/institutions/gjs-kampala', url: 'https://kikajjo.gombejuniorschool.ac.ug/', description: 'Building strong foundations for lifelong learning.' },
+  { name: 'Gombe Junior School - Gulu', type: 'UNEB Licensed Primary School', logo: '/images/Gombe Junior School logo.png', image: '/images/GJS Gulu class.jpeg', path: '/institutions/gjs-gulu', url: 'https://gulu.gombejuniorschool.ac.ug/', description: 'Extending foundational education excellence to Northern Uganda.' },
+  { name: 'ScoobyDoo International School Uganda - Kampala', type: 'International School', logo: '/images/scooby-logo.png', image: '/images/26-08-2015-12-55-02_1.jpg', path: '/institutions/sisu-kampala', url: 'https://katale.scoobydoointernational.ac.ug/', description: 'International curriculum preparing students for global success.' },
 ];
 
 /* ── Featured posts (from GES Blog) ── */

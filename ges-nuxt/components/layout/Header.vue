@@ -42,16 +42,16 @@
           </button>
           <Transition name="dropdown">
             <div v-if="dropOpen" class="ges-dropdown__menu">
-              <a
+              <RouterLink
                 v-for="inst in institutions"
                 :key="inst.path"
-                :href="inst.url"
+                :to="inst.path"
                 class="ges-dropdown__item"
                 @click="dropOpen = false"
               >
                 <span class="ges-dropdown__item-name">{{ inst.name }}</span>
                 <span class="ges-dropdown__item-desc">{{ inst.description }}</span>
-              </a>
+              </RouterLink>
             </div>
           </Transition>
         </div>
@@ -121,15 +121,15 @@
         <RouterLink to="/partnerships" class="ges-mobile-menu__link" @click="mobileOpen = false">Partnerships</RouterLink>
         <div class="ges-mobile-menu__divider"></div>
         <p class="ges-mobile-menu__section">Institutions</p>
-        <a
+        <RouterLink
           v-for="inst in institutions"
           :key="inst.path"
-          :href="inst.url"
+          :to="inst.path"
           class="ges-mobile-menu__link ges-mobile-menu__link--sub"
           @click="mobileOpen = false"
         >
           {{ inst.shortName }}
-        </a>
+        </RouterLink>
         <RouterLink to="/about" class="ges-mobile-menu__cta" @click="mobileOpen = false">Get in Touch</RouterLink>
       </div>
     </Transition>
@@ -156,15 +156,16 @@ const navLinks = [
   { name: 'BLOG', path: '/blog' },
 ];
 
+// Internal landing pages on ges.ac.ug (each links out to the school's own site).
 const institutions = [
-  { name: 'Gombe Institute of Business Science & Technology (GIBST)', shortName: 'GIBST', path: '/institutions/jsbi', url: 'https://www.gibst.ac.ug/', description: 'Business & Vocational Training' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', shortName: 'SAKGHS Bujuuko', path: '/institutions/sakghs-bujuuko', url: 'https://sakghs-bujuuko.vercel.app/', description: 'Advanced Secondary Education' },
-  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', shortName: 'SAKGHS Kawaala', path: '/institutions/sakghs-kawaala', url: 'https://sakghs-kawaala.vercel.app/', description: 'Advanced Secondary Education' },
-  { name: 'Gombe Junior School - Kampala', shortName: 'GJS Kampala', path: '/institutions/gjs-kampala', url: 'https://gjs-kikajjo.vercel.app/', description: 'Primary Education' },
-  { name: 'Gombe Junior School - Gulu', shortName: 'GJS Gulu', path: '/institutions/gjs-gulu', url: 'https://gjs-gulu.vercel.app/', description: 'Primary Education' },
-  { name: 'ScoobyDoo International School Uganda - Kampala', shortName: 'SISU Kampala', path: '/institutions/sisu-kampala', url: 'https://sisu-katale.vercel.app/', description: 'International Curriculum' },
-  { name: 'ScoobyDoo International School Uganda - Gulu', shortName: 'SISU Gulu', path: '/institutions/sisu-gulu', url: 'https://sisu-gulu.vercel.app/', description: 'International Curriculum' },
-  { name: 'International Education Pathways Program', shortName: 'IEPP', path: '/institutions/iepp', url: 'https://ipp-vert.vercel.app/', description: 'Global Study Pathways' },
+  { name: 'Gombe Institute of Business Science & Technology (GIBST)', shortName: 'GIBST', path: '/institutions/jsbi', description: 'Business & Vocational Training' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', shortName: 'SAKGHS Bujuuko', path: '/institutions/sakghs-bujuuko', description: 'Advanced Secondary Education' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', shortName: 'SAKGHS Kawaala', path: '/institutions/sakghs-kawaala', description: 'Advanced Secondary Education' },
+  { name: 'Gombe Junior School - Kampala', shortName: 'GJS Kampala', path: '/institutions/gjs-kampala', description: 'Primary Education' },
+  { name: 'Gombe Junior School - Gulu', shortName: 'GJS Gulu', path: '/institutions/gjs-gulu', description: 'Primary Education' },
+  { name: 'ScoobyDoo International School Uganda - Kampala', shortName: 'SISU Kampala', path: '/institutions/sisu-kampala', description: 'International Curriculum' },
+  { name: 'ScoobyDoo International School Uganda - Gulu', shortName: 'SISU Gulu', path: '/institutions/sisu-gulu', description: 'International Curriculum' },
+  { name: 'International Education Pathways Program', shortName: 'IEPP', path: '/international-pathway', description: 'Global Study Pathways' },
 ];
 
 /* Top bar social icons (rescue.org rplm-social-share, inverse) */

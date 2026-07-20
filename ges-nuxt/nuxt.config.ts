@@ -1,3 +1,11 @@
+import { institutions } from './seo.config'
+
+// Landing pages served by pages/institutions/[slug].vue (jsbi has its own
+// static page; IEPP maps to /international-pathway).
+const institutionPaths = institutions
+  .filter((i) => i.path === `/institutions/${i.slug}` && i.slug !== 'jsbi')
+  .map((i) => i.path)
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-06-01',
@@ -41,6 +49,8 @@ export default defineNuxtConfig({
 
   sitemap: {
     exclude: ['/admin/**'],
+    // Dynamic [slug].vue routes are not auto-discovered by the module.
+    urls: institutionPaths,
   },
 
   tailwindcss: {
@@ -72,15 +82,17 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    // --- Institution sub-sites: preserve existing 301 redirects ---
-    '/institutions/sakghs-kawaala': { redirect: { to: 'https://sakghs-kawaala.vercel.app/', statusCode: 301 } },
-    '/institutions/sakghs-bujuuko': { redirect: { to: 'https://sakghs-bujuuko.vercel.app/', statusCode: 301 } },
-    '/institutions/gjs-kikajjo': { redirect: { to: 'https://gjs-kikajjo.vercel.app/', statusCode: 301 } },
-    '/institutions/gjs-boarding': { redirect: { to: 'https://gjs-boarding.vercel.app/', statusCode: 301 } },
-    '/institutions/gjs-gulu': { redirect: { to: 'https://gjs-gulu.vercel.app/', statusCode: 301 } },
-    '/institutions/gjs-about': { redirect: { to: 'https://gjs-gulu.vercel.app/', statusCode: 301 } },
-    '/institutions/scooby-katale': { redirect: { to: 'https://sisu-katale.vercel.app/', statusCode: 301 } },
-    '/institutions/scooby-gulu': { redirect: { to: 'https://sisu-gulu.vercel.app/', statusCode: 301 } },
+    // --- Institutions now have landing pages ON ges.ac.ug (required for
+    // Google to list them as sitelinks under the GES result). Legacy slugs
+    // 301 to the new internal pages instead of the external school sites.
+    '/institutions/gjs-kikajjo': { redirect: { to: '/institutions/gjs-kampala', statusCode: 301 } },
+    '/institutions/gjs-boarding': { redirect: { to: '/institutions/gjs-kampala', statusCode: 301 } },
+    '/institutions/gjs-about': { redirect: { to: '/institutions/gjs-gulu', statusCode: 301 } },
+    '/institutions/scooby-katale': { redirect: { to: '/institutions/sisu-kampala', statusCode: 301 } },
+    '/institutions/scooby-gulu': { redirect: { to: '/institutions/sisu-gulu', statusCode: 301 } },
+    '/institutions/iepp': { redirect: { to: '/international-pathway', statusCode: 301 } },
+    // Prerender the landing pages so crawlers get static HTML.
+    ...Object.fromEntries(institutionPaths.map((p) => [p, { prerender: true }])),
     // --- Admin: keep out of the index, render client-side only ---
     '/admin/**': { robots: false, ssr: false },
   },
