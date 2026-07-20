@@ -97,7 +97,10 @@
           <blockquote class="quote-band__text">
             Our institutions are built on the conviction that every child deserves an education that nurtures their full potential - academically, morally, and as a citizen of the world.
           </blockquote>
-          <RouterLink to="/leadership" class="btn-rescue btn-rescue--primary quote-band__btn">Meet Our Leadership</RouterLink>
+          <div class="quote-band__btn-wrap">
+            <span class="quote-band__btn-float" aria-hidden="true">Leadership</span>
+            <RouterLink to="/leadership" class="btn-rescue btn-rescue--primary quote-band__btn">Meet Our Leadership</RouterLink>
+          </div>
         </div>
         <div class="quote-band__media quote-band__media--right">
           <img src="/images/Mrs. Rosalind Tanayita Kyewalabye.png" alt="Mrs. Rosalind Tanayita Kyewalabye" />
@@ -847,7 +850,32 @@ const interviewQA = [
 }
 .quote-band__author strong { font-size: 1rem; color: var(--rescue-yellow, #FFC72C); }
 .quote-band__author span { font-size: 0.85rem; color: rgba(255, 255, 255, 0.65); margin-top: 2px; }
-.quote-band__btn { margin-top: 1.75rem; }
+.quote-band__btn-wrap {
+  position: relative;
+  display: inline-block;
+  margin-top: 1.75rem;
+}
+.quote-band__btn-float {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-22%, -15%);
+  width: max-content;
+  white-space: nowrap;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  opacity: 0.08;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  z-index: 0;
+}
+.quote-band__btn {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+}
 
 /* ── Institutions carousel ── */
 .inst-carousel-head {
