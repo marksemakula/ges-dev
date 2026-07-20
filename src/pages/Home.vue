@@ -57,6 +57,7 @@
     <section class="rpl-section">
       <div class="container-rpl">
         <div class="rpl-section-heading rpl-section-heading--center">
+          <span class="rpl-section-heading__float" aria-hidden="true">Mission</span>
           <h2 class="rpl-section-heading__title">We nurture academic excellence, character and global readiness</h2>
           <p class="rpl-section-heading__intro">
             A consortium of institutions providing quality holistic education from Kindergarten to Tertiary level across Uganda - all embracing the same vision and mission.
@@ -112,6 +113,7 @@
     <section class="rpl-section rpl-section--grey">
       <div class="container-rpl">
         <div class="rpl-section-heading">
+          <span class="rpl-section-heading__float" aria-hidden="true">Institutions</span>
           <h2 class="rpl-section-heading__title">Institutions Under GES</h2>
         </div>
 
@@ -178,6 +180,7 @@
     <section id="news" class="rpl-section">
       <div class="container-rpl">
         <div class="rpl-section-heading">
+          <span class="rpl-section-heading__float" aria-hidden="true">Blogs</span>
           <h2 class="rpl-section-heading__title">News and featured Articles</h2>
         </div>
         <div class="news-ed">
@@ -227,6 +230,7 @@
     <section class="rpl-section rpl-section--grey">
       <div class="container-rpl">
         <div class="rpl-section-heading">
+          <span class="rpl-section-heading__float" aria-hidden="true">Community</span>
           <h2 class="rpl-section-heading__title">Get involved</h2>
         </div>
         <div class="rpl-grid-3">
