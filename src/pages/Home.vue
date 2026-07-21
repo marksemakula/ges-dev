@@ -102,13 +102,6 @@
             <RouterLink to="/leadership" class="btn-rescue btn-rescue--primary quote-band__btn">Meet Our Leadership</RouterLink>
           </div>
         </div>
-        <div class="quote-band__media quote-band__media--right">
-          <img src="/images/Mrs. Rosalind Tanayita Kyewalabye.png" alt="Mrs. Rosalind Tanayita Kyewalabye" />
-          <div class="quote-band__author">
-            <strong>Late Mrs. Rosalind Tanayita Kyewalabye</strong>
-            <span>Co-Founder - Gombe Education Service</span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -337,7 +330,6 @@ const slideshowImages = [
   '/images/slideshow/slideshow_4.jpg',
   '/images/slideshow/slideshow_6.jpg',
   '/images/slideshow/IMG_6935.JPG',
-  '/images/slideshow/GES Founders.jpg',
   '/images/slideshow/prayer.jpg',
   '/images/slideshow/hero-triptych-gulu.jpeg',
   '/images/slideshow/IMG_9718.JPG',
@@ -795,9 +787,6 @@ const interviewQA = [
 .quote-band__media--left img {
   box-shadow: 12px 12px 0 var(--rescue-yellow, #FFC72C);
 }
-.quote-band__media--right img {
-  box-shadow: -12px 12px 0 var(--rescue-yellow, #FFC72C);
-}
 .quote-band__content {
   position: relative;
 }
@@ -818,13 +807,10 @@ const interviewQA = [
   .quote-band__media--left {
     justify-self: right;
   }
-  .quote-band__media--right {
-    justify-self: left;
-  }
 }
 @media (min-width: 1024px) {
   .quote-band__inner {
-    grid-template-columns: 280px 1fr 280px;
+    grid-template-columns: 280px 1fr;
     gap: 4rem;
   }
 }
