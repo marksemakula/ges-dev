@@ -334,6 +334,7 @@ const slideshowImages = [
   '/images/slideshow/hero-triptych-gulu.jpeg',
   '/images/slideshow/IMG_9718.JPG',
   '/images/slideshow/_MG_7424.JPG',
+  '/images/slideshow/slideshow_11.png',
 ];
 const currentSlide = ref(0);
 let slideTimer: ReturnType<typeof setInterval> | null = null;
