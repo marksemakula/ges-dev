@@ -3,6 +3,7 @@
     <!-- Page Header -->
     <section class="page-hero">
       <div class="container">
+        <span class="page-hero__float" aria-hidden="true">About Us</span>
         <p class="page-hero__eyebrow">Who We Are</p>
         <h1 class="page-hero__title">Gombe Education Service</h1>
         <p class="page-hero__subtitle">A consortium of six institutions providing quality holistic education from Kindergarten to Tertiary level across Uganda.</p>
@@ -14,7 +15,8 @@
       <div class="container">
         <div class="section-header">
           <p class="section-eyebrow">Consortium Overview</p>
-          <h2 class="section-title">The GES Profile</h2>
+          <h2 class="section-title">The Profile</h2>
+          <img src="/images/GES_.png" alt="GES" class="profile-banner" />
         </div>
         <p class="intro-text">Gombe Education Service is a consortium of six institutions providing education from Kindergarten to Tertiary level: Scooby Doo International School- Uganda offering both National & International curricular, Gombe Junior School-Kikajjo which is entirely Day, Gombe Junior School which is purely boarding, St. Andrew Kaggwa Gombe High School – Kawaala, St Andrew Kaggwa Gombe high school- Bujuuko and Gombe Institute of Business Science & Technology (GIBST).</p>
         <p class="intro-text">All GES Schools embrace and subscribe to the same Vision and Mission.</p>
@@ -153,10 +155,30 @@ const milestones = [
 .page { min-height: 100vh; }
 .page-hero {
   background: #1A1A1A;
-  padding: 7rem 0 4rem;
+  padding: 8.5rem 0 4rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero__float {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  white-space: nowrap;
+  font-size: clamp(3.25rem, 7.5vw, 5.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  opacity: 0.08;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  z-index: 0;
 }
 .page-hero__eyebrow {
+  position: relative;
+  z-index: 1;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -165,12 +187,16 @@ const milestones = [
   margin-bottom: 0.75rem;
 }
 .page-hero__title {
+  position: relative;
+  z-index: 1;
   font-size: clamp(2.25rem, 5vw, 3.5rem);
   font-weight: 700;
   color: #fff;
   margin-bottom: 1rem;
 }
 .page-hero__subtitle {
+  position: relative;
+  z-index: 1;
   font-size: 1rem;
   color: rgba(255,255,255,0.7);
   max-width: 560px;
@@ -185,6 +211,7 @@ const milestones = [
 .section-header { text-align: center; max-width: 660px; margin: 0 auto 3.5rem; }
 .section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #E6B219; margin-bottom: 0.5rem; }
 .section-title { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: #1A1A1A; line-height: 1.2; margin: 0; }
+.profile-banner { display: block; max-width: 320px; width: 100%; height: auto; margin: 1.5rem auto 0; }
 .intro-text { font-size: 1rem; color: #555555; line-height: 1.8; margin-bottom: 1.5rem; }
 
 /* Institutions Grid */
