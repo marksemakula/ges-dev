@@ -6,7 +6,7 @@
         <span class="page-hero__float" aria-hidden="true">About Us</span>
         <p class="page-hero__eyebrow">Who We Are</p>
         <h1 class="page-hero__title">Gombe Education Service</h1>
-        <p class="page-hero__subtitle">A consortium of six institutions providing quality holistic education from Kindergarten to Tertiary level across Uganda.</p>
+        <p class="page-hero__subtitle">A consortium of nine institutions providing quality holistic education from Kindergarten to Tertiary level across Uganda.</p>
       </div>
     </section>
 
@@ -18,73 +18,27 @@
           <h2 class="section-title">The Profile</h2>
           <img src="/images/GES_.png" alt="GES" class="profile-banner" />
         </div>
-        <p class="intro-text">Gombe Education Service is a consortium of six institutions providing education from Kindergarten to Tertiary level: Scooby Doo International School- Uganda offering both National & International curricular, Gombe Junior School-Kikajjo which is entirely Day, Gombe Junior School which is purely boarding, St. Andrew Kaggwa Gombe High School – Kawaala, St Andrew Kaggwa Gombe high school- Bujuuko and Gombe Institute of Business Science & Technology (GIBST).</p>
+        <p class="intro-text">Gombe Education Service is a consortium of nine institutions providing education from Kindergarten to Tertiary level and beyond: Scooby Doo International School - Uganda (Katale and Gulu) offering both National & International curricular, Gombe Junior School-Kikajjo which is entirely Day, Gombe Junior School which is purely boarding, Gombe Junior School - Gulu, St. Andrew Kaggwa Gombe High School – Kawaala, St Andrew Kaggwa Gombe high school- Bujuuko, Gombe Institute of Business Science & Technology (GIBST) and the International Education Pathways Program (IPP).</p>
         <p class="intro-text">All GES Schools embrace and subscribe to the same Vision and Mission.</p>
         
         <div class="institutions-grid">
-          <div class="institution-card">
-            <div class="institution-card__tag">Early Years</div>
-            <h3>Scooby Doo International School Uganda</h3>
-            <p>This is an early years independent international school offering both National & International curricular and brings together learners from different parts of Uganda from the age of 2-6years. Started in 2013.</p>
-            <div class="institution-contact">
-              <p><strong>📱 Phone:</strong> 0708 800 005 / 0708 800 006</p>
-              <p><strong>🌐 Website:</strong> <a href="https://www.scoobydoointernationalschool.ac.ug" target="_blank" rel="noopener">scoobydoointernationalschooluganda.ac.ug</a></p>
-              <p><strong>📍 Location:</strong> Kikajjo-off Seguku Katale Road</p>
+          <div v-for="(inst, i) in institutions" :key="inst.name" class="institution-card">
+            <div class="inst-tile" :class="i % 2 === 0 ? 'inst-tile--a' : 'inst-tile--b'">
+              <img :src="inst.image" :alt="`${inst.name} campus`" class="inst-tile__img" loading="lazy" />
+              <div class="inst-tile__scrim" aria-hidden="true"></div>
+              <div class="inst-tile__content">
+                <span class="inst-tile__tag">{{ inst.tag }}</span>
+                <h3 class="inst-tile__title">{{ inst.name }}</h3>
+              </div>
             </div>
-          </div>
-          <div class="institution-card">
-            <div class="institution-card__tag">Primary</div>
-            <h3>Gombe Junior School</h3>
-            <p>This school is one of our pioneer schools that started in 2013 as day & boarding. It academically excelled with 100% first grades in 2017 & 2022 emerging best in Wakiso District and ranked number 4 & 5 in Uganda respectively. Due to its growth, the day parents sought customized services which saw the creation of an independent day section.</p>
-            <div class="institution-contact">
-              <p><strong>📱 Phone:</strong> 0708 800 001 / 0708 800 003</p>
-              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombejuniorschool.ac.ug">info@gombejuniorschool.ac.ug</a></p>
-              <p><strong>🌐 Website:</strong> <a href="https://www.gombejuniorschool.ac.ug" target="_blank" rel="noopener">gombejuniorschool.ac.ug</a></p>
-              <p><strong>📍 Location:</strong> Kikajjo-Nateete-Nakawuka Road</p>
-            </div>
-          </div>
-          <div class="institution-card">
-            <div class="institution-card__tag">Primary</div>
-            <h3>Gombe Junior School Kikajjo</h3>
-            <p>GJS-K was opened in 2019 after the separation of day scholars from Boarders to create for them their own school which is entirely day. The school has brought about transformation in the community around its location.</p>
-            <div class="institution-contact">
-              <p><strong>📱 Phone:</strong> 0708 800 002 / 0708 800 004</p>
-              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombejuniorschool.ac.ug">info@gombejuniorschool.ac.ug</a></p>
-              <p><strong>🌐 Website:</strong> <a href="https://www.gombejuniorschool.ac.ug" target="_blank" rel="noopener">gombejuniorschool.ac.ug</a></p>
-              <p><strong>📍 Location:</strong> Kikajjo-Nateete-Nakawuka Road</p>
-            </div>
-          </div>
-          <div class="institution-card">
-            <div class="institution-card__tag">Secondary</div>
-            <h3>St. Andrew Kaggwa Gombe High School - Kawaala</h3>
-            <p>St. Andrew Kaggwa Gombe School Kawaala is both 'O' and 'A' level mixed Day and Boarding school, that started in June 2016.</p>
-            <div class="institution-contact">
-              <p><strong>📱 Phone:</strong> 0708 700 001 / 0708 700 002</p>
-              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombehighschool.ac.ug">info@gombehighschool.ac.ug</a></p>
-              <p><strong>🌐 Website:</strong> <a href="https://www.gombehighschool.ac.ug" target="_blank" rel="noopener">gombehighschool.ac.ug</a></p>
-              <p><strong>📍 Location:</strong> Kawaala off kasube junction</p>
-            </div>
-          </div>
-          <div class="institution-card">
-            <div class="institution-card__tag">Secondary</div>
-            <h3>St. Andrew Kaggwa Gombe High School - Bujuuko</h3>
-            <p>This is one of our new campuses that started in October 2022 and has brought about a paradigm shift from Kings College Bujuuko to St Andrew Kaggwa Gombe High School Bujuuko Campus. The school is O' and 'A' level mixed, both day & boarding school and meets the middle income Parents aspiration for better education services at an affordable fees.</p>
-            <div class="institution-contact">
-              <p><strong>📱 Phone:</strong> 0752 578 254 / 0784 329 051</p>
-              <p><strong>✉️ Email:</strong> <a href="mailto:info@gombehighschool.ac.ug">info@gombehighschool.ac.ug</a></p>
-              <p><strong>🌐 Website:</strong> <a href="https://www.gombehighschool.ac.ug" target="_blank" rel="noopener">gombehighschool.ac.ug</a></p>
-              <p><strong>📍 Location:</strong> Bujuuko Trading centre 20 miles from Kampala along Mityana Road</p>
-            </div>
-          </div>
-          <div class="institution-card">
-            <div class="institution-card__tag">Tertiary</div>
-            <h3>Gombe Institute of Business Science & Technology (GIBST)</h3>
-            <p>In a deliberate plan to build, a hybrid mid-level training college GES took over Jimmy Sekasi Business Institute to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities and be direct partakers in their career destiny. It offers a unique blend of post-secondary school education and training in short courses, Certificates & Diplomas in Pastry and Baking, Barista skills, Mixology, Cookery skills, Basic Cake making and Decoration, ICT courses, Culinary arts, and Diploma courses in Fashion and Design, and Hairdressing and Beauty Therapy respectively.</p>
-            <div class="institution-contact">
-              <p><strong>📱 Phone:</strong> 0756 241 530 / 0772 472 570</p>
-              <p><strong>✉️ Email:</strong> <a href="mailto:info@gibst.ac.ug">info@gibst.ac.ug</a></p>
-              <p><strong>🌐 Website:</strong> <a href="https://gibst.ac.ug" target="_blank" rel="noopener">gibst.ac.ug</a></p>
-              <p><strong>📍 Location:</strong> 4925 Mbogo Rd, Kampala</p>
+            <div class="institution-card__body">
+              <p>{{ inst.description }}</p>
+              <div class="institution-contact">
+                <p v-if="inst.phone"><strong>📱 Phone:</strong> {{ inst.phone }}</p>
+                <p v-if="inst.email"><strong>✉️ Email:</strong> <a :href="`mailto:${inst.email}`">{{ inst.email }}</a></p>
+                <p v-if="inst.website"><strong>🌐 Website:</strong> <a :href="inst.websiteUrl" target="_blank" rel="noopener">{{ inst.website }}</a></p>
+                <p v-if="inst.location"><strong>📍 Location:</strong> {{ inst.location }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -142,6 +96,18 @@
 </template>
 
 <script setup lang="ts">
+const institutions = [
+  { name: 'Scooby Doo International School Uganda', tag: 'Early Years', image: '/images/sisu-katale-triptych.jpeg', description: 'This is an early years independent international school offering both National & International curricular and brings together learners from different parts of Uganda from the age of 2-6years. Started in 2013.', phone: '0708 800 005 / 0708 800 006', website: 'scoobydoointernationalschooluganda.ac.ug', websiteUrl: 'https://www.scoobydoointernationalschool.ac.ug', location: 'Kikajjo-off Seguku Katale Road' },
+  { name: 'ScoobyDoo International School Uganda - Gulu', tag: 'International School', image: '/images/hero-triptych-gulu.jpeg', description: 'Bringing the same National & International curricular to Northern Uganda, ScoobyDoo International School Uganda - Gulu extends quality early years and international education beyond Kampala.', website: 'gulu.scoobydoointernational.ac.ug', websiteUrl: 'https://gulu.scoobydoointernational.ac.ug/', location: 'Gulu, Northern Uganda' },
+  { name: 'Gombe Junior School', tag: 'Primary', image: '/images/IMG_1707.JPG', description: 'This school is one of our pioneer schools that started in 2013 as day & boarding. It academically excelled with 100% first grades in 2017 & 2022 emerging best in Wakiso District and ranked number 4 & 5 in Uganda respectively. Due to its growth, the day parents sought customized services which saw the creation of an independent day section.', phone: '0708 800 001 / 0708 800 003', email: 'info@gombejuniorschool.ac.ug', website: 'gombejuniorschool.ac.ug', websiteUrl: 'https://www.gombejuniorschool.ac.ug', location: 'Kikajjo-Nateete-Nakawuka Road' },
+  { name: 'Gombe Junior School Kikajjo', tag: 'Primary', image: '/images/IMG_1707.JPG', description: 'GJS-K was opened in 2019 after the separation of day scholars from Boarders to create for them their own school which is entirely day. The school has brought about transformation in the community around its location.', phone: '0708 800 002 / 0708 800 004', email: 'info@gombejuniorschool.ac.ug', website: 'gombejuniorschool.ac.ug', websiteUrl: 'https://www.gombejuniorschool.ac.ug', location: 'Kikajjo-Nateete-Nakawuka Road' },
+  { name: 'Gombe Junior School - Gulu', tag: 'Primary', image: '/images/GJS Gulu class.png', description: 'Gombe Junior School - Gulu extends the GES tradition of strong foundational education to Northern Uganda as a UNEB licensed primary school.', email: 'info@gombejuniorschool.ac.ug', website: 'gulu.gombejuniorschool.ac.ug', websiteUrl: 'https://gulu.gombejuniorschool.ac.ug/', location: 'Gulu, Northern Uganda' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Kawaala', tag: 'Secondary', image: '/images/IMG_9718.JPG', description: "St. Andrew Kaggwa Gombe School Kawaala is both 'O' and 'A' level mixed Day and Boarding school, that started in June 2016.", phone: '0708 700 001 / 0708 700 002', email: 'info@gombehighschool.ac.ug', website: 'gombehighschool.ac.ug', websiteUrl: 'https://www.gombehighschool.ac.ug', location: 'Kawaala off kasube junction' },
+  { name: 'St. Andrew Kaggwa Gombe High School - Bujuuko', tag: 'Secondary', image: '/images/slideshow/_MG_6907.JPG', description: "This is one of our new campuses that started in October 2022 and has brought about a paradigm shift from Kings College Bujuuko to St Andrew Kaggwa Gombe High School Bujuuko Campus. The school is O' and 'A' level mixed, both day & boarding school and meets the middle income Parents aspiration for better education services at an affordable fees.", phone: '0752 578 254 / 0784 329 051', email: 'info@gombehighschool.ac.ug', website: 'gombehighschool.ac.ug', websiteUrl: 'https://www.gombehighschool.ac.ug', location: 'Bujuuko Trading centre 20 miles from Kampala along Mityana Road' },
+  { name: 'Gombe Institute of Business Science & Technology (GIBST)', tag: 'Tertiary', image: '/images/JIMMY SEKASI.JPG', description: 'In a deliberate plan to build, a hybrid mid-level training college GES took over Jimmy Sekasi Business Institute to intentionally impart contemporary skills to young men and women of all walks of life, to enhance their potential in being more relevant to their families and communities and be direct partakers in their career destiny. It offers a unique blend of post-secondary school education and training in short courses, Certificates & Diplomas in Pastry and Baking, Barista skills, Mixology, Cookery skills, Basic Cake making and Decoration, ICT courses, Culinary arts, and Diploma courses in Fashion and Design, and Hairdressing and Beauty Therapy respectively.', phone: '0756 241 530 / 0772 472 570', email: 'info@gibst.ac.ug', website: 'gibst.ac.ug', websiteUrl: 'https://gibst.ac.ug', location: '4925 Mbogo Rd, Kampala' },
+  { name: 'International Education Pathways Program', tag: 'International Programme', image: '/images/ieppheader.png', description: 'The International Education Pathways Program (IPP) connects Ugandan students to structured, affordable pathways into quality universities across Canada, the United Kingdom, the United States, Germany, Australia, Cyprus, and the United Arab Emirates.', website: 'ipp.ges.ac.ug', websiteUrl: 'https://ipp.ges.ac.ug/' },
+];
+
 const milestones = [
   { year: '2013', event: 'GES Founded', detail: 'Gombe Education Service established its first institution.' },
   { year: '2005', event: 'Network Expansion', detail: 'Opened two additional campuses to meet growing demand.' },
@@ -224,9 +190,9 @@ const milestones = [
 @media (min-width: 1024px) { .institutions-grid { grid-template-columns: repeat(3, 1fr); } }
 .institution-card {
   background: #fff;
-  border-radius: 14px;
-  padding: 2.25rem;
+  border-radius: 0;
   border: 1px solid #E0E0E0;
+  overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -235,20 +201,101 @@ const milestones = [
   box-shadow: 0 12px 32px rgba(10,35,66,0.12);
   border-color: var(--ges-gold);
 }
-.institution-card__tag {
-  display: inline-block;
-  background: rgba(140, 20, 39, 0.08);
-  color: #E6B219;
-  padding: 0.3rem 0.9rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  margin-bottom: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.institution-card__body {
+  padding: 1.75rem 2rem 2rem;
 }
-.institution-card h3 { color: #1A1A1A; font-size: 1.25rem; margin-bottom: 0.875rem; line-height: 1.4; }
 .institution-card p { color: #555555; font-size: 0.95rem; line-height: 1.7; }
+
+/* Institution tiles: full-bleed image, sharp edges, overlaid tag + headline */
+.inst-tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
+}
+.inst-tile__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+.institution-card:hover .inst-tile__img {
+  transform: scale(1.04);
+}
+.inst-tile__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1.25rem;
+}
+
+/* Variant A: bottom scrim, yellow tag, headline pinned to the bottom (case-study style) */
+.inst-tile--a .inst-tile__scrim {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 60%;
+  background: linear-gradient(to top, var(--rescue-dark, #1A1A1A) 20%, rgba(26, 26, 26, 0.7) 55%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.inst-tile--a .inst-tile__content {
+  bottom: 0;
+  top: auto;
+}
+.inst-tile--a .inst-tile__tag {
+  display: inline-block;
+  background: var(--rescue-yellow, #FFC72C);
+  color: var(--rescue-dark, #1A1A1A);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.35em 0.7em;
+  margin-bottom: 0.6rem;
+}
+.inst-tile--a .inst-tile__title {
+  color: #fff;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* Variant B: white tag pinned to the top, headline highlighted in deep-blue blocks (opinion style) */
+.inst-tile--b .inst-tile__content {
+  top: 0;
+  bottom: auto;
+}
+.inst-tile--b .inst-tile__tag {
+  display: block;
+  width: max-content;
+  background: #fff;
+  color: #163A5C;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.4em 0.8em;
+  margin-bottom: 0.5rem;
+}
+.inst-tile--b .inst-tile__title {
+  display: inline;
+  color: #fff;
+  background: #163A5C;
+  box-shadow: 0.3em 0 0 #163A5C, -0.3em 0 0 #163A5C;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 800;
+  line-height: 1.6;
+  margin: 0;
+}
 
 /* Mission / Vision */
 .mv-grid {
