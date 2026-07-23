@@ -340,14 +340,15 @@ const slideshowImages = [
   '/images/slideshow/slideshow_4.jpg',
   '/images/slideshow/slideshow_6.jpg',
   '/images/slideshow/IMG_6935.JPG',
+  '/images/slideshow/slideshow_11.png',
   '/images/slideshow/prayer.jpg',
   '/images/slideshow/hero-triptych-gulu.jpeg',
   '/images/slideshow/IMG_9718.JPG',
-  '/images/slideshow/_MG_7424.JPG',
   '/images/slideshow/slideshow_11.png',
+  '/images/slideshow/_MG_7424.JPG',
 ];
 const currentSlide = ref(0);
-let slideTimer: ReturnType<typeof setInterval> | null = null;
+let slideTimer: ReturnType<typeof setTimeout> | null = null;
 
 /* ── GES Journey Modal ── */
 const isJourneyModalOpen = ref(false);
@@ -368,15 +369,21 @@ function handleKeyDown(e: KeyboardEvent) {
   }
 }
 
-onMounted(() => {
-  slideTimer = setInterval(() => {
+function scheduleNextSlide() {
+  const duration = slideshowImages[currentSlide.value].includes('slideshow_11') ? 9000 : 6000;
+  slideTimer = setTimeout(() => {
     currentSlide.value = (currentSlide.value + 1) % slideshowImages.length;
-  }, 6000);
+    scheduleNextSlide();
+  }, duration);
+}
+
+onMounted(() => {
+  scheduleNextSlide();
   window.addEventListener('keydown', handleKeyDown);
 });
 
 onUnmounted(() => {
-  if (slideTimer) clearInterval(slideTimer);
+  if (slideTimer) clearTimeout(slideTimer);
   window.removeEventListener('keydown', handleKeyDown);
 });
 
